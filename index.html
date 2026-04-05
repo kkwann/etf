@@ -1,1 +1,127 @@
-<h1>블로그</h1>h1>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETF Scoring Explorer</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Interactive Example Dashboard</p>
+        <h1 id="page-title">ETF Scoring Explorer</h1>
+        <p class="hero-text">
+          Example ETF data is displayed in a readable, interactive dashboard.
+          Search, sort, filter, and select a row to inspect each scoring method.
+        </p>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-card">
+          <span class="meta-label">Source</span>
+          <strong id="source-label">example json</strong>
+        </div>
+        <div class="meta-card">
+          <span class="meta-label">Updated</span>
+          <strong id="updated-at">-</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="summary-grid">
+      <article class="summary-card">
+        <span class="summary-label">Visible ETFs</span>
+        <strong id="visible-count" class="summary-value">0</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Top ETF</span>
+        <strong id="top-ticker" class="summary-value">-</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Top Score</span>
+        <strong id="top-score" class="summary-value">-</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Average Total</span>
+        <strong id="avg-score" class="summary-value">-</strong>
+      </article>
+    </section>
+
+    <main class="layout">
+      <section class="panel panel-wide">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Table</p>
+            <h2>ETF Rankings</h2>
+          </div>
+          <div class="controls">
+            <label class="control">
+              <span>Search</span>
+              <input id="search-input" type="search" placeholder="Ticker or name">
+            </label>
+            <label class="control">
+              <span>Sort</span>
+              <select id="sort-select">
+                <option value="total-desc">Total high to low</option>
+                <option value="total-asc">Total low to high</option>
+                <option value="ticker-asc">Ticker A to Z</option>
+                <option value="ticker-desc">Ticker Z to A</option>
+              </select>
+            </label>
+            <button id="reset-button" type="button" class="ghost-button">Reset</button>
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <label class="range-wrap" for="min-score-range">
+            <span>Minimum total score</span>
+            <input id="min-score-range" type="range" min="0" max="100" step="1" value="0">
+          </label>
+          <strong id="min-score-value" class="range-value">0</strong>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead id="table-head"></thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">Detail</p>
+              <h2>Selected ETF</h2>
+            </div>
+          </div>
+          <div class="detail-box">
+            <div class="detail-hero">
+              <span class="detail-label">Ticker</span>
+              <strong id="detail-ticker">-</strong>
+              <p id="detail-name" class="detail-name">Select a row in the table.</p>
+            </div>
+            <div id="detail-grid" class="detail-grid"></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">Format</p>
+              <h2>Example Columns</h2>
+            </div>
+          </div>
+          <div class="format-box">
+            <code>Ticker method1 method2 method3 method4 method5 method6 total</code>
+          </div>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
