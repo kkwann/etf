@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "title": "ETF Scoring Explorer",
+    "source": "static dashboard pipeline",
+    "generated_at": "2026-04-03T18:45:39+09:00"
+  },
+  "columns": [
+    "Ticker",
+    "Name",
+    "method1",
+    "method2",
+    "method3",
+    "method4",
+    "method5",
+    "method6",
+    "total"
+  ],
+  "rows": [
+    {
+      "Ticker": "QQQ",
+      "Name": "Invesco QQQ Trust",
+      "method1": 91,
+      "method2": 87,
+      "method3": 89,
+      "method4": 90,
+      "method5": 84,
+      "method6": 93,
+      "total": 89.0
+    },
+    {
+      "Ticker": "SOXX",
+      "Name": "iShares Semiconductor ETF",
+      "method1": 88,
+      "method2": 90,
+      "method3": 86,
+      "method4": 89,
+      "method5": 85,
+      "method6": 92,
+      "total": 88.3
+    },
+    {
+      "Ticker": "XLK",
+      "Name": "Technology Select Sector SPDR Fund",
+      "method1": 87,
+      "method2": 88,
+      "method3": 85,
+      "method4": 86,
+      "method5": 84,
+      "method6": 89,
+      "total": 86.5
+    },
+    {
+      "Ticker": "SCHD",
+      "Name": "Schwab U.S. Dividend Equity ETF",
+      "method1": 85,
+      "method2": 86,
+      "method3": 81,
+      "method4": 88,
+      "method5": 87,
+      "method6": 83,
+      "total": 85.0
+    },
+    {
+      "Ticker": "VUG",
+      "Name": "Vanguard Growth ETF",
+      "method1": 83,
+      "method2": 82,
+      "method3": 84,
+      "method4": 85,
+      "method5": 80,
+      "method6": 86,
+      "total": 83.3
+    },
+    {
+      "Ticker": "VTI",
+      "Name": "Vanguard Total Stock Market ETF",
+      "method1": 81,
+      "method2": 79,
+      "method3": 82,
+      "method4": 80,
+      "method5": 77,
+      "method6": 84,
+      "total": 80.5
+    },
+    {
+      "Ticker": "SPY",
+      "Name": "SPDR S&P 500 ETF Trust",
+      "method1": 78,
+      "method2": 76,
+      "method3": 79,
+      "method4": 81,
+      "method5": 75,
+      "method6": 80,
+      "total": 78.2
+    },
+    {
+      "Ticker": "IWM",
+      "Name": "iShares Russell 2000 ETF",
+      "method1": 72,
+      "method2": 74,
+      "method3": 70,
+      "method4": 73,
+      "method5": 71,
+      "method6": 69,
+      "total": 71.5
+    },
+    {
+      "Ticker": "TEST",
+      "Name": "iShares Russell 2000 ETF",
+      "method1": 72,
+      "method2": 74,
+      "method3": 70,
+      "method4": 73,
+      "method5": 71,
+      "method6": 69,
+      "total": 71.5
+    },
+    {
+      "Ticker": "TEST2",
+      "Name": "iShares Russell 2000 ETF",
+      "method1": 72,
+      "method2": 74,
+      "method3": 70,
+      "method4": 73,
+      "method5": 71,
+      "method6": 69,
+      "total": 71.5
+    }
+  ]
+}
