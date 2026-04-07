@@ -1,127 +1,170 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ETF Scoring Explorer</title>
-  <link rel="stylesheet" href="./assets/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ETF 전략 점수 서비스 대시보드" />
+  <title>ETF Strategy Score Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <div class="page-shell">
     <header class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Interactive Example Dashboard</p>
-        <h1 id="page-title">ETF Scoring Explorer</h1>
-        <p class="hero-text">
-          Example ETF data is displayed in a readable, interactive dashboard.
-          Search, sort, filter, and select a row to inspect each scoring method.
-        </p>
+      <div class="hero__content">
+        <div>
+          <div class="eyebrow">ETF Strategy Score Service</div>
+          <h1>카드로 요약하고, 클릭하면 디테일이 보이는 ETF 전략 대시보드</h1>
+          <p class="hero__desc">
+            전체 ETF 흐름은 카드와 리스트로 빠르게 확인하고, 관심 ETF만 클릭해 상세 점수·리스크·추세·배당 정보를 보는 구조입니다.
+            GitHub Pages 정적 호스팅 기준으로 <code>dashboard_data.json</code>만 교체하면 데이터가 갱신되도록 설계했습니다.
+          </p>
+        </div>
+        <div class="hero__actions">
+          <button id="themeToggle" class="btn btn--primary" type="button">🌙 다크모드</button>
+          <button id="downloadJsonBtn" class="btn" type="button">JSON 다운로드</button>
+        </div>
       </div>
-      <div class="hero-meta">
-        <div class="meta-card">
-          <span class="meta-label">Source</span>
-          <strong id="source-label">example json</strong>
-        </div>
-        <div class="meta-card">
-          <span class="meta-label">Updated</span>
-          <strong id="updated-at">-</strong>
-        </div>
+      <div class="meta-row">
+        <div class="meta-pill"><span>기준일</span><strong id="metaAsOf">-</strong></div>
+        <div class="meta-pill"><span>업데이트</span><strong id="metaUpdated">-</strong></div>
+        <div class="meta-pill"><span>통화</span><strong id="metaCurrency">-</strong></div>
+        <div class="meta-pill"><span>모델</span><strong id="metaModel">-</strong></div>
       </div>
     </header>
 
-    <section class="summary-grid">
-      <article class="summary-card">
-        <span class="summary-label">Visible ETFs</span>
-        <strong id="visible-count" class="summary-value">0</strong>
-      </article>
-      <article class="summary-card">
-        <span class="summary-label">Top ETF</span>
-        <strong id="top-ticker" class="summary-value">-</strong>
-      </article>
-      <article class="summary-card">
-        <span class="summary-label">Top Score</span>
-        <strong id="top-score" class="summary-value">-</strong>
-      </article>
-      <article class="summary-card">
-        <span class="summary-label">Average Total</span>
-        <strong id="avg-score" class="summary-value">-</strong>
-      </article>
-    </section>
-
-    <main class="layout">
-      <section class="panel panel-wide">
-        <div class="panel-head">
+    <main>
+      <section class="summary-section">
+        <div class="section-head">
           <div>
-            <p class="panel-kicker">Table</p>
-            <h2>ETF Rankings</h2>
-          </div>
-          <div class="controls">
-            <label class="control">
-              <span>Search</span>
-              <input id="search-input" type="search" placeholder="Ticker or name">
-            </label>
-            <label class="control">
-              <span>Sort</span>
-              <select id="sort-select">
-                <option value="total-desc">Total high to low</option>
-                <option value="total-asc">Total low to high</option>
-                <option value="ticker-asc">Ticker A to Z</option>
-                <option value="ticker-desc">Ticker Z to A</option>
-              </select>
-            </label>
-            <button id="reset-button" type="button" class="ghost-button">Reset</button>
+            <h2>전체 ETF 개요</h2>
+            <p>처음 화면은 카드와 전체 ETF 뷰만 보여주고, ETF를 클릭하면 상세 디테일 패널이 열립니다.</p>
           </div>
         </div>
-
-        <div class="filter-row">
-          <label class="range-wrap" for="min-score-range">
-            <span>Minimum total score</span>
-            <input id="min-score-range" type="range" min="0" max="100" step="1" value="0">
-          </label>
-          <strong id="min-score-value" class="range-value">0</strong>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <thead id="table-head"></thead>
-            <tbody id="table-body"></tbody>
-          </table>
-        </div>
+        <div id="summaryCards" class="summary-grid"></div>
       </section>
 
-      <aside class="sidebar">
-        <section class="panel">
-          <div class="panel-head">
+      <section class="dashboard-grid">
+        <section class="panel panel--wide">
+          <div class="section-head section-head--tight">
             <div>
-              <p class="panel-kicker">Detail</p>
-              <h2>Selected ETF</h2>
+              <h2>전체 ETF 뷰</h2>
+              <p>검색·필터·정렬 후 ETF 행을 클릭하면 상세뷰가 열립니다.</p>
+            </div>
+            <div class="toolbar-right">
+              <span class="hint">총 <strong id="resultCount">0</strong>개</span>
             </div>
           </div>
-          <div class="detail-box">
-            <div class="detail-hero">
-              <span class="detail-label">Ticker</span>
-              <strong id="detail-ticker">-</strong>
-              <p id="detail-name" class="detail-name">Select a row in the table.</p>
-            </div>
-            <div id="detail-grid" class="detail-grid"></div>
+
+          <div class="filter-grid">
+            <label class="field field--search">
+              <span>검색</span>
+              <input id="searchInput" type="text" placeholder="Ticker, 이름, 태그, 코멘트 검색" />
+            </label>
+            <label class="field">
+              <span>자산군</span>
+              <select id="assetFilter"></select>
+            </label>
+            <label class="field">
+              <span>전략군</span>
+              <select id="strategyFilter"></select>
+            </label>
+            <label class="field">
+              <span>배당주기</span>
+              <select id="dividendFilter"></select>
+            </label>
+            <label class="field">
+              <span>최소 등급</span>
+              <select id="gradeFilter"></select>
+            </label>
+            <label class="field">
+              <span>최소 총점</span>
+              <input id="minScoreInput" type="number" min="0" max="100" step="1" value="0" />
+            </label>
+          </div>
+
+          <div id="activeFilters" class="active-filters"></div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th data-sort="rank">Rank</th>
+                  <th data-sort="ticker">ETF</th>
+                  <th data-sort="asset_class">자산군</th>
+                  <th data-sort="strategy_family">전략군</th>
+                  <th data-sort="scores.total_score">총점</th>
+                  <th data-sort="scores.grade">등급</th>
+                  <th data-sort="features.ret_60d">3M 수익률</th>
+                  <th data-sort="features.vol_20d_ann">20D 변동성</th>
+                  <th data-sort="features.dist_yield_ttm">TTM 분배수익률</th>
+                  <th data-sort="close">종가</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+
+          <div id="tableEmpty" class="empty-state hidden">
+            조건에 맞는 ETF가 없습니다. 필터를 완화하거나 검색어를 지워보세요.
           </div>
         </section>
 
-        <section class="panel">
-          <div class="panel-head">
+        <aside class="panel panel--side">
+          <div class="section-head section-head--tight">
             <div>
-              <p class="panel-kicker">Format</p>
-              <h2>Example Columns</h2>
+              <h2>데이터 구성 안내</h2>
+              <p>정적 호스팅 기준으로 HTML/CSS/JS는 고정하고, JSON만 바꾸는 구조가 가장 안정적입니다.</p>
             </div>
           </div>
-          <div class="format-box">
-            <code>Ticker method1 method2 method3 method4 method5 method6 total</code>
+          <div class="info-stack">
+            <div class="info-card">
+              <div class="info-card__label">필수 파일</div>
+              <ul>
+                <li><code>index.html</code></li>
+                <li><code>style.css</code></li>
+                <li><code>app.js</code></li>
+                <li><code>dashboard_data.json</code></li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <div class="info-card__label">권장 DataFrame</div>
+              <p><code>dataframe_example.csv</code>처럼 flat 구조로 관리하고, 배포 전 JSON으로 변환하는 방식이 실무적으로 가장 단순합니다.</p>
+            </div>
+            <div class="info-card">
+              <div class="info-card__label">운영 포인트</div>
+              <p>GitHub Pages에선 같은 경로의 JSON 파일만 교체하면 됩니다. 프론트 코드를 매번 수정하는 방식은 비효율적입니다.</p>
+            </div>
+            <div class="info-card">
+              <div class="info-card__label">점수 해석</div>
+              <p><strong>method1~6</strong>은 모멘텀, 리스크, 추세, 유동성, 평균회귀, 인컴/배당이벤트 축으로 해석하도록 구성했습니다.</p>
+            </div>
           </div>
-        </section>
-      </aside>
+        </aside>
+      </section>
     </main>
   </div>
 
-  <script src="./assets/app.js"></script>
+  <div id="detailDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer__backdrop" data-close-drawer="true"></div>
+    <section class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <div class="drawer__head">
+        <div>
+          <div class="eyebrow">ETF Detail View</div>
+          <h2 id="detailTitle">ETF 상세</h2>
+        </div>
+        <div class="drawer__actions">
+          <button id="prevBtn" class="btn" type="button">이전</button>
+          <button id="nextBtn" class="btn" type="button">다음</button>
+          <button id="closeDrawerBtn" class="btn btn--ghost" type="button">닫기</button>
+        </div>
+      </div>
+      <div id="drawerContent" class="drawer__content"></div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
 </body>
 </html>
