@@ -1,54 +1,54 @@
-const DATA_URL = "./data/dashboard_data.json";
-const ALL = "?꾩껜";
-const GRADE_ORDER = ["A", "B", "C", "D"];
-const METHODS = {
-  method1: "Momentum",
-  method2: "Risk / Defense",
-  method3: "Trend Quality",
-  method4: "Liquidity / Flow",
-  method5: "Mean Reversion",
-  method6: "Income / Dividend Event",
+const DATA_URL = './dashboard_data.json';
+const METHOD_LABELS = {
+  method1: 'Momentum',
+  method2: 'Risk / Defense',
+  method3: 'Trend Quality',
+  method4: 'Liquidity / Flow',
+  method5: 'Mean Reversion',
+  method6: 'Income / Dividend Event'
 };
+const GRADE_ORDER = ['A', 'B', 'C', 'D'];
 
 const state = {
   rawData: [],
-  filteredData: [],
   metadata: {},
+  filteredData: [],
   selectedIndex: -1,
-  sortKey: "scores.total_score",
-  sortDir: "desc",
-  theme: localStorage.getItem("etf_theme") || "dark",
+  sortKey: 'scores.total_score',
+  sortDir: 'desc',
+  theme: localStorage.getItem('etf_theme') || 'dark'
 };
 
-const $ = (s) => document.querySelector(s);
-const $$ = (s) => [...document.querySelectorAll(s)];
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+
 const els = {
-  metaAsOf: $("#metaAsOf"),
-  metaUpdated: $("#metaUpdated"),
-  metaCurrency: $("#metaCurrency"),
-  metaModel: $("#metaModel"),
-  summaryCards: $("#summaryCards"),
-  resultCount: $("#resultCount"),
-  searchInput: $("#searchInput"),
-  assetFilter: $("#assetFilter"),
-  strategyFilter: $("#strategyFilter"),
-  dividendFilter: $("#dividendFilter"),
-  gradeFilter: $("#gradeFilter"),
-  minScoreInput: $("#minScoreInput"),
-  activeFilters: $("#activeFilters"),
-  tableBody: $("#tableBody"),
-  tableEmpty: $("#tableEmpty"),
-  detailDrawer: $("#detailDrawer"),
-  detailTitle: $("#detailTitle"),
-  drawerContent: $("#drawerContent"),
-  prevBtn: $("#prevBtn"),
-  nextBtn: $("#nextBtn"),
-  closeDrawerBtn: $("#closeDrawerBtn"),
-  themeToggle: $("#themeToggle"),
-  downloadJsonBtn: $("#downloadJsonBtn"),
+  metaAsOf: $('#metaAsOf'),
+  metaUpdated: $('#metaUpdated'),
+  metaCurrency: $('#metaCurrency'),
+  metaModel: $('#metaModel'),
+  summaryCards: $('#summaryCards'),
+  resultCount: $('#resultCount'),
+  searchInput: $('#searchInput'),
+  assetFilter: $('#assetFilter'),
+  strategyFilter: $('#strategyFilter'),
+  dividendFilter: $('#dividendFilter'),
+  gradeFilter: $('#gradeFilter'),
+  minScoreInput: $('#minScoreInput'),
+  activeFilters: $('#activeFilters'),
+  tableBody: $('#tableBody'),
+  tableEmpty: $('#tableEmpty'),
+  detailDrawer: $('#detailDrawer'),
+  drawerContent: $('#drawerContent'),
+  detailTitle: $('#detailTitle'),
+  prevBtn: $('#prevBtn'),
+  nextBtn: $('#nextBtn'),
+  closeDrawerBtn: $('#closeDrawerBtn'),
+  themeToggle: $('#themeToggle'),
+  downloadJsonBtn: $('#downloadJsonBtn')
 };
 
-void init();
+init();
 
 async function init() {
   applyTheme(state.theme);
@@ -56,466 +56,596 @@ async function init() {
   await loadData();
 }
 
-function bindEvents() {
-  ["searchInput", "assetFilter", "strategyFilter", "dividendFilter", "gradeFilter", "minScoreInput"].forEach((key) => {
-    els[key].addEventListener(key === "searchInput" || key === "minScoreInput" ? "input" : "change", applyFiltersAndRender);
-  });
-
-  $$("th[data-sort]").forEach((th) => {
-    th.addEventListener("click", () => {
-      const key = th.dataset.sort;
-      if (state.sortKey === key) {
-        state.sortDir = state.sortDir === "asc" ? "desc" : "asc";
-      } else {
-        state.sortKey = key;
-        state.sortDir = key === "ticker" ? "asc" : "desc";
-      }
-      renderTable();
-    });
-  });
-
-  els.themeToggle.addEventListener("click", () => applyTheme(document.body.classList.contains("light") ? "dark" : "light"));
-  els.downloadJsonBtn.addEventListener("click", downloadJson);
-  els.closeDrawerBtn.addEventListener("click", closeDrawer);
-  els.prevBtn.addEventListener("click", () => moveSelection(-1));
-  els.nextBtn.addEventListener("click", () => moveSelection(1));
-
-  document.addEventListener("click", (event) => {
-    const target = event.target;
-    if (target instanceof HTMLElement && target.matches('[data-close-drawer="true"]')) closeDrawer();
-    if (target instanceof HTMLButtonElement && target.dataset.clearFilter) clearFilter(target.dataset.clearFilter);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (!els.detailDrawer.classList.contains("is-open")) return;
-    if (event.key === "Escape") closeDrawer();
-    if (event.key === "ArrowLeft") moveSelection(-1);
-    if (event.key === "ArrowRight") moveSelection(1);
-  });
-}
-
 async function loadData() {
   try {
-    const response = await fetch(`${DATA_URL}?v=${Date.now()}`);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const payload = await response.json();
+    const res = await fetch(`${DATA_URL}?v=${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const payload = await res.json();
     state.metadata = payload.metadata || {};
-    state.rawData = (payload.data || []).map(normalizeItem);
+    state.rawData = (payload.data || []).map(normalizeEtf);
     populateFilters();
     renderMeta();
     applyFiltersAndRender();
   } catch (error) {
     console.error(error);
-    els.summaryCards.innerHTML = `
-      <article class="summary-card">
-        <div class="summary-card__label">?곗씠??濡쒕뵫 ?ㅽ뙣</div>
-        <div class="summary-card__value">Error</div>
-        <div class="summary-card__sub"><code>data/dashboard_data.json</code> 寃쎈줈???뺤쟻 ?몄뒪???섍꼍???뺤씤??二쇱꽭??</div>
-      </article>`;
-    els.tableEmpty.classList.remove("hidden");
-    els.tableEmpty.textContent = "JSON ?곗씠?곕? 遺덈윭?ㅼ? 紐삵뻽?듬땲?? file:// ????뺤쟻 ?쒕쾭 ?먮뒗 ?뱁샇?ㅽ똿?먯꽌 ?댁뼱 二쇱꽭??";
+    els.summaryCards.innerHTML = `<article class="summary-card"><div class="summary-card__label">데이터 로딩 실패</div><div class="summary-card__value">Error</div><div class="summary-card__sub">dashboard_data.json을 읽지 못했습니다. GitHub Pages 또는 로컬 서버 환경에서 실행하세요.</div></article>`;
+    els.tableEmpty.classList.remove('hidden');
+    els.tableEmpty.textContent = '데이터를 불러오지 못했습니다. JSON 경로와 파일 구조를 확인하세요.';
   }
 }
 
-function normalizeItem(item) {
+function normalizeEtf(item) {
   const scores = item.scores || {};
   const summary = item.summary || {};
   const features = item.features || {};
   return {
     ...item,
-    rank: n(scores.rank ?? item.rank ?? 999),
+    rank: scores.rank ?? item.rank ?? 999,
     scores: {
-      method1: n(scores.method1),
-      method2: n(scores.method2),
-      method3: n(scores.method3),
-      method4: n(scores.method4),
-      method5: n(scores.method5),
-      method6: n(scores.method6),
-      total_score: n(scores.total_score),
-      grade: scores.grade || "D",
-      rank: n(scores.rank ?? item.rank ?? 999),
+      method1: num(scores.method1),
+      method2: num(scores.method2),
+      method3: num(scores.method3),
+      method4: num(scores.method4),
+      method5: num(scores.method5),
+      method6: num(scores.method6),
+      total_score: num(scores.total_score),
+      grade: scores.grade || 'D',
+      rank: scores.rank ?? item.rank ?? 999
     },
     summary: {
-      best_for: summary.best_for || "-",
-      comment: summary.comment || "-",
-      risk_note: summary.risk_note || "-",
+      best_for: summary.best_for || '-',
+      comment: summary.comment || '-',
+      risk_note: summary.risk_note || '-',
       tags: Array.isArray(summary.tags) ? summary.tags : splitPipe(summary.tags),
-      signal_badges: Array.isArray(summary.signal_badges) ? summary.signal_badges : splitPipe(summary.signal_badges),
+      signal_badges: Array.isArray(summary.signal_badges) ? summary.signal_badges : splitPipe(summary.signal_badges)
     },
     features: {
-      ret_5d: n(features.ret_5d),
-      ret_20d: n(features.ret_20d),
-      ret_60d: n(features.ret_60d),
-      ret_120d: n(features.ret_120d),
-      ret_240d: n(features.ret_240d),
-      vol_20d_ann: n(features.vol_20d_ann),
-      vol_60d_ann: n(features.vol_60d_ann),
-      downside_vol_20d_ann: n(features.downside_vol_20d_ann),
-      drawdown_60d: n(features.drawdown_60d),
-      ma_gap_20: n(features.ma_gap_20),
-      ma_gap_50: n(features.ma_gap_50),
-      ma_gap_200: n(features.ma_gap_200),
-      rsi_14: n(features.rsi_14),
-      bb_z_20: n(features.bb_z_20),
-      dist_yield_ttm: n(features.dist_yield_ttm),
-      dist_ttm: n(features.dist_ttm),
-      total_distribution: n(features.total_distribution),
-      trading_value: n(features.trading_value),
-      avg_trading_value_20d: n(features.avg_trading_value_20d),
-      avg_volume_20d: n(features.avg_volume_20d),
-      volume_ratio_20d: n(features.volume_ratio_20d),
-      obv: n(features.obv),
-      obv_ma_20: n(features.obv_ma_20),
-      exdiv_gap_rate: n(features.exdiv_gap_rate),
-      div_drop_ratio: n(features.div_drop_ratio),
-      is_dividend_event: Boolean(features.is_dividend_event),
-      ma_20: n(features.ma_20),
-      ma_50: n(features.ma_50),
-      ma_200: n(features.ma_200),
-      hh_20: n(features.hh_20),
-      hh_60: n(features.hh_60),
-      hh_120: n(features.hh_120),
-    },
+      ...features,
+      ret_5d: num(features.ret_5d),
+      ret_20d: num(features.ret_20d),
+      ret_60d: num(features.ret_60d),
+      ret_120d: num(features.ret_120d),
+      ret_240d: num(features.ret_240d),
+      vol_20d_ann: num(features.vol_20d_ann),
+      vol_60d_ann: num(features.vol_60d_ann),
+      downside_vol_20d_ann: num(features.downside_vol_20d_ann),
+      drawdown_60d: num(features.drawdown_60d),
+      ma_gap_20: num(features.ma_gap_20),
+      ma_gap_50: num(features.ma_gap_50),
+      ma_gap_200: num(features.ma_gap_200),
+      rsi_14: num(features.rsi_14),
+      bb_z_20: num(features.bb_z_20),
+      dist_yield_ttm: num(features.dist_yield_ttm),
+      dist_ttm: num(features.dist_ttm),
+      total_distribution: num(features.total_distribution),
+      trading_value: num(features.trading_value),
+      avg_trading_value_20d: num(features.avg_trading_value_20d),
+      avg_volume_20d: num(features.avg_volume_20d),
+      volume_ratio_20d: num(features.volume_ratio_20d),
+      obv: num(features.obv),
+      obv_ma_20: num(features.obv_ma_20),
+      exdiv_gap_rate: num(features.exdiv_gap_rate),
+      div_drop_ratio: num(features.div_drop_ratio),
+      is_dividend_event: !!features.is_dividend_event,
+      ma_20: num(features.ma_20),
+      ma_50: num(features.ma_50),
+      ma_200: num(features.ma_200),
+      hh_20: num(features.hh_20),
+      hh_60: num(features.hh_60),
+      hh_120: num(features.hh_120)
+    }
   };
 }
 
+function bindEvents() {
+  els.searchInput.addEventListener('input', applyFiltersAndRender);
+  els.assetFilter.addEventListener('change', applyFiltersAndRender);
+  els.strategyFilter.addEventListener('change', applyFiltersAndRender);
+  els.dividendFilter.addEventListener('change', applyFiltersAndRender);
+  els.gradeFilter.addEventListener('change', applyFiltersAndRender);
+  els.minScoreInput.addEventListener('input', applyFiltersAndRender);
+
+  $$('th[data-sort]').forEach((th) => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.sort;
+      if (state.sortKey === key) {
+        state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        state.sortKey = key;
+        state.sortDir = key === 'ticker' ? 'asc' : 'desc';
+      }
+      renderTable();
+    });
+  });
+
+  els.themeToggle.addEventListener('click', () => {
+    const nextTheme = document.body.classList.contains('light') ? 'dark' : 'light';
+    applyTheme(nextTheme);
+  });
+
+  els.downloadJsonBtn.addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify({ metadata: state.metadata, data: state.rawData }, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'dashboard_data.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  els.closeDrawerBtn.addEventListener('click', closeDrawer);
+  els.prevBtn.addEventListener('click', () => moveSelection(-1));
+  els.nextBtn.addEventListener('click', () => moveSelection(1));
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target instanceof HTMLElement && target.matches('[data-close-drawer="true"]')) {
+      closeDrawer();
+    }
+    if (target instanceof HTMLButtonElement && target.dataset.clearFilter) {
+      clearFilter(target.dataset.clearFilter);
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!els.detailDrawer.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeDrawer();
+    if (e.key === 'ArrowRight') moveSelection(1);
+    if (e.key === 'ArrowLeft') moveSelection(-1);
+  });
+}
+
+function applyTheme(theme) {
+  state.theme = theme;
+  document.body.classList.toggle('light', theme === 'light');
+  localStorage.setItem('etf_theme', theme);
+  els.themeToggle.textContent = theme === 'light' ? '☀️ 라이트모드' : '🌙 다크모드';
+}
+
 function renderMeta() {
-  els.metaAsOf.textContent = state.metadata.asof_date || "-";
+  els.metaAsOf.textContent = state.metadata.asof_date || '-';
   els.metaUpdated.textContent = formatDateTime(state.metadata.updated_at);
-  els.metaCurrency.textContent = state.metadata.currency || "-";
-  els.metaModel.textContent = state.metadata.scoring_model?.name || "-";
+  els.metaCurrency.textContent = state.metadata.currency || '-';
+  els.metaModel.textContent = state.metadata.scoring_model?.name || '-';
 }
 
 function populateFilters() {
-  fillSelect(els.assetFilter, [ALL, ...unique(state.rawData.map((item) => item.asset_class))]);
-  fillSelect(els.strategyFilter, [ALL, ...unique(state.rawData.map((item) => item.strategy_family))]);
-  fillSelect(els.dividendFilter, [ALL, ...unique(state.rawData.map((item) => item.dividend_frequency))]);
-  fillSelect(els.gradeFilter, [ALL, ...GRADE_ORDER]);
+  fillSelect(els.assetFilter, ['전체', ...uniqueValues(state.rawData.map((d) => d.asset_class))]);
+  fillSelect(els.strategyFilter, ['전체', ...uniqueValues(state.rawData.map((d) => d.strategy_family))]);
+  fillSelect(els.dividendFilter, ['전체', ...uniqueValues(state.rawData.map((d) => d.dividend_frequency))]);
+  fillSelect(els.gradeFilter, ['전체', ...GRADE_ORDER]);
 }
 
-function fillSelect(el, values) {
-  el.innerHTML = values.map((value) => `<option value="${value}">${value}</option>`).join("");
+function fillSelect(selectEl, values) {
+  selectEl.innerHTML = values.map((value) => `<option value="${value}">${value}</option>`).join('');
 }
 
 function applyFiltersAndRender() {
-  const query = els.searchInput.value.trim().toLowerCase();
+  const q = els.searchInput.value.trim().toLowerCase();
   const asset = els.assetFilter.value;
   const strategy = els.strategyFilter.value;
   const dividend = els.dividendFilter.value;
   const grade = els.gradeFilter.value;
-  const minScore = n(els.minScoreInput.value);
+  const minScore = num(els.minScoreInput.value);
 
   state.filteredData = state.rawData.filter((item) => {
-    const text = [
-      item.ticker, item.name, item.asset_class, item.strategy_family,
-      item.summary.best_for, item.summary.comment, item.summary.risk_note,
-      ...item.summary.tags, ...item.summary.signal_badges,
-    ].join(" ").toLowerCase();
+    const haystack = [
+      item.ticker,
+      item.name,
+      item.asset_class,
+      item.strategy_family,
+      item.summary.best_for,
+      item.summary.comment,
+      item.summary.risk_note,
+      ...(item.summary.tags || []),
+      ...(item.summary.signal_badges || [])
+    ].join(' ').toLowerCase();
 
-    return (!query || text.includes(query)) &&
-      (asset === ALL || item.asset_class === asset) &&
-      (strategy === ALL || item.strategy_family === strategy) &&
-      (dividend === ALL || item.dividend_frequency === dividend) &&
-      (grade === ALL || gradeRank(item.scores.grade) <= gradeRank(grade)) &&
+    const gradePass = grade === '전체' || gradeRank(item.scores.grade) <= gradeRank(grade);
+    return (!q || haystack.includes(q)) &&
+      (asset === '전체' || item.asset_class === asset) &&
+      (strategy === '전체' || item.strategy_family === strategy) &&
+      (dividend === '전체' || item.dividend_frequency === dividend) &&
+      gradePass &&
       item.scores.total_score >= minScore;
   });
 
   renderActiveFilters();
-  renderSummary();
+  renderSummaryCards();
   renderTable();
-  if (state.selectedIndex >= 0 && !state.filteredData[state.selectedIndex]) closeDrawer();
+
+  if (state.selectedIndex >= 0) {
+    const selected = state.filteredData[state.selectedIndex];
+    if (!selected) closeDrawer();
+  }
 }
 
 function renderActiveFilters() {
   const pills = [];
-  if (els.searchInput.value.trim()) pills.push(pill(`寃?? ${els.searchInput.value.trim()}`, "search"));
-  if (els.assetFilter.value !== ALL) pills.push(pill(`?먯궛援? ${els.assetFilter.value}`, "asset"));
-  if (els.strategyFilter.value !== ALL) pills.push(pill(`?꾨왂援? ${els.strategyFilter.value}`, "strategy"));
-  if (els.dividendFilter.value !== ALL) pills.push(pill(`諛곕떦二쇨린: ${els.dividendFilter.value}`, "dividend"));
-  if (els.gradeFilter.value !== ALL) pills.push(pill(`理쒖냼 ?깃툒: ${els.gradeFilter.value}`, "grade"));
-  if (n(els.minScoreInput.value) > 0) pills.push(pill(`理쒖냼 珥앹젏: ${els.minScoreInput.value}`, "minScore"));
-  els.activeFilters.innerHTML = pills.join("");
+  if (els.searchInput.value.trim()) pills.push(makePill(`검색: ${els.searchInput.value.trim()}`, 'search'));
+  if (els.assetFilter.value !== '전체') pills.push(makePill(`자산군: ${els.assetFilter.value}`, 'asset'));
+  if (els.strategyFilter.value !== '전체') pills.push(makePill(`전략군: ${els.strategyFilter.value}`, 'strategy'));
+  if (els.dividendFilter.value !== '전체') pills.push(makePill(`배당주기: ${els.dividendFilter.value}`, 'dividend'));
+  if (els.gradeFilter.value !== '전체') pills.push(makePill(`최소 등급: ${els.gradeFilter.value}`, 'grade'));
+  if (num(els.minScoreInput.value) > 0) pills.push(makePill(`최소 총점: ${els.minScoreInput.value}`, 'minScore'));
+  els.activeFilters.innerHTML = pills.join('');
 }
 
-function pill(label, key) {
-  return `<span class="filter-pill">${label} <button type="button" data-clear-filter="${key}" aria-label="${label} ?쒓굅">횞</button></span>`;
+function makePill(label, key) {
+  return `<span class="filter-pill">${label} <button type="button" data-clear-filter="${key}" aria-label="${label} 제거">×</button></span>`;
 }
 
 function clearFilter(key) {
-  if (key === "search") els.searchInput.value = "";
-  if (key === "asset") els.assetFilter.value = ALL;
-  if (key === "strategy") els.strategyFilter.value = ALL;
-  if (key === "dividend") els.dividendFilter.value = ALL;
-  if (key === "grade") els.gradeFilter.value = ALL;
-  if (key === "minScore") els.minScoreInput.value = "0";
+  if (key === 'search') els.searchInput.value = '';
+  if (key === 'asset') els.assetFilter.value = '전체';
+  if (key === 'strategy') els.strategyFilter.value = '전체';
+  if (key === 'dividend') els.dividendFilter.value = '전체';
+  if (key === 'grade') els.gradeFilter.value = '전체';
+  if (key === 'minScore') els.minScoreInput.value = 0;
   applyFiltersAndRender();
 }
 
-function renderSummary() {
-  const items = state.filteredData;
-  const top = sort([...items], "scores.total_score", "desc")[0];
+function renderSummaryCards() {
+  const data = state.filteredData;
+  const top = sortData([...data], 'scores.total_score', 'desc')[0];
+  const avgScore = avg(data.map((d) => d.scores.total_score));
+  const avgYield = avg(data.map((d) => d.features.dist_yield_ttm));
+  const avgVol = avg(data.map((d) => d.features.vol_20d_ann));
+  const dividendEvents = data.filter((d) => d.features.is_dividend_event).length;
+
   const cards = [
-    ["?쒖떆 ETF ??, `${items.length}`, `?꾩껜 ${state.rawData.length}媛?以??꾩옱 ?꾪꽣瑜??듦낵??醫낅ぉ ??],
-    ["?됯퇏 珥앹젏", f(avg(items.map((item) => item.scores.total_score)), 1), "?꾩옱 ?붾㈃???쒖떆??ETF?ㅼ쓽 珥앹젏 ?됯퇏"],
-    ["?곸쐞 ETF", top ? top.ticker : "-", top ? `${top.name} 쨌 珥앹젏 ${f(top.scores.total_score, 1)} 쨌 ?깃툒 ${top.scores.grade}` : "?곗씠???놁쓬"],
-    ["?됯퇏 TTM 遺꾨같?섏씡瑜?, `${f(avg(items.map((item) => item.features.dist_yield_ttm)), 2)}%`, "?몄뺨 愿???됯퇏"],
-    ["諛곕떦 ?대깽??ETF", `${items.filter((item) => item.features.is_dividend_event).length}`, "?꾩옱 ?꾪꽣 寃곌낵 湲곗? 諛곕떦 ?대깽??諛쒖깮 ??],
-    ["?됯퇏 20D 蹂?숈꽦", `${f(avg(items.map((item) => item.features.vol_20d_ann)), 1)}%`, "?④린 蹂?숈꽦 ?됯퇏"],
-    ["?곸쐞 3媛??됯퇏 3M ?섏씡瑜?, `${f(avg(sort([...items], "features.ret_60d", "desc").slice(0, 3).map((item) => item.features.ret_60d)), 1)}%`, "理쒓렐 60???섏씡瑜??곸쐞 ETF ?됯퇏"],
-    ["?됯퇏 嫄곕옒?湲?20D)", money(avg(items.map((item) => item.features.avg_trading_value_20d))), "理쒓렐 ?됯퇏 嫄곕옒?湲?],
-    ["?댁쁺 諛⑹떇", "?뺤쟻 ??, "HTML? 怨좎젙?섍퀬 JSON留?援먯껜"],
+    {
+      label: '표시 ETF 수',
+      value: `${data.length}`,
+      sub: `전체 유니버스 ${state.rawData.length}개 중 현재 필터 통과 종목 수`
+    },
+    {
+      label: '평균 총점',
+      value: fmt(avgScore, 1),
+      sub: '현재 화면에 표시된 ETF들의 총점 평균'
+    },
+    {
+      label: '상위 ETF',
+      value: top ? top.ticker : '-',
+      sub: top ? `${top.name} · 총점 ${fmt(top.scores.total_score, 1)} · 등급 ${top.scores.grade}` : '데이터 없음'
+    },
+    {
+      label: '평균 TTM 분배수익률',
+      value: `${fmt(avgYield, 2)}%`,
+      sub: '인컴 관점에서 현재 화면 ETF의 평균 수준'
+    },
+    {
+      label: '배당 이벤트 발생 ETF',
+      value: `${dividendEvents}`,
+      sub: `현재 데이터 기준 ${data.length ? fmt(dividendEvents / data.length * 100, 1) : '0.0'}%`
+    },
+    {
+      label: '평균 20D 변동성',
+      value: `${fmt(avgVol, 1)}%`,
+      sub: '단기 흔들림 정도의 평균값'
+    },
+    {
+      label: '상위 3개 평균 3M 수익률',
+      value: `${fmt(avg(sortData([...data], 'features.ret_60d', 'desc').slice(0,3).map(d => d.features.ret_60d)), 1)}%`,
+      sub: '모멘텀 상위권 ETF들의 최근 3개월 수익률 평균'
+    },
+    {
+      label: '평균 Drawdown 60D',
+      value: `${fmt(avg(data.map((d) => d.features.drawdown_60d)), 1)}%`,
+      sub: '최근 60일 기준 고점 대비 낙폭 평균'
+    },
+    {
+      label: '평균 거래대금(20D)',
+      value: compactMoney(avg(data.map((d) => d.features.avg_trading_value_20d))),
+      sub: '실거래 적합성을 보기 위한 유동성 체감 지표'
+    },
+    {
+      label: '운영 방식',
+      value: '정적 웹',
+      sub: 'index.html은 고정, dashboard_data.json만 교체'
+    }
   ];
 
-  els.summaryCards.innerHTML = cards.map(([label, value, sub]) => `
+  els.summaryCards.innerHTML = cards.map((card) => `
     <article class="summary-card">
-      <div class="summary-card__label">${label}</div>
-      <div class="summary-card__value">${value}</div>
-      <div class="summary-card__sub">${sub}</div>
-    </article>`).join("");
+      <div class="summary-card__label">${card.label}</div>
+      <div class="summary-card__value">${card.value}</div>
+      <div class="summary-card__sub">${card.sub}</div>
+    </article>
+  `).join('');
 }
 
 function renderTable() {
-  const rows = sort([...state.filteredData], state.sortKey, state.sortDir);
+  const rows = sortData([...state.filteredData], state.sortKey, state.sortDir);
   state.filteredData = rows;
   els.resultCount.textContent = String(rows.length);
-  els.tableEmpty.classList.toggle("hidden", rows.length !== 0);
+  els.tableEmpty.classList.toggle('hidden', rows.length !== 0);
+
   els.tableBody.innerHTML = rows.map((item, index) => `
     <tr data-index="${index}">
       <td><span class="rank-chip">#${item.scores.rank}</span></td>
-      <td><div class="ticker-cell">${item.ticker}<small>${item.name}</small></div></td>
+      <td>
+        <div class="ticker-cell">${item.ticker}<small>${item.name}</small></div>
+      </td>
       <td>${item.asset_class}</td>
       <td>${item.strategy_family}</td>
-      <td>${f(item.scores.total_score, 1)}</td>
+      <td>${fmt(item.scores.total_score, 1)}</td>
       <td><span class="grade-badge grade-${item.scores.grade}">${item.scores.grade}</span></td>
-      <td class="${numClass(item.features.ret_60d)}">${signed(item.features.ret_60d, 1)}%</td>
-      <td>${f(item.features.vol_20d_ann, 1)}%</td>
-      <td>${f(item.features.dist_yield_ttm, 2)}%</td>
-      <td>$${f(item.close, 2)}</td>
-    </tr>`).join("");
-  $$("#tableBody tr").forEach((row) => row.addEventListener("click", () => openDrawer(Number(row.dataset.index))));
+      <td class="${numClass(item.features.ret_60d)}">${fmtSigned(item.features.ret_60d, 1)}%</td>
+      <td>${fmt(item.features.vol_20d_ann, 1)}%</td>
+      <td>${fmt(item.features.dist_yield_ttm, 2)}%</td>
+      <td>$${fmt(item.close, 2)}</td>
+    </tr>
+  `).join('');
+
+  $$('#tableBody tr').forEach((tr) => {
+    tr.addEventListener('click', () => openDrawer(Number(tr.dataset.index)));
+  });
 }
 
 function openDrawer(index) {
   state.selectedIndex = index;
   const item = state.filteredData[index];
   if (!item) return;
+  els.detailTitle.textContent = `${item.ticker} 상세 분석`;
+  els.drawerContent.innerHTML = renderDetail(item);
+  els.detailDrawer.classList.add('is-open');
+  els.detailDrawer.setAttribute('aria-hidden', 'false');
+  updateNavButtons();
+}
+
+function closeDrawer() {
+  els.detailDrawer.classList.remove('is-open');
+  els.detailDrawer.setAttribute('aria-hidden', 'true');
+  state.selectedIndex = -1;
+}
+
+function moveSelection(direction) {
+  if (!state.filteredData.length) return;
+  let next = state.selectedIndex + direction;
+  if (next < 0) next = 0;
+  if (next >= state.filteredData.length) next = state.filteredData.length - 1;
+  openDrawer(next);
+}
+
+function updateNavButtons() {
+  els.prevBtn.disabled = state.selectedIndex <= 0;
+  els.nextBtn.disabled = state.selectedIndex >= state.filteredData.length - 1;
+}
+
+function renderDetail(item) {
+  const f = item.features;
   const s = item.scores;
-  const t = item.summary;
-  const x = item.features;
-  els.detailTitle.textContent = `${item.ticker} ?곸꽭 遺꾩꽍`;
-  els.drawerContent.innerHTML = `
+  const summary = item.summary;
+  const scoreRows = ['method1', 'method2', 'method3', 'method4', 'method5', 'method6']
+    .map((key) => `
+      <div class="bar-row">
+        <span>${METHOD_LABELS[key] || key}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${clamp(s[key], 0, 100)}%"></div></div>
+        <strong>${fmt(s[key], 1)}</strong>
+      </div>
+    `).join('');
+
+  return `
     <section class="detail-block detail-hero">
       <div class="detail-title">
         <div>
-          <div class="eyebrow">${item.asset_class} 쨌 ${item.strategy_family}</div>
+          <div class="eyebrow">${item.asset_class} · ${item.strategy_family}</div>
           <h3>${item.ticker}</h3>
           <p>${item.name}</p>
         </div>
         <div class="tag-list">
-          <span class="grade-badge grade-${s.grade}">?깃툒 ${s.grade}</span>
+          <span class="grade-badge grade-${s.grade}">등급 ${s.grade}</span>
           <span class="chip">Rank #${s.rank}</span>
           <span class="chip">${item.dividend_frequency}</span>
           <span class="chip">${item.region}</span>
         </div>
       </div>
       <div class="detail-stats">
-        ${mini("珥앹젏", f(s.total_score, 1))}
-        ${mini("醫낃?", `$${f(item.close, 2)}`)}
-        ${mini("AUM", `$${f(item.aum_billion, 1)}B`)}
-        ${mini("蹂댁닔", `${f(item.expense_ratio, 2)}%`)}
+        ${miniStat('총점', fmt(s.total_score, 1))}
+        ${miniStat('종가', `$${fmt(item.close, 2)}`)}
+        ${miniStat('AUM', `$${fmt(item.aum_billion, 1)}B`)}
+        ${miniStat('보수', `${fmt(item.expense_ratio, 2)}%`)}
       </div>
     </section>
+
     <section class="score-grid">
       <article class="detail-block">
-        <div class="section-head"><div><h2>?먯닔 援ъ꽦</h2><p>method1~6 ?먯닔濡?ETF ?꾨왂 ?곹빀?꾨? ?붿빟?⑸땲??</p></div></div>
-        <div class="scorebars">${Object.keys(METHODS).map((key) => `
-          <div class="bar-row">
-            <span>${METHODS[key]}</span>
-            <div class="bar-track"><div class="bar-fill" style="width:${Math.max(0, Math.min(100, n(s[key])))}%"></div></div>
-            <strong>${f(s[key], 1)}</strong>
-          </div>`).join("")}
-        </div>
+        <div class="section-head"><div><h2>점수 구성</h2><p>method1~6 점수로 ETF 전략 적합도를 설명합니다.</p></div></div>
+        <div class="scorebars">${scoreRows}</div>
       </article>
       <article class="detail-block">
-        <div class="section-head"><div><h2>?댁꽍 ?붿빟</h2><p>?먯닔? 肄붾찘?몃? ?④퍡 蹂닿퀬 ?깃꺽??鍮좊Ⅴ寃??뚯븙?⑸땲??</p></div></div>
+        <div class="section-head"><div><h2>해석 요약</h2><p>점수와 피처를 한 줄 해석으로 압축했습니다.</p></div></div>
         <div class="metric-list">
-          <div class="metric-item"><span>異붿쿇 ?⑸룄</span><strong>${t.best_for}</strong></div>
-          <div class="metric-item"><span>肄붾찘??/span><strong>${t.comment}</strong></div>
-          <div class="metric-item"><span>由ъ뒪??/span><strong>${t.risk_note}</strong></div>
+          <div class="metric-item"><span>추천 용도</span><strong>${summary.best_for}</strong></div>
+          <div class="metric-item"><span>코멘트</span><strong>${summary.comment}</strong></div>
+          <div class="metric-item"><span>리스크</span><strong>${summary.risk_note}</strong></div>
         </div>
         <div style="height:12px"></div>
-        <div class="tag-list">${t.tags.map((tag) => `<span class="chip">${tag}</span>`).join("")}</div>
+        <div class="tag-list">${(summary.tags || []).map((tag) => `<span class="chip">${tag}</span>`).join('')}</div>
         <div style="height:12px"></div>
-        <div class="badge-list">${t.signal_badges.map((tag) => `<span class="chip">${tag}</span>`).join("")}</div>
+        <div class="badge-list">${(summary.signal_badges || []).map((tag) => `<span class="chip">${tag}</span>`).join('')}</div>
       </article>
     </section>
+
     <section class="detail-grid">
-      ${card("?섏씡瑜?/ 紐⑤찘?", [
-        ["5D ?섏씡瑜?, `${signed(x.ret_5d, 1)}%`, numClass(x.ret_5d)],
-        ["20D ?섏씡瑜?, `${signed(x.ret_20d, 1)}%`, numClass(x.ret_20d)],
-        ["60D ?섏씡瑜?, `${signed(x.ret_60d, 1)}%`, numClass(x.ret_60d)],
-        ["120D ?섏씡瑜?, `${signed(x.ret_120d, 1)}%`, numClass(x.ret_120d)],
-        ["240D ?섏씡瑜?, `${signed(x.ret_240d, 1)}%`, numClass(x.ret_240d)],
+      ${metricCard('수익률 / 모멘텀', [
+        ['5D 수익률', `${fmtSigned(f.ret_5d, 1)}%`, numClass(f.ret_5d)],
+        ['20D 수익률', `${fmtSigned(f.ret_20d, 1)}%`, numClass(f.ret_20d)],
+        ['60D 수익률', `${fmtSigned(f.ret_60d, 1)}%`, numClass(f.ret_60d)],
+        ['120D 수익률', `${fmtSigned(f.ret_120d, 1)}%`, numClass(f.ret_120d)],
+        ['240D 수익률', `${fmtSigned(f.ret_240d, 1)}%`, numClass(f.ret_240d)]
       ])}
-      ${card("蹂?숈꽦 / 由ъ뒪??, [
-        ["20D ?고솚??蹂?숈꽦", `${f(x.vol_20d_ann, 1)}%`],
-        ["60D ?고솚??蹂?숈꽦", `${f(x.vol_60d_ann, 1)}%`],
-        ["20D ?섎씫 蹂?숈꽦", `${f(x.downside_vol_20d_ann, 1)}%`],
-        ["60D Drawdown", `${signed(x.drawdown_60d, 1)}%`, numClass(x.drawdown_60d)],
-        ["諛곕떦 ?대깽???щ?", x.is_dividend_event ? "True" : "False"],
+
+      ${metricCard('변동성 / 리스크', [
+        ['20D 연환산 변동성', `${fmt(f.vol_20d_ann, 1)}%`],
+        ['60D 연환산 변동성', `${fmt(f.vol_60d_ann, 1)}%`],
+        ['20D 하방 변동성', `${fmt(f.downside_vol_20d_ann, 1)}%`],
+        ['60D Drawdown', `${fmtSigned(f.drawdown_60d, 1)}%`, numClass(f.drawdown_60d)],
+        ['배당 이벤트 여부', f.is_dividend_event ? 'True' : 'False']
       ])}
-      ${card("異붿꽭 / ?대룞?됯퇏", [
-        ["MA 20", `$${f(x.ma_20, 2)}`], ["MA 50", `$${f(x.ma_50, 2)}`], ["MA 200", `$${f(x.ma_200, 2)}`],
-        ["MA Gap 20", `${signed(x.ma_gap_20, 1)}%`, numClass(x.ma_gap_20)],
-        ["MA Gap 50", `${signed(x.ma_gap_50, 1)}%`, numClass(x.ma_gap_50)],
-        ["MA Gap 200", `${signed(x.ma_gap_200, 1)}%`, numClass(x.ma_gap_200)],
-        ["HH 20", `$${f(x.hh_20, 2)}`], ["HH 60", `$${f(x.hh_60, 2)}`], ["HH 120", `$${f(x.hh_120, 2)}`],
+
+      ${metricCard('추세 / 이동평균', [
+        ['MA 20', `$${fmt(f.ma_20, 2)}`],
+        ['MA 50', `$${fmt(f.ma_50, 2)}`],
+        ['MA 200', `$${fmt(f.ma_200, 2)}`],
+        ['MA Gap 20', `${fmtSigned(f.ma_gap_20, 1)}%`, numClass(f.ma_gap_20)],
+        ['MA Gap 50', `${fmtSigned(f.ma_gap_50, 1)}%`, numClass(f.ma_gap_50)],
+        ['MA Gap 200', `${fmtSigned(f.ma_gap_200, 1)}%`, numClass(f.ma_gap_200)],
+        ['HH 20', `$${fmt(f.hh_20, 2)}`],
+        ['HH 60', `$${fmt(f.hh_60, 2)}`],
+        ['HH 120', `$${fmt(f.hh_120, 2)}`]
       ])}
-      ${card("?좊룞??/ ?섍툒", [
-        ["?뱀씪 嫄곕옒?湲?, money(x.trading_value)],
-        ["20D ?됯퇏 嫄곕옒?湲?, money(x.avg_trading_value_20d)],
-        ["20D ?됯퇏 嫄곕옒??, integer(x.avg_volume_20d)],
-        ["嫄곕옒??鍮꾩쑉", `${f(x.volume_ratio_20d, 2)}x`],
-        ["OBV", integer(x.obv)],
-        ["OBV MA 20", integer(x.obv_ma_20)],
+
+      ${metricCard('유동성 / 수급', [
+        ['당일 거래대금', compactMoney(f.trading_value)],
+        ['20D 평균 거래대금', compactMoney(f.avg_trading_value_20d)],
+        ['20D 평균 거래량', compactInteger(f.avg_volume_20d)],
+        ['거래량 비율', `${fmt(f.volume_ratio_20d, 2)}x`],
+        ['OBV', compactInteger(f.obv)],
+        ['OBV MA 20', compactInteger(f.obv_ma_20)]
       ])}
-      ${card("?됯퇏?뚭? / 怨쇱뿴쨌怨쇰ℓ??, [
-        ["RSI 14", f(x.rsi_14, 1)],
-        ["BB Z 20", signed(x.bb_z_20, 2), numClass(-x.bb_z_20)],
-        ["Ex-div Gap", `${signed(x.exdiv_gap_rate, 2)}%`, numClass(x.exdiv_gap_rate)],
-        ["Div Drop Ratio", f(x.div_drop_ratio, 2)],
-        ["諛섏쟾 ?댁꽍", meanText(x)],
+
+      ${metricCard('평균회귀 / 과열·과매도', [
+        ['RSI 14', fmt(f.rsi_14, 1)],
+        ['BB Z 20', fmtSigned(f.bb_z_20, 2), numClass(-f.bb_z_20)],
+        ['Ex-div Gap', `${fmtSigned(f.exdiv_gap_rate, 2)}%`, numClass(f.exdiv_gap_rate)],
+        ['Div Drop Ratio', fmt(f.div_drop_ratio, 2)],
+        ['반전 해석', meanReversionText(f)]
       ])}
-      ${card("諛곕떦 / ?몄뺨", [
-        ["珥?遺꾨같湲?, `$${f(x.total_distribution, 2)}`],
-        ["TTM 遺꾨같湲?, `$${f(x.dist_ttm, 2)}`],
-        ["TTM 遺꾨같?섏씡瑜?, `${f(x.dist_yield_ttm, 2)}%`],
-        ["?몄뺨 ?댁꽍", incomeText(x)],
+
+      ${metricCard('배당 / 인컴', [
+        ['총 분배금', `$${fmt(f.total_distribution, 2)}`],
+        ['TTM 분배금', `$${fmt(f.dist_ttm, 2)}`],
+        ['TTM 분배수익률', `${fmt(f.dist_yield_ttm, 2)}%`],
+        ['인컴 해석', incomeText(f)]
       ])}
     </section>
-    <p class="footer-note">?댄썑 ?ㅼ젣 ?곗씠?곕룄 媛숈? JSON ?ㅽ궎留덈줈 蹂?섑빐 <code>dashboard_data.json</code>留?援먯껜?섎㈃ 媛숈? HTML??洹몃?濡??ъ슜?????덉뒿?덈떎.</p>`;
-  els.detailDrawer.classList.add("is-open");
-  els.detailDrawer.setAttribute("aria-hidden", "false");
-  els.prevBtn.disabled = index <= 0;
-  els.nextBtn.disabled = index >= state.filteredData.length - 1;
+
+    <p class="footer-note">이 화면은 예시 구조입니다. 실운영 시에는 pandas DataFrame(flat)을 주기적으로 갱신한 뒤, 같은 JSON 스키마로 변환해 <code>dashboard_data.json</code>만 덮어쓰는 방식이 가장 관리하기 쉽습니다.</p>
+  `;
 }
 
-function closeDrawer() {
-  els.detailDrawer.classList.remove("is-open");
-  els.detailDrawer.setAttribute("aria-hidden", "true");
-  state.selectedIndex = -1;
+function metricCard(title, items) {
+  return `
+    <article class="metric-card">
+      <h4>${title}</h4>
+      <div class="metric-list">
+        ${items.map(([label, value, cls = '']) => `
+          <div class="metric-item">
+            <span>${label}</span>
+            <strong class="${cls}">${value}</strong>
+          </div>
+        `).join('')}
+      </div>
+    </article>
+  `;
 }
 
-function moveSelection(step) {
-  if (!state.filteredData.length) return;
-  const next = Math.max(0, Math.min(state.filteredData.length - 1, state.selectedIndex + step));
-  openDrawer(next);
+function miniStat(label, value) {
+  return `
+    <div class="stat-mini">
+      <div class="stat-mini__label">${label}</div>
+      <div class="stat-mini__value">${value}</div>
+    </div>
+  `;
 }
 
-function downloadJson() {
-  const blob = new Blob([JSON.stringify({ metadata: state.metadata, data: state.rawData }, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "dashboard_data.json";
-  link.click();
-  URL.revokeObjectURL(url);
-}
-
-function applyTheme(theme) {
-  state.theme = theme;
-  document.body.classList.toggle("light", theme === "light");
-  localStorage.setItem("etf_theme", theme);
-  els.themeToggle.textContent = theme === "light" ? "?쇱씠??紐⑤뱶" : "?ㅽ겕 紐⑤뱶";
-}
-
-function card(title, rows) {
-  return `<article class="metric-card"><h4>${title}</h4><div class="metric-list">${rows.map(([label, value, cls = ""]) => `
-    <div class="metric-item"><span>${label}</span><strong class="${cls}">${value}</strong></div>`).join("")}</div></article>`;
-}
-
-function mini(label, value) {
-  return `<div class="stat-mini"><div class="stat-mini__label">${label}</div><div class="stat-mini__value">${value}</div></div>`;
-}
-
-function sort(list, key, dir) {
-  const factor = dir === "asc" ? 1 : -1;
-  return list.sort((a, b) => {
-    const av = deep(a, key);
-    const bv = deep(b, key);
-    return (typeof av === "string" || typeof bv === "string" ? String(av).localeCompare(String(bv), "ko") : n(av) - n(bv)) * factor;
+function sortData(data, key, dir = 'desc') {
+  const factor = dir === 'asc' ? 1 : -1;
+  return data.sort((a, b) => {
+    const av = deepValue(a, key);
+    const bv = deepValue(b, key);
+    if (typeof av === 'string' || typeof bv === 'string') {
+      return String(av).localeCompare(String(bv), 'ko') * factor;
+    }
+    return (num(av) - num(bv)) * factor;
   });
 }
 
-function deep(obj, path) {
-  return path.split(".").reduce((acc, key) => acc?.[key], obj);
+function deepValue(obj, path) {
+  return path.split('.').reduce((acc, cur) => acc?.[cur], obj);
 }
 
-function unique(values) {
-  return [...new Set(values.filter(Boolean))].sort((a, b) => String(a).localeCompare(String(b), "ko"));
-}
-
-function splitPipe(value) {
-  return value ? String(value).split("|").map((item) => item.trim()).filter(Boolean) : [];
+function uniqueValues(arr) {
+  return [...new Set(arr.filter(Boolean))].sort((a, b) => String(a).localeCompare(String(b), 'ko'));
 }
 
 function gradeRank(grade) {
-  const index = GRADE_ORDER.indexOf(grade);
-  return index < 0 ? GRADE_ORDER.length : index;
+  const idx = GRADE_ORDER.indexOf(grade);
+  return idx >= 0 ? idx : GRADE_ORDER.length;
 }
 
-function n(value) {
-  const parsed = Number(value);
-  return Number.isFinite(parsed) ? parsed : 0;
+function splitPipe(value) {
+  if (!value) return [];
+  return String(value).split('|').map((s) => s.trim()).filter(Boolean);
+}
+
+function num(value) {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : 0;
 }
 
 function avg(values) {
-  return values.length ? values.reduce((sum, value) => sum + n(value), 0) / values.length : 0;
+  const clean = values.filter((v) => Number.isFinite(v));
+  return clean.length ? clean.reduce((a, b) => a + b, 0) / clean.length : 0;
 }
 
-function f(value, digits) {
-  return n(value).toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+function fmt(value, digits = 1) {
+  return num(value).toLocaleString('en-US', {
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits
+  });
 }
 
-function signed(value, digits) {
-  const num = n(value);
-  return `${num > 0 ? "+" : ""}${f(num, digits)}`;
+function fmtSigned(value, digits = 1) {
+  const n = num(value);
+  const sign = n > 0 ? '+' : '';
+  return `${sign}${fmt(n, digits)}`;
 }
 
-function money(value) {
-  const num = n(value);
-  if (num >= 1e9) return `$${f(num / 1e9, 2)}B`;
-  if (num >= 1e6) return `$${f(num / 1e6, 2)}M`;
-  if (num >= 1e3) return `$${f(num / 1e3, 1)}K`;
-  return `$${f(num, 0)}`;
+function compactMoney(value) {
+  const n = num(value);
+  if (n >= 1e9) return `$${fmt(n / 1e9, 2)}B`;
+  if (n >= 1e6) return `$${fmt(n / 1e6, 2)}M`;
+  if (n >= 1e3) return `$${fmt(n / 1e3, 1)}K`;
+  return `$${fmt(n, 0)}`;
 }
 
-function integer(value) {
-  const num = n(value);
-  if (num >= 1e9) return `${f(num / 1e9, 2)}B`;
-  if (num >= 1e6) return `${f(num / 1e6, 2)}M`;
-  if (num >= 1e3) return `${f(num / 1e3, 1)}K`;
-  return f(num, 0);
+function compactInteger(value) {
+  const n = num(value);
+  if (n >= 1e9) return `${fmt(n / 1e9, 2)}B`;
+  if (n >= 1e6) return `${fmt(n / 1e6, 2)}M`;
+  if (n >= 1e3) return `${fmt(n / 1e3, 1)}K`;
+  return fmt(n, 0);
 }
 
 function formatDateTime(value) {
-  if (!value) return "-";
-  const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? value : date.toLocaleString("ko-KR", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" });
+  if (!value) return '-';
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return value;
+  return d.toLocaleString('ko-KR', {
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit'
+  });
 }
 
 function numClass(value) {
-  return n(value) > 0 ? "num-up" : n(value) < 0 ? "num-down" : "";
+  if (num(value) > 0) return 'num-up';
+  if (num(value) < 0) return 'num-down';
+  return '';
 }
 
-function meanText(item) {
-  if (item.rsi_14 < 30 || item.bb_z_20 <= -2) return "怨쇰ℓ???댄썑 諛섎벑 媛?μ꽦";
-  if (item.rsi_14 > 70 || item.bb_z_20 >= 2) return "?④린 怨쇱뿴 援ш컙 媛?μ꽦";
-  return "以묐┰ 援ш컙";
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, num(value)));
 }
 
-function incomeText(item) {
-  if (item.dist_yield_ttm >= 8) return "怨좎씤而??깃꺽??媛뺥븯吏留?吏??媛?μ꽦 ?뺤씤 ?꾩슂";
-  if (item.dist_yield_ttm >= 3) return "以묎컙 ?섏????몄뺨 ETF";
-  return "?몄뺨蹂대떎 ?깆옣 ?먮뒗 異붿꽭 鍮꾩쨷????ETF";
+function meanReversionText(f) {
+  if (f.rsi_14 < 30 || f.bb_z_20 <= -2) return '과매도 반등 후보 가능성';
+  if (f.rsi_14 > 70 || f.bb_z_20 >= 2) return '단기 과열 구간 가능성';
+  return '중립 구간';
+}
+
+function incomeText(f) {
+  if (f.dist_yield_ttm >= 8) return '고인컴 성격이 강하지만 함정 여부 확인 필요';
+  if (f.dist_yield_ttm >= 3) return '중간 수준 인컴 ETF';
+  return '인컴보다 성장/추세 비중이 큰 ETF';
 }

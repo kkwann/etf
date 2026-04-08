@@ -3,18 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="ETF ?꾨왂 ?먯닔 ??쒕낫?? JSON ?곗씠?곕쭔 援먯껜???뺤쟻 ?뱁샇?ㅽ똿?쇰줈 ?댁쁺?????덉뒿?덈떎."
-  />
+  <meta name="description" content="ETF 전략 점수 서비스 대시보드" />
   <title>ETF Strategy Score Dashboard</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <div class="page-shell">
@@ -22,21 +16,22 @@
       <div class="hero__content">
         <div>
           <div class="eyebrow">ETF Strategy Score Service</div>
-          <h1>移대뱶濡?鍮좊Ⅴ寃?蹂닿퀬, ?대┃?섎㈃ ?곸꽭 遺꾩꽍???대━??ETF ??쒕낫??/h1>
+          <h1>카드로 요약하고, 클릭하면 디테일이 보이는 ETF 전략 대시보드</h1>
           <p class="hero__desc">
-            ?꾩옱???덉떆 JSON ?곗씠?곕? ?ъ슜?섍퀬 ?덇퀬, 異뷀썑?먮뒗 媛숈? ?뺤떇???ㅼ젣 ?곗씠?곕? ?앹꽦??            <code>dashboard_data.json</code>留?援먯껜?섎㈃ 洹몃?濡??뺤쟻 ?뱁샇?ㅽ똿?쇰줈 ?댁쁺?????덈룄濡?            援ъ꽦?덉뒿?덈떎.
+            전체 ETF 흐름은 카드와 리스트로 빠르게 확인하고, 관심 ETF만 클릭해 상세 점수·리스크·추세·배당 정보를 보는 구조입니다.
+            GitHub Pages 정적 호스팅 기준으로 <code>dashboard_data.json</code>만 교체하면 데이터가 갱신되도록 설계했습니다.
           </p>
         </div>
         <div class="hero__actions">
-          <button id="themeToggle" class="btn btn--primary" type="button">?ㅽ겕 紐⑤뱶</button>
-          <button id="downloadJsonBtn" class="btn" type="button">JSON ?ㅼ슫濡쒕뱶</button>
+          <button id="themeToggle" class="btn btn--primary" type="button">🌙 다크모드</button>
+          <button id="downloadJsonBtn" class="btn" type="button">JSON 다운로드</button>
         </div>
       </div>
       <div class="meta-row">
-        <div class="meta-pill"><span>湲곗???/span><strong id="metaAsOf">-</strong></div>
-        <div class="meta-pill"><span>?낅뜲?댄듃</span><strong id="metaUpdated">-</strong></div>
-        <div class="meta-pill"><span>?듯솕</span><strong id="metaCurrency">-</strong></div>
-        <div class="meta-pill"><span>紐⑤뜽</span><strong id="metaModel">-</strong></div>
+        <div class="meta-pill"><span>기준일</span><strong id="metaAsOf">-</strong></div>
+        <div class="meta-pill"><span>업데이트</span><strong id="metaUpdated">-</strong></div>
+        <div class="meta-pill"><span>통화</span><strong id="metaCurrency">-</strong></div>
+        <div class="meta-pill"><span>모델</span><strong id="metaModel">-</strong></div>
       </div>
     </header>
 
@@ -44,8 +39,8 @@
       <section class="summary-section">
         <div class="section-head">
           <div>
-            <h2>?꾩껜 ETF 媛쒖슂</h2>
-            <p>?곷떒 移대뱶???꾪꽣 寃곌낵 ?꾩껜瑜??붿빟?섍퀬, ?쒖뿉??ETF瑜??대┃?섎㈃ ?곸꽭 ?⑤꼸???대┰?덈떎.</p>
+            <h2>전체 ETF 개요</h2>
+            <p>처음 화면은 카드와 전체 ETF 뷰만 보여주고, ETF를 클릭하면 상세 디테일 패널이 열립니다.</p>
           </div>
         </div>
         <div id="summaryCards" class="summary-grid"></div>
@@ -55,37 +50,37 @@
         <section class="panel panel--wide">
           <div class="section-head section-head--tight">
             <div>
-              <h2>?꾩껜 ETF 紐⑸줉</h2>
-              <p>寃?됯낵 ?꾪꽣濡??꾨낫瑜?醫곹엺 ?? ?먰븯??ETF瑜??대┃???곸꽭 吏?쒕? ?뺤씤?????덉뒿?덈떎.</p>
+              <h2>전체 ETF 뷰</h2>
+              <p>검색·필터·정렬 후 ETF 행을 클릭하면 상세뷰가 열립니다.</p>
             </div>
             <div class="toolbar-right">
-              <span class="hint">珥?<strong id="resultCount">0</strong>媛?/span>
+              <span class="hint">총 <strong id="resultCount">0</strong>개</span>
             </div>
           </div>
 
           <div class="filter-grid">
             <label class="field field--search">
-              <span>寃??/span>
-              <input id="searchInput" type="text" placeholder="Ticker, ?대쫫, ?쒓렇, 肄붾찘??寃?? />
+              <span>검색</span>
+              <input id="searchInput" type="text" placeholder="Ticker, 이름, 태그, 코멘트 검색" />
             </label>
             <label class="field">
-              <span>?먯궛援?/span>
+              <span>자산군</span>
               <select id="assetFilter"></select>
             </label>
             <label class="field">
-              <span>?꾨왂援?/span>
+              <span>전략군</span>
               <select id="strategyFilter"></select>
             </label>
             <label class="field">
-              <span>諛곕떦二쇨린</span>
+              <span>배당주기</span>
               <select id="dividendFilter"></select>
             </label>
             <label class="field">
-              <span>理쒖냼 ?깃툒</span>
+              <span>최소 등급</span>
               <select id="gradeFilter"></select>
             </label>
             <label class="field">
-              <span>理쒖냼 珥앹젏</span>
+              <span>최소 총점</span>
               <input id="minScoreInput" type="number" min="0" max="100" step="1" value="0" />
             </label>
           </div>
@@ -98,14 +93,14 @@
                 <tr>
                   <th data-sort="rank">Rank</th>
                   <th data-sort="ticker">ETF</th>
-                  <th data-sort="asset_class">?먯궛援?/th>
-                  <th data-sort="strategy_family">?꾨왂援?/th>
-                  <th data-sort="scores.total_score">珥앹젏</th>
-                  <th data-sort="scores.grade">?깃툒</th>
-                  <th data-sort="features.ret_60d">3M ?섏씡瑜?/th>
-                  <th data-sort="features.vol_20d_ann">20D 蹂?숈꽦</th>
-                  <th data-sort="features.dist_yield_ttm">TTM 遺꾨같?섏씡瑜?/th>
-                  <th data-sort="close">醫낃?</th>
+                  <th data-sort="asset_class">자산군</th>
+                  <th data-sort="strategy_family">전략군</th>
+                  <th data-sort="scores.total_score">총점</th>
+                  <th data-sort="scores.grade">등급</th>
+                  <th data-sort="features.ret_60d">3M 수익률</th>
+                  <th data-sort="features.vol_20d_ann">20D 변동성</th>
+                  <th data-sort="features.dist_yield_ttm">TTM 분배수익률</th>
+                  <th data-sort="close">종가</th>
                 </tr>
               </thead>
               <tbody id="tableBody"></tbody>
@@ -113,38 +108,38 @@
           </div>
 
           <div id="tableEmpty" class="empty-state hidden">
-            議곌굔??留욌뒗 ETF媛 ?놁뒿?덈떎. ?꾪꽣瑜??꾪솕?섍굅??寃?됱뼱瑜?議곗젙??蹂댁꽭??
+            조건에 맞는 ETF가 없습니다. 필터를 완화하거나 검색어를 지워보세요.
           </div>
         </section>
 
         <aside class="panel panel--side">
           <div class="section-head section-head--tight">
             <div>
-              <h2>?곗씠??援ъ“ ?덈궡</h2>
-              <p>HTML/CSS/JS??怨좎젙?섍퀬, JSON留?援먯껜?섎뒗 ?뺤쟻 ?몄뒪???댁쁺 諛⑹떇??留욎떠 ?먯뿀?듬땲??</p>
+              <h2>데이터 구성 안내</h2>
+              <p>정적 호스팅 기준으로 HTML/CSS/JS는 고정하고, JSON만 바꾸는 구조가 가장 안정적입니다.</p>
             </div>
           </div>
           <div class="info-stack">
             <div class="info-card">
-              <div class="info-card__label">?꾩닔 ?뚯씪</div>
+              <div class="info-card__label">필수 파일</div>
               <ul>
                 <li><code>index.html</code></li>
-                <li><code>assets/styles.css</code></li>
-                <li><code>assets/app.js</code></li>
-                <li><code>data/dashboard_data.json</code></li>
+                <li><code>style.css</code></li>
+                <li><code>app.js</code></li>
+                <li><code>dashboard_data.json</code></li>
               </ul>
             </div>
             <div class="info-card">
-              <div class="info-card__label">?낅젰 ?곗씠??/div>
-              <p>?꾩옱 CSV???덉떆?⑹씠怨? ?댄썑?먮뒗 媛숈? 而щ읆 援ъ“???ㅼ젣 ?곗씠?곕? JSON?쇰줈 蹂?섑빐 ?ｌ쑝硫??⑸땲??</p>
+              <div class="info-card__label">권장 DataFrame</div>
+              <p><code>dataframe_example.csv</code>처럼 flat 구조로 관리하고, 배포 전 JSON으로 변환하는 방식이 실무적으로 가장 단순합니다.</p>
             </div>
             <div class="info-card">
-              <div class="info-card__label">諛고룷 諛⑹떇</div>
-              <p><code>site/</code> ?대뜑瑜??뺤쟻 ?뱁샇?ㅽ똿 猷⑦듃濡?諛고룷?섍퀬, <code>dashboard_data.json</code>留?媛깆떊?섎㈃ ?⑸땲??</p>
+              <div class="info-card__label">운영 포인트</div>
+              <p>GitHub Pages에선 같은 경로의 JSON 파일만 교체하면 됩니다. 프론트 코드를 매번 수정하는 방식은 비효율적입니다.</p>
             </div>
             <div class="info-card">
-              <div class="info-card__label">?먯닔 ?댁꽍</div>
-              <p><strong>method1~6</strong>? 紐⑤찘?, 諛⑹뼱, 異붿꽭 ?덉쭏, ?좊룞?? ?됯퇏?뚭?, ?몄뺨/諛곕떦 ?대깽???먯닔?낅땲??</p>
+              <div class="info-card__label">점수 해석</div>
+              <p><strong>method1~6</strong>은 모멘텀, 리스크, 추세, 유동성, 평균회귀, 인컴/배당이벤트 축으로 해석하도록 구성했습니다.</p>
             </div>
           </div>
         </aside>
@@ -158,18 +153,18 @@
       <div class="drawer__head">
         <div>
           <div class="eyebrow">ETF Detail View</div>
-          <h2 id="detailTitle">ETF ?곸꽭</h2>
+          <h2 id="detailTitle">ETF 상세</h2>
         </div>
         <div class="drawer__actions">
-          <button id="prevBtn" class="btn" type="button">?댁쟾</button>
-          <button id="nextBtn" class="btn" type="button">?ㅼ쓬</button>
-          <button id="closeDrawerBtn" class="btn btn--ghost" type="button">?リ린</button>
+          <button id="prevBtn" class="btn" type="button">이전</button>
+          <button id="nextBtn" class="btn" type="button">다음</button>
+          <button id="closeDrawerBtn" class="btn btn--ghost" type="button">닫기</button>
         </div>
       </div>
       <div id="drawerContent" class="drawer__content"></div>
     </section>
   </div>
 
-  <script src="./assets/app.js" defer></script>
+  <script src="./app.js"></script>
 </body>
 </html>
