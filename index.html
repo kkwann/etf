@@ -8,7 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    /* Fallback critical styles for single-file preview environments */
+    :root{--bg:#f4f7fb;--surface:rgba(255,255,255,.88);--surface-strong:#fff;--text:#152033;--muted:#617089;--border:#dbe3f0;--shadow:0 12px 28px rgba(18,31,53,.08);--accent:#2f6bff;--accent-soft:rgba(47,107,255,.12);--good:#11845b;--warn:#d97706;--bad:#c2410c;--chip:#eef3ff}body[data-theme="dark"]{--bg:#0f1726;--surface:rgba(19,27,43,.86);--surface-strong:#131b2b;--text:#e8eefc;--muted:#97a5c0;--border:#273551;--shadow:0 14px 36px rgba(0,0,0,.34);--accent:#74a0ff;--accent-soft:rgba(116,160,255,.16);--good:#34d399;--warn:#f59e0b;--bad:#fb923c;--chip:#18243b}html,body{margin:0;padding:0}*{box-sizing:border-box}body{font-family:Inter,"Noto Sans KR",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top left, rgba(47,107,255,.16), transparent 24%),radial-gradient(circle at top right, rgba(17,132,91,.10), transparent 20%),var(--bg);color:var(--text);min-height:100vh}.app{max-width:1480px;margin:0 auto;padding:28px 20px 36px}.topbar,.topbar-actions,.meta-row,.tag-row,.tabs,.drawer-actions{display:flex}.topbar{justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:18px}.topbar-actions,.meta-row,.tag-row,.tabs,.drawer-actions{gap:8px;flex-wrap:wrap}.brand h1{margin:0 0 8px;font-size:30px;line-height:1.1}.brand p,.dim{color:var(--muted)}.grid-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}.workspace{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(360px,.8fr);gap:18px;align-items:start}.card{background:var(--surface);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}.panel,.summary-card{padding:18px}.filter-grid{display:grid;grid-template-columns:1.8fr repeat(4,minmax(120px,1fr)) 160px;gap:10px}.control{display:flex;flex-direction:column;gap:6px}.control input,.control select,.ghost-btn,.icon-btn{border:1px solid var(--border);background:var(--surface-strong);color:var(--text);border-radius:14px;padding:11px 12px}.table-wrap{margin-top:16px;overflow:auto;border:1px solid var(--border);border-radius:18px}table{width:100%;border-collapse:collapse;min-width:920px}th,td{padding:14px 12px;border-bottom:1px solid var(--border);text-align:left}thead{background:var(--surface-strong)}.drawer{display:none;flex-direction:column;gap:14px}.drawer.active{display:flex}.hidden{display:none!important}@media (max-width:1200px){.workspace{grid-template-columns:1fr}}@media (max-width:980px){.grid-cards,.filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:640px){.app{padding:20px 14px 30px}.topbar{flex-direction:column}.grid-cards,.filter-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body data-theme="dark">
   <div class="app">
@@ -135,6 +139,6 @@
     </section>
   </div>
 
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
