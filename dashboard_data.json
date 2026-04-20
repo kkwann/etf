@@ -1,0 +1,1589 @@
+{
+  "metadata": {
+    "service_name": "ETF Strategy Validation Dashboard",
+    "asof_date": "2026-04-20",
+    "updated_at": "2026-04-20T13:00:00+09:00",
+    "currency": "USD",
+    "lookbacks": [
+      {
+        "key": "ret_5d",
+        "label": "5D"
+      },
+      {
+        "key": "ret_20d",
+        "label": "20D"
+      },
+      {
+        "key": "ret_60d",
+        "label": "60D"
+      },
+      {
+        "key": "ret_120d",
+        "label": "120D"
+      },
+      {
+        "key": "ret_240d",
+        "label": "240D"
+      }
+    ],
+    "validation_metrics": [
+      "CAGR",
+      "Sharpe",
+      "Sortino",
+      "Calmar",
+      "MDD",
+      "Volatility",
+      "Downside Volatility",
+      "Win Rate",
+      "Turnover"
+    ],
+    "summary_cards": {
+      "universe_count": 10,
+      "avg_total_score": 56.0,
+      "dominant_best_strategy": "60D",
+      "top_etf": "SCHD"
+    }
+  },
+  "data": [
+    {
+      "ticker": "SCHD",
+      "name": "Schwab U.S. Dividend Equity ETF",
+      "asset_class": "US Equity",
+      "style": "Dividend Quality",
+      "region": "US",
+      "close": 82.7,
+      "expense_ratio": 0.06,
+      "fit_for": "Income + Quality",
+      "tags": [
+        "배당 퀄리티",
+        "방어형"
+      ],
+      "summary": "인컴 성향과 방어력이 강하고 장기 보유 적합성이 높은 ETF.",
+      "scores": {
+        "ret_5d": 53.3,
+        "ret_20d": 71.0,
+        "ret_60d": 79.1,
+        "ret_120d": 82.3,
+        "ret_240d": 80.8
+      },
+      "total_score": 73.3,
+      "grade": "B",
+      "best_strategy": "120D",
+      "best_sharpe_strategy": "120D",
+      "strategies": {
+        "ret_5d": {
+          "label": "5D",
+          "strategy_score": 53.3,
+          "group_scores": {
+            "profitability": 39.6,
+            "risk_control": 78.3,
+            "efficiency": 46.7
+          },
+          "metrics": {
+            "cagr": 9.7,
+            "sharpe": 0.82,
+            "sortino": 1.18,
+            "calmar": 0.61,
+            "mdd": -15.9,
+            "volatility": 14.3,
+            "downside_volatility": 8.6,
+            "win_rate": 55.0,
+            "turnover": 24.6
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "SCHD의 5D 전략은 CAGR 9.7%, Sharpe 0.82, MDD -15.9%로 요약됩니다.",
+            "risk_note": "회전율이 높아 거래비용 민감"
+          }
+        },
+        "ret_20d": {
+          "label": "20D",
+          "strategy_score": 71.0,
+          "group_scores": {
+            "profitability": 60.2,
+            "risk_control": 84.2,
+            "efficiency": 72.1
+          },
+          "metrics": {
+            "cagr": 12.4,
+            "sharpe": 1.02,
+            "sortino": 1.49,
+            "calmar": 0.84,
+            "mdd": -14.7,
+            "volatility": 13.5,
+            "downside_volatility": 8.0,
+            "win_rate": 57.8,
+            "turnover": 11.5
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "SCHD의 20D 전략은 CAGR 12.4%, Sharpe 1.02, MDD -14.7%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_60d": {
+          "label": "60D",
+          "strategy_score": 79.1,
+          "group_scores": {
+            "profitability": 69.8,
+            "risk_control": 87.0,
+            "efficiency": 83.5
+          },
+          "metrics": {
+            "cagr": 13.6,
+            "sharpe": 1.12,
+            "sortino": 1.62,
+            "calmar": 0.95,
+            "mdd": -14.3,
+            "volatility": 12.9,
+            "downside_volatility": 7.7,
+            "win_rate": 59.1,
+            "turnover": 6.1
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "SCHD의 60D 전략은 CAGR 13.6%, Sharpe 1.12, MDD -14.3%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_120d": {
+          "label": "120D",
+          "strategy_score": 82.3,
+          "group_scores": {
+            "profitability": 73.9,
+            "risk_control": 88.5,
+            "efficiency": 87.2
+          },
+          "metrics": {
+            "cagr": 14.1,
+            "sharpe": 1.14,
+            "sortino": 1.66,
+            "calmar": 1.0,
+            "mdd": -14.1,
+            "volatility": 12.6,
+            "downside_volatility": 7.5,
+            "win_rate": 59.6,
+            "turnover": 3.4
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "SCHD의 120D 전략은 CAGR 14.1%, Sharpe 1.14, MDD -14.1%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_240d": {
+          "label": "240D",
+          "strategy_score": 80.8,
+          "group_scores": {
+            "profitability": 71.4,
+            "risk_control": 89.4,
+            "efficiency": 84.7
+          },
+          "metrics": {
+            "cagr": 13.8,
+            "sharpe": 1.1,
+            "sortino": 1.6,
+            "calmar": 0.98,
+            "mdd": -14.0,
+            "volatility": 12.4,
+            "downside_volatility": 7.4,
+            "win_rate": 59.0,
+            "turnover": 1.9
+          },
+          "commentary": {
+            "headline": "장기 방향성 확인",
+            "summary": "SCHD의 240D 전략은 CAGR 13.8%, Sharpe 1.10, MDD -14.0%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        }
+      },
+      "rank": 1
+    },
+    {
+      "ticker": "GLD",
+      "name": "SPDR Gold Shares",
+      "asset_class": "Commodity",
+      "style": "Defensive Alternative",
+      "region": "Global",
+      "close": 74.9,
+      "expense_ratio": 0.4,
+      "fit_for": "Diversifier",
+      "tags": [
+        "금",
+        "분산"
+      ],
+      "summary": "방어형 대안자산으로서 포트폴리오 분산 기능이 돋보이는 ETF.",
+      "scores": {
+        "ret_5d": 50.5,
+        "ret_20d": 65.6,
+        "ret_60d": 77.1,
+        "ret_120d": 75.4,
+        "ret_240d": 71.5
+      },
+      "total_score": 68.0,
+      "grade": "C",
+      "best_strategy": "60D",
+      "best_sharpe_strategy": "60D",
+      "strategies": {
+        "ret_5d": {
+          "label": "5D",
+          "strategy_score": 50.5,
+          "group_scores": {
+            "profitability": 32.3,
+            "risk_control": 84.2,
+            "efficiency": 40.9
+          },
+          "metrics": {
+            "cagr": 8.1,
+            "sharpe": 0.73,
+            "sortino": 1.02,
+            "calmar": 0.56,
+            "mdd": -14.4,
+            "volatility": 13.5,
+            "downside_volatility": 8.3,
+            "win_rate": 54.0,
+            "turnover": 20.5
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "GLD의 5D 전략은 CAGR 8.1%, Sharpe 0.73, MDD -14.4%로 요약됩니다.",
+            "risk_note": "회전율이 높아 거래비용 민감"
+          }
+        },
+        "ret_20d": {
+          "label": "20D",
+          "strategy_score": 65.6,
+          "group_scores": {
+            "profitability": 50.3,
+            "risk_control": 88.1,
+            "efficiency": 63.4
+          },
+          "metrics": {
+            "cagr": 10.7,
+            "sharpe": 0.91,
+            "sortino": 1.3,
+            "calmar": 0.76,
+            "mdd": -14.0,
+            "volatility": 12.7,
+            "downside_volatility": 7.7,
+            "win_rate": 56.2,
+            "turnover": 9.4
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "GLD의 20D 전략은 CAGR 10.7%, Sharpe 0.91, MDD -14.0%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_60d": {
+          "label": "60D",
+          "strategy_score": 77.1,
+          "group_scores": {
+            "profitability": 66.6,
+            "risk_control": 91.2,
+            "efficiency": 77.1
+          },
+          "metrics": {
+            "cagr": 12.8,
+            "sharpe": 1.04,
+            "sortino": 1.49,
+            "calmar": 0.94,
+            "mdd": -13.6,
+            "volatility": 12.1,
+            "downside_volatility": 7.3,
+            "win_rate": 58.5,
+            "turnover": 5.0
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "GLD의 60D 전략은 CAGR 12.8%, Sharpe 1.04, MDD -13.6%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_120d": {
+          "label": "120D",
+          "strategy_score": 75.4,
+          "group_scores": {
+            "profitability": 62.3,
+            "risk_control": 92.3,
+            "efficiency": 75.9
+          },
+          "metrics": {
+            "cagr": 12.2,
+            "sharpe": 1.01,
+            "sortino": 1.45,
+            "calmar": 0.89,
+            "mdd": -13.7,
+            "volatility": 11.8,
+            "downside_volatility": 7.0,
+            "win_rate": 58.0,
+            "turnover": 2.9
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "GLD의 120D 전략은 CAGR 12.2%, Sharpe 1.01, MDD -13.7%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_240d": {
+          "label": "240D",
+          "strategy_score": 71.5,
+          "group_scores": {
+            "profitability": 54.9,
+            "risk_control": 93.1,
+            "efficiency": 71.9
+          },
+          "metrics": {
+            "cagr": 11.1,
+            "sharpe": 0.95,
+            "sortino": 1.37,
+            "calmar": 0.81,
+            "mdd": -13.7,
+            "volatility": 11.5,
+            "downside_volatility": 6.9,
+            "win_rate": 57.1,
+            "turnover": 1.6
+          },
+          "commentary": {
+            "headline": "장기 방향성 확인",
+            "summary": "GLD의 240D 전략은 CAGR 11.1%, Sharpe 0.95, MDD -13.7%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        }
+      },
+      "rank": 2
+    },
+    {
+      "ticker": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "asset_class": "US Equity",
+      "style": "Broad Market",
+      "region": "US",
+      "close": 585.4,
+      "expense_ratio": 0.09,
+      "fit_for": "Core Holding",
+      "tags": [
+        "코어 ETF",
+        "리스크 균형"
+      ],
+      "summary": "장기 추세와 리스크 균형이 안정적인 코어 ETF.",
+      "scores": {
+        "ret_5d": 45.7,
+        "ret_20d": 68.0,
+        "ret_60d": 80.4,
+        "ret_120d": 77.7,
+        "ret_240d": 67.6
+      },
+      "total_score": 67.9,
+      "grade": "C",
+      "best_strategy": "60D",
+      "best_sharpe_strategy": "60D",
+      "strategies": {
+        "ret_5d": {
+          "label": "5D",
+          "strategy_score": 45.7,
+          "group_scores": {
+            "profitability": 39.0,
+            "risk_control": 54.8,
+            "efficiency": 45.6
+          },
+          "metrics": {
+            "cagr": 11.2,
+            "sharpe": 0.86,
+            "sortino": 1.2,
+            "calmar": 0.55,
+            "mdd": -20.4,
+            "volatility": 17.8,
+            "downside_volatility": 11.1,
+            "win_rate": 54.3,
+            "turnover": 30.2
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "SPY의 5D 전략은 CAGR 11.2%, Sharpe 0.86, MDD -20.4%로 요약됩니다.",
+            "risk_note": "회전율이 높아 거래비용 민감"
+          }
+        },
+        "ret_20d": {
+          "label": "20D",
+          "strategy_score": 68.0,
+          "group_scores": {
+            "profitability": 64.2,
+            "risk_control": 68.3,
+            "efficiency": 72.9
+          },
+          "metrics": {
+            "cagr": 14.8,
+            "sharpe": 1.05,
+            "sortino": 1.52,
+            "calmar": 0.84,
+            "mdd": -17.6,
+            "volatility": 15.9,
+            "downside_volatility": 9.8,
+            "win_rate": 57.2,
+            "turnover": 13.8
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "SPY의 20D 전략은 CAGR 14.8%, Sharpe 1.05, MDD -17.6%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_60d": {
+          "label": "60D",
+          "strategy_score": 80.4,
+          "group_scores": {
+            "profitability": 78.6,
+            "risk_control": 75.1,
+            "efficiency": 88.0
+          },
+          "metrics": {
+            "cagr": 16.4,
+            "sharpe": 1.18,
+            "sortino": 1.72,
+            "calmar": 1.02,
+            "mdd": -16.1,
+            "volatility": 15.0,
+            "downside_volatility": 9.2,
+            "win_rate": 59.0,
+            "turnover": 7.6
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "SPY의 60D 전략은 CAGR 16.4%, Sharpe 1.18, MDD -16.1%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_120d": {
+          "label": "120D",
+          "strategy_score": 77.7,
+          "group_scores": {
+            "profitability": 72.9,
+            "risk_control": 75.2,
+            "efficiency": 86.6
+          },
+          "metrics": {
+            "cagr": 15.7,
+            "sharpe": 1.14,
+            "sortino": 1.66,
+            "calmar": 0.96,
+            "mdd": -16.4,
+            "volatility": 14.8,
+            "downside_volatility": 9.0,
+            "win_rate": 58.1,
+            "turnover": 4.3
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "SPY의 120D 전략은 CAGR 15.7%, Sharpe 1.14, MDD -16.4%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_240d": {
+          "label": "240D",
+          "strategy_score": 67.6,
+          "group_scores": {
+            "profitability": 57.5,
+            "risk_control": 75.2,
+            "efficiency": 73.5
+          },
+          "metrics": {
+            "cagr": 13.5,
+            "sharpe": 0.97,
+            "sortino": 1.41,
+            "calmar": 0.79,
+            "mdd": -17.1,
+            "volatility": 14.2,
+            "downside_volatility": 8.8,
+            "win_rate": 56.2,
+            "turnover": 2.2
+          },
+          "commentary": {
+            "headline": "장기 방향성 확인",
+            "summary": "SPY의 240D 전략은 CAGR 13.5%, Sharpe 0.97, MDD -17.1%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        }
+      },
+      "rank": 3
+    },
+    {
+      "ticker": "JEPI",
+      "name": "JPMorgan Equity Premium Income ETF",
+      "asset_class": "US Equity",
+      "style": "Income / Covered Call",
+      "region": "US",
+      "close": 55.2,
+      "expense_ratio": 0.35,
+      "fit_for": "Income Focus",
+      "tags": [
+        "커버드콜",
+        "현금흐름"
+      ],
+      "summary": "고배당 인컴 전략에 강점이 있으나 강한 상승장 추세 추종력은 낮다.",
+      "scores": {
+        "ret_5d": 54.6,
+        "ret_20d": 64.5,
+        "ret_60d": 71.1,
+        "ret_120d": 74.1,
+        "ret_240d": 72.2
+      },
+      "total_score": 67.3,
+      "grade": "C",
+      "best_strategy": "120D",
+      "best_sharpe_strategy": "120D",
+      "strategies": {
+        "ret_5d": {
+          "label": "5D",
+          "strategy_score": 54.6,
+          "group_scores": {
+            "profitability": 33.2,
+            "risk_control": 95.1,
+            "efficiency": 42.8
+          },
+          "metrics": {
+            "cagr": 7.4,
+            "sharpe": 0.76,
+            "sortino": 1.08,
+            "calmar": 0.59,
+            "mdd": -12.5,
+            "volatility": 11.7,
+            "downside_volatility": 7.1,
+            "win_rate": 54.6,
+            "turnover": 22.1
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "JEPI의 5D 전략은 CAGR 7.4%, Sharpe 0.76, MDD -12.5%로 요약됩니다.",
+            "risk_note": "회전율이 높아 거래비용 민감"
+          }
+        },
+        "ret_20d": {
+          "label": "20D",
+          "strategy_score": 64.5,
+          "group_scores": {
+            "profitability": 44.6,
+            "risk_control": 95.2,
+            "efficiency": 60.2
+          },
+          "metrics": {
+            "cagr": 9.1,
+            "sharpe": 0.88,
+            "sortino": 1.25,
+            "calmar": 0.7,
+            "mdd": -13.1,
+            "volatility": 11.3,
+            "downside_volatility": 6.8,
+            "win_rate": 56.3,
+            "turnover": 10.2
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "JEPI의 20D 전략은 CAGR 9.1%, Sharpe 0.88, MDD -13.1%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_60d": {
+          "label": "60D",
+          "strategy_score": 71.1,
+          "group_scores": {
+            "profitability": 53.6,
+            "risk_control": 96.2,
+            "efficiency": 69.3
+          },
+          "metrics": {
+            "cagr": 10.5,
+            "sharpe": 0.95,
+            "sortino": 1.36,
+            "calmar": 0.79,
+            "mdd": -13.3,
+            "volatility": 10.9,
+            "downside_volatility": 6.5,
+            "win_rate": 57.5,
+            "turnover": 5.4
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "JEPI의 60D 전략은 CAGR 10.5%, Sharpe 0.95, MDD -13.3%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_120d": {
+          "label": "120D",
+          "strategy_score": 74.1,
+          "group_scores": {
+            "profitability": 56.8,
+            "risk_control": 98.2,
+            "efficiency": 73.1
+          },
+          "metrics": {
+            "cagr": 10.8,
+            "sharpe": 0.98,
+            "sortino": 1.4,
+            "calmar": 0.83,
+            "mdd": -13.0,
+            "volatility": 10.6,
+            "downside_volatility": 6.2,
+            "win_rate": 58.0,
+            "turnover": 3.1
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "JEPI의 120D 전략은 CAGR 10.8%, Sharpe 0.98, MDD -13.0%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_240d": {
+          "label": "240D",
+          "strategy_score": 72.2,
+          "group_scores": {
+            "profitability": 52.9,
+            "risk_control": 99.3,
+            "efficiency": 70.8
+          },
+          "metrics": {
+            "cagr": 10.1,
+            "sharpe": 0.94,
+            "sortino": 1.35,
+            "calmar": 0.79,
+            "mdd": -12.8,
+            "volatility": 10.4,
+            "downside_volatility": 6.1,
+            "win_rate": 57.6,
+            "turnover": 1.8
+          },
+          "commentary": {
+            "headline": "장기 방향성 확인",
+            "summary": "JEPI의 240D 전략은 CAGR 10.1%, Sharpe 0.94, MDD -12.8%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        }
+      },
+      "rank": 4
+    },
+    {
+      "ticker": "VTI",
+      "name": "Vanguard Total Stock Market ETF",
+      "asset_class": "US Equity",
+      "style": "Broad Market",
+      "region": "US",
+      "close": 287.3,
+      "expense_ratio": 0.03,
+      "fit_for": "Core Holding",
+      "tags": [
+        "미국 전체시장",
+        "분산"
+      ],
+      "summary": "시장 전체 노출을 확보하면서도 전략별 편차가 크지 않은 ETF.",
+      "scores": {
+        "ret_5d": 41.1,
+        "ret_20d": 63.3,
+        "ret_60d": 73.9,
+        "ret_120d": 72.6,
+        "ret_240d": 65.0
+      },
+      "total_score": 63.2,
+      "grade": "C",
+      "best_strategy": "60D",
+      "best_sharpe_strategy": "60D",
+      "strategies": {
+        "ret_5d": {
+          "label": "5D",
+          "strategy_score": 41.1,
+          "group_scores": {
+            "profitability": 34.1,
+            "risk_control": 50.8,
+            "efficiency": 40.9
+          },
+          "metrics": {
+            "cagr": 10.6,
+            "sharpe": 0.79,
+            "sortino": 1.1,
+            "calmar": 0.5,
+            "mdd": -21.2,
+            "volatility": 18.3,
+            "downside_volatility": 11.6,
+            "win_rate": 53.5,
+            "turnover": 28.4
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "VTI의 5D 전략은 CAGR 10.6%, Sharpe 0.79, MDD -21.2%로 요약됩니다.",
+            "risk_note": "회전율이 높아 거래비용 민감"
+          }
+        },
+        "ret_20d": {
+          "label": "20D",
+          "strategy_score": 63.3,
+          "group_scores": {
+            "profitability": 57.6,
+            "risk_control": 66.7,
+            "efficiency": 67.5
+          },
+          "metrics": {
+            "cagr": 13.9,
+            "sharpe": 0.98,
+            "sortino": 1.41,
+            "calmar": 0.78,
+            "mdd": -17.9,
+            "volatility": 16.1,
+            "downside_volatility": 10.0,
+            "win_rate": 56.0,
+            "turnover": 12.7
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "VTI의 20D 전략은 CAGR 13.9%, Sharpe 0.98, MDD -17.9%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_60d": {
+          "label": "60D",
+          "strategy_score": 73.9,
+          "group_scores": {
+            "profitability": 69.8,
+            "risk_control": 73.2,
+            "efficiency": 79.9
+          },
+          "metrics": {
+            "cagr": 15.3,
+            "sharpe": 1.08,
+            "sortino": 1.58,
+            "calmar": 0.92,
+            "mdd": -16.6,
+            "volatility": 15.1,
+            "downside_volatility": 9.4,
+            "win_rate": 57.8,
+            "turnover": 7.2
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "VTI의 60D 전략은 CAGR 15.3%, Sharpe 1.08, MDD -16.6%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_120d": {
+          "label": "120D",
+          "strategy_score": 72.6,
+          "group_scores": {
+            "profitability": 66.6,
+            "risk_control": 73.6,
+            "efficiency": 79.7
+          },
+          "metrics": {
+            "cagr": 14.9,
+            "sharpe": 1.05,
+            "sortino": 1.55,
+            "calmar": 0.89,
+            "mdd": -16.8,
+            "volatility": 14.9,
+            "downside_volatility": 9.2,
+            "win_rate": 57.2,
+            "turnover": 4.0
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "VTI의 120D 전략은 CAGR 14.9%, Sharpe 1.05, MDD -16.8%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_240d": {
+          "label": "240D",
+          "strategy_score": 65.0,
+          "group_scores": {
+            "profitability": 54.3,
+            "risk_control": 73.9,
+            "efficiency": 70.4
+          },
+          "metrics": {
+            "cagr": 13.0,
+            "sharpe": 0.93,
+            "sortino": 1.36,
+            "calmar": 0.76,
+            "mdd": -17.2,
+            "volatility": 14.5,
+            "downside_volatility": 9.0,
+            "win_rate": 55.7,
+            "turnover": 2.0
+          },
+          "commentary": {
+            "headline": "장기 방향성 확인",
+            "summary": "VTI의 240D 전략은 CAGR 13.0%, Sharpe 0.93, MDD -17.2%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        }
+      },
+      "rank": 5
+    },
+    {
+      "ticker": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "asset_class": "US Equity",
+      "style": "Growth Momentum",
+      "region": "US",
+      "close": 472.8,
+      "expense_ratio": 0.2,
+      "fit_for": "Aggressive Trend",
+      "tags": [
+        "고성장",
+        "변동성 높음"
+      ],
+      "summary": "중기 모멘텀은 강하지만 낙폭과 변동성이 큰 성장주 중심 ETF.",
+      "scores": {
+        "ret_5d": 29.7,
+        "ret_20d": 56.7,
+        "ret_60d": 76.7,
+        "ret_120d": 67.2,
+        "ret_240d": 55.5
+      },
+      "total_score": 57.2,
+      "grade": "D",
+      "best_strategy": "60D",
+      "best_sharpe_strategy": "60D",
+      "strategies": {
+        "ret_5d": {
+          "label": "5D",
+          "strategy_score": 29.7,
+          "group_scores": {
+            "profitability": 42.0,
+            "risk_control": 3.3,
+            "efficiency": 39.6
+          },
+          "metrics": {
+            "cagr": 14.9,
+            "sharpe": 0.81,
+            "sortino": 1.15,
+            "calmar": 0.49,
+            "mdd": -30.1,
+            "volatility": 25.4,
+            "downside_volatility": 16.8,
+            "win_rate": 53.1,
+            "turnover": 34.0
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "QQQ의 5D 전략은 CAGR 14.9%, Sharpe 0.81, MDD -30.1%로 요약됩니다.",
+            "risk_note": "회전율이 높아 거래비용 민감"
+          }
+        },
+        "ret_20d": {
+          "label": "20D",
+          "strategy_score": 56.7,
+          "group_scores": {
+            "profitability": 75.7,
+            "risk_control": 15.4,
+            "efficiency": 72.6
+          },
+          "metrics": {
+            "cagr": 21.8,
+            "sharpe": 1.07,
+            "sortino": 1.51,
+            "calmar": 0.77,
+            "mdd": -28.2,
+            "volatility": 23.6,
+            "downside_volatility": 15.1,
+            "win_rate": 57.0,
+            "turnover": 15.4
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "QQQ의 20D 전략은 CAGR 21.8%, Sharpe 1.07, MDD -28.2%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_60d": {
+          "label": "60D",
+          "strategy_score": 76.7,
+          "group_scores": {
+            "profitability": 99.6,
+            "risk_control": 26.9,
+            "efficiency": 96.0
+          },
+          "metrics": {
+            "cagr": 25.6,
+            "sharpe": 1.28,
+            "sortino": 1.86,
+            "calmar": 1.01,
+            "mdd": -25.4,
+            "volatility": 22.1,
+            "downside_volatility": 14.3,
+            "win_rate": 60.1,
+            "turnover": 8.1
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "QQQ의 60D 전략은 CAGR 25.6%, Sharpe 1.28, MDD -25.4%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_120d": {
+          "label": "120D",
+          "strategy_score": 67.2,
+          "group_scores": {
+            "profitability": 82.6,
+            "risk_control": 26.8,
+            "efficiency": 86.9
+          },
+          "metrics": {
+            "cagr": 22.4,
+            "sharpe": 1.14,
+            "sortino": 1.68,
+            "calmar": 0.84,
+            "mdd": -26.7,
+            "volatility": 21.3,
+            "downside_volatility": 13.7,
+            "win_rate": 58.5,
+            "turnover": 4.7
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "QQQ의 120D 전략은 CAGR 22.4%, Sharpe 1.14, MDD -26.7%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_240d": {
+          "label": "240D",
+          "strategy_score": 55.5,
+          "group_scores": {
+            "profitability": 63.8,
+            "risk_control": 26.1,
+            "efficiency": 73.8
+          },
+          "metrics": {
+            "cagr": 18.7,
+            "sharpe": 0.98,
+            "sortino": 1.41,
+            "calmar": 0.67,
+            "mdd": -27.9,
+            "volatility": 20.7,
+            "downside_volatility": 13.3,
+            "win_rate": 56.4,
+            "turnover": 2.4
+          },
+          "commentary": {
+            "headline": "장기 방향성 확인",
+            "summary": "QQQ의 240D 전략은 CAGR 18.7%, Sharpe 0.98, MDD -27.9%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        }
+      },
+      "rank": 6
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financial Select Sector SPDR Fund",
+      "asset_class": "Sector Equity",
+      "style": "Cyclical Value",
+      "region": "US",
+      "close": 42.1,
+      "expense_ratio": 0.1,
+      "fit_for": "Cyclical Sector",
+      "tags": [
+        "금융섹터",
+        "사이클"
+      ],
+      "summary": "금융주 사이클 반영이 강해 중기 전략 선택이 성과 차이를 만든다.",
+      "scores": {
+        "ret_5d": 30.6,
+        "ret_20d": 52.3,
+        "ret_60d": 71.6,
+        "ret_120d": 68.1,
+        "ret_240d": 59.1
+      },
+      "total_score": 56.3,
+      "grade": "D",
+      "best_strategy": "60D",
+      "best_sharpe_strategy": "60D",
+      "strategies": {
+        "ret_5d": {
+          "label": "5D",
+          "strategy_score": 30.6,
+          "group_scores": {
+            "profitability": 24.7,
+            "risk_control": 37.3,
+            "efficiency": 31.8
+          },
+          "metrics": {
+            "cagr": 9.3,
+            "sharpe": 0.67,
+            "sortino": 0.95,
+            "calmar": 0.39,
+            "mdd": -23.8,
+            "volatility": 20.2,
+            "downside_volatility": 13.1,
+            "win_rate": 52.4,
+            "turnover": 27.6
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "XLF의 5D 전략은 CAGR 9.3%, Sharpe 0.67, MDD -23.8%로 요약됩니다.",
+            "risk_note": "회전율이 높아 거래비용 민감"
+          }
+        },
+        "ret_20d": {
+          "label": "20D",
+          "strategy_score": 52.3,
+          "group_scores": {
+            "profitability": 47.8,
+            "risk_control": 52.1,
+            "efficiency": 58.6
+          },
+          "metrics": {
+            "cagr": 13.0,
+            "sharpe": 0.88,
+            "sortino": 1.25,
+            "calmar": 0.62,
+            "mdd": -20.9,
+            "volatility": 18.0,
+            "downside_volatility": 11.6,
+            "win_rate": 55.4,
+            "turnover": 12.8
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "XLF의 20D 전략은 CAGR 13.0%, Sharpe 0.88, MDD -20.9%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_60d": {
+          "label": "60D",
+          "strategy_score": 71.6,
+          "group_scores": {
+            "profitability": 71.3,
+            "risk_control": 65.0,
+            "efficiency": 78.7
+          },
+          "metrics": {
+            "cagr": 15.9,
+            "sharpe": 1.07,
+            "sortino": 1.54,
+            "calmar": 0.88,
+            "mdd": -18.1,
+            "volatility": 16.5,
+            "downside_volatility": 10.2,
+            "win_rate": 58.9,
+            "turnover": 6.8
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "XLF의 60D 전략은 CAGR 15.9%, Sharpe 1.07, MDD -18.1%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_120d": {
+          "label": "120D",
+          "strategy_score": 68.1,
+          "group_scores": {
+            "profitability": 63.8,
+            "risk_control": 67.1,
+            "efficiency": 74.9
+          },
+          "metrics": {
+            "cagr": 14.7,
+            "sharpe": 1.0,
+            "sortino": 1.45,
+            "calmar": 0.81,
+            "mdd": -18.2,
+            "volatility": 15.8,
+            "downside_volatility": 9.8,
+            "win_rate": 57.8,
+            "turnover": 3.8
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "XLF의 120D 전략은 CAGR 14.7%, Sharpe 1.00, MDD -18.2%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_240d": {
+          "label": "240D",
+          "strategy_score": 59.1,
+          "group_scores": {
+            "profitability": 49.1,
+            "risk_control": 67.5,
+            "efficiency": 64.0
+          },
+          "metrics": {
+            "cagr": 12.4,
+            "sharpe": 0.86,
+            "sortino": 1.24,
+            "calmar": 0.66,
+            "mdd": -18.8,
+            "volatility": 15.2,
+            "downside_volatility": 9.5,
+            "win_rate": 55.9,
+            "turnover": 2.1
+          },
+          "commentary": {
+            "headline": "장기 방향성 확인",
+            "summary": "XLF의 240D 전략은 CAGR 12.4%, Sharpe 0.86, MDD -18.8%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        }
+      },
+      "rank": 7
+    },
+    {
+      "ticker": "VNQ",
+      "name": "Vanguard Real Estate ETF",
+      "asset_class": "Real Estate",
+      "style": "Yield / Real Assets",
+      "region": "US",
+      "close": 31.5,
+      "expense_ratio": 0.13,
+      "fit_for": "Yield / Real Assets",
+      "tags": [
+        "리츠",
+        "인컴"
+      ],
+      "summary": "인컴과 자산분산은 유효하지만 금리 부담기에 변동성이 확대될 수 있다.",
+      "scores": {
+        "ret_5d": 26.3,
+        "ret_20d": 41.2,
+        "ret_60d": 54.1,
+        "ret_120d": 52.3,
+        "ret_240d": 47.1
+      },
+      "total_score": 44.2,
+      "grade": "E",
+      "best_strategy": "60D",
+      "best_sharpe_strategy": "60D",
+      "strategies": {
+        "ret_5d": {
+          "label": "5D",
+          "strategy_score": 26.3,
+          "group_scores": {
+            "profitability": 14.3,
+            "risk_control": 46.0,
+            "efficiency": 22.6
+          },
+          "metrics": {
+            "cagr": 6.8,
+            "sharpe": 0.55,
+            "sortino": 0.77,
+            "calmar": 0.3,
+            "mdd": -22.5,
+            "volatility": 18.2,
+            "downside_volatility": 12.4,
+            "win_rate": 51.7,
+            "turnover": 25.9
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "VNQ의 5D 전략은 CAGR 6.8%, Sharpe 0.55, MDD -22.5%로 요약됩니다.",
+            "risk_note": "회전율이 높아 거래비용 민감"
+          }
+        },
+        "ret_20d": {
+          "label": "20D",
+          "strategy_score": 41.2,
+          "group_scores": {
+            "profitability": 29.1,
+            "risk_control": 53.1,
+            "efficiency": 45.5
+          },
+          "metrics": {
+            "cagr": 9.4,
+            "sharpe": 0.72,
+            "sortino": 1.01,
+            "calmar": 0.43,
+            "mdd": -21.7,
+            "volatility": 16.9,
+            "downside_volatility": 11.3,
+            "win_rate": 53.8,
+            "turnover": 11.8
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "VNQ의 20D 전략은 CAGR 9.4%, Sharpe 0.72, MDD -21.7%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_60d": {
+          "label": "60D",
+          "strategy_score": 54.1,
+          "group_scores": {
+            "profitability": 44.2,
+            "risk_control": 59.5,
+            "efficiency": 61.9
+          },
+          "metrics": {
+            "cagr": 11.8,
+            "sharpe": 0.87,
+            "sortino": 1.24,
+            "calmar": 0.57,
+            "mdd": -20.8,
+            "volatility": 15.8,
+            "downside_volatility": 10.4,
+            "win_rate": 56.0,
+            "turnover": 6.3
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "VNQ의 60D 전략은 CAGR 11.8%, Sharpe 0.87, MDD -20.8%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_120d": {
+          "label": "120D",
+          "strategy_score": 52.3,
+          "group_scores": {
+            "profitability": 39.9,
+            "risk_control": 61.8,
+            "efficiency": 59.2
+          },
+          "metrics": {
+            "cagr": 11.0,
+            "sharpe": 0.82,
+            "sortino": 1.16,
+            "calmar": 0.53,
+            "mdd": -20.7,
+            "volatility": 15.2,
+            "downside_volatility": 10.0,
+            "win_rate": 55.5,
+            "turnover": 3.5
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "VNQ의 120D 전략은 CAGR 11.0%, Sharpe 0.82, MDD -20.7%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_240d": {
+          "label": "240D",
+          "strategy_score": 47.1,
+          "group_scores": {
+            "profitability": 31.3,
+            "risk_control": 61.9,
+            "efficiency": 53.3
+          },
+          "metrics": {
+            "cagr": 9.6,
+            "sharpe": 0.74,
+            "sortino": 1.04,
+            "calmar": 0.45,
+            "mdd": -21.3,
+            "volatility": 14.8,
+            "downside_volatility": 9.7,
+            "win_rate": 54.3,
+            "turnover": 1.9
+          },
+          "commentary": {
+            "headline": "장기 방향성 확인",
+            "summary": "VNQ의 240D 전략은 CAGR 9.6%, Sharpe 0.74, MDD -21.3%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        }
+      },
+      "rank": 8
+    },
+    {
+      "ticker": "IWM",
+      "name": "iShares Russell 2000 ETF",
+      "asset_class": "US Equity",
+      "style": "Small Cap",
+      "region": "US",
+      "close": 68.8,
+      "expense_ratio": 0.19,
+      "fit_for": "High Beta",
+      "tags": [
+        "소형주",
+        "반응성"
+      ],
+      "summary": "단기 반응성은 좋지만 효율성과 낙폭 관리에서 약점이 보이는 ETF.",
+      "scores": {
+        "ret_5d": 10.6,
+        "ret_20d": 28.3,
+        "ret_60d": 45.9,
+        "ret_120d": 43.3,
+        "ret_240d": 33.9
+      },
+      "total_score": 32.4,
+      "grade": "E",
+      "best_strategy": "60D",
+      "best_sharpe_strategy": "60D",
+      "strategies": {
+        "ret_5d": {
+          "label": "5D",
+          "strategy_score": 10.6,
+          "group_scores": {
+            "profitability": 12.3,
+            "risk_control": 2.6,
+            "efficiency": 16.2
+          },
+          "metrics": {
+            "cagr": 7.9,
+            "sharpe": 0.51,
+            "sortino": 0.72,
+            "calmar": 0.25,
+            "mdd": -31.4,
+            "volatility": 24.1,
+            "downside_volatility": 16.9,
+            "win_rate": 50.5,
+            "turnover": 31.2
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "IWM의 5D 전략은 CAGR 7.9%, Sharpe 0.51, MDD -31.4%로 요약됩니다.",
+            "risk_note": "회전율이 높아 거래비용 민감"
+          }
+        },
+        "ret_20d": {
+          "label": "20D",
+          "strategy_score": 28.3,
+          "group_scores": {
+            "profitability": 27.7,
+            "risk_control": 17.0,
+            "efficiency": 40.3
+          },
+          "metrics": {
+            "cagr": 10.6,
+            "sharpe": 0.67,
+            "sortino": 0.97,
+            "calmar": 0.37,
+            "mdd": -28.8,
+            "volatility": 22.2,
+            "downside_volatility": 15.0,
+            "win_rate": 53.0,
+            "turnover": 14.7
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "IWM의 20D 전략은 CAGR 10.6%, Sharpe 0.67, MDD -28.8%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_60d": {
+          "label": "60D",
+          "strategy_score": 45.9,
+          "group_scores": {
+            "profitability": 45.6,
+            "risk_control": 33.4,
+            "efficiency": 58.7
+          },
+          "metrics": {
+            "cagr": 13.4,
+            "sharpe": 0.84,
+            "sortino": 1.21,
+            "calmar": 0.54,
+            "mdd": -24.9,
+            "volatility": 20.5,
+            "downside_volatility": 13.4,
+            "win_rate": 55.6,
+            "turnover": 7.9
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "IWM의 60D 전략은 CAGR 13.4%, Sharpe 0.84, MDD -24.9%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_120d": {
+          "label": "120D",
+          "strategy_score": 43.3,
+          "group_scores": {
+            "profitability": 40.3,
+            "risk_control": 34.0,
+            "efficiency": 56.7
+          },
+          "metrics": {
+            "cagr": 12.7,
+            "sharpe": 0.79,
+            "sortino": 1.14,
+            "calmar": 0.49,
+            "mdd": -25.7,
+            "volatility": 19.8,
+            "downside_volatility": 12.9,
+            "win_rate": 54.7,
+            "turnover": 4.4
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "IWM의 120D 전략은 CAGR 12.7%, Sharpe 0.79, MDD -25.7%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_240d": {
+          "label": "240D",
+          "strategy_score": 33.9,
+          "group_scores": {
+            "profitability": 26.9,
+            "risk_control": 31.1,
+            "efficiency": 46.0
+          },
+          "metrics": {
+            "cagr": 10.4,
+            "sharpe": 0.65,
+            "sortino": 0.93,
+            "calmar": 0.37,
+            "mdd": -27.9,
+            "volatility": 19.2,
+            "downside_volatility": 12.4,
+            "win_rate": 52.8,
+            "turnover": 2.3
+          },
+          "commentary": {
+            "headline": "장기 방향성 확인",
+            "summary": "IWM의 240D 전략은 CAGR 10.4%, Sharpe 0.65, MDD -27.9%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        }
+      },
+      "rank": 9
+    },
+    {
+      "ticker": "TLT",
+      "name": "iShares 20+ Year Treasury Bond ETF",
+      "asset_class": "Bond",
+      "style": "Rate Sensitive",
+      "region": "US",
+      "close": 91.6,
+      "expense_ratio": 0.15,
+      "fit_for": "Macro / Rate Play",
+      "tags": [
+        "금리민감",
+        "장기채"
+      ],
+      "summary": "채권 민감도가 높아 추세보다 금리 국면 해석이 중요한 ETF.",
+      "scores": {
+        "ret_5d": 15.3,
+        "ret_20d": 28.1,
+        "ret_60d": 40.7,
+        "ret_120d": 38.1,
+        "ret_240d": 28.5
+      },
+      "total_score": 30.1,
+      "grade": "E",
+      "best_strategy": "60D",
+      "best_sharpe_strategy": "60D",
+      "strategies": {
+        "ret_5d": {
+          "label": "5D",
+          "strategy_score": 15.3,
+          "group_scores": {
+            "profitability": 0.0,
+            "risk_control": 46.5,
+            "efficiency": 4.4
+          },
+          "metrics": {
+            "cagr": 4.3,
+            "sharpe": 0.34,
+            "sortino": 0.47,
+            "calmar": 0.2,
+            "mdd": -21.5,
+            "volatility": 18.9,
+            "downside_volatility": 12.6,
+            "win_rate": 49.1,
+            "turnover": 26.8
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "TLT의 5D 전략은 CAGR 4.3%, Sharpe 0.34, MDD -21.5%로 요약됩니다.",
+            "risk_note": "회전율이 높아 거래비용 민감"
+          }
+        },
+        "ret_20d": {
+          "label": "20D",
+          "strategy_score": 28.1,
+          "group_scores": {
+            "profitability": 12.4,
+            "risk_control": 51.5,
+            "efficiency": 25.6
+          },
+          "metrics": {
+            "cagr": 6.5,
+            "sharpe": 0.48,
+            "sortino": 0.69,
+            "calmar": 0.31,
+            "mdd": -21.0,
+            "volatility": 17.8,
+            "downside_volatility": 11.9,
+            "win_rate": 50.8,
+            "turnover": 12.3
+          },
+          "commentary": {
+            "headline": "단기 반응성 중심",
+            "summary": "TLT의 20D 전략은 CAGR 6.5%, Sharpe 0.48, MDD -21.0%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_60d": {
+          "label": "60D",
+          "strategy_score": 40.7,
+          "group_scores": {
+            "profitability": 25.8,
+            "risk_control": 59.7,
+            "efficiency": 41.6
+          },
+          "metrics": {
+            "cagr": 8.9,
+            "sharpe": 0.62,
+            "sortino": 0.92,
+            "calmar": 0.45,
+            "mdd": -19.8,
+            "volatility": 16.4,
+            "downside_volatility": 10.8,
+            "win_rate": 52.1,
+            "turnover": 6.7
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "TLT의 60D 전략은 CAGR 8.9%, Sharpe 0.62, MDD -19.8%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_120d": {
+          "label": "120D",
+          "strategy_score": 38.1,
+          "group_scores": {
+            "profitability": 19.5,
+            "risk_control": 62.1,
+            "efficiency": 38.8
+          },
+          "metrics": {
+            "cagr": 7.7,
+            "sharpe": 0.57,
+            "sortino": 0.83,
+            "calmar": 0.39,
+            "mdd": -19.6,
+            "volatility": 15.9,
+            "downside_volatility": 10.4,
+            "win_rate": 51.4,
+            "turnover": 3.7
+          },
+          "commentary": {
+            "headline": "중기 추세 적합",
+            "summary": "TLT의 120D 전략은 CAGR 7.7%, Sharpe 0.57, MDD -19.6%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        },
+        "ret_240d": {
+          "label": "240D",
+          "strategy_score": 28.5,
+          "group_scores": {
+            "profitability": 5.5,
+            "risk_control": 62.8,
+            "efficiency": 24.9
+          },
+          "metrics": {
+            "cagr": 5.1,
+            "sharpe": 0.39,
+            "sortino": 0.58,
+            "calmar": 0.25,
+            "mdd": -20.4,
+            "volatility": 15.1,
+            "downside_volatility": 10.0,
+            "win_rate": 50.0,
+            "turnover": 2.0
+          },
+          "commentary": {
+            "headline": "장기 방향성 확인",
+            "summary": "TLT의 240D 전략은 CAGR 5.1%, Sharpe 0.39, MDD -20.4%로 요약됩니다.",
+            "risk_note": "리스크와 회전율이 상대적으로 안정적"
+          }
+        }
+      },
+      "rank": 10
+    }
+  ]
+}
