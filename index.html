@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ETF Quant Ranking Dashboard</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">ETF Quant Dashboard</p>
+      <h1>ETF 순위 & 전일자 시그널</h1>
+      <p class="subtitle">
+        전략 적합도 점수와 전일자 기준 BUY / HOLD / SELL / WAIT 신호를 함께 확인합니다.
+      </p>
+    </div>
+    <div class="header-card">
+      <span class="label">Signal Date</span>
+      <strong id="signalDate">-</strong>
+      <small id="generatedAt">data.json 기준</small>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel ranking-panel">
+      <div class="panel-head">
+        <div>
+          <h2>ETF 최종점수 랭킹</h2>
+          <p>블록 점수와 최종점수 기준으로 1차 후보를 확인합니다.</p>
+        </div>
+        <div class="toolbar">
+          <input id="searchInput" type="search" placeholder="Ticker 검색" />
+          <select id="decisionFilter">
+            <option value="ALL">전체 판단</option>
+            <option value="BUY">BUY</option>
+            <option value="HOLD">HOLD</option>
+            <option value="HOLD_CAUTION">HOLD_CAUTION</option>
+            <option value="SELL">SELL</option>
+            <option value="WAIT">WAIT</option>
+          </select>
+          <select id="scoreFilter">
+            <option value="ALL">전체 점수</option>
+            <option value="FIRST">1차 필터 통과</option>
+            <option value="70">70점 이상</option>
+            <option value="60">60점 이상</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="summaryCards" class="summary-grid"></div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th data-sort="final_rank">순위</th>
+              <th data-sort="Ticker">Ticker</th>
+              <th data-sort="final_score">최종점수</th>
+              <th data-sort="momentum_block_score">모멘텀</th>
+              <th data-sort="trend_block_score">추세</th>
+              <th data-sort="volatility_block_score">변동성</th>
+              <th data-sort="liquidity_block_score">유동성</th>
+              <th data-sort="dividend_block_score">배당</th>
+              <th data-sort="risk_recovery_block_score">리스크/회복</th>
+              <th data-sort="final_decision">신호</th>
+            </tr>
+          </thead>
+          <tbody id="rankingBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="panel detail-panel">
+      <div id="detailEmpty" class="empty-state">
+        <h2>ETF를 선택하세요</h2>
+        <p>왼쪽 랭킹에서 ETF를 클릭하면 지표별 점수와 전일자 시그널을 확인할 수 있습니다.</p>
+      </div>
+
+      <div id="detailContent" class="detail-content hidden">
+        <div class="detail-title-row">
+          <div>
+            <p class="eyebrow">ETF Detail</p>
+            <h2 id="detailTicker">-</h2>
+          </div>
+          <span id="detailDecision" class="decision-badge">-</span>
+        </div>
+
+        <div class="score-hero">
+          <div>
+            <span class="label">Final Score</span>
+            <strong id="detailFinalScore">-</strong>
+          </div>
+          <div>
+            <span class="label">Rank</span>
+            <strong id="detailRank">-</strong>
+          </div>
+          <div>
+            <span class="label">Reliability</span>
+            <strong id="detailReliability">-</strong>
+          </div>
+        </div>
+
+        <section>
+          <h3>블록 점수</h3>
+          <div id="blockScores" class="score-list"></div>
+        </section>
+
+        <section>
+          <h3>블록별 지표 점수</h3>
+          <div id="indicatorScores" class="indicator-groups"></div>
+        </section>
+
+        <section>
+          <h3>전일자 기준 신호</h3>
+          <div id="signalSummary" class="signal-grid"></div>
+          <div id="signalTable" class="mini-table"></div>
+        </section>
+
+        <section>
+          <h3>판단 사유</h3>
+          <p id="decisionReason" class="reason-box">-</p>
+        </section>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>
+      이 대시보드는 과거 데이터 기반 전략 적합도와 전일자 시그널을 시각화합니다.
+      투자 권유가 아니며, 실거래 전 데이터 품질·거래비용·슬리피지·룩어헤드 여부를 반드시 검증해야 합니다.
+    </p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
