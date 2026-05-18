@@ -1,6 +1,21 @@
 "use strict";
 
 const PERIOD_ORDER = ["ALL", "5Y", "3Y", "1Y"];
+const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
+const THEME_STORAGE_KEY = "etfDashboardTheme";
+const METRIC_LABELS = {
+  totalReturn: "총수익률 (Total Return)",
+  cagr: "연복리수익률 (CAGR)",
+  mdd: "최대낙폭 (MDD)",
+  sharpe: "샤프지수 (Sharpe)",
+  calmar: "칼마지수 (Calmar)",
+  exposure: "투자노출도 (Exposure)",
+  tradeCount: "거래수 (Trades)",
+  profitFactor: "수익팩터 (Profit Factor)",
+  expectancy: "기대값 (Expectancy)",
+  firstDate: "거래시작일 (first_date)",
+  lastDate: "거래종료일 (last_date)"
+};
 
 let rawRows = [];
 let groupedItems = [];
@@ -13,14 +28,17 @@ document.addEventListener("DOMContentLoaded", init);
 async function init() {
   try {
     cacheDom();
+    initializeTheme();
     bindEvents();
-    showStatus("Loading data.json...");
+    showStatus("Yahoo Finance 데이터를 불러오는 중입니다...");
 
-    const json = await loadJson();
+    const dataResult = await loadJson();
+    const json = dataResult.json;
 
     rawRows = normalizeInput(json);
     validateRows(rawRows);
     groupedItems = buildGroupedItems(rawRows);
+    updateDataSourceMeta(dataResult.lastModified);
 
     const strategies = getStrategies(groupedItems);
     if (strategies.length === 0) {
@@ -41,6 +59,10 @@ async function init() {
 function cacheDom() {
   [
     "statusBox",
+    "themeToggle",
+    "themeToggleLabel",
+    "dataSourceName",
+    "lastUpdated",
     "strategyTabs",
     "searchInput",
     "gradeFilter",
@@ -48,6 +70,7 @@ function cacheDom() {
     "sortSelect",
     "kpiCards",
     "totalEtfCount",
+    "bestCount",
     "goodCount",
     "normalCount",
     "badCount",
@@ -87,6 +110,7 @@ function bindEvents() {
   dom.sortSelect.addEventListener("change", renderDashboard);
   dom.closeDrawer.addEventListener("click", closeDrawer);
   dom.overlay.addEventListener("click", closeDrawer);
+  dom.themeToggle.addEventListener("click", toggleTheme);
 
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
@@ -95,25 +119,97 @@ function bindEvents() {
   });
 }
 
+function initializeTheme() {
+  const savedTheme = readStoredTheme();
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = savedTheme || (prefersDark ? "dark" : "light");
+
+  applyTheme(theme);
+}
+
+function readStoredTheme() {
+  try {
+    const value = window.localStorage.getItem(THEME_STORAGE_KEY);
+    return value === "dark" || value === "light" ? value : "";
+  } catch (error) {
+    return "";
+  }
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+  applyTheme(nextTheme);
+
+  try {
+    window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+  } catch (error) {
+    // Theme persistence is optional when storage is unavailable.
+  }
+}
+
+function applyTheme(theme) {
+  const normalized = theme === "dark" ? "dark" : "light";
+  const isDark = normalized === "dark";
+
+  document.documentElement.dataset.theme = normalized;
+  dom.themeToggle.setAttribute("aria-pressed", String(isDark));
+  dom.themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "라이트 모드로 전환 (Switch to light mode)" : "다크 모드로 전환 (Switch to dark mode)"
+  );
+  dom.themeToggleLabel.textContent = isDark ? "라이트 (Light)" : "다크 (Dark)";
+}
+
 async function loadJson() {
   try {
     const response = await fetch("./data.json", { cache: "no-store" });
 
     if (!response.ok) {
-      throw new Error("Failed to load data.json: HTTP " + response.status);
+      throw new Error("data.json 로딩 실패: HTTP " + response.status);
     }
 
-    return await response.json();
+    return {
+      json: await response.json(),
+      lastModified: response.headers.get("last-modified")
+    };
   } catch (error) {
     if (window.location.protocol === "file:") {
       throw new Error(
-        "The dashboard must be served over HTTP so the browser can load data.json. " +
-        "Run `python -m http.server 8000` in this folder, then open http://localhost:8000."
+        "브라우저가 data.json을 읽으려면 HTTP 서버로 실행해야 합니다. " +
+        "이 폴더에서 `python -m http.server 8000`을 실행한 뒤 http://localhost:8000 으로 접속하세요."
       );
     }
 
     throw error;
   }
+}
+
+function updateDataSourceMeta(lastModified) {
+  dom.dataSourceName.textContent = "Yahoo Finance";
+  dom.lastUpdated.textContent = "마지막 업데이트 (Last updated): " + formatLastUpdated(lastModified);
+}
+
+function formatLastUpdated(lastModified) {
+  const date = lastModified ? new Date(lastModified) : null;
+
+  if (!date || !Number.isFinite(date.getTime())) {
+    return "알 수 없음 (Unknown)";
+  }
+
+  return new Intl.DateTimeFormat(undefined, {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+    timeZoneName: "short"
+  }).format(date);
 }
 
 function normalizeInput(json) {
@@ -125,7 +221,7 @@ function normalizeInput(json) {
     return json.items.map(normalizeRow);
   }
 
-  throw new Error("data.json must be an array or an object with an items array.");
+  throw new Error("data.json은 배열 또는 items 배열을 가진 객체여야 합니다.");
 }
 
 function normalizeRow(row) {
@@ -139,6 +235,8 @@ function normalizeRow(row) {
     category: cleanText(category),
     strategy: cleanText(strategy),
     period: period,
+    firstDate: normalizeDate(read(row, ["first_date", "firstDate", "First Date", "first date"])),
+    lastDate: normalizeDate(read(row, ["last_date", "lastDate", "Last Date", "last date"])),
     totalReturn: toNumber(read(row, ["Total Return", "totalReturn", "total_return", "Return", "return"])),
     cagr: toNumber(read(row, ["CAGR", "cagr"])),
     sharpe: toNumber(read(row, ["Sharpe", "sharpe"])),
@@ -155,20 +253,20 @@ function normalizeRow(row) {
 
 function validateRows(rows) {
   if (!Array.isArray(rows) || rows.length === 0) {
-    throw new Error("data.json does not contain any rows.");
+    throw new Error("data.json에 데이터 row가 없습니다.");
   }
 
   const missing = [];
 
   rows.forEach(function (row, index) {
-    if (!row.ticker) missing.push("row " + index + ": missing Ticker");
-    if (!row.category) missing.push("row " + index + ": missing Category");
-    if (!row.strategy) missing.push("row " + index + ": missing strategy");
-    if (!row.period) missing.push("row " + index + ": missing period");
+    if (!row.ticker) missing.push("row " + index + ": Ticker 누락");
+    if (!row.category) missing.push("row " + index + ": Category 누락");
+    if (!row.strategy) missing.push("row " + index + ": strategy 누락");
+    if (!row.period) missing.push("row " + index + ": period 누락");
   });
 
   if (missing.length > 0) {
-    throw new Error("Required column issue(s):\n" + missing.slice(0, 15).join("\n"));
+    throw new Error("필수 컬럼 문제:\n" + missing.slice(0, 15).join("\n"));
   }
 
   const hasOneYear = rows.some(function (row) {
@@ -176,7 +274,7 @@ function validateRows(rows) {
   });
 
   if (!hasOneYear) {
-    throw new Error("At least one row with period equal to 1Y is required.");
+    throw new Error("period 값이 1Y인 row가 최소 1개 필요합니다.");
   }
 }
 
@@ -235,7 +333,7 @@ function renderStrategyTabs(strategies) {
 function renderDashboard() {
   const data = getVisibleData();
 
-  dom.tableTitle.textContent = "Strategy " + activeStrategy + " - Latest 1Y Performance";
+  dom.tableTitle.textContent = "전략 " + activeStrategy + " - 최근 1년 성과 (Latest 1Y Performance)";
 
   renderKpiCards(data);
   renderGradeDistribution(data);
@@ -283,13 +381,13 @@ function getVisibleData() {
 
 function renderKpiCards(data) {
   const metrics = [
-    metric("Return", "percent", "Average total return", data, "totalReturn"),
-    metric("CAGR", "percent", "Average annualized return", data, "cagr"),
-    metric("MDD", "percent", "Average max drawdown", data, "mdd"),
-    metric("Sharpe", "number", "Risk-adjusted return", data, "sharpe"),
-    metric("Calmar", "number", "CAGR divided by MDD", data, "calmar"),
-    metric("Profit Factor", "number", "Gross profit / gross loss", data, "profitFactor"),
-    metric("Expectancy", "number", "Expected value per trade", data, "expectancy")
+    metric(METRIC_LABELS.totalReturn, "percent", "평균 총수익률 (Average total return)", data, "totalReturn"),
+    metric(METRIC_LABELS.cagr, "percent", "평균 연복리수익률 (Average annualized return)", data, "cagr"),
+    metric(METRIC_LABELS.mdd, "percent", "평균 최대낙폭 (Average max drawdown)", data, "mdd"),
+    metric(METRIC_LABELS.sharpe, "number", "위험 대비 수익 (Risk-adjusted return)", data, "sharpe"),
+    metric(METRIC_LABELS.calmar, "number", "CAGR / MDD", data, "calmar"),
+    metric(METRIC_LABELS.profitFactor, "number", "총이익 / 총손실 (Gross profit / gross loss)", data, "profitFactor"),
+    metric(METRIC_LABELS.expectancy, "number", "거래당 기대값 (Expected value per trade)", data, "expectancy")
   ];
 
   dom.kpiCards.innerHTML = metrics.map(function (item) {
@@ -317,26 +415,25 @@ function metric(label, type, note, data, key) {
 
 function renderGradeDistribution(data) {
   const total = data.length;
-  const good = countBy(data, function (item) {
-    return item.periods["1Y"].grade === "Good";
-  });
-  const normal = countBy(data, function (item) {
-    return item.periods["1Y"].grade === "Normal";
-  });
-  const bad = countBy(data, function (item) {
-    return item.periods["1Y"].grade === "Bad";
+  const counts = {};
+
+  GRADE_ORDER.forEach(function (grade) {
+    counts[grade] = countBy(data, function (item) {
+      return item.periods["1Y"].grade === grade;
+    });
   });
 
   dom.totalEtfCount.textContent = String(total);
-  dom.goodCount.textContent = String(good);
-  dom.normalCount.textContent = String(normal);
-  dom.badCount.textContent = String(bad);
+  dom.bestCount.textContent = String(counts.Best);
+  dom.goodCount.textContent = String(counts.Good);
+  dom.normalCount.textContent = String(counts.Normal);
+  dom.badCount.textContent = String(counts.Bad);
 
-  dom.gradeRatio.innerHTML = ratioHtml([
-    ["ratio-good", good],
-    ["ratio-normal", normal],
-    ["ratio-bad", bad]
-  ]);
+  dom.gradeRatio.innerHTML = ratioHtml(
+    GRADE_ORDER.map(function (grade) {
+      return ["ratio-" + grade.toLowerCase(), counts[grade]];
+    })
+  );
 }
 
 function renderSignalDistribution(data) {
@@ -365,8 +462,8 @@ function renderTable(data) {
   if (data.length === 0) {
     dom.tableBody.innerHTML =
       '<tr>'
-      + '<td colspan="13" style="text-align:center; padding:32px; color:#94a3b8;">'
-      + 'No ETFs match the current filters.'
+      + '<td colspan="15" style="text-align:center; padding:32px; color:#94a3b8;">'
+      + '조건에 맞는 ETF가 없습니다. (No ETFs match the current filters.)'
       + '</td>'
       + '</tr>';
     return;
@@ -383,6 +480,8 @@ function renderTable(data) {
       + '<td>' + escapeHtml(item.category) + '</td>'
       + '<td>' + gradeBadge(p.grade) + '</td>'
       + '<td>' + signalBadge(p.signal) + '</td>'
+      + '<td>' + escapeHtml(formatDate(p.firstDate)) + '</td>'
+      + '<td>' + escapeHtml(formatDate(p.lastDate)) + '</td>'
       + metricCell(p.totalReturn, "percent", 100)
       + metricCell(p.cagr, "percent", 50)
       + metricCell(p.sharpe, "number", 3)
@@ -442,12 +541,22 @@ function renderPeriodSummaryCards(item) {
     return ""
       + '<div class="period-card">'
       + '<h4>' + escapeHtml(period) + '</h4>'
-      + periodCardRow("Return", p.totalReturn, "percent")
-      + periodCardRow("CAGR", p.cagr, "percent")
-      + periodCardRow("Sharpe", p.sharpe, "number")
-      + periodCardRow("MDD", p.mdd, "percent")
+      + periodDateRow(METRIC_LABELS.firstDate, p.firstDate)
+      + periodDateRow(METRIC_LABELS.lastDate, p.lastDate)
+      + periodCardRow(METRIC_LABELS.totalReturn, p.totalReturn, "percent")
+      + periodCardRow(METRIC_LABELS.cagr, p.cagr, "percent")
+      + periodCardRow(METRIC_LABELS.sharpe, p.sharpe, "number")
+      + periodCardRow(METRIC_LABELS.mdd, p.mdd, "percent")
       + '</div>';
   }).join("");
+}
+
+function periodDateRow(label, value) {
+  return ""
+    + '<div class="period-card-row date-row">'
+    + '<span>' + escapeHtml(label) + '</span>'
+    + '<strong>' + escapeHtml(formatDate(value)) + '</strong>'
+    + '</div>';
 }
 
 function periodCardRow(label, value, type) {
@@ -469,18 +578,18 @@ function renderPeriodCompareChart(item) {
   });
 
   if (available.length === 0) {
-    dom.periodCompareChart.innerHTML = '<p style="color:#94a3b8;">No period data is available.</p>';
+    dom.periodCompareChart.innerHTML = '<p style="color:#94a3b8;">기간 데이터가 없습니다. (No period data is available.)</p>';
     return;
   }
 
   const chartMetrics = [
-    { key: "totalReturn", label: "Total Return", type: "percent", mode: "positive" },
-    { key: "cagr", label: "CAGR", type: "percent", mode: "positive" },
-    { key: "sharpe", label: "Sharpe", type: "number", mode: "positive" },
-    { key: "mdd", label: "MDD", type: "percent", mode: "absolute" },
-    { key: "calmar", label: "Calmar", type: "number", mode: "positive" },
-    { key: "profitFactor", label: "Profit Factor", type: "number", mode: "positive" },
-    { key: "expectancy", label: "Expectancy", type: "number", mode: "positive" }
+    { key: "totalReturn", label: METRIC_LABELS.totalReturn, type: "percent", mode: "positive" },
+    { key: "cagr", label: METRIC_LABELS.cagr, type: "percent", mode: "positive" },
+    { key: "sharpe", label: METRIC_LABELS.sharpe, type: "number", mode: "positive" },
+    { key: "mdd", label: METRIC_LABELS.mdd, type: "percent", mode: "absolute" },
+    { key: "calmar", label: METRIC_LABELS.calmar, type: "number", mode: "positive" },
+    { key: "profitFactor", label: METRIC_LABELS.profitFactor, type: "number", mode: "positive" },
+    { key: "expectancy", label: METRIC_LABELS.expectancy, type: "number", mode: "positive" }
   ];
 
   dom.periodCompareChart.innerHTML = chartMetrics.map(function (chartMetric) {
@@ -539,6 +648,8 @@ function renderDetailTable(item) {
     return ""
       + '<tr>'
       + '<td><strong>' + escapeHtml(period) + '</strong></td>'
+      + '<td>' + escapeHtml(formatDate(p.firstDate)) + '</td>'
+      + '<td>' + escapeHtml(formatDate(p.lastDate)) + '</td>'
       + '<td class="' + numberClass(p.totalReturn) + '">' + formatPercent(p.totalReturn) + '</td>'
       + '<td class="' + numberClass(p.cagr) + '">' + formatPercent(p.cagr) + '</td>'
       + '<td class="' + numberClass(p.sharpe) + '">' + formatNumber(p.sharpe) + '</td>'
@@ -561,7 +672,9 @@ function gradeBadge(grade) {
   const normalized = normalizeGrade(grade);
   let cls = "grade-unknown";
 
-  if (normalized === "Good") {
+  if (normalized === "Best") {
+    cls = "grade-best";
+  } else if (normalized === "Good") {
     cls = "grade-good";
   } else if (normalized === "Normal") {
     cls = "grade-normal";
@@ -634,6 +747,14 @@ function cleanText(value) {
   return String(value == null ? "" : value).trim();
 }
 
+function normalizeDate(value) {
+  return cleanText(value);
+}
+
+function formatDate(value) {
+  return cleanText(value) || "-";
+}
+
 function normalizePeriod(value) {
   const v = cleanText(value).toUpperCase();
 
@@ -648,6 +769,7 @@ function normalizePeriod(value) {
 function normalizeGrade(value) {
   const v = cleanText(value).toLowerCase();
 
+  if (v === "best") return "Best";
   if (v === "good") return "Good";
   if (v === "normal") return "Normal";
   if (v === "bad") return "Bad";
@@ -764,20 +886,20 @@ function showError(error) {
     dom.statusBox.classList.add("error");
 
     dom.statusBox.innerHTML =
-      '<strong>Data loading or rendering error</strong><br>'
+      '<strong>데이터 로딩 또는 렌더링 오류 (Data loading or rendering error)</strong><br>'
       + escapeHtml(error.message).replace(/\n/g, "<br>")
       + '<br><br>'
-      + 'Check these items:'
-      + '<br>1. index.html, style.css, app.js, and data.json are in the same folder'
-      + '<br>2. data.json has at least one row with period equal to 1Y'
-      + '<br>3. If the address starts with file://, run the local HTTP server';
+      + '확인사항 (Check these items):'
+      + '<br>1. index.html, style.css, app.js, data.json이 같은 폴더에 있는지 확인'
+      + '<br>2. data.json에 period 값이 1Y인 row가 최소 1개 이상 있는지 확인'
+      + '<br>3. 주소가 file:// 로 시작하면 로컬 HTTP 서버로 실행';
   }
 
   if (dom.tableBody) {
     dom.tableBody.innerHTML =
       '<tr>'
-      + '<td colspan="13" style="text-align:center; padding:32px; color:#fecaca;">'
-      + 'Failed to load data'
+      + '<td colspan="15" style="text-align:center; padding:32px; color:#fecaca;">'
+      + '데이터 로딩 실패 (Failed to load data)'
       + '</td>'
       + '</tr>';
   }
