@@ -1,137 +1,165 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ETF Quant Ranking Dashboard</title>
+  <title>ETF Strategy Dashboard</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <header class="app-header">
-    <div>
-      <p class="eyebrow">ETF Quant Dashboard</p>
-      <h1>ETF 순위 & 전일자 시그널</h1>
-      <p class="subtitle">
-        전략 적합도 점수와 전일자 기준 BUY / HOLD / SELL / WAIT 신호를 함께 확인합니다.
-      </p>
-    </div>
-    <div class="header-card">
-      <span class="label">Signal Date</span>
-      <strong id="signalDate">-</strong>
-      <small id="generatedAt">data.json 기준</small>
-    </div>
-  </header>
-
-  <main class="layout">
-    <section class="panel ranking-panel">
-      <div class="panel-head">
-        <div>
-          <h2>ETF 최종점수 랭킹</h2>
-          <p>블록 점수와 최종점수 기준으로 1차 후보를 확인합니다.</p>
-        </div>
-        <div class="toolbar">
-          <input id="searchInput" type="search" placeholder="Ticker 검색" />
-          <select id="decisionFilter">
-            <option value="ALL">전체 판단</option>
-            <option value="BUY">BUY</option>
-            <option value="HOLD">HOLD</option>
-            <option value="HOLD_CAUTION">HOLD_CAUTION</option>
-            <option value="SELL">SELL</option>
-            <option value="WAIT">WAIT</option>
-          </select>
-          <select id="scoreFilter">
-            <option value="ALL">전체 점수</option>
-            <option value="FIRST">1차 필터 통과</option>
-            <option value="70">70점 이상</option>
-            <option value="60">60점 이상</option>
-          </select>
-        </div>
+  <div class="app">
+    <header class="app-header">
+      <div>
+        <h1>ETF Strategy Dashboard</h1>
+        <p>ETF performance by strategy, grade, signal, and period.</p>
       </div>
+      <div class="header-meta">
+        <span>Data Source</span>
+        <b>data.json</b>
+      </div>
+    </header>
 
-      <div id="summaryCards" class="summary-grid"></div>
+    <section id="statusBox" class="status-box hidden"></section>
+    <nav id="strategyTabs" class="strategy-tabs" aria-label="Strategy selector"></nav>
 
-      <div class="table-wrap">
+    <section class="toolbar">
+      <input id="searchInput" type="text" placeholder="Search ticker or category" />
+      <select id="gradeFilter" aria-label="Grade filter">
+        <option value="ALL">All Grade</option>
+        <option value="Good">Good</option>
+        <option value="Normal">Normal</option>
+        <option value="Bad">Bad</option>
+      </select>
+      <select id="signalFilter" aria-label="Signal filter">
+        <option value="ALL">All Signal</option>
+        <option value="BUY">BUY</option>
+        <option value="HOLD">HOLD</option>
+        <option value="SELL">SELL</option>
+      </select>
+      <select id="sortSelect" aria-label="Sort order">
+        <option value="cagr_desc">Highest CAGR</option>
+        <option value="return_desc">Highest Return</option>
+        <option value="sharpe_desc">Highest Sharpe</option>
+        <option value="mdd_desc">Most Stable MDD</option>
+        <option value="calmar_desc">Highest Calmar</option>
+        <option value="pf_desc">Highest Profit Factor</option>
+      </select>
+    </section>
+
+    <section id="kpiCards" class="kpi-grid"></section>
+
+    <section class="insight-grid">
+      <article class="panel">
+        <div class="panel-title">
+          <div>
+            <h2>ETF Universe</h2>
+            <p>ETF count and grade mix for the selected strategy.</p>
+          </div>
+        </div>
+        <div class="count-grid">
+          <div class="count-card total"><span>Total ETF</span> <strong id="totalEtfCount">0</strong></div>
+          <div class="count-card good"><span>Good</span> <strong id="goodCount">0</strong></div>
+          <div class="count-card normal"><span>Normal</span> <strong id="normalCount">0</strong></div>
+          <div class="count-card bad"><span>Bad</span> <strong id="badCount">0</strong></div>
+        </div>
+        <div id="gradeRatio" class="ratio-bar"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-title">
+          <div>
+            <h2>Signal Distribution</h2>
+            <p>BUY / HOLD / SELL mix based on the latest 1Y rows.</p>
+          </div>
+        </div>
+        <div class="count-grid three">
+          <div class="count-card buy"><span>BUY</span> <strong id="buyCount">0</strong></div>
+          <div class="count-card hold"><span>HOLD</span> <strong id="holdCount">0</strong></div>
+          <div class="count-card sell"><span>SELL</span> <strong id="sellCount">0</strong></div>
+        </div>
+        <div id="signalRatio" class="ratio-bar"></div>
+      </article>
+    </section>
+
+    <main class="table-panel expanded">
+      <div class="table-title">
+        <div>
+          <h2 id="tableTitle">Latest 1Y Performance</h2>
+          <p>Click a row to compare ALL, 5Y, 3Y, and 1Y performance details.</p>
+        </div>
+        <span class="period-chip">1Y Basis</span>
+      </div>
+      <div class="table-wrap main-table-wrap">
         <table>
           <thead>
             <tr>
-              <th data-sort="final_rank">순위</th>
-              <th data-sort="Ticker">Ticker</th>
-              <th data-sort="final_score">최종점수</th>
-              <th data-sort="momentum_block_score">모멘텀</th>
-              <th data-sort="trend_block_score">추세</th>
-              <th data-sort="volatility_block_score">변동성</th>
-              <th data-sort="liquidity_block_score">유동성</th>
-              <th data-sort="dividend_block_score">배당</th>
-              <th data-sort="risk_recovery_block_score">리스크/회복</th>
-              <th data-sort="final_decision">신호</th>
+              <th>Ticker</th>
+              <th>Category</th>
+              <th>Grade</th>
+              <th>Signal</th>
+              <th>Total Return</th>
+              <th>CAGR</th>
+              <th>Sharpe</th>
+              <th>MDD</th>
+              <th>Calmar</th>
+              <th>Exposure</th>
+              <th>Trades</th>
+              <th>Profit Factor</th>
+              <th>Expectancy</th>
             </tr>
           </thead>
-          <tbody id="rankingBody"></tbody>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <aside id="detailDrawer" class="drawer" aria-label="ETF detail panel">
+    <button id="closeDrawer" class="drawer-close" type="button" aria-label="Close detail panel">&times;</button>
+    <div class="drawer-header">
+      <div>
+        <h2 id="detailTicker">-</h2>
+        <p id="detailSub">-</p>
+      </div>
+      <div id="detailBadges" class="detail-badges"></div>
+    </div>
+
+    <section class="drawer-section">
+      <h3>Period Summary</h3>
+      <div id="periodSummaryCards" class="period-summary-grid"></div>
+    </section>
+
+    <section class="drawer-section">
+      <h3>Period Comparison</h3>
+      <p class="drawer-desc">Compare key metrics across ALL, 5Y, 3Y, and 1Y periods.</p>
+      <div id="periodCompareChart" class="period-compare-chart"></div>
+    </section>
+
+    <section class="drawer-section">
+      <h3>Period Detail Table</h3>
+      <div class="table-wrap detail-table-wrap">
+        <table class="detail-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>Total Return</th>
+              <th>CAGR</th>
+              <th>Sharpe</th>
+              <th>MDD</th>
+              <th>Calmar</th>
+              <th>Exposure</th>
+              <th>Trades</th>
+              <th>PF</th>
+              <th>Expectancy</th>
+            </tr>
+          </thead>
+          <tbody id="detailBody"></tbody>
         </table>
       </div>
     </section>
+  </aside>
 
-    <aside class="panel detail-panel">
-      <div id="detailEmpty" class="empty-state">
-        <h2>ETF를 선택하세요</h2>
-        <p>왼쪽 랭킹에서 ETF를 클릭하면 지표별 점수와 전일자 시그널을 확인할 수 있습니다.</p>
-      </div>
-
-      <div id="detailContent" class="detail-content hidden">
-        <div class="detail-title-row">
-          <div>
-            <p class="eyebrow">ETF Detail</p>
-            <h2 id="detailTicker">-</h2>
-          </div>
-          <span id="detailDecision" class="decision-badge">-</span>
-        </div>
-
-        <div class="score-hero">
-          <div>
-            <span class="label">Final Score</span>
-            <strong id="detailFinalScore">-</strong>
-          </div>
-          <div>
-            <span class="label">Rank</span>
-            <strong id="detailRank">-</strong>
-          </div>
-          <div>
-            <span class="label">Reliability</span>
-            <strong id="detailReliability">-</strong>
-          </div>
-        </div>
-
-        <section>
-          <h3>블록 점수</h3>
-          <div id="blockScores" class="score-list"></div>
-        </section>
-
-        <section>
-          <h3>블록별 지표 점수</h3>
-          <div id="indicatorScores" class="indicator-groups"></div>
-        </section>
-
-        <section>
-          <h3>전일자 기준 신호</h3>
-          <div id="signalSummary" class="signal-grid"></div>
-          <div id="signalTable" class="mini-table"></div>
-        </section>
-
-        <section>
-          <h3>판단 사유</h3>
-          <p id="decisionReason" class="reason-box">-</p>
-        </section>
-      </div>
-    </aside>
-  </main>
-
-  <footer>
-    <p>
-      이 대시보드는 과거 데이터 기반 전략 적합도와 전일자 시그널을 시각화합니다.
-      투자 권유가 아니며, 실거래 전 데이터 품질·거래비용·슬리피지·룩어헤드 여부를 반드시 검증해야 합니다.
-    </p>
-  </footer>
-
+  <div id="overlay" class="overlay"></div>
   <script src="./app.js"></script>
 </body>
 </html>
