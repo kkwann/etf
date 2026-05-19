@@ -319,14 +319,6 @@ select:focus {
   letter-spacing: 0;
 }
 
-.kpi-card small {
-  display: block;
-  margin-top: 6px;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.35;
-}
-
 .insight-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

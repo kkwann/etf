@@ -1,6 +1,7 @@
 "use strict";
 
 const PERIOD_ORDER = ["ALL", "5Y", "3Y", "1Y"];
+const MAIN_PERIOD = "ALL";
 const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
 const THEME_STORAGE_KEY = "etfDashboardTheme";
 const METRIC_LABELS = {
@@ -269,12 +270,12 @@ function validateRows(rows) {
     throw new Error("필수 컬럼 문제:\n" + missing.slice(0, 15).join("\n"));
   }
 
-  const hasOneYear = rows.some(function (row) {
-    return row.period === "1Y";
+  const hasMainPeriod = rows.some(function (row) {
+    return row.period === MAIN_PERIOD;
   });
 
-  if (!hasOneYear) {
-    throw new Error("period 값이 1Y인 row가 최소 1개 필요합니다.");
+  if (!hasMainPeriod) {
+    throw new Error("첫 화면 표시를 위해 period 값이 total 또는 ALL인 row가 최소 1개 필요합니다.");
   }
 }
 
@@ -333,7 +334,7 @@ function renderStrategyTabs(strategies) {
 function renderDashboard() {
   const data = getVisibleData();
 
-  dom.tableTitle.textContent = "전략 " + activeStrategy + " - 최근 1년 성과 (Latest 1Y Performance)";
+  dom.tableTitle.textContent = "전략 " + activeStrategy + " - 전체 기간 성과 (Total Performance)";
 
   renderKpiCards(data);
   renderGradeDistribution(data);
@@ -349,23 +350,23 @@ function getVisibleData() {
 
   const data = groupedItems
     .filter(function (item) {
-      return item.strategy === activeStrategy && item.periods["1Y"];
+      return item.strategy === activeStrategy && item.periods[MAIN_PERIOD];
     })
     .filter(function (item) {
-      const oneY = item.periods["1Y"];
+      const mainPeriod = item.periods[MAIN_PERIOD];
       const matchesKeyword =
         !keyword ||
         item.ticker.toLowerCase().indexOf(keyword) >= 0 ||
         item.category.toLowerCase().indexOf(keyword) >= 0;
-      const matchesGrade = grade === "ALL" || oneY.grade === grade;
-      const matchesSignal = signal === "ALL" || oneY.signal === signal;
+      const matchesGrade = grade === "ALL" || mainPeriod.grade === grade;
+      const matchesSignal = signal === "ALL" || mainPeriod.signal === signal;
 
       return matchesKeyword && matchesGrade && matchesSignal;
     });
 
   data.sort(function (a, b) {
-    const a1 = a.periods["1Y"];
-    const b1 = b.periods["1Y"];
+    const a1 = a.periods[MAIN_PERIOD];
+    const b1 = b.periods[MAIN_PERIOD];
 
     if (sort === "return_desc") return b1.totalReturn - a1.totalReturn;
     if (sort === "sharpe_desc") return b1.sharpe - a1.sharpe;
@@ -397,7 +398,6 @@ function renderKpiCards(data) {
       + '<div class="kpi-card">'
       + '<span>' + escapeHtml(item.label) + '</span>'
       + '<strong class="' + cls + '">' + formatByType(item.value, item.type) + '</strong>'
-      + '<small>' + escapeHtml(item.note) + '</small>'
       + '</div>';
   }).join("");
 }
@@ -408,7 +408,7 @@ function metric(label, type, note, data, key) {
     type: type,
     note: note,
     value: average(data, function (item) {
-      return item.periods["1Y"][key];
+      return item.periods[MAIN_PERIOD][key];
     })
   };
 }
@@ -419,7 +419,7 @@ function renderGradeDistribution(data) {
 
   GRADE_ORDER.forEach(function (grade) {
     counts[grade] = countBy(data, function (item) {
-      return item.periods["1Y"].grade === grade;
+      return item.periods[MAIN_PERIOD].grade === grade;
     });
   });
 
@@ -438,13 +438,13 @@ function renderGradeDistribution(data) {
 
 function renderSignalDistribution(data) {
   const buy = countBy(data, function (item) {
-    return item.periods["1Y"].signal === "BUY";
+    return item.periods[MAIN_PERIOD].signal === "BUY";
   });
   const hold = countBy(data, function (item) {
-    return item.periods["1Y"].signal === "HOLD";
+    return item.periods[MAIN_PERIOD].signal === "HOLD";
   });
   const sell = countBy(data, function (item) {
-    return item.periods["1Y"].signal === "SELL";
+    return item.periods[MAIN_PERIOD].signal === "SELL";
   });
 
   dom.buyCount.textContent = String(buy);
@@ -472,7 +472,7 @@ function renderTable(data) {
   dom.tableBody.innerHTML = "";
 
   data.forEach(function (item) {
-    const p = item.periods["1Y"];
+    const p = item.periods[MAIN_PERIOD];
     const tr = document.createElement("tr");
 
     tr.innerHTML = ""
@@ -512,15 +512,15 @@ function metricCell(valueForBar, type, max, displayValue) {
 }
 
 function openDrawer(item) {
-  const oneY = item.periods["1Y"];
+  const mainPeriod = item.periods[MAIN_PERIOD];
 
-  if (!oneY) {
+  if (!mainPeriod) {
     return;
   }
 
   dom.detailTicker.textContent = item.ticker;
   dom.detailSub.textContent = item.category + " - Strategy " + item.strategy;
-  dom.detailBadges.innerHTML = gradeBadge(oneY.grade) + signalBadge(oneY.signal);
+  dom.detailBadges.innerHTML = gradeBadge(mainPeriod.grade) + signalBadge(mainPeriod.signal);
 
   renderPeriodSummaryCards(item);
   renderPeriodCompareChart(item);
@@ -891,7 +891,7 @@ function showError(error) {
       + '<br><br>'
       + '확인사항 (Check these items):'
       + '<br>1. index.html, style.css, app.js, data.json이 같은 폴더에 있는지 확인'
-      + '<br>2. data.json에 period 값이 1Y인 row가 최소 1개 이상 있는지 확인'
+      + '<br>2. data.json에 period 값이 total 또는 ALL인 row가 최소 1개 이상 있는지 확인'
       + '<br>3. 주소가 file:// 로 시작하면 로컬 HTTP 서버로 실행';
   }
 
