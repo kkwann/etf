@@ -4,6 +4,9 @@ const PERIOD_ORDER = ["ALL", "5Y", "3Y", "1Y"];
 const MAIN_PERIOD = "ALL";
 const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
 const THEME_STORAGE_KEY = "etfDashboardTheme";
+const TEXT_SORT_KEYS = ["ticker", "category"];
+const DATE_SORT_KEYS = ["firstDate", "lastDate"];
+const ASC_DEFAULT_SORT_KEYS = ["ticker", "category", "firstDate", "lastDate"];
 const METRIC_LABELS = {
   totalReturn: "총수익률 (Total Return)",
   cagr: "연복리수익률 (CAGR)",
@@ -21,6 +24,10 @@ const METRIC_LABELS = {
 let rawRows = [];
 let groupedItems = [];
 let activeStrategy = null;
+let tableSort = {
+  key: "cagr",
+  direction: "desc"
+};
 
 const dom = {};
 
@@ -64,6 +71,7 @@ function cacheDom() {
     "themeToggleLabel",
     "dataSourceName",
     "lastUpdated",
+    "mainTable",
     "strategyTabs",
     "searchInput",
     "gradeFilter",
@@ -108,16 +116,59 @@ function bindEvents() {
   dom.searchInput.addEventListener("input", renderDashboard);
   dom.gradeFilter.addEventListener("change", renderDashboard);
   dom.signalFilter.addEventListener("change", renderDashboard);
-  dom.sortSelect.addEventListener("change", renderDashboard);
+  dom.sortSelect.addEventListener("change", function () {
+    tableSort = sortFromSelectValue(dom.sortSelect.value);
+    renderDashboard();
+  });
   dom.closeDrawer.addEventListener("click", closeDrawer);
   dom.overlay.addEventListener("click", closeDrawer);
   dom.themeToggle.addEventListener("click", toggleTheme);
+  bindHeaderSortEvents();
 
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
       closeDrawer();
     }
   });
+}
+
+function bindHeaderSortEvents() {
+  dom.mainTable.addEventListener("click", handleSortHeaderEvent);
+  dom.mainTable.addEventListener("keydown", handleSortHeaderEvent);
+}
+
+function handleSortHeaderEvent(event) {
+  const th = event.target.closest("th[data-sort-key]");
+
+  if (!th || !dom.mainTable.contains(th)) {
+    return;
+  }
+
+  if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") {
+    return;
+  }
+
+  event.preventDefault();
+  event.stopPropagation();
+  applyHeaderSort(th.dataset.sortKey);
+}
+
+function applyHeaderSort(key) {
+  if (!key) {
+    return;
+  }
+
+  if (tableSort.key === key) {
+    tableSort.direction = tableSort.direction === "asc" ? "desc" : "asc";
+  } else {
+    tableSort = {
+      key: key,
+      direction: defaultSortDirection(key)
+    };
+  }
+
+  syncSortSelect();
+  renderDashboard();
 }
 
 function initializeTheme() {
@@ -335,6 +386,7 @@ function renderDashboard() {
   const data = getVisibleData();
 
   dom.tableTitle.textContent = "전략 " + activeStrategy + " - 전체 기간 성과 (Total Performance)";
+  updateSortHeaders();
 
   renderKpiCards(data);
   renderGradeDistribution(data);
@@ -346,7 +398,6 @@ function getVisibleData() {
   const keyword = dom.searchInput.value.trim().toLowerCase();
   const grade = dom.gradeFilter.value;
   const signal = dom.signalFilter.value;
-  const sort = dom.sortSelect.value;
 
   const data = groupedItems
     .filter(function (item) {
@@ -364,20 +415,127 @@ function getVisibleData() {
       return matchesKeyword && matchesGrade && matchesSignal;
     });
 
-  data.sort(function (a, b) {
-    const a1 = a.periods[MAIN_PERIOD];
-    const b1 = b.periods[MAIN_PERIOD];
-
-    if (sort === "return_desc") return b1.totalReturn - a1.totalReturn;
-    if (sort === "sharpe_desc") return b1.sharpe - a1.sharpe;
-    if (sort === "mdd_desc") return b1.mdd - a1.mdd;
-    if (sort === "calmar_desc") return b1.calmar - a1.calmar;
-    if (sort === "pf_desc") return b1.profitFactor - a1.profitFactor;
-
-    return b1.cagr - a1.cagr;
-  });
+  data.sort(compareVisibleItems);
 
   return data;
+}
+
+function compareVisibleItems(a, b) {
+  const direction = tableSort.direction === "asc" ? 1 : -1;
+  const result = compareSortValues(
+    getSortValue(a, tableSort.key),
+    getSortValue(b, tableSort.key),
+    tableSort.key
+  );
+
+  if (result !== 0) {
+    return result * direction;
+  }
+
+  return itemText(a.ticker).localeCompare(itemText(b.ticker), undefined, {
+    numeric: true,
+    sensitivity: "base"
+  });
+}
+
+function getSortValue(item, key) {
+  const row = item.periods[MAIN_PERIOD] || {};
+
+  if (key === "ticker") return item.ticker;
+  if (key === "category") return item.category;
+  if (key === "grade") return gradeRank(row.grade);
+  if (key === "signal") return signalRank(row.signal);
+
+  return row[key];
+}
+
+function compareSortValues(a, b, key) {
+  if (DATE_SORT_KEYS.indexOf(key) >= 0) {
+    return dateValue(a) - dateValue(b);
+  }
+
+  if (TEXT_SORT_KEYS.indexOf(key) >= 0) {
+    return itemText(a).localeCompare(itemText(b), undefined, {
+      numeric: true,
+      sensitivity: "base"
+    });
+  }
+
+  return toNumber(a) - toNumber(b);
+}
+
+function itemText(value) {
+  return String(value == null ? "" : value);
+}
+
+function dateValue(value) {
+  const time = Date.parse(cleanText(value));
+  return Number.isFinite(time) ? time : 0;
+}
+
+function gradeRank(value) {
+  const normalized = normalizeGrade(value);
+  const index = GRADE_ORDER.indexOf(normalized);
+  return index >= 0 ? GRADE_ORDER.length - index : -1;
+}
+
+function signalRank(value) {
+  const normalized = normalizeSignal(value);
+
+  if (normalized === "BUY") return 3;
+  if (normalized === "HOLD") return 2;
+  if (normalized === "SELL") return 1;
+
+  return 0;
+}
+
+function defaultSortDirection(key) {
+  return ASC_DEFAULT_SORT_KEYS.indexOf(key) >= 0 ? "asc" : "desc";
+}
+
+function sortFromSelectValue(value) {
+  if (value === "return_desc") return { key: "totalReturn", direction: "desc" };
+  if (value === "sharpe_desc") return { key: "sharpe", direction: "desc" };
+  if (value === "mdd_desc") return { key: "mdd", direction: "desc" };
+  if (value === "calmar_desc") return { key: "calmar", direction: "desc" };
+  if (value === "pf_desc") return { key: "profitFactor", direction: "desc" };
+
+  return { key: "cagr", direction: "desc" };
+}
+
+function syncSortSelect() {
+  const value = sortSelectValue(tableSort);
+
+  if (value) {
+    dom.sortSelect.value = value;
+  }
+}
+
+function sortSelectValue(sortState) {
+  if (sortState.direction !== "desc") return "";
+  if (sortState.key === "totalReturn") return "return_desc";
+  if (sortState.key === "sharpe") return "sharpe_desc";
+  if (sortState.key === "mdd") return "mdd_desc";
+  if (sortState.key === "calmar") return "calmar_desc";
+  if (sortState.key === "profitFactor") return "pf_desc";
+  if (sortState.key === "cagr") return "cagr_desc";
+
+  return "";
+}
+
+function updateSortHeaders() {
+  document.querySelectorAll("#mainTable th[data-sort-key]").forEach(function (th) {
+    const isActive = th.dataset.sortKey === tableSort.key;
+    th.classList.toggle("sorted", isActive);
+    th.classList.toggle("sort-asc", isActive && tableSort.direction === "asc");
+    th.classList.toggle("sort-desc", isActive && tableSort.direction === "desc");
+    th.setAttribute(
+      "aria-sort",
+      isActive
+        ? (tableSort.direction === "asc" ? "ascending" : "descending")
+        : "none"
+    );
+  });
 }
 
 function renderKpiCards(data) {

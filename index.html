@@ -101,24 +101,24 @@
         <span class="period-chip">전체 기간 기준 (Total Basis)</span>
       </div>
       <div class="table-wrap main-table-wrap">
-        <table>
+        <table id="mainTable">
           <thead>
             <tr>
-              <th>티커<br><span>Ticker</span></th>
-              <th>카테고리<br><span>Category</span></th>
-              <th>등급<br><span>Grade</span></th>
-              <th>신호<br><span>Signal</span></th>
-              <th>거래시작일<br><span>first_date</span></th>
-              <th>거래종료일<br><span>last_date</span></th>
-              <th>총수익률<br><span>Total Return</span></th>
-              <th>연복리수익률<br><span>CAGR</span></th>
-              <th>샤프지수<br><span>Sharpe</span></th>
-              <th>최대낙폭<br><span>MDD</span></th>
-              <th>칼마지수<br><span>Calmar</span></th>
-              <th>투자노출도<br><span>Exposure</span></th>
-              <th>거래수<br><span>Trades</span></th>
-              <th>수익팩터<br><span>Profit Factor</span></th>
-              <th>기대값<br><span>Expectancy</span></th>
+              <th data-sort-key="ticker" tabindex="0">티커<br><span>Ticker</span></th>
+              <th data-sort-key="category" tabindex="0">카테고리<br><span>Category</span></th>
+              <th data-sort-key="grade" tabindex="0">등급<br><span>Grade</span></th>
+              <th data-sort-key="signal" tabindex="0">신호<br><span>Signal</span></th>
+              <th data-sort-key="firstDate" tabindex="0">거래시작일<br><span>first_date</span></th>
+              <th data-sort-key="lastDate" tabindex="0">거래종료일<br><span>last_date</span></th>
+              <th data-sort-key="totalReturn" tabindex="0">총수익률<br><span>Total Return</span></th>
+              <th data-sort-key="cagr" tabindex="0">연복리수익률<br><span>CAGR</span></th>
+              <th data-sort-key="sharpe" tabindex="0">샤프지수<br><span>Sharpe</span></th>
+              <th data-sort-key="mdd" tabindex="0">최대낙폭<br><span>MDD</span></th>
+              <th data-sort-key="calmar" tabindex="0">칼마지수<br><span>Calmar</span></th>
+              <th data-sort-key="exposure" tabindex="0">투자노출도<br><span>Exposure</span></th>
+              <th data-sort-key="tradeCount" tabindex="0">거래수<br><span>Trades</span></th>
+              <th data-sort-key="profitFactor" tabindex="0">수익팩터<br><span>Profit Factor</span></th>
+              <th data-sort-key="expectancy" tabindex="0">기대값<br><span>Expectancy</span></th>
             </tr>
           </thead>
           <tbody id="tableBody"></tbody>
@@ -175,6 +175,6 @@
   </aside>
 
   <div id="overlay" class="overlay"></div>
-  <script src="./app.js"></script>
+  <script src="./app.js?v=20260520-sort"></script>
 </body>
 </html>
