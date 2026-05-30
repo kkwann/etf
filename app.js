@@ -1,33 +1,38 @@
 "use strict";
 
-const PERIOD_ORDER = ["ALL", "5Y", "3Y", "1Y"];
-const MAIN_PERIOD = "ALL";
-const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
 const THEME_STORAGE_KEY = "etfDashboardTheme";
-const TEXT_SORT_KEYS = ["ticker", "category"];
-const DATE_SORT_KEYS = ["firstDate", "lastDate"];
-const ASC_DEFAULT_SORT_KEYS = ["ticker", "category", "firstDate", "lastDate"];
-const METRIC_LABELS = {
-  totalReturn: "총수익률 (Total Return)",
-  cagr: "연복리수익률 (CAGR)",
-  mdd: "최대낙폭 (MDD)",
-  sharpe: "샤프지수 (Sharpe)",
-  calmar: "칼마지수 (Calmar)",
-  exposure: "투자노출도 (Exposure)",
-  tradeCount: "거래수 (Trades)",
-  profitFactor: "수익팩터 (Profit Factor)",
-  expectancy: "기대값 (Expectancy)",
-  firstDate: "거래시작일 (first_date)",
-  lastDate: "거래종료일 (last_date)"
+const ALL_FILTER = "__ALL__";
+const MAIN_PERIOD = "10y";
+const PERIOD_DETAIL_ORDER = ["1y", "3y", "5y", "10y"];
+const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
+const PREFERRED_DEFAULT_PERIODS = [MAIN_PERIOD, "total", "all", "5y", "3y", "1y"];
+const PERCENT_COLUMNS = new Set(["Total Return", "CAGR", "MDD"]);
+const KNOWN_NUMERIC_COLUMNS = new Set(["Total Return", "CAGR", "Sharpe", "MDD", "Calmar"]);
+const DETAIL_METRIC_COLUMNS = ["Total Return", "CAGR", "Sharpe", "MDD", "Calmar"];
+const DATE_COLUMNS = new Set(["first_date", "last_date"]);
+const TEXT_DEFAULT_ASC_COLUMNS = new Set(["Ticker", "Category", "first_date", "last_date"]);
+const COLUMN_LABELS = {
+  Ticker: "티커",
+  Category: "카테고리",
+  period: "기간",
+  first_date: "거래시작일",
+  last_date: "거래종료일",
+  "Total Return": "총수익률",
+  CAGR: "연평균수익률",
+  Sharpe: "샤프지수",
+  MDD: "최대낙폭",
+  Calmar: "칼마지수",
+  Grade: "등급"
 };
 
 let rawRows = [];
-let groupedItems = [];
-let activeStrategy = null;
+let columns = [];
+let visibleRows = [];
 let tableSort = {
-  key: "cagr",
-  direction: "desc"
+  key: "",
+  direction: "asc"
 };
+let defaultPeriod = ALL_FILTER;
 
 const dom = {};
 
@@ -41,21 +46,13 @@ async function init() {
     showStatus("Yahoo Finance 데이터를 불러오는 중입니다...");
 
     const dataResult = await loadJson();
-    const json = dataResult.json;
+    rawRows = normalizeInput(dataResult.json);
+    columns = inferColumns(rawRows);
+    validateData(rawRows, columns);
 
-    rawRows = normalizeInput(json);
-    validateRows(rawRows);
-    groupedItems = buildGroupedItems(rawRows);
     updateDataSourceMeta(dataResult.lastModified);
-
-    const strategies = getStrategies(groupedItems);
-    if (strategies.length === 0) {
-      throw new Error("No strategy data found.");
-    }
-
-    activeStrategy = strategies[0];
-
-    renderStrategyTabs(strategies);
+    setupControls();
+    renderTableHead();
     renderDashboard();
     hideStatus();
   } catch (error) {
@@ -71,24 +68,23 @@ function cacheDom() {
     "themeToggleLabel",
     "dataSourceName",
     "lastUpdated",
-    "mainTable",
-    "strategyTabs",
     "searchInput",
+    "periodFilter",
     "gradeFilter",
-    "signalFilter",
     "sortSelect",
+    "resetButton",
     "kpiCards",
-    "totalEtfCount",
-    "bestCount",
-    "goodCount",
-    "normalCount",
-    "badCount",
+    "gradeSummaryText",
+    "gradeCounts",
     "gradeRatio",
-    "buyCount",
-    "holdCount",
-    "sellCount",
-    "signalRatio",
+    "periodSummaryText",
+    "periodCounts",
+    "periodRatio",
     "tableTitle",
+    "tableSubtitle",
+    "rowCount",
+    "mainTable",
+    "tableHead",
     "tableBody",
     "detailDrawer",
     "closeDrawer",
@@ -97,8 +93,7 @@ function cacheDom() {
     "detailSub",
     "detailBadges",
     "periodSummaryCards",
-    "periodCompareChart",
-    "detailBody"
+    "periodMetricBars"
   ].forEach(function (id) {
     dom[id] = document.getElementById(id);
   });
@@ -108,67 +103,43 @@ function cacheDom() {
   });
 
   if (missingIds.length > 0) {
-    throw new Error("Missing required element(s) in index.html: " + missingIds.join(", "));
+    throw new Error("index.html에서 필요한 요소를 찾을 수 없습니다: " + missingIds.join(", "));
   }
 }
 
 function bindEvents() {
-  dom.searchInput.addEventListener("input", renderDashboard);
-  dom.gradeFilter.addEventListener("change", renderDashboard);
-  dom.signalFilter.addEventListener("change", renderDashboard);
-  dom.sortSelect.addEventListener("change", function () {
-    tableSort = sortFromSelectValue(dom.sortSelect.value);
+  dom.searchInput.addEventListener("input", function () {
     renderDashboard();
+    closeDrawer();
   });
+  dom.periodFilter.addEventListener("change", function () {
+    renderDashboard();
+    closeDrawer();
+  });
+  dom.gradeFilter.addEventListener("change", function () {
+    renderDashboard();
+    closeDrawer();
+  });
+  dom.sortSelect.addEventListener("change", function () {
+    const nextSort = parseSortValue(dom.sortSelect.value);
+
+    if (nextSort) {
+      tableSort = nextSort;
+      renderDashboard();
+    }
+  });
+  dom.resetButton.addEventListener("click", resetFilters);
+  dom.themeToggle.addEventListener("click", toggleTheme);
   dom.closeDrawer.addEventListener("click", closeDrawer);
   dom.overlay.addEventListener("click", closeDrawer);
-  dom.themeToggle.addEventListener("click", toggleTheme);
-  bindHeaderSortEvents();
+  dom.mainTable.addEventListener("click", handleSortHeaderEvent);
+  dom.mainTable.addEventListener("keydown", handleSortHeaderEvent);
 
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
       closeDrawer();
     }
   });
-}
-
-function bindHeaderSortEvents() {
-  dom.mainTable.addEventListener("click", handleSortHeaderEvent);
-  dom.mainTable.addEventListener("keydown", handleSortHeaderEvent);
-}
-
-function handleSortHeaderEvent(event) {
-  const th = event.target.closest("th[data-sort-key]");
-
-  if (!th || !dom.mainTable.contains(th)) {
-    return;
-  }
-
-  if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") {
-    return;
-  }
-
-  event.preventDefault();
-  event.stopPropagation();
-  applyHeaderSort(th.dataset.sortKey);
-}
-
-function applyHeaderSort(key) {
-  if (!key) {
-    return;
-  }
-
-  if (tableSort.key === key) {
-    tableSort.direction = tableSort.direction === "asc" ? "desc" : "asc";
-  } else {
-    tableSort = {
-      key: key,
-      direction: defaultSortDirection(key)
-    };
-  }
-
-  syncSortSelect();
-  renderDashboard();
 }
 
 function initializeTheme() {
@@ -199,7 +170,7 @@ function toggleTheme() {
   try {
     window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
   } catch (error) {
-    // Theme persistence is optional when storage is unavailable.
+    // Storage can be unavailable in private or restricted browser contexts.
   }
 }
 
@@ -209,11 +180,8 @@ function applyTheme(theme) {
 
   document.documentElement.dataset.theme = normalized;
   dom.themeToggle.setAttribute("aria-pressed", String(isDark));
-  dom.themeToggle.setAttribute(
-    "aria-label",
-    isDark ? "라이트 모드로 전환 (Switch to light mode)" : "다크 모드로 전환 (Switch to dark mode)"
-  );
-  dom.themeToggleLabel.textContent = isDark ? "라이트 (Light)" : "다크 (Dark)";
+  dom.themeToggle.setAttribute("aria-label", isDark ? "라이트 모드로 전환" : "다크 모드로 전환");
+  dom.themeToggleLabel.textContent = isDark ? "라이트" : "다크";
 }
 
 async function loadJson() {
@@ -231,8 +199,8 @@ async function loadJson() {
   } catch (error) {
     if (window.location.protocol === "file:") {
       throw new Error(
-        "브라우저가 data.json을 읽으려면 HTTP 서버로 실행해야 합니다. " +
-        "이 폴더에서 `python -m http.server 8000`을 실행한 뒤 http://localhost:8000 으로 접속하세요."
+        "브라우저 보안 정책 때문에 file:// 주소에서는 data.json을 읽을 수 없습니다. " +
+        "이 폴더에서 HTTP 서버로 실행한 뒤 접속해 주세요."
       );
     }
 
@@ -240,19 +208,61 @@ async function loadJson() {
   }
 }
 
+function normalizeInput(json) {
+  const rows = Array.isArray(json)
+    ? json
+    : json && Array.isArray(json.items)
+      ? json.items
+      : null;
+
+  if (!rows) {
+    throw new Error("data.json은 배열이거나 items 배열을 가진 객체여야 합니다.");
+  }
+
+  return rows.filter(function (row) {
+    return row && typeof row === "object" && !Array.isArray(row);
+  });
+}
+
+function inferColumns(rows) {
+  const seen = new Set();
+  const result = [];
+
+  rows.forEach(function (row) {
+    Object.keys(row).forEach(function (key) {
+      if (!seen.has(key)) {
+        seen.add(key);
+        result.push(key);
+      }
+    });
+  });
+
+  return result;
+}
+
+function validateData(rows, columnList) {
+  if (!Array.isArray(rows) || rows.length === 0) {
+    throw new Error("data.json에 표시할 행이 없습니다.");
+  }
+
+  if (!Array.isArray(columnList) || columnList.length === 0) {
+    throw new Error("data.json에서 컬럼을 찾을 수 없습니다.");
+  }
+}
+
 function updateDataSourceMeta(lastModified) {
   dom.dataSourceName.textContent = "Yahoo Finance";
-  dom.lastUpdated.textContent = "마지막 업데이트 (Last updated): " + formatLastUpdated(lastModified);
+  dom.lastUpdated.textContent = "마지막 업데이트: " + formatLastUpdated(lastModified);
 }
 
 function formatLastUpdated(lastModified) {
   const date = lastModified ? new Date(lastModified) : null;
 
   if (!date || !Number.isFinite(date.getTime())) {
-    return "알 수 없음 (Unknown)";
+    return "확인 불가";
   }
 
-  return new Intl.DateTimeFormat(undefined, {
+  return new Intl.DateTimeFormat("ko-KR", {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
@@ -260,614 +270,236 @@ function formatLastUpdated(lastModified) {
     minute: "2-digit",
     second: "2-digit",
     hour12: false,
+    timeZone: "Asia/Seoul",
     timeZoneName: "short"
   }).format(date);
 }
 
-function normalizeInput(json) {
-  if (Array.isArray(json)) {
-    return json.map(normalizeRow);
-  }
-
-  if (json && Array.isArray(json.items)) {
-    return json.items.map(normalizeRow);
-  }
-
-  throw new Error("data.json은 배열 또는 items 배열을 가진 객체여야 합니다.");
+function setupControls() {
+  setupPeriodFilter();
+  setupGradeFilter();
+  setupSortSelect();
 }
 
-function normalizeRow(row) {
-  const ticker = read(row, ["Ticker", "ticker", "TICKER"]);
-  const category = read(row, ["Category", "category", "CATEGORY"]);
-  const strategy = read(row, ["strategy", "Strategy", "STRATEGY"]);
-  const period = normalizePeriod(read(row, ["period", "Period", "PERIOD"]));
+function setupPeriodFilter() {
+  const periodValues = uniqueValues(rawRows, "period").sort(comparePeriodsForOptions);
+  defaultPeriod = chooseDefaultPeriod(periodValues);
 
-  return {
-    ticker: cleanText(ticker),
-    category: cleanText(category),
-    strategy: cleanText(strategy),
-    period: period,
-    firstDate: normalizeDate(read(row, ["first_date", "firstDate", "First Date", "first date"])),
-    lastDate: normalizeDate(read(row, ["last_date", "lastDate", "Last Date", "last date"])),
-    totalReturn: toNumber(read(row, ["Total Return", "totalReturn", "total_return", "Return", "return"])),
-    cagr: toNumber(read(row, ["CAGR", "cagr"])),
-    sharpe: toNumber(read(row, ["Sharpe", "sharpe"])),
-    mdd: toNumber(read(row, ["MDD", "mdd"])),
-    calmar: toNumber(read(row, ["Calmar", "calmar"])),
-    exposure: toNumber(read(row, ["exposure_ratio", "exposure", "Exposure", "exposureRatio"])),
-    tradeCount: toNumber(read(row, ["trade_count", "tradeCount", "Trades", "trades", "trade count"])),
-    profitFactor: toNumber(read(row, ["profit factor", "profit_factor", "profitFactor", "Profit Factor", "PF", "pf"])),
-    expectancy: toNumber(read(row, ["expectancy", "Expectancy", "exp", "Exp"])),
-    grade: normalizeGrade(read(row, ["Grade", "grade"])),
-    signal: normalizeSignal(read(row, ["signal", "Signal"]))
+  dom.periodFilter.innerHTML = "";
+  appendOption(dom.periodFilter, ALL_FILTER, "전체 기간");
+
+  periodValues.forEach(function (value) {
+    appendOption(dom.periodFilter, value, labelPeriod(value));
+  });
+
+  dom.periodFilter.value = defaultPeriod;
+}
+
+function setupGradeFilter() {
+  const gradeValues = uniqueValues(rawRows, "Grade");
+  const orderedGrades = GRADE_ORDER.filter(function (grade) {
+    return gradeValues.indexOf(grade) >= 0;
+  });
+  const extraGrades = gradeValues
+    .filter(function (grade) {
+      return orderedGrades.indexOf(grade) < 0;
+    })
+    .sort(textCompare);
+
+  dom.gradeFilter.innerHTML = "";
+  appendOption(dom.gradeFilter, ALL_FILTER, "전체 등급");
+
+  orderedGrades.concat(extraGrades).forEach(function (grade) {
+    appendOption(dom.gradeFilter, grade, grade);
+  });
+}
+
+function setupSortSelect() {
+  const defaultKey = columns.indexOf("CAGR") >= 0
+    ? "CAGR"
+    : columns.indexOf("Total Return") >= 0
+      ? "Total Return"
+      : columns[0];
+
+  tableSort = {
+    key: defaultKey,
+    direction: defaultSortDirection(defaultKey)
   };
-}
 
-function validateRows(rows) {
-  if (!Array.isArray(rows) || rows.length === 0) {
-    throw new Error("data.json에 데이터 row가 없습니다.");
-  }
+  dom.sortSelect.innerHTML = "";
 
-  const missing = [];
-
-  rows.forEach(function (row, index) {
-    if (!row.ticker) missing.push("row " + index + ": Ticker 누락");
-    if (!row.category) missing.push("row " + index + ": Category 누락");
-    if (!row.strategy) missing.push("row " + index + ": strategy 누락");
-    if (!row.period) missing.push("row " + index + ": period 누락");
-  });
-
-  if (missing.length > 0) {
-    throw new Error("필수 컬럼 문제:\n" + missing.slice(0, 15).join("\n"));
-  }
-
-  const hasMainPeriod = rows.some(function (row) {
-    return row.period === MAIN_PERIOD;
-  });
-
-  if (!hasMainPeriod) {
-    throw new Error("첫 화면 표시를 위해 period 값이 total 또는 ALL인 row가 최소 1개 필요합니다.");
-  }
-}
-
-function buildGroupedItems(rows) {
-  const map = new Map();
-
-  rows.forEach(function (row) {
-    const key = row.ticker + "__" + row.strategy;
-
-    if (!map.has(key)) {
-      map.set(key, {
-        key: key,
-        ticker: row.ticker,
-        category: row.category,
-        strategy: row.strategy,
-        periods: {}
-      });
-    }
-
-    map.get(key).periods[row.period] = row;
-  });
-
-  return Array.from(map.values());
-}
-
-function getStrategies(items) {
-  return Array.from(
-    new Set(
-      items.map(function (item) {
-        return item.strategy;
-      }).filter(Boolean)
-    )
-  ).sort();
-}
-
-function renderStrategyTabs(strategies) {
-  dom.strategyTabs.innerHTML = "";
-
-  strategies.forEach(function (strategy) {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "strategy-tab" + (strategy === activeStrategy ? " active" : "");
-    button.textContent = "Strategy " + strategy;
-
-    button.addEventListener("click", function () {
-      activeStrategy = strategy;
-      renderStrategyTabs(strategies);
-      renderDashboard();
-      closeDrawer();
+  columns.forEach(function (column) {
+    ["asc", "desc"].forEach(function (direction) {
+      appendOption(
+        dom.sortSelect,
+        buildSortValue(column, direction),
+        columnLabelText(column) + " " + sortDirectionLabel(column, direction)
+      );
     });
-
-    dom.strategyTabs.appendChild(button);
   });
+
+  syncSortSelect();
+}
+
+function appendOption(select, value, label) {
+  const option = document.createElement("option");
+  option.value = value;
+  option.textContent = label;
+  select.appendChild(option);
+}
+
+function renderTableHead() {
+  const tr = document.createElement("tr");
+
+  columns.forEach(function (column) {
+    const th = document.createElement("th");
+    const label = columnLabelParts(column);
+
+    th.dataset.sortKey = column;
+    th.tabIndex = 0;
+    th.innerHTML = escapeHtml(label.ko) + "<br><span>" + escapeHtml(label.en) + "</span>";
+    tr.appendChild(th);
+  });
+
+  dom.tableHead.innerHTML = "";
+  dom.tableHead.appendChild(tr);
 }
 
 function renderDashboard() {
-  const data = getVisibleData();
+  visibleRows = getFilteredRows();
+  visibleRows.sort(compareRows);
 
-  dom.tableTitle.textContent = "전략 " + activeStrategy + " - 전체 기간 성과 (Total Performance)";
+  updateTableCopy();
   updateSortHeaders();
-
-  renderKpiCards(data);
-  renderGradeDistribution(data);
-  renderSignalDistribution(data);
-  renderTable(data);
+  renderKpiCards(visibleRows);
+  renderGradeDistribution(visibleRows);
+  renderPeriodDistribution(getFilteredRows({ ignorePeriod: true }));
+  renderTable(visibleRows);
 }
 
-function getVisibleData() {
+function getFilteredRows(options) {
+  const ignorePeriod = options && options.ignorePeriod;
   const keyword = dom.searchInput.value.trim().toLowerCase();
+  const period = dom.periodFilter.value;
   const grade = dom.gradeFilter.value;
-  const signal = dom.signalFilter.value;
 
-  const data = groupedItems
-    .filter(function (item) {
-      return item.strategy === activeStrategy && item.periods[MAIN_PERIOD];
-    })
-    .filter(function (item) {
-      const mainPeriod = item.periods[MAIN_PERIOD];
-      const matchesKeyword =
-        !keyword ||
-        item.ticker.toLowerCase().indexOf(keyword) >= 0 ||
-        item.category.toLowerCase().indexOf(keyword) >= 0;
-      const matchesGrade = grade === "ALL" || mainPeriod.grade === grade;
-      const matchesSignal = signal === "ALL" || mainPeriod.signal === signal;
-
-      return matchesKeyword && matchesGrade && matchesSignal;
+  return rawRows.filter(function (row) {
+    const matchesKeyword = !keyword || columns.some(function (column) {
+      return cleanText(row[column]).toLowerCase().indexOf(keyword) >= 0;
     });
+    const matchesPeriod =
+      ignorePeriod ||
+      period === ALL_FILTER ||
+      cleanText(row.period) === period;
+    const matchesGrade =
+      grade === ALL_FILTER ||
+      normalizeGrade(row.Grade) === grade;
 
-  data.sort(compareVisibleItems);
-
-  return data;
-}
-
-function compareVisibleItems(a, b) {
-  const direction = tableSort.direction === "asc" ? 1 : -1;
-  const result = compareSortValues(
-    getSortValue(a, tableSort.key),
-    getSortValue(b, tableSort.key),
-    tableSort.key
-  );
-
-  if (result !== 0) {
-    return result * direction;
-  }
-
-  return itemText(a.ticker).localeCompare(itemText(b.ticker), undefined, {
-    numeric: true,
-    sensitivity: "base"
+    return matchesKeyword && matchesPeriod && matchesGrade;
   });
 }
 
-function getSortValue(item, key) {
-  const row = item.periods[MAIN_PERIOD] || {};
+function updateTableCopy() {
+  const period = dom.periodFilter.value;
+  const grade = dom.gradeFilter.value;
+  const periodText = period === ALL_FILTER ? "전체 기간" : labelPeriod(period);
+  const gradeText = grade === ALL_FILTER ? "전체 등급" : grade;
+  const tickerCount = countUnique(visibleRows, "Ticker");
 
-  if (key === "ticker") return item.ticker;
-  if (key === "category") return item.category;
-  if (key === "grade") return gradeRank(row.grade);
-  if (key === "signal") return signalRank(row.signal);
-
-  return row[key];
+  dom.tableTitle.textContent = periodText + " ETF 성과";
+  dom.tableSubtitle.textContent =
+    columns.length + "개 JSON 컬럼 기준 · " + gradeText + " · " +
+    tickerCount.toLocaleString("ko-KR") + "개 티커";
+  dom.rowCount.textContent = visibleRows.length.toLocaleString("ko-KR") + " rows";
 }
 
-function compareSortValues(a, b, key) {
-  if (DATE_SORT_KEYS.indexOf(key) >= 0) {
-    return dateValue(a) - dateValue(b);
-  }
-
-  if (TEXT_SORT_KEYS.indexOf(key) >= 0) {
-    return itemText(a).localeCompare(itemText(b), undefined, {
-      numeric: true,
-      sensitivity: "base"
-    });
-  }
-
-  return toNumber(a) - toNumber(b);
-}
-
-function itemText(value) {
-  return String(value == null ? "" : value);
-}
-
-function dateValue(value) {
-  const time = Date.parse(cleanText(value));
-  return Number.isFinite(time) ? time : 0;
-}
-
-function gradeRank(value) {
-  const normalized = normalizeGrade(value);
-  const index = GRADE_ORDER.indexOf(normalized);
-  return index >= 0 ? GRADE_ORDER.length - index : -1;
-}
-
-function signalRank(value) {
-  const normalized = normalizeSignal(value);
-
-  if (normalized === "BUY") return 3;
-  if (normalized === "HOLD") return 2;
-  if (normalized === "SELL") return 1;
-
-  return 0;
-}
-
-function defaultSortDirection(key) {
-  return ASC_DEFAULT_SORT_KEYS.indexOf(key) >= 0 ? "asc" : "desc";
-}
-
-function sortFromSelectValue(value) {
-  if (value === "return_desc") return { key: "totalReturn", direction: "desc" };
-  if (value === "sharpe_desc") return { key: "sharpe", direction: "desc" };
-  if (value === "mdd_desc") return { key: "mdd", direction: "desc" };
-  if (value === "calmar_desc") return { key: "calmar", direction: "desc" };
-  if (value === "pf_desc") return { key: "profitFactor", direction: "desc" };
-
-  return { key: "cagr", direction: "desc" };
-}
-
-function syncSortSelect() {
-  const value = sortSelectValue(tableSort);
-
-  if (value) {
-    dom.sortSelect.value = value;
-  }
-}
-
-function sortSelectValue(sortState) {
-  if (sortState.direction !== "desc") return "";
-  if (sortState.key === "totalReturn") return "return_desc";
-  if (sortState.key === "sharpe") return "sharpe_desc";
-  if (sortState.key === "mdd") return "mdd_desc";
-  if (sortState.key === "calmar") return "calmar_desc";
-  if (sortState.key === "profitFactor") return "pf_desc";
-  if (sortState.key === "cagr") return "cagr_desc";
-
-  return "";
-}
-
-function updateSortHeaders() {
-  document.querySelectorAll("#mainTable th[data-sort-key]").forEach(function (th) {
-    const isActive = th.dataset.sortKey === tableSort.key;
-    th.classList.toggle("sorted", isActive);
-    th.classList.toggle("sort-asc", isActive && tableSort.direction === "asc");
-    th.classList.toggle("sort-desc", isActive && tableSort.direction === "desc");
-    th.setAttribute(
-      "aria-sort",
-      isActive
-        ? (tableSort.direction === "asc" ? "ascending" : "descending")
-        : "none"
-    );
+function renderKpiCards(rows) {
+  const numericColumns = columns.filter(function (column) {
+    return isNumericColumn(column);
   });
-}
 
-function renderKpiCards(data) {
-  const metrics = [
-    metric(METRIC_LABELS.totalReturn, "percent", "평균 총수익률 (Average total return)", data, "totalReturn"),
-    metric(METRIC_LABELS.cagr, "percent", "평균 연복리수익률 (Average annualized return)", data, "cagr"),
-    metric(METRIC_LABELS.mdd, "percent", "평균 최대낙폭 (Average max drawdown)", data, "mdd"),
-    metric(METRIC_LABELS.sharpe, "number", "위험 대비 수익 (Risk-adjusted return)", data, "sharpe"),
-    metric(METRIC_LABELS.calmar, "number", "CAGR / MDD", data, "calmar"),
-    metric(METRIC_LABELS.profitFactor, "number", "총이익 / 총손실 (Gross profit / gross loss)", data, "profitFactor"),
-    metric(METRIC_LABELS.expectancy, "number", "거래당 기대값 (Expected value per trade)", data, "expectancy")
-  ];
+  if (numericColumns.length === 0) {
+    dom.kpiCards.innerHTML = "";
+    return;
+  }
 
-  dom.kpiCards.innerHTML = metrics.map(function (item) {
-    const cls = numberClass(item.value);
+  dom.kpiCards.innerHTML = numericColumns.map(function (column) {
+    const value = average(rows, column);
+    const valueHtml = value == null ? "-" : formatCellValue(column, value);
 
     return ""
-      + '<div class="kpi-card">'
-      + '<span>' + escapeHtml(item.label) + '</span>'
-      + '<strong class="' + cls + '">' + formatByType(item.value, item.type) + '</strong>'
-      + '</div>';
+      + '<article class="kpi-card">'
+      + '<span>' + escapeHtml(columnLabelText(column)) + '</span>'
+      + '<strong class="' + numberClass(value) + '">' + escapeHtml(valueHtml) + '</strong>'
+      + '</article>';
   }).join("");
 }
 
-function metric(label, type, note, data, key) {
-  return {
-    label: label,
-    type: type,
-    note: note,
-    value: average(data, function (item) {
-      return item.periods[MAIN_PERIOD][key];
-    })
-  };
-}
+function renderGradeDistribution(rows) {
+  if (columns.indexOf("Grade") < 0) {
+    dom.gradeSummaryText.textContent = "Grade 컬럼이 없습니다.";
+    dom.gradeCounts.innerHTML = "";
+    dom.gradeRatio.innerHTML = "";
+    return;
+  }
 
-function renderGradeDistribution(data) {
-  const total = data.length;
-  const counts = {};
-
-  GRADE_ORDER.forEach(function (grade) {
-    counts[grade] = countBy(data, function (item) {
-      return item.periods[MAIN_PERIOD].grade === grade;
-    });
-  });
-
-  dom.totalEtfCount.textContent = String(total);
-  dom.bestCount.textContent = String(counts.Best);
-  dom.goodCount.textContent = String(counts.Good);
-  dom.normalCount.textContent = String(counts.Normal);
-  dom.badCount.textContent = String(counts.Bad);
-
-  dom.gradeRatio.innerHTML = ratioHtml(
+  const counts = countByValue(rows, "Grade", normalizeGrade);
+  const total = rows.length;
+  const cards = [["전체", total, "total"]].concat(
     GRADE_ORDER.map(function (grade) {
-      return ["ratio-" + grade.toLowerCase(), counts[grade]];
+      return [grade, counts.get(grade) || 0, grade.toLowerCase()];
+    })
+  );
+
+  dom.gradeSummaryText.textContent =
+    total.toLocaleString("ko-KR") + "개 행 기준 · " +
+    countUnique(rows, "Ticker").toLocaleString("ko-KR") + "개 티커";
+  dom.gradeCounts.innerHTML = cards.map(renderCountCard).join("");
+  dom.gradeRatio.innerHTML = renderRatio(
+    GRADE_ORDER.map(function (grade) {
+      return ["ratio-" + grade.toLowerCase(), counts.get(grade) || 0];
     })
   );
 }
 
-function renderSignalDistribution(data) {
-  const buy = countBy(data, function (item) {
-    return item.periods[MAIN_PERIOD].signal === "BUY";
-  });
-  const hold = countBy(data, function (item) {
-    return item.periods[MAIN_PERIOD].signal === "HOLD";
-  });
-  const sell = countBy(data, function (item) {
-    return item.periods[MAIN_PERIOD].signal === "SELL";
-  });
-
-  dom.buyCount.textContent = String(buy);
-  dom.holdCount.textContent = String(hold);
-  dom.sellCount.textContent = String(sell);
-
-  dom.signalRatio.innerHTML = ratioHtml([
-    ["ratio-buy", buy],
-    ["ratio-hold", hold],
-    ["ratio-sell", sell]
-  ]);
-}
-
-function renderTable(data) {
-  if (data.length === 0) {
-    dom.tableBody.innerHTML =
-      '<tr>'
-      + '<td colspan="15" style="text-align:center; padding:32px; color:#94a3b8;">'
-      + '조건에 맞는 ETF가 없습니다. (No ETFs match the current filters.)'
-      + '</td>'
-      + '</tr>';
+function renderPeriodDistribution(rows) {
+  if (columns.indexOf("period") < 0) {
+    dom.periodSummaryText.textContent = "period 컬럼이 없습니다.";
+    dom.periodCounts.innerHTML = "";
+    dom.periodRatio.innerHTML = "";
     return;
   }
 
-  dom.tableBody.innerHTML = "";
+  const counts = countByValue(rows, "period", cleanText);
+  const periods = Array.from(counts.keys()).sort(comparePeriodsForOptions);
+  const total = rows.length;
 
-  data.forEach(function (item) {
-    const p = item.periods[MAIN_PERIOD];
-    const tr = document.createElement("tr");
-
-    tr.innerHTML = ""
-      + '<td class="ticker">' + escapeHtml(item.ticker) + '</td>'
-      + '<td>' + escapeHtml(item.category) + '</td>'
-      + '<td>' + gradeBadge(p.grade) + '</td>'
-      + '<td>' + signalBadge(p.signal) + '</td>'
-      + '<td>' + escapeHtml(formatDate(p.firstDate)) + '</td>'
-      + '<td>' + escapeHtml(formatDate(p.lastDate)) + '</td>'
-      + metricCell(p.totalReturn, "percent", 100)
-      + metricCell(p.cagr, "percent", 50)
-      + metricCell(p.sharpe, "number", 3)
-      + metricCell(Math.abs(p.mdd), "percent", 40, p.mdd)
-      + '<td class="' + numberClass(p.calmar) + '">' + formatNumber(p.calmar) + '</td>'
-      + '<td>' + formatPercent(p.exposure) + '</td>'
-      + '<td>' + formatInteger(p.tradeCount) + '</td>'
-      + '<td class="' + numberClass(p.profitFactor - 1) + '">' + formatNumber(p.profitFactor) + '</td>'
-      + '<td class="' + numberClass(p.expectancy) + '">' + formatNumber(p.expectancy) + '</td>';
-
-    tr.addEventListener("click", function () {
-      openDrawer(item);
-    });
-
-    dom.tableBody.appendChild(tr);
-  });
-}
-
-function metricCell(valueForBar, type, max, displayValue) {
-  const value = displayValue === undefined ? valueForBar : displayValue;
-  const danger = displayValue !== undefined && value < 0;
-
-  return ""
-    + '<td class="' + numberClass(value) + ' metric-cell">'
-    + formatByType(value, type)
-    + miniBar(valueForBar, max, danger)
-    + '</td>';
-}
-
-function openDrawer(item) {
-  const mainPeriod = item.periods[MAIN_PERIOD];
-
-  if (!mainPeriod) {
-    return;
-  }
-
-  dom.detailTicker.textContent = item.ticker;
-  dom.detailSub.textContent = item.category + " - Strategy " + item.strategy;
-  dom.detailBadges.innerHTML = gradeBadge(mainPeriod.grade) + signalBadge(mainPeriod.signal);
-
-  renderPeriodSummaryCards(item);
-  renderPeriodCompareChart(item);
-  renderDetailTable(item);
-
-  dom.detailDrawer.classList.add("open");
-  dom.overlay.classList.add("open");
-}
-
-function renderPeriodSummaryCards(item) {
-  dom.periodSummaryCards.innerHTML = PERIOD_ORDER.map(function (period) {
-    const p = item.periods[period];
-
-    if (!p) {
-      return "";
-    }
-
-    return ""
-      + '<div class="period-card">'
-      + '<h4>' + escapeHtml(period) + '</h4>'
-      + periodDateRow(METRIC_LABELS.firstDate, p.firstDate)
-      + periodDateRow(METRIC_LABELS.lastDate, p.lastDate)
-      + periodCardRow(METRIC_LABELS.totalReturn, p.totalReturn, "percent")
-      + periodCardRow(METRIC_LABELS.cagr, p.cagr, "percent")
-      + periodCardRow(METRIC_LABELS.sharpe, p.sharpe, "number")
-      + periodCardRow(METRIC_LABELS.mdd, p.mdd, "percent")
-      + '</div>';
+  dom.periodSummaryText.textContent =
+    total.toLocaleString("ko-KR") + "개 행 기준 · " +
+    periods.length.toLocaleString("ko-KR") + "개 기간";
+  dom.periodCounts.innerHTML = periods.map(function (period) {
+    return renderCountCard([labelPeriod(period), counts.get(period), "period"]);
   }).join("");
+  dom.periodRatio.innerHTML = renderRatio(
+    periods.map(function (period, index) {
+      return ["ratio-period-" + ((index % 4) + 1), counts.get(period) || 0];
+    })
+  );
 }
 
-function periodDateRow(label, value) {
+function renderCountCard(card) {
+  const label = card[0];
+  const count = card[1];
+  const className = card[2];
+
   return ""
-    + '<div class="period-card-row date-row">'
+    + '<div class="count-card ' + escapeHtml(className) + '">'
     + '<span>' + escapeHtml(label) + '</span>'
-    + '<strong>' + escapeHtml(formatDate(value)) + '</strong>'
+    + '<strong>' + Number(count || 0).toLocaleString("ko-KR") + '</strong>'
     + '</div>';
 }
 
-function periodCardRow(label, value, type) {
-  return ""
-    + '<div class="period-card-row">'
-    + '<span>' + escapeHtml(label) + '</span>'
-    + '<strong class="' + numberClass(value) + '">' + formatByType(value, type) + '</strong>'
-    + '</div>';
-}
-
-function renderPeriodCompareChart(item) {
-  const available = PERIOD_ORDER.map(function (period) {
-    return {
-      period: period,
-      row: item.periods[period]
-    };
-  }).filter(function (entry) {
-    return entry.row;
-  });
-
-  if (available.length === 0) {
-    dom.periodCompareChart.innerHTML = '<p style="color:#94a3b8;">기간 데이터가 없습니다. (No period data is available.)</p>';
-    return;
-  }
-
-  const chartMetrics = [
-    { key: "totalReturn", label: METRIC_LABELS.totalReturn, type: "percent", mode: "positive" },
-    { key: "cagr", label: METRIC_LABELS.cagr, type: "percent", mode: "positive" },
-    { key: "sharpe", label: METRIC_LABELS.sharpe, type: "number", mode: "positive" },
-    { key: "mdd", label: METRIC_LABELS.mdd, type: "percent", mode: "absolute" },
-    { key: "calmar", label: METRIC_LABELS.calmar, type: "number", mode: "positive" },
-    { key: "profitFactor", label: METRIC_LABELS.profitFactor, type: "number", mode: "positive" },
-    { key: "expectancy", label: METRIC_LABELS.expectancy, type: "number", mode: "positive" }
-  ];
-
-  dom.periodCompareChart.innerHTML = chartMetrics.map(function (chartMetric) {
-    const maxValue = getMaxVisualValue(available, chartMetric);
-
-    const rowsHtml = available.map(function (entry) {
-      const rawValue = toNumber(entry.row[chartMetric.key]);
-      const visualValue = getVisualValue(rawValue, chartMetric.mode);
-      const width = clamp((visualValue / maxValue) * 100, 3, 100);
-      const isMdd = chartMetric.key === "mdd";
-
-      return ""
-        + '<div class="compare-row">'
-        + '<div class="compare-period">' + escapeHtml(entry.period) + '</div>'
-        + '<div class="compare-track">'
-        + '<div class="compare-fill ' + (isMdd ? "negative-fill" : "") + '" style="width:' + width + '%"></div>'
-        + '</div>'
-        + '<div class="compare-value ' + numberClass(rawValue) + '">'
-        + formatByType(rawValue, chartMetric.type)
-        + '</div>'
-        + '</div>';
-    }).join("");
-
-    return ""
-      + '<div class="compare-block">'
-      + '<h4>' + escapeHtml(chartMetric.label) + '</h4>'
-      + rowsHtml
-      + '</div>';
-  }).join("");
-}
-
-function getMaxVisualValue(available, chartMetric) {
-  const values = available.map(function (entry) {
-    return getVisualValue(toNumber(entry.row[chartMetric.key]), chartMetric.mode);
-  });
-
-  return Math.max.apply(null, values.concat([1]));
-}
-
-function getVisualValue(rawValue, mode) {
-  if (mode === "absolute") {
-    return Math.abs(rawValue);
-  }
-
-  return Math.max(rawValue, 0);
-}
-
-function renderDetailTable(item) {
-  dom.detailBody.innerHTML = PERIOD_ORDER.map(function (period) {
-    const p = item.periods[period];
-
-    if (!p) {
-      return "";
-    }
-
-    return ""
-      + '<tr>'
-      + '<td><strong>' + escapeHtml(period) + '</strong></td>'
-      + '<td>' + escapeHtml(formatDate(p.firstDate)) + '</td>'
-      + '<td>' + escapeHtml(formatDate(p.lastDate)) + '</td>'
-      + '<td class="' + numberClass(p.totalReturn) + '">' + formatPercent(p.totalReturn) + '</td>'
-      + '<td class="' + numberClass(p.cagr) + '">' + formatPercent(p.cagr) + '</td>'
-      + '<td class="' + numberClass(p.sharpe) + '">' + formatNumber(p.sharpe) + '</td>'
-      + '<td class="' + numberClass(p.mdd) + '">' + formatPercent(p.mdd) + '</td>'
-      + '<td class="' + numberClass(p.calmar) + '">' + formatNumber(p.calmar) + '</td>'
-      + '<td>' + formatPercent(p.exposure) + '</td>'
-      + '<td>' + formatInteger(p.tradeCount) + '</td>'
-      + '<td class="' + numberClass(p.profitFactor - 1) + '">' + formatNumber(p.profitFactor) + '</td>'
-      + '<td class="' + numberClass(p.expectancy) + '">' + formatNumber(p.expectancy) + '</td>'
-      + '</tr>';
-  }).join("");
-}
-
-function closeDrawer() {
-  dom.detailDrawer.classList.remove("open");
-  dom.overlay.classList.remove("open");
-}
-
-function gradeBadge(grade) {
-  const normalized = normalizeGrade(grade);
-  let cls = "grade-unknown";
-
-  if (normalized === "Best") {
-    cls = "grade-best";
-  } else if (normalized === "Good") {
-    cls = "grade-good";
-  } else if (normalized === "Normal") {
-    cls = "grade-normal";
-  } else if (normalized === "Bad") {
-    cls = "grade-bad";
-  }
-
-  return '<span class="grade-pill ' + cls + '">' + escapeHtml(normalized) + '</span>';
-}
-
-function signalBadge(signal) {
-  const normalized = normalizeSignal(signal);
-  let cls = "signal-hold";
-
-  if (normalized === "BUY") {
-    cls = "signal-buy";
-  } else if (normalized === "SELL") {
-    cls = "signal-sell";
-  }
-
-  return '<span class="signal-pill ' + cls + '">' + escapeHtml(normalized) + '</span>';
-}
-
-function miniBar(value, max, danger) {
-  const safeMax = max > 0 ? max : 1;
-  const width = clamp((Math.max(toNumber(value), 0) / safeMax) * 100, 3, 100);
-  const dangerClass = danger ? "red" : "";
-
-  return ""
-    + '<div class="cell-bar">'
-    + '<div class="cell-fill ' + dangerClass + '" style="width:' + width + '%"></div>'
-    + '</div>';
-}
-
-function ratioHtml(items) {
+function renderRatio(items) {
   const total = items.reduce(function (sum, item) {
     return sum + item[1];
   }, 0);
@@ -877,98 +509,598 @@ function ratioHtml(items) {
   }
 
   return items.map(function (item) {
-    const className = item[0];
-    const count = item[1];
-    const width = (count / total) * 100;
-
-    return '<div class="' + className + '" style="width:' + width + '%"></div>';
+    const width = (item[1] / total) * 100;
+    return '<div class="' + escapeHtml(item[0]) + '" style="width:' + width + '%"></div>';
   }).join("");
 }
 
-function read(row, keys) {
-  if (!row || typeof row !== "object") {
-    return "";
+function renderTable(rows) {
+  if (rows.length === 0) {
+    dom.tableBody.innerHTML =
+      '<tr><td class="empty-cell" colspan="' + columns.length + '">조건에 맞는 데이터가 없습니다.</td></tr>';
+    return;
   }
 
-  for (let i = 0; i < keys.length; i += 1) {
-    const key = keys[i];
+  const fragment = document.createDocumentFragment();
 
-    if (Object.prototype.hasOwnProperty.call(row, key)) {
-      return row[key];
+  rows.forEach(function (row) {
+    const tr = document.createElement("tr");
+
+    tr.addEventListener("click", function () {
+      openDrawer(row);
+    });
+
+    columns.forEach(function (column) {
+      const td = document.createElement("td");
+      const value = row[column];
+
+      td.className = cellClass(column, value);
+
+      if (column === "Grade") {
+        td.innerHTML = gradeBadge(value);
+      } else if (column === "period") {
+        td.innerHTML = periodBadge(value);
+      } else {
+        td.textContent = formatCellValue(column, value);
+      }
+
+      tr.appendChild(td);
+    });
+
+    fragment.appendChild(tr);
+  });
+
+  dom.tableBody.innerHTML = "";
+  dom.tableBody.appendChild(fragment);
+}
+
+function openDrawer(row) {
+  const ticker = cleanText(row.Ticker) || "-";
+  const category = cleanText(row.Category);
+  const periodRows = getTickerPeriodRows(row);
+  const mainRow = findPeriodRow(periodRows, MAIN_PERIOD) || row;
+  const availablePeriods = periodRows.map(function (periodRow) {
+    return labelPeriod(periodRow.period);
+  }).join(" · ");
+
+  dom.detailTicker.textContent = ticker;
+  dom.detailSub.textContent = [category, availablePeriods].filter(Boolean).join(" · ") || "-";
+  dom.detailBadges.innerHTML =
+    (columns.indexOf("Grade") >= 0 ? gradeBadge(mainRow.Grade) : "") +
+    (columns.indexOf("period") >= 0 ? periodBadge(MAIN_PERIOD) : "");
+
+  renderPeriodSummaryCards(periodRows);
+  renderPeriodMetricBars(periodRows);
+
+  dom.detailDrawer.classList.add("open");
+  dom.overlay.classList.add("open");
+}
+
+function getTickerPeriodRows(row) {
+  const ticker = cleanText(row.Ticker);
+  const category = cleanText(row.Category);
+
+  return rawRows
+    .filter(function (candidate) {
+      const sameTicker = cleanText(candidate.Ticker) === ticker;
+      const sameCategory = !category || cleanText(candidate.Category) === category;
+
+      return sameTicker && sameCategory;
+    })
+    .filter(function (candidate) {
+      return PERIOD_DETAIL_ORDER.indexOf(cleanText(candidate.period).toLowerCase()) >= 0;
+    })
+    .sort(function (a, b) {
+      return detailPeriodIndex(a.period) - detailPeriodIndex(b.period);
+    });
+}
+
+function findPeriodRow(rows, period) {
+  const normalized = cleanText(period).toLowerCase();
+
+  return rows.find(function (row) {
+    return cleanText(row.period).toLowerCase() === normalized;
+  });
+}
+
+function detailPeriodIndex(period) {
+  const index = PERIOD_DETAIL_ORDER.indexOf(cleanText(period).toLowerCase());
+
+  return index >= 0 ? index : PERIOD_DETAIL_ORDER.length;
+}
+
+function renderPeriodSummaryCards(periodRows) {
+  dom.periodSummaryCards.innerHTML = PERIOD_DETAIL_ORDER.map(function (period) {
+    const row = findPeriodRow(periodRows, period);
+
+    if (!row) {
+      return ""
+        + '<article class="period-card missing">'
+        + '<h4>' + escapeHtml(labelPeriod(period)) + '</h4>'
+        + '<p>데이터 없음</p>'
+        + '</article>';
+    }
+
+    return ""
+      + '<article class="period-card">'
+      + '<h4>' + escapeHtml(labelPeriod(period)) + '</h4>'
+      + periodCardRow("거래시작일", row.first_date)
+      + periodCardRow("거래종료일", row.last_date)
+      + '<div class="period-card-row">'
+      + '<span>등급</span>'
+      + '<strong>' + gradeBadge(row.Grade) + '</strong>'
+      + '</div>'
+      + '</article>';
+  }).join("");
+}
+
+function periodCardRow(label, value) {
+  return ""
+    + '<div class="period-card-row">'
+    + '<span>' + escapeHtml(label) + '</span>'
+    + '<strong>' + escapeHtml(cleanText(value) || "-") + '</strong>'
+    + '</div>';
+}
+
+function renderPeriodMetricBars(periodRows) {
+  const metrics = DETAIL_METRIC_COLUMNS.filter(function (metric) {
+    return columns.indexOf(metric) >= 0;
+  });
+
+  if (periodRows.length === 0 || metrics.length === 0) {
+    dom.periodMetricBars.innerHTML = '<div class="empty-detail">표시할 기간별 지표가 없습니다.</div>';
+    return;
+  }
+
+  dom.periodMetricBars.innerHTML = metrics.map(function (metric) {
+    return renderMetricBlock(metric, periodRows);
+  }).join("");
+}
+
+function renderMetricBlock(metric, periodRows) {
+  const rowsByPeriod = PERIOD_DETAIL_ORDER.map(function (period) {
+    return {
+      period: period,
+      row: findPeriodRow(periodRows, period)
+    };
+  });
+  const values = rowsByPeriod
+    .map(function (entry) {
+      return entry.row ? parseNumber(entry.row[metric]) : NaN;
+    })
+    .filter(Number.isFinite);
+  const maxValue = Math.max.apply(null, values.map(function (value) {
+    return Math.abs(value);
+  }).concat([1]));
+
+  return ""
+    + '<article class="metric-block">'
+    + '<h4>' + escapeHtml(columnLabelText(metric)) + '</h4>'
+    + rowsByPeriod.map(function (entry) {
+      return renderMetricPeriodRow(metric, entry.period, entry.row, maxValue);
+    }).join("")
+    + '</article>';
+}
+
+function renderMetricPeriodRow(metric, period, row, maxValue) {
+  if (!row) {
+    return ""
+      + '<div class="metric-period-row missing">'
+      + '<span class="metric-period-label">' + escapeHtml(labelPeriod(period)) + '</span>'
+      + '<div class="metric-track"></div>'
+      + '<strong class="metric-value">-</strong>'
+      + '</div>';
+  }
+
+  const value = parseNumber(row[metric]);
+  const width = Number.isFinite(value)
+    ? clamp((Math.abs(value) / maxValue) * 100, 4, 100)
+    : 0;
+  const fillClass = metricBarClass(metric, value);
+
+  return ""
+    + '<div class="metric-period-row">'
+    + '<span class="metric-period-label">' + escapeHtml(labelPeriod(period)) + '</span>'
+    + '<div class="metric-track">'
+    + '<div class="metric-fill ' + fillClass + '" style="width:' + width + '%"></div>'
+    + '</div>'
+    + '<strong class="metric-value ' + numberClass(value) + '">' + escapeHtml(formatCellValue(metric, value)) + '</strong>'
+    + '</div>';
+}
+
+function metricBarClass(metric, value) {
+  if (metric === "MDD") {
+    return "danger";
+  }
+
+  return parseNumber(value) < 0 ? "danger" : "good";
+}
+
+function closeDrawer() {
+  dom.detailDrawer.classList.remove("open");
+  dom.overlay.classList.remove("open");
+}
+
+function handleSortHeaderEvent(event) {
+  const th = event.target.closest("th[data-sort-key]");
+
+  if (!th || !dom.mainTable.contains(th)) {
+    return;
+  }
+
+  if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") {
+    return;
+  }
+
+  event.preventDefault();
+  applyHeaderSort(th.dataset.sortKey);
+}
+
+function applyHeaderSort(key) {
+  if (!key) {
+    return;
+  }
+
+  if (tableSort.key === key) {
+    tableSort.direction = tableSort.direction === "asc" ? "desc" : "asc";
+  } else {
+    tableSort = {
+      key: key,
+      direction: defaultSortDirection(key)
+    };
+  }
+
+  syncSortSelect();
+  renderDashboard();
+}
+
+function updateSortHeaders() {
+  dom.tableHead.querySelectorAll("th[data-sort-key]").forEach(function (th) {
+    const isActive = th.dataset.sortKey === tableSort.key;
+
+    th.classList.toggle("sorted", isActive);
+    th.classList.toggle("sort-asc", isActive && tableSort.direction === "asc");
+    th.classList.toggle("sort-desc", isActive && tableSort.direction === "desc");
+    th.setAttribute(
+      "aria-sort",
+      isActive
+        ? tableSort.direction === "asc" ? "ascending" : "descending"
+        : "none"
+    );
+  });
+}
+
+function compareRows(a, b) {
+  const direction = tableSort.direction === "asc" ? 1 : -1;
+  const key = tableSort.key;
+  const aValue = a[key];
+  const bValue = b[key];
+  const missingCompare = compareMissing(aValue, bValue);
+
+  if (missingCompare !== 0) {
+    return missingCompare;
+  }
+
+  let result = 0;
+
+  if (key === "Grade") {
+    result = gradeRank(aValue) - gradeRank(bValue);
+  } else if (key === "period") {
+    result = periodRank(aValue) - periodRank(bValue);
+  } else if (isDateColumn(key)) {
+    result = dateValue(aValue) - dateValue(bValue);
+  } else if (isNumericColumn(key)) {
+    result = numberValue(aValue) - numberValue(bValue);
+  } else {
+    result = textCompare(cleanText(aValue), cleanText(bValue));
+  }
+
+  if (result !== 0) {
+    return result * direction;
+  }
+
+  return textCompare(cleanText(a.Ticker), cleanText(b.Ticker));
+}
+
+function compareMissing(a, b) {
+  const aMissing = isBlank(a);
+  const bMissing = isBlank(b);
+
+  if (aMissing && bMissing) {
+    return 0;
+  }
+
+  if (aMissing) {
+    return 1;
+  }
+
+  if (bMissing) {
+    return -1;
+  }
+
+  return 0;
+}
+
+function defaultSortDirection(column) {
+  if (column === "Grade") {
+    return "asc";
+  }
+
+  if (column === "period") {
+    return "desc";
+  }
+
+  if (TEXT_DEFAULT_ASC_COLUMNS.has(column)) {
+    return "asc";
+  }
+
+  return isNumericColumn(column) ? "desc" : "asc";
+}
+
+function syncSortSelect() {
+  dom.sortSelect.value = buildSortValue(tableSort.key, tableSort.direction);
+}
+
+function buildSortValue(column, direction) {
+  return encodeURIComponent(column) + "|" + direction;
+}
+
+function parseSortValue(value) {
+  const parts = String(value || "").split("|");
+
+  if (parts.length !== 2) {
+    return null;
+  }
+
+  const key = decodeURIComponent(parts[0]);
+  const direction = parts[1] === "desc" ? "desc" : "asc";
+
+  if (columns.indexOf(key) < 0) {
+    return null;
+  }
+
+  return { key: key, direction: direction };
+}
+
+function resetFilters() {
+  dom.searchInput.value = "";
+  dom.periodFilter.value = defaultPeriod;
+  dom.gradeFilter.value = ALL_FILTER;
+  tableSort = {
+    key: columns.indexOf("CAGR") >= 0 ? "CAGR" : columns[0],
+    direction: columns.indexOf("CAGR") >= 0 ? "desc" : defaultSortDirection(columns[0])
+  };
+
+  syncSortSelect();
+  closeDrawer();
+  renderDashboard();
+}
+
+function uniqueValues(rows, column) {
+  if (columns.indexOf(column) < 0) {
+    return [];
+  }
+
+  return Array.from(
+    new Set(
+      rows.map(function (row) {
+        return cleanText(row[column]);
+      }).filter(Boolean)
+    )
+  );
+}
+
+function countByValue(rows, column, normalizer) {
+  const counts = new Map();
+  const normalize = normalizer || cleanText;
+
+  rows.forEach(function (row) {
+    const value = normalize(row[column]);
+
+    if (!value) {
+      return;
+    }
+
+    counts.set(value, (counts.get(value) || 0) + 1);
+  });
+
+  return counts;
+}
+
+function countUnique(rows, column) {
+  if (columns.indexOf(column) < 0) {
+    return 0;
+  }
+
+  return new Set(
+    rows.map(function (row) {
+      return cleanText(row[column]);
+    }).filter(Boolean)
+  ).size;
+}
+
+function chooseDefaultPeriod(periodValues) {
+  if (periodValues.length === 0) {
+    return ALL_FILTER;
+  }
+
+  const lowerMap = new Map(
+    periodValues.map(function (period) {
+      return [period.toLowerCase(), period];
+    })
+  );
+
+  for (let i = 0; i < PREFERRED_DEFAULT_PERIODS.length; i += 1) {
+    const period = lowerMap.get(PREFERRED_DEFAULT_PERIODS[i]);
+
+    if (period) {
+      return period;
     }
   }
 
-  return "";
+  return periodValues[0];
 }
 
-function cleanText(value) {
-  return String(value == null ? "" : value).trim();
+function comparePeriodsForOptions(a, b) {
+  const rankA = periodRank(a);
+  const rankB = periodRank(b);
+
+  if (rankA !== rankB) {
+    return rankB - rankA;
+  }
+
+  return textCompare(a, b);
 }
 
-function normalizeDate(value) {
+function periodRank(value) {
+  const text = cleanText(value).toLowerCase();
+
+  if (text === "total" || text === "all") {
+    return 100000;
+  }
+
+  const yearMatch = text.match(/^(\d+(?:\.\d+)?)\s*y/);
+
+  if (yearMatch) {
+    return Number(yearMatch[1]) * 100;
+  }
+
+  const monthMatch = text.match(/^(\d+(?:\.\d+)?)\s*m/);
+
+  if (monthMatch) {
+    return Number(monthMatch[1]) * 8;
+  }
+
+  return 0;
+}
+
+function labelPeriod(value) {
+  const text = cleanText(value);
+  const lower = text.toLowerCase();
+
+  if (lower === "total" || lower === "all") {
+    return "전체 기간";
+  }
+
+  const yearMatch = lower.match(/^(\d+(?:\.\d+)?)\s*y$/);
+
+  if (yearMatch) {
+    return yearMatch[1] + "년";
+  }
+
+  const monthMatch = lower.match(/^(\d+(?:\.\d+)?)\s*m$/);
+
+  if (monthMatch) {
+    return monthMatch[1] + "개월";
+  }
+
+  return text;
+}
+
+function columnLabelParts(column) {
+  return {
+    ko: COLUMN_LABELS[column] || column,
+    en: column
+  };
+}
+
+function columnLabelText(column) {
+  const label = columnLabelParts(column);
+
+  return label.ko === label.en ? label.en : label.ko + " (" + label.en + ")";
+}
+
+function sortDirectionLabel(column, direction) {
+  if (column === "Grade") {
+    return direction === "asc" ? "높은 등급 순" : "낮은 등급 순";
+  }
+
+  if (isNumericColumn(column) || column === "period") {
+    return direction === "asc" ? "낮은 순" : "높은 순";
+  }
+
+  return direction === "asc" ? "오름차순" : "내림차순";
+}
+
+function cellClass(column, value) {
+  const classes = [];
+
+  if (column === "Ticker") {
+    classes.push("ticker", "text-cell");
+  } else if (column === "Category" || column === "Grade" || column === "period") {
+    classes.push("text-cell");
+  }
+
+  if (isNumericColumn(column)) {
+    classes.push(numberClass(value));
+  }
+
+  return classes.join(" ");
+}
+
+function numberClassForColumn(column, value) {
+  return isNumericColumn(column) ? numberClass(value) : "";
+}
+
+function isNumericColumn(column) {
+  if (KNOWN_NUMERIC_COLUMNS.has(column)) {
+    return true;
+  }
+
+  if (!rawRows.length || isDateColumn(column) || column === "Ticker") {
+    return false;
+  }
+
+  const sample = rawRows.slice(0, 80).filter(function (row) {
+    return !isBlank(row[column]);
+  });
+
+  return sample.length > 0 && sample.every(function (row) {
+    return Number.isFinite(parseNumber(row[column]));
+  });
+}
+
+function isDateColumn(column) {
+  return DATE_COLUMNS.has(column) || /date/i.test(column);
+}
+
+function formatCellValue(column, value) {
+  if (isBlank(value)) {
+    return "-";
+  }
+
+  if (PERCENT_COLUMNS.has(column)) {
+    return formatPercent(value);
+  }
+
+  if (isNumericColumn(column)) {
+    return formatNumber(value);
+  }
+
   return cleanText(value);
 }
 
-function formatDate(value) {
-  return cleanText(value) || "-";
+function formatPercent(value) {
+  const number = parseNumber(value);
+
+  return Number.isFinite(number) ? number.toFixed(2) + "%" : cleanText(value);
 }
 
-function normalizePeriod(value) {
-  const v = cleanText(value).toUpperCase();
+function formatNumber(value) {
+  const number = parseNumber(value);
 
-  if (v === "TOTAL" || v === "ALL") return "ALL";
-  if (v === "5Y" || v === "5YR" || v === "5YEAR" || v === "5 YEARS") return "5Y";
-  if (v === "3Y" || v === "3YR" || v === "3YEAR" || v === "3 YEARS") return "3Y";
-  if (v === "1Y" || v === "1YR" || v === "1YEAR" || v === "1 YEAR") return "1Y";
-
-  return v;
+  return Number.isFinite(number) ? number.toFixed(2) : cleanText(value);
 }
 
-function normalizeGrade(value) {
-  const v = cleanText(value).toLowerCase();
-
-  if (v === "best") return "Best";
-  if (v === "good") return "Good";
-  if (v === "normal") return "Normal";
-  if (v === "bad") return "Bad";
-
-  return cleanText(value) || "Unknown";
-}
-
-function normalizeSignal(value) {
-  const v = cleanText(value).toUpperCase();
-
-  if (v === "BUY") return "BUY";
-  if (v === "SELL") return "SELL";
-  if (v === "HOLD") return "HOLD";
-
-  return v || "HOLD";
-}
-
-function toNumber(value) {
-  if (value === null || value === undefined || value === "") {
-    return 0;
-  }
-
-  if (typeof value === "number") {
-    return Number.isFinite(value) ? value : 0;
-  }
-
-  const cleaned = String(value).replace(/%/g, "").replace(/,/g, "").trim();
-  const number = Number(cleaned);
-
-  return Number.isFinite(number) ? number : 0;
-}
-
-function average(data, selector) {
-  if (!Array.isArray(data) || data.length === 0) {
-    return 0;
-  }
-
-  const values = data.map(selector).map(toNumber).filter(Number.isFinite);
+function average(rows, column) {
+  const values = rows
+    .map(function (row) {
+      return parseNumber(row[column]);
+    })
+    .filter(Number.isFinite);
 
   if (values.length === 0) {
-    return 0;
+    return null;
   }
 
   return values.reduce(function (sum, value) {
@@ -976,37 +1108,74 @@ function average(data, selector) {
   }, 0) / values.length;
 }
 
-function countBy(data, predicate) {
-  return data.filter(predicate).length;
+function normalizeGrade(value) {
+  const text = cleanText(value).toLowerCase();
+
+  if (text === "best") return "Best";
+  if (text === "good") return "Good";
+  if (text === "normal") return "Normal";
+  if (text === "bad") return "Bad";
+
+  return cleanText(value);
 }
 
-function formatByType(value, type) {
-  if (type === "percent") {
-    return formatPercent(value);
-  }
+function gradeRank(value) {
+  const normalized = normalizeGrade(value);
+  const index = GRADE_ORDER.indexOf(normalized);
 
-  return formatNumber(value);
+  return index >= 0 ? index : GRADE_ORDER.length;
 }
 
-function formatPercent(value) {
-  return toNumber(value).toFixed(2) + "%";
+function gradeBadge(value) {
+  const normalized = normalizeGrade(value) || "Unknown";
+  let className = "grade-unknown";
+
+  if (normalized === "Best") className = "grade-best";
+  if (normalized === "Good") className = "grade-good";
+  if (normalized === "Normal") className = "grade-normal";
+  if (normalized === "Bad") className = "grade-bad";
+
+  return '<span class="grade-pill ' + className + '">' + escapeHtml(normalized) + '</span>';
 }
 
-function formatNumber(value) {
-  return toNumber(value).toFixed(2);
-}
-
-function formatInteger(value) {
-  return Math.round(toNumber(value)).toLocaleString("en-US");
+function periodBadge(value) {
+  return '<span class="period-pill">' + escapeHtml(labelPeriod(value)) + '</span>';
 }
 
 function numberClass(value) {
-  const number = toNumber(value);
+  const number = parseNumber(value);
 
-  if (number > 0) return "positive";
-  if (number < 0) return "negative";
+  if (!Number.isFinite(number) || number === 0) {
+    return "neutral";
+  }
 
-  return "neutral";
+  return number > 0 ? "positive" : "negative";
+}
+
+function numberValue(value) {
+  const number = parseNumber(value);
+
+  return Number.isFinite(number) ? number : 0;
+}
+
+function dateValue(value) {
+  const time = Date.parse(cleanText(value));
+
+  return Number.isFinite(time) ? time : 0;
+}
+
+function parseNumber(value) {
+  if (typeof value === "number") {
+    return Number.isFinite(value) ? value : NaN;
+  }
+
+  if (isBlank(value)) {
+    return NaN;
+  }
+
+  const number = Number(String(value).replace(/%/g, "").replace(/,/g, "").trim());
+
+  return Number.isFinite(number) ? number : NaN;
 }
 
 function clamp(value, min, max) {
@@ -1017,6 +1186,21 @@ function clamp(value, min, max) {
   }
 
   return Math.min(Math.max(number, min), max);
+}
+
+function cleanText(value) {
+  return String(value == null ? "" : value).trim();
+}
+
+function isBlank(value) {
+  return value === null || value === undefined || cleanText(value) === "";
+}
+
+function textCompare(a, b) {
+  return cleanText(a).localeCompare(cleanText(b), "ko-KR", {
+    numeric: true,
+    sensitivity: "base"
+  });
 }
 
 function escapeHtml(value) {
@@ -1039,26 +1223,18 @@ function hideStatus() {
 }
 
 function showError(error) {
+  const message = error && error.message ? error.message : String(error);
+
   if (dom.statusBox) {
     dom.statusBox.classList.remove("hidden");
     dom.statusBox.classList.add("error");
-
     dom.statusBox.innerHTML =
-      '<strong>데이터 로딩 또는 렌더링 오류 (Data loading or rendering error)</strong><br>'
-      + escapeHtml(error.message).replace(/\n/g, "<br>")
-      + '<br><br>'
-      + '확인사항 (Check these items):'
-      + '<br>1. index.html, style.css, app.js, data.json이 같은 폴더에 있는지 확인'
-      + '<br>2. data.json에 period 값이 total 또는 ALL인 row가 최소 1개 이상 있는지 확인'
-      + '<br>3. 주소가 file:// 로 시작하면 로컬 HTTP 서버로 실행';
+      '<strong>데이터 로딩 또는 화면 렌더링 오류</strong><br>' +
+      escapeHtml(message).replace(/\n/g, "<br>");
   }
 
   if (dom.tableBody) {
     dom.tableBody.innerHTML =
-      '<tr>'
-      + '<td colspan="15" style="text-align:center; padding:32px; color:#fecaca;">'
-      + '데이터 로딩 실패 (Failed to load data)'
-      + '</td>'
-      + '</tr>';
+      '<tr><td class="empty-cell" colspan="' + Math.max(columns.length, 1) + '">데이터를 표시할 수 없습니다.</td></tr>';
   }
 }

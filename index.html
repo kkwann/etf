@@ -1,134 +1,88 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ETF Strategy Dashboard</title>
+  <title>ETF Performance Dashboard</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <div class="app">
     <header class="app-header">
-      <div>
-        <h1>ETF 전략 대시보드 (ETF Strategy Dashboard)</h1>
-        <p>전략, 등급, 신호, 기간별 ETF 성과를 확인합니다. (ETF performance by strategy, grade, signal, and period.)</p>
+      <div class="title-group">
+        <h1>ETF 성과 대시보드</h1>
+        <p>Yahoo Finance 기준 기간별 ETF 성과와 등급을 확인합니다.</p>
       </div>
       <div class="header-actions">
-        <button id="themeToggle" class="theme-toggle" type="button" aria-label="다크 모드로 전환 (Switch to dark mode)" aria-pressed="false">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
           <span class="theme-toggle-track" aria-hidden="true">
             <span class="theme-toggle-thumb"></span>
           </span>
-          <span id="themeToggleLabel">다크 (Dark)</span>
+          <span id="themeToggleLabel">다크</span>
         </button>
         <div class="header-meta">
-          <span>데이터 소스 (Data Source)</span>
+          <span>Data Source</span>
           <b id="dataSourceName">Yahoo Finance</b>
-          <small id="lastUpdated">마지막 업데이트 (Last updated): -</small>
+          <small id="lastUpdated">마지막 업데이트: -</small>
         </div>
       </div>
     </header>
 
     <section id="statusBox" class="status-box hidden"></section>
-    <nav id="strategyTabs" class="strategy-tabs" aria-label="Strategy selector"></nav>
 
-    <section class="toolbar">
-      <input id="searchInput" type="text" placeholder="티커 또는 카테고리 검색 (Ticker / Category)" />
-      <select id="gradeFilter" aria-label="등급 필터 (Grade filter)">
-        <option value="ALL">전체 등급 (All Grade)</option>
-        <option value="Best">Best</option>
-        <option value="Good">Good</option>
-        <option value="Normal">Normal</option>
-        <option value="Bad">Bad</option>
-      </select>
-      <select id="signalFilter" aria-label="신호 필터 (Signal filter)">
-        <option value="ALL">전체 신호 (All Signal)</option>
-        <option value="BUY">BUY</option>
-        <option value="HOLD">HOLD</option>
-        <option value="SELL">SELL</option>
-      </select>
-      <select id="sortSelect" aria-label="정렬 (Sort order)">
-        <option value="cagr_desc">연복리수익률 (CAGR) 높은 순</option>
-        <option value="return_desc">총수익률 (Total Return) 높은 순</option>
-        <option value="sharpe_desc">샤프지수 (Sharpe) 높은 순</option>
-        <option value="mdd_desc">최대낙폭 (MDD) 안정 순</option>
-        <option value="calmar_desc">칼마지수 (Calmar) 높은 순</option>
-        <option value="pf_desc">수익팩터 (Profit Factor) 높은 순</option>
-      </select>
+    <section class="toolbar" aria-label="ETF 데이터 필터">
+      <input id="searchInput" type="search" placeholder="티커, 카테고리, 기간, 등급 검색" autocomplete="off" />
+      <select id="periodFilter" aria-label="기간 필터"></select>
+      <select id="gradeFilter" aria-label="등급 필터"></select>
+      <select id="sortSelect" aria-label="정렬"></select>
+      <button id="resetButton" class="reset-button" type="button">초기화</button>
     </section>
 
-    <section id="kpiCards" class="kpi-grid"></section>
+    <section id="kpiCards" class="kpi-grid" aria-label="주요 지표"></section>
 
     <section class="insight-grid">
       <article class="panel">
         <div class="panel-title">
           <div>
-            <h2>ETF 유니버스 (ETF Universe)</h2>
-            <p>ETF 수와 Best / Good / Normal / Bad 등급 분포입니다. (ETF count and grade mix.)</p>
+            <h2>등급 분포</h2>
+            <p id="gradeSummaryText">-</p>
           </div>
         </div>
-        <div class="count-grid grade-grid">
-          <div class="count-card total"><span>전체 ETF (Total ETF)</span> <strong id="totalEtfCount">0</strong></div>
-          <div class="count-card best"><span>Best</span> <strong id="bestCount">0</strong></div>
-          <div class="count-card good"><span>Good</span> <strong id="goodCount">0</strong></div>
-          <div class="count-card normal"><span>Normal</span> <strong id="normalCount">0</strong></div>
-          <div class="count-card bad"><span>Bad</span> <strong id="badCount">0</strong></div>
-        </div>
+        <div id="gradeCounts" class="count-grid grade-grid"></div>
         <div id="gradeRatio" class="ratio-bar"></div>
       </article>
 
       <article class="panel">
         <div class="panel-title">
           <div>
-            <h2>신호 분포 (Signal Distribution)</h2>
-            <p>전체 기간 기준 BUY / HOLD / SELL 분포입니다. (Based on total period rows.)</p>
+            <h2>기간 분포</h2>
+            <p id="periodSummaryText">-</p>
           </div>
         </div>
-        <div class="count-grid three">
-          <div class="count-card buy"><span>BUY</span> <strong id="buyCount">0</strong></div>
-          <div class="count-card hold"><span>HOLD</span> <strong id="holdCount">0</strong></div>
-          <div class="count-card sell"><span>SELL</span> <strong id="sellCount">0</strong></div>
-        </div>
-        <div id="signalRatio" class="ratio-bar"></div>
+        <div id="periodCounts" class="count-grid period-grid"></div>
+        <div id="periodRatio" class="ratio-bar"></div>
       </article>
     </section>
 
     <main class="table-panel expanded">
       <div class="table-title">
         <div>
-          <h2 id="tableTitle">전체 기간 성과 (Total Performance)</h2>
-          <p>행을 클릭하면 전체, 5년, 3년, 1년 상세 성과를 비교할 수 있습니다. (Click a row to compare ALL, 5Y, 3Y, and 1Y details.)</p>
+          <h2 id="tableTitle">기간별 ETF 성과</h2>
+          <p id="tableSubtitle">data.json 컬럼 순서 기준으로 표시됩니다.</p>
         </div>
-        <span class="period-chip">전체 기간 기준 (Total Basis)</span>
+        <span id="rowCount" class="period-chip">0 rows</span>
       </div>
       <div class="table-wrap main-table-wrap">
         <table id="mainTable">
-          <thead>
-            <tr>
-              <th data-sort-key="ticker" tabindex="0">티커<br><span>Ticker</span></th>
-              <th data-sort-key="category" tabindex="0">카테고리<br><span>Category</span></th>
-              <th data-sort-key="grade" tabindex="0">등급<br><span>Grade</span></th>
-              <th data-sort-key="signal" tabindex="0">신호<br><span>Signal</span></th>
-              <th data-sort-key="firstDate" tabindex="0">거래시작일<br><span>first_date</span></th>
-              <th data-sort-key="lastDate" tabindex="0">거래종료일<br><span>last_date</span></th>
-              <th data-sort-key="totalReturn" tabindex="0">총수익률<br><span>Total Return</span></th>
-              <th data-sort-key="cagr" tabindex="0">연복리수익률<br><span>CAGR</span></th>
-              <th data-sort-key="sharpe" tabindex="0">샤프지수<br><span>Sharpe</span></th>
-              <th data-sort-key="mdd" tabindex="0">최대낙폭<br><span>MDD</span></th>
-              <th data-sort-key="calmar" tabindex="0">칼마지수<br><span>Calmar</span></th>
-              <th data-sort-key="exposure" tabindex="0">투자노출도<br><span>Exposure</span></th>
-              <th data-sort-key="tradeCount" tabindex="0">거래수<br><span>Trades</span></th>
-              <th data-sort-key="profitFactor" tabindex="0">수익팩터<br><span>Profit Factor</span></th>
-              <th data-sort-key="expectancy" tabindex="0">기대값<br><span>Expectancy</span></th>
-            </tr>
-          </thead>
+          <thead id="tableHead"></thead>
           <tbody id="tableBody"></tbody>
         </table>
       </div>
     </main>
   </div>
 
-  <aside id="detailDrawer" class="drawer" aria-label="ETF 상세 패널 (ETF detail panel)">
-    <button id="closeDrawer" class="drawer-close" type="button" aria-label="상세 패널 닫기 (Close detail panel)">&times;</button>
+  <aside id="detailDrawer" class="drawer" aria-label="ETF 상세 패널">
+    <button id="closeDrawer" class="drawer-close" type="button" aria-label="상세 패널 닫기">&times;</button>
     <div class="drawer-header">
       <div>
         <h2 id="detailTicker">-</h2>
@@ -138,43 +92,17 @@
     </div>
 
     <section class="drawer-section">
-      <h3>기간별 요약 (Period Summary)</h3>
+      <h3>기간별 날짜 및 등급</h3>
       <div id="periodSummaryCards" class="period-summary-grid"></div>
     </section>
 
     <section class="drawer-section">
-      <h3>기간별 비교 (Period Comparison)</h3>
-      <p class="drawer-desc">전체, 5년, 3년, 1년 핵심 지표를 비교합니다. (Compare key metrics across ALL, 5Y, 3Y, and 1Y periods.)</p>
-      <div id="periodCompareChart" class="period-compare-chart"></div>
-    </section>
-
-    <section class="drawer-section">
-      <h3>기간별 상세 테이블 (Period Detail Table)</h3>
-      <div class="table-wrap detail-table-wrap">
-        <table class="detail-table">
-          <thead>
-            <tr>
-              <th>기간<br><span>Period</span></th>
-              <th>거래시작일<br><span>first_date</span></th>
-              <th>거래종료일<br><span>last_date</span></th>
-              <th>총수익률<br><span>Total Return</span></th>
-              <th>연복리수익률<br><span>CAGR</span></th>
-              <th>샤프지수<br><span>Sharpe</span></th>
-              <th>최대낙폭<br><span>MDD</span></th>
-              <th>칼마지수<br><span>Calmar</span></th>
-              <th>투자노출도<br><span>Exposure</span></th>
-              <th>거래수<br><span>Trades</span></th>
-              <th>수익팩터<br><span>Profit Factor</span></th>
-              <th>기대값<br><span>Expectancy</span></th>
-            </tr>
-          </thead>
-          <tbody id="detailBody"></tbody>
-        </table>
-      </div>
+      <h3>기간별 지표 상세</h3>
+      <div id="periodMetricBars" class="metric-bars"></div>
     </section>
   </aside>
 
   <div id="overlay" class="overlay"></div>
-  <script src="./app.js?v=20260520-sort"></script>
+  <script src="./app.js?v=20260530-period-bars"></script>
 </body>
 </html>
