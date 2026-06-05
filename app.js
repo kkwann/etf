@@ -1,19 +1,48 @@
 "use strict";
 
-const THEME_STORAGE_KEY = "etfDashboardTheme";
+const THEME_STORAGE_KEY = "stockDashboardTheme";
 const ALL_FILTER = "__ALL__";
 const MAIN_PERIOD = "10y";
 const PERIOD_DETAIL_ORDER = ["1y", "3y", "5y", "10y"];
+const DATASET_KEYS = ["ETF", "STOCK"];
 const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
 const PREFERRED_DEFAULT_PERIODS = [MAIN_PERIOD, "total", "all", "5y", "3y", "1y"];
 const PERCENT_COLUMNS = new Set(["Total Return", "CAGR", "MDD"]);
-const KNOWN_NUMERIC_COLUMNS = new Set(["Total Return", "CAGR", "Sharpe", "MDD", "Calmar"]);
-const DETAIL_METRIC_COLUMNS = ["Total Return", "CAGR", "Sharpe", "MDD", "Calmar"];
+const KNOWN_NUMERIC_COLUMNS = new Set(["Total Return", "CAGR", "Sharpe", "MDD", "Calmar", "Score"]);
+const DETAIL_METRIC_COLUMNS = ["Total Return", "CAGR", "Sharpe", "MDD", "Calmar", "Score"];
 const DATE_COLUMNS = new Set(["first_date", "last_date"]);
-const TEXT_DEFAULT_ASC_COLUMNS = new Set(["Ticker", "Category", "first_date", "last_date"]);
+const TEXT_DEFAULT_ASC_COLUMNS = new Set(["Ticker", "Name", "Category", "Sector", "Industry", "first_date", "last_date"]);
+const ROUTING_COLUMNS = new Set([
+  "asset_type",
+  "Asset Type",
+  "AssetType",
+  "assetType",
+  "dataset",
+  "Dataset",
+  "type",
+  "Type",
+  "market",
+  "Market"
+]);
+const DEFAULT_COLUMNS = [
+  "Ticker",
+  "Category",
+  "period",
+  "first_date",
+  "last_date",
+  "Total Return",
+  "CAGR",
+  "Sharpe",
+  "MDD",
+  "Calmar",
+  "Grade"
+];
 const COLUMN_LABELS = {
   Ticker: "티커",
+  Name: "종목명",
   Category: "카테고리",
+  Sector: "섹터",
+  Industry: "산업",
   period: "기간",
   first_date: "거래시작일",
   last_date: "거래종료일",
@@ -22,17 +51,40 @@ const COLUMN_LABELS = {
   Sharpe: "샤프지수",
   MDD: "최대낙폭",
   Calmar: "칼마지수",
-  Grade: "등급"
+  Grade: "등급",
+  Trend: "추세",
+  Score: "점수"
+};
+const DATASET_META = {
+  ETF: {
+    label: "ETF",
+    tableLabel: "ETF",
+    title: "ETF 성과 대시보드",
+    description: "Yahoo Finance 기준 기간별 ETF 성과와 등급을 확인합니다.",
+    emptyText: "ETF 데이터가 없습니다."
+  },
+  STOCK: {
+    label: "미국주식",
+    tableLabel: "미국주식",
+    title: "미국주식 성과 대시보드",
+    description: "Yahoo Finance 기준 기간별 미국주식 성과와 등급을 확인합니다.",
+    emptyText: "미국주식 데이터가 없습니다. data.json에 US_STOCK 배열 또는 asset_type: stock 행을 추가하면 표시됩니다."
+  }
 };
 
+let rowsByDataset = {
+  ETF: [],
+  STOCK: []
+};
+let activeDataset = "ETF";
 let rawRows = [];
-let columns = [];
+let columns = DEFAULT_COLUMNS.slice();
 let visibleRows = [];
 let tableSort = {
-  key: "",
-  direction: "asc"
+  key: "CAGR",
+  direction: "desc"
 };
-let defaultPeriod = ALL_FILTER;
+let defaultPeriod = MAIN_PERIOD;
 
 const dom = {};
 
@@ -46,28 +98,27 @@ async function init() {
     showStatus("Yahoo Finance 데이터를 불러오는 중입니다...");
 
     const dataResult = await loadJson();
-    rawRows = normalizeInput(dataResult.json);
-    columns = inferColumns(rawRows);
-    validateData(rawRows, columns);
+    rowsByDataset = normalizeDatasets(dataResult.json);
 
     updateDataSourceMeta(dataResult.lastModified);
-    setupControls();
-    renderTableHead();
-    renderDashboard();
+    activateDataset("ETF", false);
     hideStatus();
   } catch (error) {
-    console.error("[ETF Dashboard Error]", error);
+    console.error("[Dashboard Error]", error);
     showError(error);
   }
 }
 
 function cacheDom() {
   [
+    "dashboardTitle",
+    "dashboardDescription",
     "statusBox",
     "themeToggle",
     "themeToggleLabel",
     "dataSourceName",
     "lastUpdated",
+    "assetTabs",
     "searchInput",
     "periodFilter",
     "gradeFilter",
@@ -77,6 +128,7 @@ function cacheDom() {
     "gradeSummaryText",
     "gradeCounts",
     "gradeRatio",
+    "groupDistributionTitle",
     "periodSummaryText",
     "periodCounts",
     "periodRatio",
@@ -142,6 +194,64 @@ function bindEvents() {
   });
 }
 
+function activateDataset(datasetKey, preserveSearch) {
+  activeDataset = DATASET_META[datasetKey] ? datasetKey : "ETF";
+  rawRows = rowsByDataset[activeDataset] || [];
+  columns = inferColumns(rawRows);
+
+  if (!preserveSearch) {
+    dom.searchInput.value = "";
+  }
+
+  applyDatasetCopy();
+  renderAssetTabs();
+  setupControls();
+  renderTableHead();
+  closeDrawer();
+  renderDashboard();
+}
+
+function applyDatasetCopy() {
+  const meta = DATASET_META[activeDataset];
+
+  dom.dashboardTitle.textContent = meta.title;
+  dom.dashboardDescription.textContent = meta.description;
+  dom.searchInput.placeholder = activeDataset === "ETF"
+    ? "티커, 카테고리, 기간, 등급 검색"
+    : "티커, 종목명, 섹터, 기간, 등급 검색";
+}
+
+function renderAssetTabs() {
+  dom.assetTabs.innerHTML = DATASET_KEYS.map(function (datasetKey) {
+    const meta = DATASET_META[datasetKey];
+    const isActive = datasetKey === activeDataset;
+    const count = countDatasetTickers(datasetKey);
+
+    return ""
+      + '<button class="asset-tab' + (isActive ? " active" : "") + '" type="button" data-dataset="' + datasetKey + '" aria-pressed="' + String(isActive) + '">'
+      + '<span>' + escapeHtml(meta.label) + '</span>'
+      + '<strong>' + count.toLocaleString("ko-KR") + '</strong>'
+      + '</button>';
+  }).join("");
+
+  dom.assetTabs.querySelectorAll(".asset-tab").forEach(function (button) {
+    button.addEventListener("click", function () {
+      activateDataset(button.dataset.dataset, false);
+    });
+  });
+}
+
+function countDatasetTickers(datasetKey) {
+  const rows = rowsByDataset[datasetKey] || [];
+  const tickers = new Set(
+    rows.map(function (row) {
+      return cleanText(row.Ticker);
+    }).filter(Boolean)
+  );
+
+  return tickers.size || rows.length;
+}
+
 function initializeTheme() {
   const savedTheme = readStoredTheme();
   const prefersDark =
@@ -170,7 +280,7 @@ function toggleTheme() {
   try {
     window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
   } catch (error) {
-    // Storage can be unavailable in private or restricted browser contexts.
+    // Theme persistence is optional.
   }
 }
 
@@ -198,56 +308,97 @@ async function loadJson() {
     };
   } catch (error) {
     if (window.location.protocol === "file:") {
-      throw new Error(
-        "브라우저 보안 정책 때문에 file:// 주소에서는 data.json을 읽을 수 없습니다. " +
-        "이 폴더에서 HTTP 서버로 실행한 뒤 접속해 주세요."
-      );
+      throw new Error("file:// 주소에서는 data.json을 읽을 수 없습니다. 이 폴더에서 HTTP 서버로 실행한 뒤 접속해 주세요.");
     }
 
     throw error;
   }
 }
 
-function normalizeInput(json) {
-  const rows = Array.isArray(json)
-    ? json
-    : json && Array.isArray(json.items)
-      ? json.items
-      : null;
+function normalizeDatasets(json) {
+  const datasets = {
+    ETF: [],
+    STOCK: []
+  };
 
-  if (!rows) {
-    throw new Error("data.json은 배열이거나 items 배열을 가진 객체여야 합니다.");
+  if (Array.isArray(json)) {
+    splitArrayRows(json, datasets);
+    return datasets;
   }
 
+  if (!json || typeof json !== "object") {
+    throw new Error("data.json은 배열이거나 ETF/US_STOCK 배열을 가진 객체여야 합니다.");
+  }
+
+  const etfRows = readDatasetArray(json, ["ETF", "etf", "ETFS", "etfs"]);
+  const stockRows = readDatasetArray(json, ["US_STOCK", "US_STOCKS", "us_stock", "us_stocks", "stock", "stocks", "STOCK", "STOCKS", "미국주식"]);
+
+  if (etfRows.length > 0 || stockRows.length > 0) {
+    datasets.ETF = sanitizeRows(etfRows);
+    datasets.STOCK = sanitizeRows(stockRows);
+    return datasets;
+  }
+
+  if (Array.isArray(json.items)) {
+    splitArrayRows(json.items, datasets);
+    return datasets;
+  }
+
+  throw new Error("data.json에서 ETF 또는 미국주식 배열을 찾을 수 없습니다.");
+}
+
+function readDatasetArray(json, keys) {
+  for (let i = 0; i < keys.length; i += 1) {
+    const key = keys[i];
+
+    if (Array.isArray(json[key])) {
+      return json[key];
+    }
+  }
+
+  return [];
+}
+
+function splitArrayRows(rows, datasets) {
+  const cleanRows = sanitizeRows(rows);
+
+  cleanRows.forEach(function (row) {
+    const datasetKey = detectDataset(row);
+    datasets[datasetKey].push(row);
+  });
+}
+
+function sanitizeRows(rows) {
   return rows.filter(function (row) {
     return row && typeof row === "object" && !Array.isArray(row);
   });
 }
 
-function inferColumns(rows) {
-  const seen = new Set();
-  const result = [];
+function detectDataset(row) {
+  const explicitValue =
+    read(row, ["asset_type", "Asset Type", "AssetType", "assetType", "dataset", "Dataset", "type", "Type"]) ||
+    read(row, ["market", "Market"]);
+  const normalized = normalizeDatasetKey(explicitValue);
 
-  rows.forEach(function (row) {
-    Object.keys(row).forEach(function (key) {
-      if (!seen.has(key)) {
-        seen.add(key);
-        result.push(key);
-      }
-    });
-  });
-
-  return result;
+  return normalized || "ETF";
 }
 
-function validateData(rows, columnList) {
-  if (!Array.isArray(rows) || rows.length === 0) {
-    throw new Error("data.json에 표시할 행이 없습니다.");
+function normalizeDatasetKey(value) {
+  const text = cleanText(value).toLowerCase().replace(/[\s_-]+/g, "");
+
+  if (!text) {
+    return "";
   }
 
-  if (!Array.isArray(columnList) || columnList.length === 0) {
-    throw new Error("data.json에서 컬럼을 찾을 수 없습니다.");
+  if (text === "stock" || text === "stocks" || text === "usstock" || text === "usstocks" || text === "미국주식" || text === "usa") {
+    return "STOCK";
   }
+
+  if (text === "etf" || text === "etfs") {
+    return "ETF";
+  }
+
+  return "";
 }
 
 function updateDataSourceMeta(lastModified) {
@@ -348,6 +499,22 @@ function appendOption(select, value, label) {
   select.appendChild(option);
 }
 
+function inferColumns(rows) {
+  const seen = new Set();
+  const result = [];
+
+  rows.forEach(function (row) {
+    Object.keys(row).forEach(function (key) {
+      if (!ROUTING_COLUMNS.has(key) && !seen.has(key)) {
+        seen.add(key);
+        result.push(key);
+      }
+    });
+  });
+
+  return result.length > 0 ? result : DEFAULT_COLUMNS.slice();
+}
+
 function renderTableHead() {
   const tr = document.createElement("tr");
 
@@ -373,7 +540,7 @@ function renderDashboard() {
   updateSortHeaders();
   renderKpiCards(visibleRows);
   renderGradeDistribution(visibleRows);
-  renderPeriodDistribution(getFilteredRows({ ignorePeriod: true }));
+  renderGroupDistribution(visibleRows);
   renderTable(visibleRows);
 }
 
@@ -400,13 +567,14 @@ function getFilteredRows(options) {
 }
 
 function updateTableCopy() {
+  const meta = DATASET_META[activeDataset];
   const period = dom.periodFilter.value;
   const grade = dom.gradeFilter.value;
   const periodText = period === ALL_FILTER ? "전체 기간" : labelPeriod(period);
   const gradeText = grade === ALL_FILTER ? "전체 등급" : grade;
   const tickerCount = countUnique(visibleRows, "Ticker");
 
-  dom.tableTitle.textContent = periodText + " ETF 성과";
+  dom.tableTitle.textContent = periodText + " " + meta.tableLabel + " 성과";
   dom.tableSubtitle.textContent =
     columns.length + "개 JSON 컬럼 기준 · " + gradeText + " · " +
     tickerCount.toLocaleString("ko-KR") + "개 티커";
@@ -462,27 +630,41 @@ function renderGradeDistribution(rows) {
   );
 }
 
-function renderPeriodDistribution(rows) {
-  if (columns.indexOf("period") < 0) {
-    dom.periodSummaryText.textContent = "period 컬럼이 없습니다.";
+function renderGroupDistribution(rows) {
+  const config = activeDataset === "STOCK"
+    ? { title: "산업 분포", column: "Industry", fallback: "Sector", unit: "개 산업" }
+    : { title: "카테고리 분포", column: "Category", fallback: "", unit: "개 카테고리" };
+  const column = columns.indexOf(config.column) >= 0
+    ? config.column
+    : columns.indexOf(config.fallback) >= 0
+      ? config.fallback
+      : "";
+
+  dom.groupDistributionTitle.textContent = config.title;
+
+  if (!column) {
+    dom.periodSummaryText.textContent = config.column + " 컬럼이 없습니다.";
     dom.periodCounts.innerHTML = "";
     dom.periodRatio.innerHTML = "";
     return;
   }
 
-  const counts = countByValue(rows, "period", cleanText);
-  const periods = Array.from(counts.keys()).sort(comparePeriodsForOptions);
-  const total = rows.length;
+  const counts = countUniqueTickersByValue(rows, column);
+  const groups = Array.from(counts.keys()).sort(function (a, b) {
+    const diff = counts.get(b) - counts.get(a);
+    return diff !== 0 ? diff : textCompare(a, b);
+  });
+  const totalTickers = countUnique(rows, "Ticker");
 
   dom.periodSummaryText.textContent =
-    total.toLocaleString("ko-KR") + "개 행 기준 · " +
-    periods.length.toLocaleString("ko-KR") + "개 기간";
-  dom.periodCounts.innerHTML = periods.map(function (period) {
-    return renderCountCard([labelPeriod(period), counts.get(period), "period"]);
+    totalTickers.toLocaleString("ko-KR") + "개 티커 기준 · " +
+    groups.length.toLocaleString("ko-KR") + config.unit;
+  dom.periodCounts.innerHTML = groups.map(function (group, index) {
+    return renderCountCard([group, counts.get(group), "period group-" + ((index % 4) + 1)]);
   }).join("");
   dom.periodRatio.innerHTML = renderRatio(
-    periods.map(function (period, index) {
-      return ["ratio-period-" + ((index % 4) + 1), counts.get(period) || 0];
+    groups.map(function (group, index) {
+      return ["ratio-period-" + ((index % 4) + 1), counts.get(group) || 0];
     })
   );
 }
@@ -516,8 +698,12 @@ function renderRatio(items) {
 
 function renderTable(rows) {
   if (rows.length === 0) {
+    const message = rawRows.length === 0
+      ? DATASET_META[activeDataset].emptyText
+      : "조건에 맞는 데이터가 없습니다.";
+
     dom.tableBody.innerHTML =
-      '<tr><td class="empty-cell" colspan="' + columns.length + '">조건에 맞는 데이터가 없습니다.</td></tr>';
+      '<tr><td class="empty-cell" colspan="' + columns.length + '">' + escapeHtml(message) + '</td></tr>';
     return;
   }
 
@@ -538,6 +724,8 @@ function renderTable(rows) {
 
       if (column === "Grade") {
         td.innerHTML = gradeBadge(value);
+      } else if (column === "Trend") {
+        td.innerHTML = trendBadge(value);
       } else if (column === "period") {
         td.innerHTML = periodBadge(value);
       } else {
@@ -556,7 +744,7 @@ function renderTable(rows) {
 
 function openDrawer(row) {
   const ticker = cleanText(row.Ticker) || "-";
-  const category = cleanText(row.Category);
+  const category = cleanText(row.Category || row.Sector || row.Industry);
   const periodRows = getTickerPeriodRows(row);
   const mainRow = findPeriodRow(periodRows, MAIN_PERIOD) || row;
   const availablePeriods = periodRows.map(function (periodRow) {
@@ -564,9 +752,10 @@ function openDrawer(row) {
   }).join(" · ");
 
   dom.detailTicker.textContent = ticker;
-  dom.detailSub.textContent = [category, availablePeriods].filter(Boolean).join(" · ") || "-";
+  dom.detailSub.textContent = [DATASET_META[activeDataset].label, category, availablePeriods].filter(Boolean).join(" · ") || "-";
   dom.detailBadges.innerHTML =
     (columns.indexOf("Grade") >= 0 ? gradeBadge(mainRow.Grade) : "") +
+    (columns.indexOf("Trend") >= 0 ? trendBadge(mainRow.Trend) : "") +
     (columns.indexOf("period") >= 0 ? periodBadge(MAIN_PERIOD) : "");
 
   renderPeriodSummaryCards(periodRows);
@@ -630,6 +819,9 @@ function renderPeriodSummaryCards(periodRows) {
       + '<span>등급</span>'
       + '<strong>' + gradeBadge(row.Grade) + '</strong>'
       + '</div>'
+      + (columns.indexOf("Trend") >= 0
+        ? '<div class="period-card-row"><span>추세</span><strong>' + trendBadge(row.Trend) + '</strong></div>'
+        : "")
       + '</article>';
   }).join("");
 }
@@ -785,6 +977,8 @@ function compareRows(a, b) {
 
   if (key === "Grade") {
     result = gradeRank(aValue) - gradeRank(bValue);
+  } else if (key === "Trend") {
+    result = trendRank(aValue) - trendRank(bValue);
   } else if (key === "period") {
     result = periodRank(aValue) - periodRank(bValue);
   } else if (isDateColumn(key)) {
@@ -907,6 +1101,27 @@ function countByValue(rows, column, normalizer) {
   return counts;
 }
 
+function countUniqueTickersByValue(rows, column) {
+  const groups = new Map();
+
+  rows.forEach(function (row) {
+    const group = cleanText(row[column]) || "미분류";
+    const ticker = cleanText(row.Ticker) || JSON.stringify(row);
+
+    if (!groups.has(group)) {
+      groups.set(group, new Set());
+    }
+
+    groups.get(group).add(ticker);
+  });
+
+  return new Map(
+    Array.from(groups.entries()).map(function (entry) {
+      return [entry[0], entry[1].size];
+    })
+  );
+}
+
 function countUnique(rows, column) {
   if (columns.indexOf(column) < 0) {
     return 0;
@@ -1027,7 +1242,7 @@ function cellClass(column, value) {
 
   if (column === "Ticker") {
     classes.push("ticker", "text-cell");
-  } else if (column === "Category" || column === "Grade" || column === "period") {
+  } else if (column === "Name" || column === "Category" || column === "Sector" || column === "Industry" || column === "Grade" || column === "Trend" || column === "period") {
     classes.push("text-cell");
   }
 
@@ -1036,10 +1251,6 @@ function cellClass(column, value) {
   }
 
   return classes.join(" ");
-}
-
-function numberClassForColumn(column, value) {
-  return isNumericColumn(column) ? numberClass(value) : "";
 }
 
 function isNumericColumn(column) {
@@ -1126,6 +1337,35 @@ function gradeRank(value) {
   return index >= 0 ? index : GRADE_ORDER.length;
 }
 
+function normalizeTrend(value) {
+  const text = cleanText(value);
+  const lower = text.toLowerCase();
+
+  if (text === "상승" || lower === "up" || lower === "rising" || lower === "bullish") {
+    return "상승";
+  }
+
+  if (text === "하락" || lower === "down" || lower === "falling" || lower === "bearish") {
+    return "하락";
+  }
+
+  if (text === "보합" || text === "중립" || lower === "flat" || lower === "neutral" || lower === "sideways") {
+    return "보합";
+  }
+
+  return text || "Unknown";
+}
+
+function trendRank(value) {
+  const normalized = normalizeTrend(value);
+
+  if (normalized === "상승") return 3;
+  if (normalized === "보합") return 2;
+  if (normalized === "하락") return 1;
+
+  return 0;
+}
+
 function gradeBadge(value) {
   const normalized = normalizeGrade(value) || "Unknown";
   let className = "grade-unknown";
@@ -1136,6 +1376,17 @@ function gradeBadge(value) {
   if (normalized === "Bad") className = "grade-bad";
 
   return '<span class="grade-pill ' + className + '">' + escapeHtml(normalized) + '</span>';
+}
+
+function trendBadge(value) {
+  const normalized = normalizeTrend(value);
+  let className = "trend-unknown";
+
+  if (normalized === "상승") className = "trend-up";
+  if (normalized === "보합") className = "trend-flat";
+  if (normalized === "하락") className = "trend-down";
+
+  return '<span class="trend-pill ' + className + '">' + escapeHtml(normalized) + '</span>';
 }
 
 function periodBadge(value) {
@@ -1186,6 +1437,18 @@ function clamp(value, min, max) {
   }
 
   return Math.min(Math.max(number, min), max);
+}
+
+function read(row, keys) {
+  for (let i = 0; i < keys.length; i += 1) {
+    const key = keys[i];
+
+    if (Object.prototype.hasOwnProperty.call(row, key)) {
+      return row[key];
+    }
+  }
+
+  return "";
 }
 
 function cleanText(value) {
