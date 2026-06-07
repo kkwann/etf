@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stock Performance Dashboard</title>
-  <link rel="stylesheet" href="./style.css?v=20260605-trend-grade" />
+  <link rel="stylesheet" href="./style.css?v=20260608-data-columns" />
 </head>
 <body>
   <div class="app">
@@ -29,6 +29,16 @@
     </header>
 
     <section id="statusBox" class="status-box hidden"></section>
+
+    <section id="marketOverview" class="market-overview hidden" aria-label="시장 지표">
+      <div class="market-overview-head">
+        <div>
+          <h2>시장 지표</h2>
+          <p>공포탐욕지수, 나스닥, S&amp;P500 흐름</p>
+        </div>
+      </div>
+      <div id="marketCards" class="market-card-grid"></div>
+    </section>
 
     <nav id="assetTabs" class="asset-tabs" aria-label="데이터 종류 선택"></nav>
 
@@ -105,6 +115,6 @@
   </aside>
 
   <div id="overlay" class="overlay"></div>
-  <script src="./app.js?v=20260605-trend-grade"></script>
+  <script src="./app.js?v=20260608-data-columns"></script>
 </body>
 </html>

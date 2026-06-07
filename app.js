@@ -4,12 +4,31 @@ const THEME_STORAGE_KEY = "stockDashboardTheme";
 const ALL_FILTER = "__ALL__";
 const MAIN_PERIOD = "10y";
 const PERIOD_DETAIL_ORDER = ["1y", "3y", "5y", "10y"];
+const DATASET_MAIN_PERIODS = {
+  ETF: "10y",
+  STOCK: "5y"
+};
+const DATASET_PERIOD_DETAIL_ORDERS = {
+  ETF: ["1y", "3y", "5y", "10y"],
+  STOCK: ["1y", "3y", "5y"]
+};
+const DATASET_ALLOWED_PERIODS = {
+  STOCK: new Set(["1y", "3y", "5y"])
+};
+const HIDDEN_COLUMNS_BY_DATASET = {
+  STOCK: new Set(["Trend"])
+};
 const DATASET_KEYS = ["ETF", "STOCK"];
 const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
 const PREFERRED_DEFAULT_PERIODS = [MAIN_PERIOD, "total", "all", "5y", "3y", "1y"];
+const PREFERRED_DEFAULT_PERIODS_BY_DATASET = {
+  ETF: ["10y", "total", "all", "5y", "3y", "1y"],
+  STOCK: ["5y", "3y", "1y"]
+};
+const MAX_GROUP_DISTRIBUTION_ITEMS = 5;
 const PERCENT_COLUMNS = new Set(["Total Return", "CAGR", "MDD"]);
-const KNOWN_NUMERIC_COLUMNS = new Set(["Total Return", "CAGR", "Sharpe", "MDD", "Calmar", "Score"]);
-const DETAIL_METRIC_COLUMNS = ["Total Return", "CAGR", "Sharpe", "MDD", "Calmar", "Score"];
+const KNOWN_NUMERIC_COLUMNS = new Set(["Total Return", "CAGR", "Sharpe", "MDD", "Calmar", "Return", "Score"]);
+const DETAIL_METRIC_COLUMNS = ["Total Return", "CAGR", "Sharpe", "MDD", "Calmar", "Return", "Score"];
 const DATE_COLUMNS = new Set(["first_date", "last_date"]);
 const TEXT_DEFAULT_ASC_COLUMNS = new Set(["Ticker", "Name", "Category", "Sector", "Industry", "first_date", "last_date"]);
 const ROUTING_COLUMNS = new Set([
@@ -35,7 +54,8 @@ const DEFAULT_COLUMNS = [
   "Sharpe",
   "MDD",
   "Calmar",
-  "Grade"
+  "Grade",
+  "Return"
 ];
 const COLUMN_LABELS = {
   Ticker: "티커",
@@ -52,6 +72,7 @@ const COLUMN_LABELS = {
   MDD: "최대낙폭",
   Calmar: "칼마지수",
   Grade: "등급",
+  Return: "수익률",
   Trend: "추세",
   Score: "점수"
 };
@@ -76,6 +97,7 @@ let rowsByDataset = {
   ETF: [],
   STOCK: []
 };
+let marketItems = [];
 let activeDataset = "ETF";
 let rawRows = [];
 let columns = DEFAULT_COLUMNS.slice();
@@ -99,8 +121,10 @@ async function init() {
 
     const dataResult = await loadJson();
     rowsByDataset = normalizeDatasets(dataResult.json);
+    marketItems = normalizeMarketItems(dataResult.json);
 
     updateDataSourceMeta(dataResult.lastModified);
+    renderMarketOverview();
     activateDataset("ETF", false);
     hideStatus();
   } catch (error) {
@@ -118,6 +142,8 @@ function cacheDom() {
     "themeToggleLabel",
     "dataSourceName",
     "lastUpdated",
+    "marketOverview",
+    "marketCards",
     "assetTabs",
     "searchInput",
     "periodFilter",
@@ -219,6 +245,112 @@ function applyDatasetCopy() {
   dom.searchInput.placeholder = activeDataset === "ETF"
     ? "티커, 카테고리, 기간, 등급 검색"
     : "티커, 종목명, 섹터, 기간, 등급 검색";
+}
+
+function renderMarketOverview() {
+  if (!marketItems.length) {
+    dom.marketOverview.classList.add("hidden");
+    dom.marketCards.innerHTML = "";
+    return;
+  }
+
+  dom.marketOverview.classList.remove("hidden");
+  dom.marketCards.innerHTML = marketItems.map(renderMarketCard).join("");
+}
+
+function renderMarketCard(item) {
+  const name = cleanText(read(item, ["Name", "name", "Label", "label", "Title", "title"])) || "-";
+  const symbol = cleanText(read(item, ["Symbol", "symbol", "Ticker", "ticker"]));
+  const value = read(item, ["Value", "value", "Close", "close", "Index", "index"]);
+  const unit = read(item, ["Unit", "unit"]);
+  const change = read(item, ["Change", "change", "Point Change", "point_change"]);
+  const changePercent = read(item, ["Change Percent", "change_percent", "ChangePercent", "changePercent"]);
+  const state = cleanText(read(item, ["State", "state", "Status", "status"]));
+  const asOf = cleanText(read(item, ["as_of", "As Of", "date", "Date", "last_updated", "Last Updated"]));
+  const trend = normalizeTrend(read(item, ["Trend", "trend", "Direction", "direction"]));
+  const detailText = [formatMarketChange(change, changePercent), asOf ? "기준 " + asOf : ""]
+    .filter(Boolean)
+    .join(" · ");
+
+  return ""
+    + '<article class="market-card ' + marketTrendCardClass(trend) + '">'
+    + '<div class="market-card-top">'
+    + '<span>' + escapeHtml(name) + '</span>'
+    + marketTrendBadge(trend)
+    + '</div>'
+    + '<strong>' + escapeHtml(formatMarketValue(value, unit)) + '</strong>'
+    + '<div class="market-card-bottom">'
+    + '<span>' + escapeHtml([symbol, state].filter(Boolean).join(" · ") || "-") + '</span>'
+    + '<small>' + escapeHtml(detailText || "-") + '</small>'
+    + '</div>'
+    + '</article>';
+}
+
+function formatMarketValue(value, unit) {
+  if (isBlank(value)) {
+    return "-";
+  }
+
+  const number = parseNumber(value);
+  const unitText = cleanText(unit);
+  const text = Number.isFinite(number)
+    ? number.toLocaleString("ko-KR", {
+      minimumFractionDigits: Math.abs(number) >= 100 ? 2 : 0,
+      maximumFractionDigits: 2
+    })
+    : cleanText(value);
+
+  return unitText ? text + unitText : text;
+}
+
+function formatMarketChange(change, changePercent) {
+  const parts = [];
+  const changeNumber = parseNumber(change);
+  const percentNumber = parseNumber(changePercent);
+
+  if (Number.isFinite(changeNumber)) {
+    parts.push(formatSignedNumber(changeNumber));
+  }
+
+  if (Number.isFinite(percentNumber)) {
+    parts.push(formatSignedNumber(percentNumber) + "%");
+  }
+
+  return parts.join(" / ");
+}
+
+function formatSignedNumber(value) {
+  const number = parseNumber(value);
+
+  if (!Number.isFinite(number)) {
+    return cleanText(value);
+  }
+
+  return (number > 0 ? "+" : "") + number.toLocaleString("ko-KR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
+function marketTrendCardClass(trend) {
+  const normalized = normalizeTrend(trend);
+
+  if (normalized === "상승") return "market-up";
+  if (normalized === "하락") return "market-down";
+  if (normalized === "보합") return "market-flat";
+
+  return "market-unknown";
+}
+
+function marketTrendBadge(trend) {
+  const normalized = normalizeTrend(trend);
+  let className = "trend-unknown";
+
+  if (normalized === "상승") className = "trend-up";
+  if (normalized === "하락") className = "trend-down";
+  if (normalized === "보합") className = "trend-flat";
+
+  return '<span class="market-trend ' + className + '">' + escapeHtml(normalized) + '</span>';
 }
 
 function renderAssetTabs() {
@@ -323,7 +455,7 @@ function normalizeDatasets(json) {
 
   if (Array.isArray(json)) {
     splitArrayRows(json, datasets);
-    return datasets;
+    return finalizeDatasets(datasets);
   }
 
   if (!json || typeof json !== "object") {
@@ -334,17 +466,49 @@ function normalizeDatasets(json) {
   const stockRows = readDatasetArray(json, ["US_STOCK", "US_STOCKS", "us_stock", "us_stocks", "stock", "stocks", "STOCK", "STOCKS", "미국주식"]);
 
   if (etfRows.length > 0 || stockRows.length > 0) {
-    datasets.ETF = sanitizeRows(etfRows);
-    datasets.STOCK = sanitizeRows(stockRows);
-    return datasets;
+    datasets.ETF = etfRows;
+    datasets.STOCK = stockRows;
+    return finalizeDatasets(datasets);
   }
 
   if (Array.isArray(json.items)) {
     splitArrayRows(json.items, datasets);
-    return datasets;
+    return finalizeDatasets(datasets);
   }
 
   throw new Error("data.json에서 ETF 또는 미국주식 배열을 찾을 수 없습니다.");
+}
+
+function finalizeDatasets(datasets) {
+  return {
+    ETF: prepareRowsForDataset(datasets.ETF || [], "ETF"),
+    STOCK: prepareRowsForDataset(datasets.STOCK || [], "STOCK")
+  };
+}
+
+function prepareRowsForDataset(rows, datasetKey) {
+  const allowedPeriods = DATASET_ALLOWED_PERIODS[datasetKey];
+  const hiddenColumns = HIDDEN_COLUMNS_BY_DATASET[datasetKey] || new Set();
+
+  return sanitizeRows(rows)
+    .filter(function (row) {
+      if (!allowedPeriods) {
+        return true;
+      }
+
+      return allowedPeriods.has(cleanText(row.period).toLowerCase());
+    })
+    .map(function (row) {
+      const copy = {};
+
+      Object.keys(row).forEach(function (key) {
+        if (!hiddenColumns.has(key)) {
+          copy[key] = row[key];
+        }
+      });
+
+      return copy;
+    });
 }
 
 function readDatasetArray(json, keys) {
@@ -357,6 +521,23 @@ function readDatasetArray(json, keys) {
   }
 
   return [];
+}
+
+function normalizeMarketItems(json) {
+  if (!json || typeof json !== "object" || Array.isArray(json)) {
+    return [];
+  }
+
+  return readDatasetArray(json, [
+    "MARKET_INDICES",
+    "MARKET_INDEXES",
+    "market_indices",
+    "market_indexes",
+    "market",
+    "indices"
+  ]).map(function (item) {
+    return item && typeof item === "object" && !Array.isArray(item) ? item : null;
+  }).filter(Boolean);
 }
 
 function splitArrayRows(rows, datasets) {
@@ -502,10 +683,11 @@ function appendOption(select, value, label) {
 function inferColumns(rows) {
   const seen = new Set();
   const result = [];
+  const hiddenColumns = HIDDEN_COLUMNS_BY_DATASET[activeDataset] || new Set();
 
   rows.forEach(function (row) {
     Object.keys(row).forEach(function (key) {
-      if (!ROUTING_COLUMNS.has(key) && !seen.has(key)) {
+      if (!ROUTING_COLUMNS.has(key) && !hiddenColumns.has(key) && !seen.has(key)) {
         seen.add(key);
         result.push(key);
       }
@@ -650,23 +832,53 @@ function renderGroupDistribution(rows) {
   }
 
   const counts = countUniqueTickersByValue(rows, column);
-  const groups = Array.from(counts.keys()).sort(function (a, b) {
-    const diff = counts.get(b) - counts.get(a);
-    return diff !== 0 ? diff : textCompare(a, b);
-  });
+  const groups = limitedDistributionGroups(counts, MAX_GROUP_DISTRIBUTION_ITEMS);
   const totalTickers = countUnique(rows, "Ticker");
+  const groupCount = counts.size;
+  const shownCount = Math.min(groupCount, MAX_GROUP_DISTRIBUTION_ITEMS);
 
   dom.periodSummaryText.textContent =
     totalTickers.toLocaleString("ko-KR") + "개 티커 기준 · " +
-    groups.length.toLocaleString("ko-KR") + config.unit;
-  dom.periodCounts.innerHTML = groups.map(function (group, index) {
-    return renderCountCard([group, counts.get(group), "period group-" + ((index % 4) + 1)]);
+    groupCount.toLocaleString("ko-KR") + config.unit + " 중 상위 " +
+    shownCount.toLocaleString("ko-KR") + "개" +
+    (groups.length > shownCount ? " + 기타" : "");
+  dom.periodCounts.innerHTML = groups.map(function (group) {
+    return renderCountCard([group.label, group.count, "period " + group.cardClass]);
   }).join("");
   dom.periodRatio.innerHTML = renderRatio(
-    groups.map(function (group, index) {
-      return ["ratio-period-" + ((index % 4) + 1), counts.get(group) || 0];
+    groups.map(function (group) {
+      return ["ratio-period-" + group.ratioClass, group.count || 0];
     })
   );
+}
+
+function limitedDistributionGroups(counts, limit) {
+  const sorted = Array.from(counts.keys()).sort(function (a, b) {
+    const diff = counts.get(b) - counts.get(a);
+    return diff !== 0 ? diff : textCompare(a, b);
+  });
+  const top = sorted.slice(0, limit).map(function (group, index) {
+    return {
+      label: group,
+      count: counts.get(group) || 0,
+      cardClass: "group-" + (index + 1),
+      ratioClass: String(index + 1)
+    };
+  });
+  const otherCount = sorted.slice(limit).reduce(function (sum, group) {
+    return sum + (counts.get(group) || 0);
+  }, 0);
+
+  if (otherCount > 0) {
+    top.push({
+      label: "기타",
+      count: otherCount,
+      cardClass: "group-other",
+      ratioClass: "other"
+    });
+  }
+
+  return top;
 }
 
 function renderCountCard(card) {
@@ -746,7 +958,8 @@ function openDrawer(row) {
   const ticker = cleanText(row.Ticker) || "-";
   const category = cleanText(row.Category || row.Sector || row.Industry);
   const periodRows = getTickerPeriodRows(row);
-  const mainRow = findPeriodRow(periodRows, MAIN_PERIOD) || row;
+  const mainPeriod = getMainPeriod();
+  const mainRow = findPeriodRow(periodRows, mainPeriod) || row;
   const availablePeriods = periodRows.map(function (periodRow) {
     return labelPeriod(periodRow.period);
   }).join(" · ");
@@ -756,13 +969,21 @@ function openDrawer(row) {
   dom.detailBadges.innerHTML =
     (columns.indexOf("Grade") >= 0 ? gradeBadge(mainRow.Grade) : "") +
     (columns.indexOf("Trend") >= 0 ? trendBadge(mainRow.Trend) : "") +
-    (columns.indexOf("period") >= 0 ? periodBadge(MAIN_PERIOD) : "");
+    (columns.indexOf("period") >= 0 ? periodBadge(mainPeriod) : "");
 
   renderPeriodSummaryCards(periodRows);
   renderPeriodMetricBars(periodRows);
 
   dom.detailDrawer.classList.add("open");
   dom.overlay.classList.add("open");
+}
+
+function getMainPeriod() {
+  return DATASET_MAIN_PERIODS[activeDataset] || MAIN_PERIOD;
+}
+
+function getDetailPeriodOrder() {
+  return DATASET_PERIOD_DETAIL_ORDERS[activeDataset] || PERIOD_DETAIL_ORDER;
 }
 
 function getTickerPeriodRows(row) {
@@ -777,7 +998,7 @@ function getTickerPeriodRows(row) {
       return sameTicker && sameCategory;
     })
     .filter(function (candidate) {
-      return PERIOD_DETAIL_ORDER.indexOf(cleanText(candidate.period).toLowerCase()) >= 0;
+      return getDetailPeriodOrder().indexOf(cleanText(candidate.period).toLowerCase()) >= 0;
     })
     .sort(function (a, b) {
       return detailPeriodIndex(a.period) - detailPeriodIndex(b.period);
@@ -793,13 +1014,14 @@ function findPeriodRow(rows, period) {
 }
 
 function detailPeriodIndex(period) {
-  const index = PERIOD_DETAIL_ORDER.indexOf(cleanText(period).toLowerCase());
+  const detailPeriodOrder = getDetailPeriodOrder();
+  const index = detailPeriodOrder.indexOf(cleanText(period).toLowerCase());
 
-  return index >= 0 ? index : PERIOD_DETAIL_ORDER.length;
+  return index >= 0 ? index : detailPeriodOrder.length;
 }
 
 function renderPeriodSummaryCards(periodRows) {
-  dom.periodSummaryCards.innerHTML = PERIOD_DETAIL_ORDER.map(function (period) {
+  dom.periodSummaryCards.innerHTML = getDetailPeriodOrder().map(function (period) {
     const row = findPeriodRow(periodRows, period);
 
     if (!row) {
@@ -850,7 +1072,7 @@ function renderPeriodMetricBars(periodRows) {
 }
 
 function renderMetricBlock(metric, periodRows) {
-  const rowsByPeriod = PERIOD_DETAIL_ORDER.map(function (period) {
+  const rowsByPeriod = getDetailPeriodOrder().map(function (period) {
     return {
       period: period,
       row: findPeriodRow(periodRows, period)
@@ -1139,14 +1361,15 @@ function chooseDefaultPeriod(periodValues) {
     return ALL_FILTER;
   }
 
+  const preferredPeriods = PREFERRED_DEFAULT_PERIODS_BY_DATASET[activeDataset] || PREFERRED_DEFAULT_PERIODS;
   const lowerMap = new Map(
     periodValues.map(function (period) {
       return [period.toLowerCase(), period];
     })
   );
 
-  for (let i = 0; i < PREFERRED_DEFAULT_PERIODS.length; i += 1) {
-    const period = lowerMap.get(PREFERRED_DEFAULT_PERIODS[i]);
+  for (let i = 0; i < preferredPeriods.length; i += 1) {
+    const period = lowerMap.get(preferredPeriods[i]);
 
     if (period) {
       return period;
