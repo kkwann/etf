@@ -6,24 +6,29 @@ const MAIN_PERIOD = "10y";
 const PERIOD_DETAIL_ORDER = ["1y", "3y", "5y", "10y"];
 const DATASET_MAIN_PERIODS = {
   ETF: "10y",
-  STOCK: "5y"
+  NASDAQ: "5y",
+  SP500: "5y"
 };
 const DATASET_PERIOD_DETAIL_ORDERS = {
   ETF: ["1y", "3y", "5y", "10y"],
-  STOCK: ["1y", "3y", "5y"]
+  NASDAQ: ["1y", "3y", "5y"],
+  SP500: ["1y", "3y", "5y"]
 };
 const DATASET_ALLOWED_PERIODS = {
-  STOCK: new Set(["1y", "3y", "5y"])
+  NASDAQ: new Set(["1y", "3y", "5y"]),
+  SP500: new Set(["1y", "3y", "5y"])
 };
 const HIDDEN_COLUMNS_BY_DATASET = {
-  STOCK: new Set(["Trend"])
+  NASDAQ: new Set(["Trend"]),
+  SP500: new Set(["Trend"])
 };
-const DATASET_KEYS = ["ETF", "STOCK"];
+const DATASET_KEYS = ["ETF", "NASDAQ", "SP500"];
 const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
 const PREFERRED_DEFAULT_PERIODS = [MAIN_PERIOD, "total", "all", "5y", "3y", "1y"];
 const PREFERRED_DEFAULT_PERIODS_BY_DATASET = {
   ETF: ["10y", "total", "all", "5y", "3y", "1y"],
-  STOCK: ["5y", "3y", "1y"]
+  NASDAQ: ["5y", "3y", "1y"],
+  SP500: ["5y", "3y", "1y"]
 };
 const MAX_GROUP_DISTRIBUTION_ITEMS = 5;
 const PERCENT_COLUMNS = new Set(["Total Return", "CAGR", "MDD"]);
@@ -57,6 +62,26 @@ const DEFAULT_COLUMNS = [
   "Grade",
   "Return"
 ];
+const EQUITY_DEFAULT_COLUMNS = [
+  "Ticker",
+  "Sector",
+  "Industry",
+  "period",
+  "first_date",
+  "last_date",
+  "Total Return",
+  "CAGR",
+  "Sharpe",
+  "MDD",
+  "Calmar",
+  "Grade",
+  "Return"
+];
+const DEFAULT_COLUMNS_BY_DATASET = {
+  ETF: DEFAULT_COLUMNS,
+  NASDAQ: EQUITY_DEFAULT_COLUMNS,
+  SP500: EQUITY_DEFAULT_COLUMNS
+};
 const COLUMN_LABELS = {
   Ticker: "티커",
   Name: "종목명",
@@ -84,18 +109,26 @@ const DATASET_META = {
     description: "Yahoo Finance 기준 기간별 ETF 성과와 등급을 확인합니다.",
     emptyText: "ETF 데이터가 없습니다."
   },
-  STOCK: {
-    label: "미국주식",
-    tableLabel: "미국주식",
-    title: "미국주식 성과 대시보드",
-    description: "Yahoo Finance 기준 기간별 미국주식 성과와 등급을 확인합니다.",
-    emptyText: "미국주식 데이터가 없습니다. data.json에 US_STOCK 배열 또는 asset_type: stock 행을 추가하면 표시됩니다."
+  NASDAQ: {
+    label: "나스닥",
+    tableLabel: "나스닥",
+    title: "나스닥 성과 대시보드",
+    description: "Yahoo Finance 기준 기간별 나스닥 종목 성과와 등급을 확인합니다.",
+    emptyText: "나스닥 데이터가 없습니다. data.json에 NASDAQ 배열을 추가하면 표시됩니다."
+  },
+  SP500: {
+    label: "S&P500",
+    tableLabel: "S&P500",
+    title: "S&P500 성과 대시보드",
+    description: "Yahoo Finance 기준 기간별 S&P500 종목 성과와 등급을 확인합니다.",
+    emptyText: "S&P500 데이터가 없습니다. data.json에 SP500 배열을 추가하면 표시됩니다."
   }
 };
 
 let rowsByDataset = {
   ETF: [],
-  STOCK: []
+  NASDAQ: [],
+  SP500: []
 };
 let marketItems = [];
 let activeDataset = "ETF";
@@ -259,31 +292,151 @@ function renderMarketOverview() {
 }
 
 function renderMarketCard(item) {
-  const name = cleanText(read(item, ["Name", "name", "Label", "label", "Title", "title"])) || "-";
-  const symbol = cleanText(read(item, ["Symbol", "symbol", "Ticker", "ticker"]));
-  const value = read(item, ["Value", "value", "Close", "close", "Index", "index"]);
-  const unit = read(item, ["Unit", "unit"]);
-  const change = read(item, ["Change", "change", "Point Change", "point_change"]);
-  const changePercent = read(item, ["Change Percent", "change_percent", "ChangePercent", "changePercent"]);
-  const state = cleanText(read(item, ["State", "state", "Status", "status"]));
+  const name = marketDisplayName(item);
+  const symbol = marketDisplaySymbol(item);
+  const valueText = marketDisplayValue(item);
+  const state = marketDisplayState(item);
   const asOf = cleanText(read(item, ["as_of", "As Of", "date", "Date", "last_updated", "Last Updated"]));
-  const trend = normalizeTrend(read(item, ["Trend", "trend", "Direction", "direction"]));
-  const detailText = [formatMarketChange(change, changePercent), asOf ? "기준 " + asOf : ""]
+  const description = marketDisplayDescription(item);
+  const useDescriptionBadge = shouldUseMarketDescriptionBadge(item);
+  const trend = useDescriptionBadge ? "" : marketDisplayTrend(item);
+  const detailText = [marketDisplayDetail(item), asOf ? "기준 " + asOf : ""]
     .filter(Boolean)
     .join(" · ");
 
   return ""
-    + '<article class="market-card ' + marketTrendCardClass(trend) + '">'
+    + '<article class="market-card ' + (useDescriptionBadge ? "market-unknown" : marketTrendCardClass(trend)) + '">'
     + '<div class="market-card-top">'
     + '<span>' + escapeHtml(name) + '</span>'
-    + marketTrendBadge(trend)
+    + (useDescriptionBadge ? marketDescriptionBadge(description) : marketTrendBadge(trend))
     + '</div>'
-    + '<strong>' + escapeHtml(formatMarketValue(value, unit)) + '</strong>'
+    + '<strong>' + escapeHtml(valueText) + '</strong>'
     + '<div class="market-card-bottom">'
     + '<span>' + escapeHtml([symbol, state].filter(Boolean).join(" · ") || "-") + '</span>'
-    + '<small>' + escapeHtml(detailText || "-") + '</small>'
+    + (detailText ? '<small>' + escapeHtml(detailText) + '</small>' : "")
     + '</div>'
     + '</article>';
+}
+
+function marketDisplayName(item) {
+  const explicitName = cleanText(read(item, ["Name", "name", "Label", "label", "Title", "title"]));
+  const ticker = cleanText(read(item, ["Ticker", "ticker", "Symbol", "symbol"]));
+
+  if (explicitName) return explicitName;
+  if (ticker === "^GSPC") return "S&P500";
+  if (ticker === "^IXIC") return "나스닥";
+
+  return ticker || "-";
+}
+
+function marketDisplaySymbol(item) {
+  const ticker = cleanText(read(item, ["Ticker", "ticker", "Symbol", "symbol"]));
+
+  if (ticker === "^GSPC") return "S&P 500";
+  if (ticker === "^IXIC") return "NASDAQ Composite";
+
+  return ticker;
+}
+
+function marketDisplayValue(item) {
+  const adjClose = read(item, ["Adj Close", "adj_close", "AdjClose", "adjClose"]);
+  const value = read(item, ["Value", "value", "Close", "close"]);
+  const unit = read(item, ["Unit", "unit"]);
+  const ticker = cleanText(read(item, ["Ticker", "ticker", "Symbol", "symbol"]));
+
+  if ((ticker === "^GSPC" || ticker === "^IXIC") && !isBlank(adjClose)) {
+    return formatMarketValue(adjClose, unit);
+  }
+
+  if (!isBlank(value)) {
+    return formatMarketValue(value, unit);
+  }
+
+  const ma200Diff = parseNumber(read(item, ["adj_ma200_diff", "Adj MA200 Diff"]));
+
+  if (Number.isFinite(ma200Diff)) {
+    return "MA200 " + formatSignedNumber(ma200Diff * 100) + "%";
+  }
+
+  const ret60 = parseNumber(read(item, ["ret_60d", "Ret 60D"]));
+
+  if (Number.isFinite(ret60)) {
+    return formatSignedNumber(ret60) + "%";
+  }
+
+  return "-";
+}
+
+function marketDisplayState(item) {
+  const ticker = cleanText(read(item, ["Ticker", "ticker", "Symbol", "symbol"]));
+  const state = cleanText(read(item, ["State", "state", "Status", "status", "description", "Description"]));
+
+  if (!ticker && state) {
+    return "";
+  }
+
+  if (state === "fear") return "Fear";
+  if (state === "greed") return "Greed";
+
+  return state;
+}
+
+function marketDisplayDescription(item) {
+  return cleanText(read(item, ["description", "Description", "State", "state", "Status", "status"])) || "-";
+}
+
+function shouldUseMarketDescriptionBadge(item) {
+  const ticker = cleanText(read(item, ["Ticker", "ticker", "Symbol", "symbol"]));
+  const description = marketDisplayDescription(item);
+
+  return !ticker && description !== "-";
+}
+
+function marketDisplayTrend(item) {
+  const explicitTrend = read(item, ["Trend", "trend", "Direction", "direction"]);
+
+  if (!isBlank(explicitTrend)) {
+    return normalizeTrend(explicitTrend);
+  }
+
+  const description = cleanText(read(item, ["description", "Description"])).toLowerCase();
+
+  if (description.indexOf("fear") >= 0) return "하락";
+  if (description.indexOf("greed") >= 0) return "상승";
+
+  return "보합";
+}
+
+function marketDisplayDetail(item) {
+  const change = read(item, ["Change", "change", "Point Change", "point_change"]);
+  const changePercent = read(item, ["Change Percent", "change_percent", "ChangePercent", "changePercent"]);
+  const ma200Diff = parseNumber(read(item, ["adj_ma200_diff", "Adj MA200 Diff"]));
+  const ret1d = parseNumber(read(item, ["ret_1d", "Ret 1D"]));
+  const ret60d = parseNumber(read(item, ["ret_60d", "Ret 60D"]));
+  const maSlope = parseNumber(read(item, ["ma200_60_slope", "MA200 60 Slope"]));
+  const details = [];
+
+  if (!isBlank(change) || !isBlank(changePercent)) {
+    details.push(formatMarketChange(change, changePercent));
+  }
+
+  if (Number.isFinite(ma200Diff)) {
+    details.push("MA200 대비 " + formatSignedNumber(ma200Diff * 100) + "%");
+  }
+
+  if (Number.isFinite(ret1d)) {
+    details.push("1일 " + formatSignedNumber(ret1d) + "%");
+  }
+
+  if (Number.isFinite(ret60d)) {
+    details.push("60일 " + formatSignedNumber(ret60d) + "%");
+  }
+
+  if (Number.isFinite(maSlope)) {
+    details.push("MA200 기울기 " + formatSignedNumber(maSlope * 100) + "%");
+  }
+
+  return details.filter(Boolean).join(" · ");
 }
 
 function formatMarketValue(value, unit) {
@@ -351,6 +504,10 @@ function marketTrendBadge(trend) {
   if (normalized === "보합") className = "trend-flat";
 
   return '<span class="market-trend ' + className + '">' + escapeHtml(normalized) + '</span>';
+}
+
+function marketDescriptionBadge(description) {
+  return '<span class="market-trend trend-unknown">' + escapeHtml(description || "-") + '</span>';
 }
 
 function renderAssetTabs() {
@@ -450,7 +607,8 @@ async function loadJson() {
 function normalizeDatasets(json) {
   const datasets = {
     ETF: [],
-    STOCK: []
+    NASDAQ: [],
+    SP500: []
   };
 
   if (Array.isArray(json)) {
@@ -459,15 +617,17 @@ function normalizeDatasets(json) {
   }
 
   if (!json || typeof json !== "object") {
-    throw new Error("data.json은 배열이거나 ETF/US_STOCK 배열을 가진 객체여야 합니다.");
+    throw new Error("data.json은 배열이거나 ETF/NASDAQ/SP500 배열을 가진 객체여야 합니다.");
   }
 
   const etfRows = readDatasetArray(json, ["ETF", "etf", "ETFS", "etfs"]);
-  const stockRows = readDatasetArray(json, ["US_STOCK", "US_STOCKS", "us_stock", "us_stocks", "stock", "stocks", "STOCK", "STOCKS", "미국주식"]);
+  const nasdaqRows = readDatasetArray(json, ["NASDAQ", "NASDAQ_STOCK", "NASDAQ_STOCKS", "nasdaq", "nasdaq_stock", "nasdaq_stocks", "나스닥"]);
+  const sp500Rows = readDatasetArray(json, ["SP500", "S&P500", "SP_500", "SP500_STOCK", "SP500_STOCKS", "sp500", "s_p_500", "sp_500", "snp500", "SNP500", "S&P500_STOCKS"]);
 
-  if (etfRows.length > 0 || stockRows.length > 0) {
+  if (etfRows.length > 0 || nasdaqRows.length > 0 || sp500Rows.length > 0) {
     datasets.ETF = etfRows;
-    datasets.STOCK = stockRows;
+    datasets.NASDAQ = nasdaqRows;
+    datasets.SP500 = sp500Rows;
     return finalizeDatasets(datasets);
   }
 
@@ -476,13 +636,14 @@ function normalizeDatasets(json) {
     return finalizeDatasets(datasets);
   }
 
-  throw new Error("data.json에서 ETF 또는 미국주식 배열을 찾을 수 없습니다.");
+  throw new Error("data.json에서 ETF, NASDAQ 또는 SP500 배열을 찾을 수 없습니다.");
 }
 
 function finalizeDatasets(datasets) {
   return {
     ETF: prepareRowsForDataset(datasets.ETF || [], "ETF"),
-    STOCK: prepareRowsForDataset(datasets.STOCK || [], "STOCK")
+    NASDAQ: prepareRowsForDataset(datasets.NASDAQ || [], "NASDAQ"),
+    SP500: prepareRowsForDataset(datasets.SP500 || [], "SP500")
   };
 }
 
@@ -509,6 +670,27 @@ function prepareRowsForDataset(rows, datasetKey) {
 
       return copy;
     });
+}
+
+function splitStockRowsByIndex(rows) {
+  const result = {
+    NASDAQ: [],
+    SP500: []
+  };
+
+  sanitizeRows(rows).forEach(function (row) {
+    const datasetKey = normalizeDatasetKey(
+      read(row, ["Index", "index", "Benchmark", "benchmark", "Market", "market", "Dataset", "dataset"])
+    );
+
+    if (datasetKey === "SP500") {
+      result.SP500.push(row);
+    } else {
+      result.NASDAQ.push(row);
+    }
+  });
+
+  return result;
 }
 
 function readDatasetArray(json, keys) {
@@ -545,7 +727,9 @@ function splitArrayRows(rows, datasets) {
 
   cleanRows.forEach(function (row) {
     const datasetKey = detectDataset(row);
-    datasets[datasetKey].push(row);
+    if (datasets[datasetKey]) {
+      datasets[datasetKey].push(row);
+    }
   });
 }
 
@@ -571,8 +755,12 @@ function normalizeDatasetKey(value) {
     return "";
   }
 
-  if (text === "stock" || text === "stocks" || text === "usstock" || text === "usstocks" || text === "미국주식" || text === "usa") {
-    return "STOCK";
+  if (text === "stock" || text === "stocks" || text === "usstock" || text === "usstocks" || text === "미국주식" || text === "usa" || text === "nasdaq" || text === "nasdaqstock" || text === "nasdaqstocks" || text === "ixic" || text === "^ixic" || text === "나스닥") {
+    return "NASDAQ";
+  }
+
+  if (text === "sp500" || text === "spx" || text === "s&p500" || text === "snp500" || text === "sp500stock" || text === "sp500stocks" || text === "gspc" || text === "^gspc" || text === "s&p" || text === "s&p500지수") {
+    return "SP500";
   }
 
   if (text === "etf" || text === "etfs") {
@@ -694,7 +882,13 @@ function inferColumns(rows) {
     });
   });
 
-  return result.length > 0 ? result : DEFAULT_COLUMNS.slice();
+  return result.length > 0 ? result : defaultColumnsForDataset(activeDataset);
+}
+
+function defaultColumnsForDataset(datasetKey) {
+  const defaultColumns = DEFAULT_COLUMNS_BY_DATASET[datasetKey] || DEFAULT_COLUMNS;
+
+  return defaultColumns.slice();
 }
 
 function renderTableHead() {
@@ -813,9 +1007,9 @@ function renderGradeDistribution(rows) {
 }
 
 function renderGroupDistribution(rows) {
-  const config = activeDataset === "STOCK"
-    ? { title: "산업 분포", column: "Industry", fallback: "Sector", unit: "개 산업" }
-    : { title: "카테고리 분포", column: "Category", fallback: "", unit: "개 카테고리" };
+  const config = activeDataset === "ETF"
+    ? { title: "카테고리 분포", column: "Category", fallback: "", unit: "개 카테고리" }
+    : { title: "산업 분포", column: "Industry", fallback: "Sector", unit: "개 산업" };
   const column = columns.indexOf(config.column) >= 0
     ? config.column
     : columns.indexOf(config.fallback) >= 0
