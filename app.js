@@ -1,6 +1,7 @@
 "use strict";
 
 const THEME_STORAGE_KEY = "stockDashboardTheme";
+const LOCAL_DASHBOARD_URL = "http://127.0.0.1:8765/";
 const ALL_FILTER = "__ALL__";
 const MAIN_PERIOD = "10y";
 const PERIOD_DETAIL_ORDER = ["1y", "3y", "5y", "10y"];
@@ -148,6 +149,9 @@ document.addEventListener("DOMContentLoaded", init);
 async function init() {
   try {
     cacheDom();
+    if (redirectFileProtocolToLocalServer()) {
+      return;
+    }
     initializeTheme();
     bindEvents();
     showStatus("Yahoo Finance 데이터를 불러오는 중입니다...");
@@ -164,6 +168,16 @@ async function init() {
     console.error("[Dashboard Error]", error);
     showError(error);
   }
+}
+
+function redirectFileProtocolToLocalServer() {
+  if (window.location.protocol !== "file:") {
+    return false;
+  }
+
+  showStatus("file:// 주소에서는 data.json을 읽을 수 없어 HTTP 서버 주소로 이동합니다...");
+  window.location.replace(LOCAL_DASHBOARD_URL);
+  return true;
 }
 
 function cacheDom() {
@@ -293,16 +307,11 @@ function renderMarketOverview() {
 
 function renderMarketCard(item) {
   const name = marketDisplayName(item);
-  const symbol = marketDisplaySymbol(item);
   const valueText = marketDisplayValue(item);
-  const state = marketDisplayState(item);
-  const asOf = cleanText(read(item, ["as_of", "As Of", "date", "Date", "last_updated", "Last Updated"]));
   const description = marketDisplayDescription(item);
   const useDescriptionBadge = shouldUseMarketDescriptionBadge(item);
   const trend = useDescriptionBadge ? "" : marketDisplayTrend(item);
-  const detailText = [marketDisplayDetail(item), asOf ? "기준 " + asOf : ""]
-    .filter(Boolean)
-    .join(" · ");
+  const detailText = marketDisplayDetail(item);
 
   return ""
     + '<article class="market-card ' + (useDescriptionBadge ? "market-unknown" : marketTrendCardClass(trend)) + '">'
@@ -311,10 +320,7 @@ function renderMarketCard(item) {
     + (useDescriptionBadge ? marketDescriptionBadge(description) : marketTrendBadge(trend))
     + '</div>'
     + '<strong>' + escapeHtml(valueText) + '</strong>'
-    + '<div class="market-card-bottom">'
-    + '<span>' + escapeHtml([symbol, state].filter(Boolean).join(" · ") || "-") + '</span>'
-    + (detailText ? '<small>' + escapeHtml(detailText) + '</small>' : "")
-    + '</div>'
+    + (detailText ? '<div class="market-card-bottom"><small>' + escapeHtml(detailText) + '</small></div>' : "")
     + '</article>';
 }
 
@@ -350,18 +356,6 @@ function marketDisplayValue(item) {
 
   if (!isBlank(value)) {
     return formatMarketValue(value, unit);
-  }
-
-  const ma200Diff = parseNumber(read(item, ["adj_ma200_diff", "Adj MA200 Diff"]));
-
-  if (Number.isFinite(ma200Diff)) {
-    return "MA200 " + formatSignedNumber(ma200Diff * 100) + "%";
-  }
-
-  const ret60 = parseNumber(read(item, ["ret_60d", "Ret 60D"]));
-
-  if (Number.isFinite(ret60)) {
-    return formatSignedNumber(ret60) + "%";
   }
 
   return "-";
@@ -408,35 +402,9 @@ function marketDisplayTrend(item) {
 }
 
 function marketDisplayDetail(item) {
-  const change = read(item, ["Change", "change", "Point Change", "point_change"]);
-  const changePercent = read(item, ["Change Percent", "change_percent", "ChangePercent", "changePercent"]);
-  const ma200Diff = parseNumber(read(item, ["adj_ma200_diff", "Adj MA200 Diff"]));
   const ret1d = parseNumber(read(item, ["ret_1d", "Ret 1D"]));
-  const ret60d = parseNumber(read(item, ["ret_60d", "Ret 60D"]));
-  const maSlope = parseNumber(read(item, ["ma200_60_slope", "MA200 60 Slope"]));
-  const details = [];
 
-  if (!isBlank(change) || !isBlank(changePercent)) {
-    details.push(formatMarketChange(change, changePercent));
-  }
-
-  if (Number.isFinite(ma200Diff)) {
-    details.push("MA200 대비 " + formatSignedNumber(ma200Diff * 100) + "%");
-  }
-
-  if (Number.isFinite(ret1d)) {
-    details.push("1일 " + formatSignedNumber(ret1d) + "%");
-  }
-
-  if (Number.isFinite(ret60d)) {
-    details.push("60일 " + formatSignedNumber(ret60d) + "%");
-  }
-
-  if (Number.isFinite(maSlope)) {
-    details.push("MA200 기울기 " + formatSignedNumber(maSlope * 100) + "%");
-  }
-
-  return details.filter(Boolean).join(" · ");
+  return Number.isFinite(ret1d) ? "ret_1d " + formatSignedNumber(ret1d) + "%" : "";
 }
 
 function formatMarketValue(value, unit) {
@@ -503,11 +471,11 @@ function marketTrendBadge(trend) {
   if (normalized === "하락") className = "trend-down";
   if (normalized === "보합") className = "trend-flat";
 
-  return '<span class="market-trend ' + className + '">' + escapeHtml(normalized) + '</span>';
+  return '<span class="market-trend market-trend-large ' + className + '">' + escapeHtml(normalized) + '</span>';
 }
 
 function marketDescriptionBadge(description) {
-  return '<span class="market-trend trend-unknown">' + escapeHtml(description || "-") + '</span>';
+  return '<span class="market-trend market-description trend-unknown">' + escapeHtml(description || "-") + '</span>';
 }
 
 function renderAssetTabs() {
@@ -597,7 +565,7 @@ async function loadJson() {
     };
   } catch (error) {
     if (window.location.protocol === "file:") {
-      throw new Error("file:// 주소에서는 data.json을 읽을 수 없습니다. 이 폴더에서 HTTP 서버로 실행한 뒤 접속해 주세요.");
+      throw new Error("file:// 주소에서는 data.json을 읽을 수 없습니다. HTTP 서버로 실행한 뒤 " + LOCAL_DASHBOARD_URL + " 로 접속해 주세요.");
     }
 
     throw error;
