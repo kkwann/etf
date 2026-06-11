@@ -329,6 +329,8 @@ function marketDisplayName(item) {
   const ticker = cleanText(read(item, ["Ticker", "ticker", "Symbol", "symbol"]));
 
   if (explicitName) return explicitName;
+  if (ticker === "KQ11") return "코스닥";
+  if (ticker === "KS11") return "코스피";
   if (ticker === "^GSPC") return "S&P500";
   if (ticker === "^IXIC") return "나스닥";
 
@@ -338,6 +340,8 @@ function marketDisplayName(item) {
 function marketDisplaySymbol(item) {
   const ticker = cleanText(read(item, ["Ticker", "ticker", "Symbol", "symbol"]));
 
+  if (ticker === "KQ11") return "KOSDAQ";
+  if (ticker === "KS11") return "KOSPI";
   if (ticker === "^GSPC") return "S&P 500";
   if (ticker === "^IXIC") return "NASDAQ Composite";
 
@@ -350,7 +354,7 @@ function marketDisplayValue(item) {
   const unit = read(item, ["Unit", "unit"]);
   const ticker = cleanText(read(item, ["Ticker", "ticker", "Symbol", "symbol"]));
 
-  if ((ticker === "^GSPC" || ticker === "^IXIC") && !isBlank(adjClose)) {
+  if (ticker && !isBlank(adjClose)) {
     return formatMarketValue(adjClose, unit);
   }
 

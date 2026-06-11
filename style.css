@@ -269,13 +269,13 @@ body {
 
 .market-card-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .market-card {
   min-width: 0;
-  padding: 16px;
+  padding: 14px 12px;
   border: 1px solid var(--line);
   border-left: 4px solid var(--gray);
   border-radius: 8px;
@@ -314,8 +314,8 @@ body {
 
 .market-card strong {
   display: block;
-  margin: 12px 0 10px;
-  font-size: 28px;
+  margin: 10px 0 8px;
+  font-size: 24px;
   line-height: 1.08;
   letter-spacing: 0;
 }
@@ -325,7 +325,7 @@ body {
   min-width: 0;
   overflow: hidden;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   line-height: 1.35;
   text-overflow: ellipsis;
@@ -336,16 +336,16 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 34px;
-  padding: 7px 13px;
+  min-height: 32px;
+  padding: 6px 11px;
   border-radius: 999px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 900;
   white-space: nowrap;
 }
 
 .market-description {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .asset-tabs {
@@ -1168,10 +1168,6 @@ tbody tr:hover {
 }
 
 @media (max-width: 1180px) {
-  .market-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .insight-grid {
     grid-template-columns: 1fr;
   }
@@ -1218,12 +1214,51 @@ tbody tr:hover {
   }
 
   .toolbar,
-  .market-card-grid,
   .grade-grid,
   .period-grid,
   .period-summary-grid,
   .detail-grid {
     grid-template-columns: 1fr;
+  }
+
+  .market-overview {
+    padding: 12px;
+  }
+
+  .market-card-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .market-card {
+    padding: 9px 6px;
+  }
+
+  .market-card-top {
+    gap: 5px;
+  }
+
+  .market-card-top span:first-child {
+    font-size: 10px;
+  }
+
+  .market-card strong {
+    margin: 8px 0 6px;
+    font-size: clamp(12px, 2.5vw, 18px);
+  }
+
+  .market-card-bottom small {
+    font-size: 10px;
+  }
+
+  .market-trend {
+    min-height: 24px;
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  .market-description {
+    font-size: 11px;
   }
 
   .metric-period-row {

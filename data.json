@@ -23260,12 +23260,30 @@
   ],
   "MARKET_INDICES": [
     {
+      "Ticker": "KQ11",
+      "Adj Close": 951.63,
+      "adj_ma200_diff": -0.04,
+      "ma200_60_slope": 0.12,
+      "ret_60d": -17.13,
+      "ret_1d": -1.67,
+      "trend": "하락"
+    },
+    {
+      "Ticker": "KS11",
+      "Adj Close": 7730.82,
+      "adj_ma200_diff": 0.56,
+      "ma200_60_slope": 0.29,
+      "ret_60d": 38.46,
+      "ret_1d": -4.52,
+      "trend": "상승"
+    },
+    {
       "Ticker": "^GSPC",
       "Adj Close": 7405.73,
       "adj_ma200_diff": 0.08,
       "ma200_60_slope": 0.04,
-      "ret_60d": 10.99,
-      "ret_1d": 0.3,
+      "ret_60d": 11.66,
+      "ret_1d": 0.0,
       "trend": "상승"
     },
     {
@@ -23273,13 +23291,13 @@
       "Adj Close": 25929.66,
       "adj_ma200_diff": 0.11,
       "ma200_60_slope": 0.05,
-      "ret_60d": 16.21,
-      "ret_1d": 0.86,
+      "ret_60d": 17.3,
+      "ret_1d": 0.0,
       "trend": "상승"
     },
     {
       "name": "공포탐욕지수",
-      "value": 39.37,
+      "value": 33.66,
       "description": "fear"
     }
   ],
