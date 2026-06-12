@@ -8,28 +8,33 @@ const PERIOD_DETAIL_ORDER = ["1y", "3y", "5y", "10y"];
 const DATASET_MAIN_PERIODS = {
   ETF: "10y",
   NASDAQ: "5y",
-  SP500: "5y"
+  SP500: "5y",
+  KRX: "5y"
 };
 const DATASET_PERIOD_DETAIL_ORDERS = {
   ETF: ["1y", "3y", "5y", "10y"],
   NASDAQ: ["1y", "3y", "5y"],
-  SP500: ["1y", "3y", "5y"]
+  SP500: ["1y", "3y", "5y"],
+  KRX: ["1y", "3y", "5y"]
 };
 const DATASET_ALLOWED_PERIODS = {
   NASDAQ: new Set(["1y", "3y", "5y"]),
-  SP500: new Set(["1y", "3y", "5y"])
+  SP500: new Set(["1y", "3y", "5y"]),
+  KRX: new Set(["1y", "3y", "5y"])
 };
 const HIDDEN_COLUMNS_BY_DATASET = {
   NASDAQ: new Set(["Trend"]),
-  SP500: new Set(["Trend"])
+  SP500: new Set(["Trend"]),
+  KRX: new Set(["Trend"])
 };
-const DATASET_KEYS = ["ETF", "NASDAQ", "SP500"];
+const DATASET_KEYS = ["ETF", "NASDAQ", "SP500", "KRX"];
 const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
 const PREFERRED_DEFAULT_PERIODS = [MAIN_PERIOD, "total", "all", "5y", "3y", "1y"];
 const PREFERRED_DEFAULT_PERIODS_BY_DATASET = {
   ETF: ["10y", "total", "all", "5y", "3y", "1y"],
   NASDAQ: ["5y", "3y", "1y"],
-  SP500: ["5y", "3y", "1y"]
+  SP500: ["5y", "3y", "1y"],
+  KRX: ["5y", "3y", "1y"]
 };
 const MAX_GROUP_DISTRIBUTION_ITEMS = 5;
 const PERCENT_COLUMNS = new Set(["Total Return", "CAGR", "MDD"]);
@@ -81,7 +86,8 @@ const EQUITY_DEFAULT_COLUMNS = [
 const DEFAULT_COLUMNS_BY_DATASET = {
   ETF: DEFAULT_COLUMNS,
   NASDAQ: EQUITY_DEFAULT_COLUMNS,
-  SP500: EQUITY_DEFAULT_COLUMNS
+  SP500: EQUITY_DEFAULT_COLUMNS,
+  KRX: EQUITY_DEFAULT_COLUMNS
 };
 const COLUMN_LABELS = {
   Ticker: "티커",
@@ -123,13 +129,21 @@ const DATASET_META = {
     title: "S&P500 성과 대시보드",
     description: "Yahoo Finance 기준 기간별 S&P500 종목 성과와 등급을 확인합니다.",
     emptyText: "S&P500 데이터가 없습니다. data.json에 SP500 배열을 추가하면 표시됩니다."
+  },
+  KRX: {
+    label: "KRX",
+    tableLabel: "KRX",
+    title: "KRX 성과 대시보드",
+    description: "Yahoo Finance 기준 기간별 KRX 종목 성과와 등급을 확인합니다.",
+    emptyText: "KRX 데이터가 없습니다. data.json에 KRX 배열을 추가하면 표시됩니다."
   }
 };
 
 let rowsByDataset = {
   ETF: [],
   NASDAQ: [],
-  SP500: []
+  SP500: [],
+  KRX: []
 };
 let marketItems = [];
 let activeDataset = "ETF";
@@ -580,7 +594,8 @@ function normalizeDatasets(json) {
   const datasets = {
     ETF: [],
     NASDAQ: [],
-    SP500: []
+    SP500: [],
+    KRX: []
   };
 
   if (Array.isArray(json)) {
@@ -589,17 +604,19 @@ function normalizeDatasets(json) {
   }
 
   if (!json || typeof json !== "object") {
-    throw new Error("data.json은 배열이거나 ETF/NASDAQ/SP500 배열을 가진 객체여야 합니다.");
+    throw new Error("data.json은 배열이거나 ETF/NASDAQ/SP500/KRX 배열을 가진 객체여야 합니다.");
   }
 
   const etfRows = readDatasetArray(json, ["ETF", "etf", "ETFS", "etfs"]);
   const nasdaqRows = readDatasetArray(json, ["NASDAQ", "NASDAQ_STOCK", "NASDAQ_STOCKS", "nasdaq", "nasdaq_stock", "nasdaq_stocks", "나스닥"]);
   const sp500Rows = readDatasetArray(json, ["SP500", "S&P500", "SP_500", "SP500_STOCK", "SP500_STOCKS", "sp500", "s_p_500", "sp_500", "snp500", "SNP500", "S&P500_STOCKS"]);
+  const krxRows = readDatasetArray(json, ["KRX", "krx", "KOREA", "korea", "KOREA_STOCK", "KOREA_STOCKS", "한국주식", "국내주식"]);
 
-  if (etfRows.length > 0 || nasdaqRows.length > 0 || sp500Rows.length > 0) {
+  if (etfRows.length > 0 || nasdaqRows.length > 0 || sp500Rows.length > 0 || krxRows.length > 0) {
     datasets.ETF = etfRows;
     datasets.NASDAQ = nasdaqRows;
     datasets.SP500 = sp500Rows;
+    datasets.KRX = krxRows;
     return finalizeDatasets(datasets);
   }
 
@@ -608,14 +625,15 @@ function normalizeDatasets(json) {
     return finalizeDatasets(datasets);
   }
 
-  throw new Error("data.json에서 ETF, NASDAQ 또는 SP500 배열을 찾을 수 없습니다.");
+  throw new Error("data.json에서 ETF, NASDAQ, SP500 또는 KRX 배열을 찾을 수 없습니다.");
 }
 
 function finalizeDatasets(datasets) {
   return {
     ETF: prepareRowsForDataset(datasets.ETF || [], "ETF"),
     NASDAQ: prepareRowsForDataset(datasets.NASDAQ || [], "NASDAQ"),
-    SP500: prepareRowsForDataset(datasets.SP500 || [], "SP500")
+    SP500: prepareRowsForDataset(datasets.SP500 || [], "SP500"),
+    KRX: prepareRowsForDataset(datasets.KRX || [], "KRX")
   };
 }
 
@@ -647,7 +665,8 @@ function prepareRowsForDataset(rows, datasetKey) {
 function splitStockRowsByIndex(rows) {
   const result = {
     NASDAQ: [],
-    SP500: []
+    SP500: [],
+    KRX: []
   };
 
   sanitizeRows(rows).forEach(function (row) {
@@ -657,6 +676,8 @@ function splitStockRowsByIndex(rows) {
 
     if (datasetKey === "SP500") {
       result.SP500.push(row);
+    } else if (datasetKey === "KRX") {
+      result.KRX.push(row);
     } else {
       result.NASDAQ.push(row);
     }
@@ -733,6 +754,10 @@ function normalizeDatasetKey(value) {
 
   if (text === "sp500" || text === "spx" || text === "s&p500" || text === "snp500" || text === "sp500stock" || text === "sp500stocks" || text === "gspc" || text === "^gspc" || text === "s&p" || text === "s&p500지수") {
     return "SP500";
+  }
+
+  if (text === "krx" || text === "korea" || text === "koreastock" || text === "koreastocks" || text === "kospi" || text === "kosdaq" || text === "국내주식" || text === "한국주식") {
+    return "KRX";
   }
 
   if (text === "etf" || text === "etfs") {
