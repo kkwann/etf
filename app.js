@@ -38,8 +38,30 @@ const PREFERRED_DEFAULT_PERIODS_BY_DATASET = {
 };
 const MAX_GROUP_DISTRIBUTION_ITEMS = 5;
 const PERCENT_COLUMNS = new Set(["Total Return", "CAGR", "MDD"]);
-const KNOWN_NUMERIC_COLUMNS = new Set(["Total Return", "CAGR", "Sharpe", "MDD", "Calmar", "Return", "Score"]);
-const DETAIL_METRIC_COLUMNS = ["Total Return", "CAGR", "Sharpe", "MDD", "Calmar", "Return", "Score"];
+const KNOWN_NUMERIC_COLUMNS = new Set([
+  "Total Return",
+  "CAGR",
+  "Sharpe",
+  "MDD",
+  "Calmar",
+  "Return",
+  "Score",
+  "Score1",
+  "Score2",
+  "Score3"
+]);
+const DETAIL_METRIC_COLUMNS = [
+  "Total Return",
+  "CAGR",
+  "Sharpe",
+  "MDD",
+  "Calmar",
+  "Return",
+  "Score",
+  "Score1",
+  "Score2",
+  "Score3"
+];
 const DATE_COLUMNS = new Set(["first_date", "last_date"]);
 const TEXT_DEFAULT_ASC_COLUMNS = new Set(["Ticker", "Name", "Category", "Sector", "Industry", "first_date", "last_date"]);
 const ROUTING_COLUMNS = new Set([
@@ -66,7 +88,9 @@ const DEFAULT_COLUMNS = [
   "MDD",
   "Calmar",
   "Grade",
-  "Return"
+  "Score1",
+  "Score2",
+  "Score3"
 ];
 const EQUITY_DEFAULT_COLUMNS = [
   "Ticker",
@@ -106,7 +130,10 @@ const COLUMN_LABELS = {
   Grade: "등급",
   Return: "수익률",
   Trend: "추세",
-  Score: "점수"
+  Score: "점수",
+  Score1: "점수1",
+  Score2: "점수2",
+  Score3: "점수3"
 };
 const DATASET_META = {
   ETF: {
