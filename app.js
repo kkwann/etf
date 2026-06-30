@@ -27,8 +27,14 @@ const HIDDEN_COLUMNS_BY_DATASET = {
   SP500: new Set(["Trend"]),
   KRX: new Set(["Trend"])
 };
+const MAIN_TABLE_HIDDEN_COLUMNS_BY_DATASET = {
+  NASDAQ: new Set(["Industry"]),
+  SP500: new Set(["Industry"]),
+  KRX: new Set(["Industry"])
+};
 const DATASET_KEYS = ["ETF", "NASDAQ", "SP500", "KRX"];
 const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
+const SCORE_FILTER_COLUMNS = ["Score1", "Score2", "Score3"];
 const PREFERRED_DEFAULT_PERIODS = [MAIN_PERIOD, "total", "all", "5y", "3y", "1y"];
 const PREFERRED_DEFAULT_PERIODS_BY_DATASET = {
   ETF: ["10y", "total", "all", "5y", "3y", "1y"],
@@ -233,9 +239,13 @@ function cacheDom() {
     "marketOverview",
     "marketCards",
     "assetTabs",
+    "filterToolbar",
     "searchInput",
     "periodFilter",
     "gradeFilter",
+    "score1Filter",
+    "score2Filter",
+    "score3Filter",
     "sortSelect",
     "resetButton",
     "kpiCards",
@@ -285,6 +295,12 @@ function bindEvents() {
   dom.gradeFilter.addEventListener("change", function () {
     renderDashboard();
     closeDrawer();
+  });
+  SCORE_FILTER_COLUMNS.forEach(function (column) {
+    dom[scoreFilterId(column)].addEventListener("input", function () {
+      renderDashboard();
+      closeDrawer();
+    });
   });
   dom.sortSelect.addEventListener("change", function () {
     const nextSort = parseSortValue(dom.sortSelect.value);
@@ -822,6 +838,7 @@ function formatLastUpdated(lastModified) {
 function setupControls() {
   setupPeriodFilter();
   setupGradeFilter();
+  setupScoreFilters();
   setupSortSelect();
 }
 
@@ -858,12 +875,30 @@ function setupGradeFilter() {
   });
 }
 
+function setupScoreFilters() {
+  const hasAnyScoreColumn = SCORE_FILTER_COLUMNS.some(function (column) {
+    return columns.indexOf(column) >= 0;
+  });
+
+  dom.filterToolbar.classList.toggle("score-filter-active", hasAnyScoreColumn);
+
+  SCORE_FILTER_COLUMNS.forEach(function (column) {
+    const input = dom[scoreFilterId(column)];
+    const hasColumn = columns.indexOf(column) >= 0;
+
+    input.value = "";
+    input.disabled = !hasColumn;
+    input.classList.toggle("hidden", !hasColumn);
+  });
+}
+
 function setupSortSelect() {
-  const defaultKey = columns.indexOf("CAGR") >= 0
+  const tableColumns = getTableColumns();
+  const defaultKey = tableColumns.indexOf("CAGR") >= 0
     ? "CAGR"
-    : columns.indexOf("Total Return") >= 0
+    : tableColumns.indexOf("Total Return") >= 0
       ? "Total Return"
-      : columns[0];
+      : tableColumns[0] || columns[0] || "Ticker";
 
   tableSort = {
     key: defaultKey,
@@ -872,7 +907,7 @@ function setupSortSelect() {
 
   dom.sortSelect.innerHTML = "";
 
-  columns.forEach(function (column) {
+  tableColumns.forEach(function (column) {
     ["asc", "desc"].forEach(function (direction) {
       appendOption(
         dom.sortSelect,
@@ -915,10 +950,18 @@ function defaultColumnsForDataset(datasetKey) {
   return defaultColumns.slice();
 }
 
+function getTableColumns() {
+  const hiddenColumns = MAIN_TABLE_HIDDEN_COLUMNS_BY_DATASET[activeDataset] || new Set();
+
+  return columns.filter(function (column) {
+    return !hiddenColumns.has(column);
+  });
+}
+
 function renderTableHead() {
   const tr = document.createElement("tr");
 
-  columns.forEach(function (column) {
+  getTableColumns().forEach(function (column) {
     const th = document.createElement("th");
     const label = columnLabelParts(column);
 
@@ -949,6 +992,7 @@ function getFilteredRows(options) {
   const keyword = dom.searchInput.value.trim().toLowerCase();
   const period = dom.periodFilter.value;
   const grade = dom.gradeFilter.value;
+  const scoreFilters = getActiveScoreFilters();
 
   return rawRows.filter(function (row) {
     const matchesKeyword = !keyword || columns.some(function (column) {
@@ -961,8 +1005,13 @@ function getFilteredRows(options) {
     const matchesGrade =
       grade === ALL_FILTER ||
       normalizeGrade(row.Grade) === grade;
+    const matchesScores = scoreFilters.every(function (filter) {
+      const value = parseNumber(row[filter.column]);
 
-    return matchesKeyword && matchesPeriod && matchesGrade;
+      return Number.isFinite(value) && value >= filter.minValue;
+    });
+
+    return matchesKeyword && matchesPeriod && matchesGrade && matchesScores;
   });
 }
 
@@ -972,13 +1021,41 @@ function updateTableCopy() {
   const grade = dom.gradeFilter.value;
   const periodText = period === ALL_FILTER ? "전체 기간" : labelPeriod(period);
   const gradeText = grade === ALL_FILTER ? "전체 등급" : grade;
+  const scoreText = scoreFilterSummary();
   const tickerCount = countUnique(visibleRows, "Ticker");
 
   dom.tableTitle.textContent = periodText + " " + meta.tableLabel + " 성과";
   dom.tableSubtitle.textContent =
-    columns.length + "개 JSON 컬럼 기준 · " + gradeText + " · " +
+    getTableColumns().length + "개 표시 컬럼 기준 · " + gradeText +
+    (scoreText ? " · " + scoreText : "") + " · " +
     tickerCount.toLocaleString("ko-KR") + "개 티커";
   dom.rowCount.textContent = visibleRows.length.toLocaleString("ko-KR") + " rows";
+}
+
+function getActiveScoreFilters() {
+  return SCORE_FILTER_COLUMNS.map(function (column) {
+    const input = dom[scoreFilterId(column)];
+    const minValue = parseNumber(input.value);
+
+    if (input.disabled || !Number.isFinite(minValue)) {
+      return null;
+    }
+
+    return {
+      column: column,
+      minValue: minValue
+    };
+  }).filter(Boolean);
+}
+
+function scoreFilterSummary() {
+  return getActiveScoreFilters().map(function (filter) {
+    return COLUMN_LABELS[filter.column] + " >= " + formatNumber(filter.minValue);
+  }).join(" · ");
+}
+
+function scoreFilterId(column) {
+  return column.toLowerCase() + "Filter";
 }
 
 function renderKpiCards(rows) {
@@ -1127,13 +1204,15 @@ function renderRatio(items) {
 }
 
 function renderTable(rows) {
+  const tableColumns = getTableColumns();
+
   if (rows.length === 0) {
     const message = rawRows.length === 0
       ? DATASET_META[activeDataset].emptyText
       : "조건에 맞는 데이터가 없습니다.";
 
     dom.tableBody.innerHTML =
-      '<tr><td class="empty-cell" colspan="' + columns.length + '">' + escapeHtml(message) + '</td></tr>';
+      '<tr><td class="empty-cell" colspan="' + tableColumns.length + '">' + escapeHtml(message) + '</td></tr>';
     return;
   }
 
@@ -1146,7 +1225,7 @@ function renderTable(rows) {
       openDrawer(row);
     });
 
-    columns.forEach(function (column) {
+    tableColumns.forEach(function (column) {
       const td = document.createElement("td");
       const value = row[column];
 
@@ -1480,6 +1559,7 @@ function buildSortValue(column, direction) {
 }
 
 function parseSortValue(value) {
+  const tableColumns = getTableColumns();
   const parts = String(value || "").split("|");
 
   if (parts.length !== 2) {
@@ -1489,7 +1569,7 @@ function parseSortValue(value) {
   const key = decodeURIComponent(parts[0]);
   const direction = parts[1] === "desc" ? "desc" : "asc";
 
-  if (columns.indexOf(key) < 0) {
+  if (tableColumns.indexOf(key) < 0) {
     return null;
   }
 
@@ -1497,12 +1577,17 @@ function parseSortValue(value) {
 }
 
 function resetFilters() {
+  const tableColumns = getTableColumns();
+
   dom.searchInput.value = "";
   dom.periodFilter.value = defaultPeriod;
   dom.gradeFilter.value = ALL_FILTER;
+  SCORE_FILTER_COLUMNS.forEach(function (column) {
+    dom[scoreFilterId(column)].value = "";
+  });
   tableSort = {
-    key: columns.indexOf("CAGR") >= 0 ? "CAGR" : columns[0],
-    direction: columns.indexOf("CAGR") >= 0 ? "desc" : defaultSortDirection(columns[0])
+    key: tableColumns.indexOf("CAGR") >= 0 ? "CAGR" : tableColumns[0] || columns[0] || "Ticker",
+    direction: tableColumns.indexOf("CAGR") >= 0 ? "desc" : defaultSortDirection(tableColumns[0] || columns[0])
   };
 
   syncSortSelect();

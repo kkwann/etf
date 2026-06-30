@@ -405,6 +405,10 @@ body {
   margin-bottom: 18px;
 }
 
+.toolbar.score-filter-active {
+  grid-template-columns: minmax(220px, 1.45fr) repeat(6, minmax(112px, 1fr)) auto;
+}
+
 input,
 select,
 button {
@@ -425,6 +429,10 @@ select {
 
 input::placeholder {
   color: var(--input-placeholder);
+}
+
+.score-filter {
+  min-width: 0;
 }
 
 input:focus,
@@ -1176,6 +1184,10 @@ tbody tr:hover {
     grid-template-columns: 1fr 1fr;
   }
 
+  .toolbar.score-filter-active {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .reset-button {
     min-width: 120px;
   }
@@ -1218,6 +1230,10 @@ tbody tr:hover {
   .period-grid,
   .period-summary-grid,
   .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar.score-filter-active {
     grid-template-columns: 1fr;
   }
 

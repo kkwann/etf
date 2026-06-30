@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stock Performance Dashboard</title>
-  <link rel="stylesheet" href="./style.css?v=20260623-score-columns" />
+  <link rel="stylesheet" href="./style.css?v=20260630-score-filters" />
 </head>
 <body>
   <div class="app">
@@ -42,10 +42,13 @@
 
     <nav id="assetTabs" class="asset-tabs" aria-label="데이터 종류 선택"></nav>
 
-    <section class="toolbar" aria-label="데이터 필터">
+    <section id="filterToolbar" class="toolbar" aria-label="데이터 필터">
       <input id="searchInput" type="search" placeholder="티커, 카테고리, 기간, 등급 검색" autocomplete="off" />
       <select id="periodFilter" aria-label="기간 필터"></select>
       <select id="gradeFilter" aria-label="등급 필터"></select>
+      <input id="score1Filter" class="score-filter hidden" type="number" step="0.01" inputmode="decimal" placeholder="점수1 이상" aria-label="점수1 최소값 필터" />
+      <input id="score2Filter" class="score-filter hidden" type="number" step="0.01" inputmode="decimal" placeholder="점수2 이상" aria-label="점수2 최소값 필터" />
+      <input id="score3Filter" class="score-filter hidden" type="number" step="0.01" inputmode="decimal" placeholder="점수3 이상" aria-label="점수3 최소값 필터" />
       <select id="sortSelect" aria-label="정렬"></select>
       <button id="resetButton" class="reset-button" type="button">초기화</button>
     </section>
@@ -115,6 +118,6 @@
   </aside>
 
   <div id="overlay" class="overlay"></div>
-  <script src="./app.js?v=20260623-score-columns"></script>
+  <script src="./app.js?v=20260630-score-filters"></script>
 </body>
 </html>
