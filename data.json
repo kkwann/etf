@@ -20117,6 +20117,7 @@
   "KRX": [
     {
       "Ticker": "DB하이텍",
+      "Market": "KOSPI",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "1y",
@@ -20134,6 +20135,7 @@
     },
     {
       "Ticker": "DI동일",
+      "Market": "KOSPI",
       "Sector": "상품 중개업",
       "Industry": "상품 중개업",
       "period": "1y",
@@ -20151,6 +20153,7 @@
     },
     {
       "Ticker": "DN오토모티브",
+      "Market": "KOSPI",
       "Sector": "일차전지 및 축전지 제조업",
       "Industry": "일차전지 및 축전지 제조업",
       "period": "1y",
@@ -20168,6 +20171,7 @@
     },
     {
       "Ticker": "GS",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "1y",
@@ -20185,6 +20189,7 @@
     },
     {
       "Ticker": "GST",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -20202,6 +20207,7 @@
     },
     {
       "Ticker": "GS리테일",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "1y",
@@ -20219,6 +20225,7 @@
     },
     {
       "Ticker": "KBI메탈",
+      "Market": "KOSDAQ",
       "Sector": "1차 비철금속 제조업",
       "Industry": "1차 비철금속 제조업",
       "period": "1y",
@@ -20236,6 +20243,7 @@
     },
     {
       "Ticker": "KB금융",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "1y",
@@ -20253,6 +20261,7 @@
     },
     {
       "Ticker": "KT&G",
+      "Market": "KOSPI",
       "Sector": "담배 제조업",
       "Industry": "담배 제조업",
       "period": "1y",
@@ -20270,6 +20279,7 @@
     },
     {
       "Ticker": "LG",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "1y",
@@ -20287,6 +20297,7 @@
     },
     {
       "Ticker": "LG이노텍",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "1y",
@@ -20304,6 +20315,7 @@
     },
     {
       "Ticker": "LG전자",
+      "Market": "KOSPI",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "1y",
@@ -20321,6 +20333,7 @@
     },
     {
       "Ticker": "LS ELECTRIC",
+      "Market": "KOSPI",
       "Sector": "전동기, 발전기 및 전기 변환 · 공급 · 제어 장치 제조업",
       "Industry": "전동기, 발전기 및 전기 변환 · 공급 · 제어 장치 제조업",
       "period": "1y",
@@ -20338,6 +20351,7 @@
     },
     {
       "Ticker": "S-Oil",
+      "Market": "KOSPI",
       "Sector": "석유 정제품 제조업",
       "Industry": "석유 정제품 제조업",
       "period": "1y",
@@ -20355,6 +20369,7 @@
     },
     {
       "Ticker": "SK",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "1y",
@@ -20372,6 +20387,7 @@
     },
     {
       "Ticker": "SK네트웍스",
+      "Market": "KOSPI",
       "Sector": "기타 전문 도매업",
       "Industry": "기타 전문 도매업",
       "period": "1y",
@@ -20389,6 +20405,7 @@
     },
     {
       "Ticker": "SK하이닉스",
+      "Market": "KOSPI",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "1y",
@@ -20406,6 +20423,7 @@
     },
     {
       "Ticker": "가온전선",
+      "Market": "KOSPI",
       "Sector": "절연선 및 케이블 제조업",
       "Industry": "절연선 및 케이블 제조업",
       "period": "1y",
@@ -20423,6 +20441,7 @@
     },
     {
       "Ticker": "광주신세계",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "1y",
@@ -20440,6 +20459,7 @@
     },
     {
       "Ticker": "금호건설",
+      "Market": "KOSPI",
       "Sector": "건물 건설업",
       "Industry": "건물 건설업",
       "period": "1y",
@@ -20457,6 +20477,7 @@
     },
     {
       "Ticker": "금호타이어",
+      "Market": "KOSPI",
       "Sector": "고무제품 제조업",
       "Industry": "고무제품 제조업",
       "period": "1y",
@@ -20474,6 +20495,7 @@
     },
     {
       "Ticker": "네이처셀",
+      "Market": "KOSDAQ",
       "Sector": "기초 의약물질 및 생물학적 제제 제조업",
       "Industry": "기초 의약물질 및 생물학적 제제 제조업",
       "period": "1y",
@@ -20491,6 +20513,7 @@
     },
     {
       "Ticker": "네패스아크",
+      "Market": "KOSDAQ",
       "Sector": "그외 기타 전문, 과학 및 기술 서비스업",
       "Industry": "그외 기타 전문, 과학 및 기술 서비스업",
       "period": "1y",
@@ -20508,6 +20531,7 @@
     },
     {
       "Ticker": "뉴파워프라즈마",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -20525,6 +20549,7 @@
     },
     {
       "Ticker": "대덕전자",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "1y",
@@ -20542,6 +20567,7 @@
     },
     {
       "Ticker": "대원전선",
+      "Market": "KOSPI",
       "Sector": "절연선 및 케이블 제조업",
       "Industry": "절연선 및 케이블 제조업",
       "period": "1y",
@@ -20559,6 +20585,7 @@
     },
     {
       "Ticker": "대한항공",
+      "Market": "KOSPI",
       "Sector": "항공 여객 운송업",
       "Industry": "항공 여객 운송업",
       "period": "1y",
@@ -20576,6 +20603,7 @@
     },
     {
       "Ticker": "더블유게임즈",
+      "Market": "KOSPI",
       "Sector": "소프트웨어 개발 및 공급업",
       "Industry": "소프트웨어 개발 및 공급업",
       "period": "1y",
@@ -20593,6 +20621,7 @@
     },
     {
       "Ticker": "롯데손해보험",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "1y",
@@ -20610,6 +20639,7 @@
     },
     {
       "Ticker": "롯데쇼핑",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "1y",
@@ -20627,6 +20657,7 @@
     },
     {
       "Ticker": "미스토홀딩스",
+      "Market": "KOSPI",
       "Sector": "생활용품 도매업",
       "Industry": "생활용품 도매업",
       "period": "1y",
@@ -20644,6 +20675,7 @@
     },
     {
       "Ticker": "브이엠",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -20661,6 +20693,7 @@
     },
     {
       "Ticker": "삼성물산",
+      "Market": "KOSPI",
       "Sector": "기타 전문 도매업",
       "Industry": "기타 전문 도매업",
       "period": "1y",
@@ -20678,6 +20711,7 @@
     },
     {
       "Ticker": "삼성생명",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "1y",
@@ -20695,6 +20729,7 @@
     },
     {
       "Ticker": "삼성에스디에스",
+      "Market": "KOSPI",
       "Sector": "컴퓨터 프로그래밍, 시스템 통합 및 관리업",
       "Industry": "컴퓨터 프로그래밍, 시스템 통합 및 관리업",
       "period": "1y",
@@ -20712,6 +20747,7 @@
     },
     {
       "Ticker": "삼성전기",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "1y",
@@ -20729,6 +20765,7 @@
     },
     {
       "Ticker": "삼성전자",
+      "Market": "KOSPI",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "1y",
@@ -20746,6 +20783,7 @@
     },
     {
       "Ticker": "삼성화재",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "1y",
@@ -20763,6 +20801,7 @@
     },
     {
       "Ticker": "삼지전자",
+      "Market": "KOSDAQ",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "1y",
@@ -20780,6 +20819,7 @@
     },
     {
       "Ticker": "삼화콘덴서",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "1y",
@@ -20797,6 +20837,7 @@
     },
     {
       "Ticker": "서울바이오시스",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "1y",
@@ -20814,6 +20855,7 @@
     },
     {
       "Ticker": "소룩스",
+      "Market": "KOSDAQ",
       "Sector": "전구 및 조명장치 제조업",
       "Industry": "전구 및 조명장치 제조업",
       "period": "1y",
@@ -20831,6 +20873,7 @@
     },
     {
       "Ticker": "신한지주",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "1y",
@@ -20848,6 +20891,7 @@
     },
     {
       "Ticker": "심텍",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "1y",
@@ -20865,6 +20909,7 @@
     },
     {
       "Ticker": "심텍홀딩스",
+      "Market": "KOSDAQ",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "1y",
@@ -20882,6 +20927,7 @@
     },
     {
       "Ticker": "싸이맥스",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -20899,6 +20945,7 @@
     },
     {
       "Ticker": "씨젠",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "의료용품 및 기타 의약 관련제품 제조업",
       "Industry": "의료용품 및 기타 의약 관련제품 제조업",
       "period": "1y",
@@ -20916,6 +20963,7 @@
     },
     {
       "Ticker": "에스에이엠티",
+      "Market": "KOSDAQ",
       "Sector": "기계장비 및 관련 물품 도매업",
       "Industry": "기계장비 및 관련 물품 도매업",
       "period": "1y",
@@ -20933,6 +20981,7 @@
     },
     {
       "Ticker": "엘티씨",
+      "Market": "KOSDAQ",
       "Sector": "기초 화학물질 제조업",
       "Industry": "기초 화학물질 제조업",
       "period": "1y",
@@ -20950,6 +20999,7 @@
     },
     {
       "Ticker": "예스티",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -20967,6 +21017,7 @@
     },
     {
       "Ticker": "오로라",
+      "Market": "KOSDAQ",
       "Sector": "전문디자인업",
       "Industry": "전문디자인업",
       "period": "1y",
@@ -20984,6 +21035,7 @@
     },
     {
       "Ticker": "오리온홀딩스",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "1y",
@@ -21001,6 +21053,7 @@
     },
     {
       "Ticker": "와이지-원",
+      "Market": "KOSDAQ",
       "Sector": "기타 금속 가공제품 제조업",
       "Industry": "기타 금속 가공제품 제조업",
       "period": "1y",
@@ -21018,6 +21071,7 @@
     },
     {
       "Ticker": "원익IPS",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -21035,6 +21089,7 @@
     },
     {
       "Ticker": "유진테크",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -21052,6 +21107,7 @@
     },
     {
       "Ticker": "이수화학",
+      "Market": "KOSPI",
       "Sector": "기초 화학물질 제조업",
       "Industry": "기초 화학물질 제조업",
       "period": "1y",
@@ -21069,6 +21125,7 @@
     },
     {
       "Ticker": "인바디",
+      "Market": "KOSDAQ",
       "Sector": "의료용 기기 제조업",
       "Industry": "의료용 기기 제조업",
       "period": "1y",
@@ -21086,6 +21143,7 @@
     },
     {
       "Ticker": "인텍플러스",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -21103,6 +21161,7 @@
     },
     {
       "Ticker": "제주반도체",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "1y",
@@ -21120,6 +21179,7 @@
     },
     {
       "Ticker": "주성엔지니어링",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -21137,6 +21197,7 @@
     },
     {
       "Ticker": "케이씨텍",
+      "Market": "KOSPI",
       "Sector": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "Industry": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "period": "1y",
@@ -21154,6 +21215,7 @@
     },
     {
       "Ticker": "코리안리",
+      "Market": "KOSPI",
       "Sector": "재 보험업",
       "Industry": "재 보험업",
       "period": "1y",
@@ -21171,6 +21233,7 @@
     },
     {
       "Ticker": "코미코",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -21188,6 +21251,7 @@
     },
     {
       "Ticker": "코스맥스엔비티",
+      "Market": "KOSDAQ",
       "Sector": "기타 식품 제조업",
       "Industry": "기타 식품 제조업",
       "period": "1y",
@@ -21205,6 +21269,7 @@
     },
     {
       "Ticker": "코웨이",
+      "Market": "KOSPI",
       "Sector": "그외 기타 개인 서비스업",
       "Industry": "그외 기타 개인 서비스업",
       "period": "1y",
@@ -21222,6 +21287,7 @@
     },
     {
       "Ticker": "테스",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -21239,6 +21305,7 @@
     },
     {
       "Ticker": "티에스이",
+      "Market": "KOSDAQ",
       "Sector": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "Industry": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "period": "1y",
@@ -21256,6 +21323,7 @@
     },
     {
       "Ticker": "피델릭스",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "1y",
@@ -21273,6 +21341,7 @@
     },
     {
       "Ticker": "피에스케이",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -21290,6 +21359,7 @@
     },
     {
       "Ticker": "피에스케이홀딩스",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -21307,6 +21377,7 @@
     },
     {
       "Ticker": "하나금융지주",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "1y",
@@ -21324,6 +21395,7 @@
     },
     {
       "Ticker": "하나마이크론",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "1y",
@@ -21341,6 +21413,7 @@
     },
     {
       "Ticker": "한국콜마",
+      "Market": "KOSPI",
       "Sector": "기타 화학제품 제조업",
       "Industry": "기타 화학제품 제조업",
       "period": "1y",
@@ -21358,6 +21431,7 @@
     },
     {
       "Ticker": "한국타이어앤테크놀로지",
+      "Market": "KOSPI",
       "Sector": "고무제품 제조업",
       "Industry": "고무제품 제조업",
       "period": "1y",
@@ -21375,6 +21449,7 @@
     },
     {
       "Ticker": "한솔테크닉스",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "1y",
@@ -21392,6 +21467,7 @@
     },
     {
       "Ticker": "한양이엔지",
+      "Market": "KOSDAQ",
       "Sector": "건축기술, 엔지니어링 및 관련 기술 서비스업",
       "Industry": "건축기술, 엔지니어링 및 관련 기술 서비스업",
       "period": "1y",
@@ -21409,6 +21485,7 @@
     },
     {
       "Ticker": "한올바이오파마",
+      "Market": "KOSPI",
       "Sector": "의약품 제조업",
       "Industry": "의약품 제조업",
       "period": "1y",
@@ -21426,6 +21503,7 @@
     },
     {
       "Ticker": "해성디에스",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "1y",
@@ -21443,6 +21521,7 @@
     },
     {
       "Ticker": "현대모비스",
+      "Market": "KOSPI",
       "Sector": "자동차 신품 부품 제조업",
       "Industry": "자동차 신품 부품 제조업",
       "period": "1y",
@@ -21460,6 +21539,7 @@
     },
     {
       "Ticker": "현대백화점",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "1y",
@@ -21477,6 +21557,7 @@
     },
     {
       "Ticker": "현대지에프홀딩스",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "1y",
@@ -21494,6 +21575,7 @@
     },
     {
       "Ticker": "현대해상",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "1y",
@@ -21511,6 +21593,7 @@
     },
     {
       "Ticker": "후성",
+      "Market": "KOSPI",
       "Sector": "기초 화학물질 제조업",
       "Industry": "기초 화학물질 제조업",
       "period": "1y",
@@ -21528,6 +21611,7 @@
     },
     {
       "Ticker": "DB하이텍",
+      "Market": "KOSPI",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "3y",
@@ -21545,6 +21629,7 @@
     },
     {
       "Ticker": "DI동일",
+      "Market": "KOSPI",
       "Sector": "상품 중개업",
       "Industry": "상품 중개업",
       "period": "3y",
@@ -21562,6 +21647,7 @@
     },
     {
       "Ticker": "DN오토모티브",
+      "Market": "KOSPI",
       "Sector": "일차전지 및 축전지 제조업",
       "Industry": "일차전지 및 축전지 제조업",
       "period": "3y",
@@ -21579,6 +21665,7 @@
     },
     {
       "Ticker": "GS",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "3y",
@@ -21596,6 +21683,7 @@
     },
     {
       "Ticker": "GST",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -21613,6 +21701,7 @@
     },
     {
       "Ticker": "GS리테일",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "3y",
@@ -21630,6 +21719,7 @@
     },
     {
       "Ticker": "KBI메탈",
+      "Market": "KOSDAQ",
       "Sector": "1차 비철금속 제조업",
       "Industry": "1차 비철금속 제조업",
       "period": "3y",
@@ -21647,6 +21737,7 @@
     },
     {
       "Ticker": "KB금융",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "3y",
@@ -21664,6 +21755,7 @@
     },
     {
       "Ticker": "KT&G",
+      "Market": "KOSPI",
       "Sector": "담배 제조업",
       "Industry": "담배 제조업",
       "period": "3y",
@@ -21681,6 +21773,7 @@
     },
     {
       "Ticker": "LG",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "3y",
@@ -21698,6 +21791,7 @@
     },
     {
       "Ticker": "LG이노텍",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "3y",
@@ -21715,6 +21809,7 @@
     },
     {
       "Ticker": "LG전자",
+      "Market": "KOSPI",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "3y",
@@ -21732,6 +21827,7 @@
     },
     {
       "Ticker": "LS ELECTRIC",
+      "Market": "KOSPI",
       "Sector": "전동기, 발전기 및 전기 변환 · 공급 · 제어 장치 제조업",
       "Industry": "전동기, 발전기 및 전기 변환 · 공급 · 제어 장치 제조업",
       "period": "3y",
@@ -21749,6 +21845,7 @@
     },
     {
       "Ticker": "S-Oil",
+      "Market": "KOSPI",
       "Sector": "석유 정제품 제조업",
       "Industry": "석유 정제품 제조업",
       "period": "3y",
@@ -21766,6 +21863,7 @@
     },
     {
       "Ticker": "SK",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "3y",
@@ -21783,6 +21881,7 @@
     },
     {
       "Ticker": "SK네트웍스",
+      "Market": "KOSPI",
       "Sector": "기타 전문 도매업",
       "Industry": "기타 전문 도매업",
       "period": "3y",
@@ -21800,6 +21899,7 @@
     },
     {
       "Ticker": "SK하이닉스",
+      "Market": "KOSPI",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "3y",
@@ -21817,6 +21917,7 @@
     },
     {
       "Ticker": "가온전선",
+      "Market": "KOSPI",
       "Sector": "절연선 및 케이블 제조업",
       "Industry": "절연선 및 케이블 제조업",
       "period": "3y",
@@ -21834,6 +21935,7 @@
     },
     {
       "Ticker": "광주신세계",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "3y",
@@ -21851,6 +21953,7 @@
     },
     {
       "Ticker": "금호건설",
+      "Market": "KOSPI",
       "Sector": "건물 건설업",
       "Industry": "건물 건설업",
       "period": "3y",
@@ -21868,6 +21971,7 @@
     },
     {
       "Ticker": "금호타이어",
+      "Market": "KOSPI",
       "Sector": "고무제품 제조업",
       "Industry": "고무제품 제조업",
       "period": "3y",
@@ -21885,6 +21989,7 @@
     },
     {
       "Ticker": "네이처셀",
+      "Market": "KOSDAQ",
       "Sector": "기초 의약물질 및 생물학적 제제 제조업",
       "Industry": "기초 의약물질 및 생물학적 제제 제조업",
       "period": "3y",
@@ -21902,6 +22007,7 @@
     },
     {
       "Ticker": "네패스아크",
+      "Market": "KOSDAQ",
       "Sector": "그외 기타 전문, 과학 및 기술 서비스업",
       "Industry": "그외 기타 전문, 과학 및 기술 서비스업",
       "period": "3y",
@@ -21919,6 +22025,7 @@
     },
     {
       "Ticker": "뉴파워프라즈마",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -21936,6 +22043,7 @@
     },
     {
       "Ticker": "대덕전자",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "3y",
@@ -21953,6 +22061,7 @@
     },
     {
       "Ticker": "대원전선",
+      "Market": "KOSPI",
       "Sector": "절연선 및 케이블 제조업",
       "Industry": "절연선 및 케이블 제조업",
       "period": "3y",
@@ -21970,6 +22079,7 @@
     },
     {
       "Ticker": "대한항공",
+      "Market": "KOSPI",
       "Sector": "항공 여객 운송업",
       "Industry": "항공 여객 운송업",
       "period": "3y",
@@ -21987,6 +22097,7 @@
     },
     {
       "Ticker": "더블유게임즈",
+      "Market": "KOSPI",
       "Sector": "소프트웨어 개발 및 공급업",
       "Industry": "소프트웨어 개발 및 공급업",
       "period": "3y",
@@ -22004,6 +22115,7 @@
     },
     {
       "Ticker": "롯데손해보험",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "3y",
@@ -22021,6 +22133,7 @@
     },
     {
       "Ticker": "롯데쇼핑",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "3y",
@@ -22038,6 +22151,7 @@
     },
     {
       "Ticker": "미스토홀딩스",
+      "Market": "KOSPI",
       "Sector": "생활용품 도매업",
       "Industry": "생활용품 도매업",
       "period": "3y",
@@ -22055,6 +22169,7 @@
     },
     {
       "Ticker": "브이엠",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22072,6 +22187,7 @@
     },
     {
       "Ticker": "삼성물산",
+      "Market": "KOSPI",
       "Sector": "기타 전문 도매업",
       "Industry": "기타 전문 도매업",
       "period": "3y",
@@ -22089,6 +22205,7 @@
     },
     {
       "Ticker": "삼성생명",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "3y",
@@ -22106,6 +22223,7 @@
     },
     {
       "Ticker": "삼성에스디에스",
+      "Market": "KOSPI",
       "Sector": "컴퓨터 프로그래밍, 시스템 통합 및 관리업",
       "Industry": "컴퓨터 프로그래밍, 시스템 통합 및 관리업",
       "period": "3y",
@@ -22123,6 +22241,7 @@
     },
     {
       "Ticker": "삼성전기",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "3y",
@@ -22140,6 +22259,7 @@
     },
     {
       "Ticker": "삼성전자",
+      "Market": "KOSPI",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "3y",
@@ -22157,6 +22277,7 @@
     },
     {
       "Ticker": "삼성화재",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "3y",
@@ -22174,6 +22295,7 @@
     },
     {
       "Ticker": "삼지전자",
+      "Market": "KOSDAQ",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "3y",
@@ -22191,6 +22313,7 @@
     },
     {
       "Ticker": "삼화콘덴서",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "3y",
@@ -22208,6 +22331,7 @@
     },
     {
       "Ticker": "서울바이오시스",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "3y",
@@ -22225,6 +22349,7 @@
     },
     {
       "Ticker": "소룩스",
+      "Market": "KOSDAQ",
       "Sector": "전구 및 조명장치 제조업",
       "Industry": "전구 및 조명장치 제조업",
       "period": "3y",
@@ -22242,6 +22367,7 @@
     },
     {
       "Ticker": "신한지주",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "3y",
@@ -22259,6 +22385,7 @@
     },
     {
       "Ticker": "심텍",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "3y",
@@ -22276,6 +22403,7 @@
     },
     {
       "Ticker": "심텍홀딩스",
+      "Market": "KOSDAQ",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "3y",
@@ -22293,6 +22421,7 @@
     },
     {
       "Ticker": "싸이맥스",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22310,6 +22439,7 @@
     },
     {
       "Ticker": "씨젠",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "의료용품 및 기타 의약 관련제품 제조업",
       "Industry": "의료용품 및 기타 의약 관련제품 제조업",
       "period": "3y",
@@ -22327,6 +22457,7 @@
     },
     {
       "Ticker": "에스에이엠티",
+      "Market": "KOSDAQ",
       "Sector": "기계장비 및 관련 물품 도매업",
       "Industry": "기계장비 및 관련 물품 도매업",
       "period": "3y",
@@ -22344,6 +22475,7 @@
     },
     {
       "Ticker": "엘티씨",
+      "Market": "KOSDAQ",
       "Sector": "기초 화학물질 제조업",
       "Industry": "기초 화학물질 제조업",
       "period": "3y",
@@ -22361,6 +22493,7 @@
     },
     {
       "Ticker": "예스티",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22378,6 +22511,7 @@
     },
     {
       "Ticker": "오로라",
+      "Market": "KOSDAQ",
       "Sector": "전문디자인업",
       "Industry": "전문디자인업",
       "period": "3y",
@@ -22395,6 +22529,7 @@
     },
     {
       "Ticker": "오리온홀딩스",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "3y",
@@ -22412,6 +22547,7 @@
     },
     {
       "Ticker": "와이지-원",
+      "Market": "KOSDAQ",
       "Sector": "기타 금속 가공제품 제조업",
       "Industry": "기타 금속 가공제품 제조업",
       "period": "3y",
@@ -22429,6 +22565,7 @@
     },
     {
       "Ticker": "원익IPS",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22446,6 +22583,7 @@
     },
     {
       "Ticker": "유진테크",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22463,6 +22601,7 @@
     },
     {
       "Ticker": "이수화학",
+      "Market": "KOSPI",
       "Sector": "기초 화학물질 제조업",
       "Industry": "기초 화학물질 제조업",
       "period": "3y",
@@ -22480,6 +22619,7 @@
     },
     {
       "Ticker": "인바디",
+      "Market": "KOSDAQ",
       "Sector": "의료용 기기 제조업",
       "Industry": "의료용 기기 제조업",
       "period": "3y",
@@ -22497,6 +22637,7 @@
     },
     {
       "Ticker": "인텍플러스",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22514,6 +22655,7 @@
     },
     {
       "Ticker": "제주반도체",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "3y",
@@ -22531,6 +22673,7 @@
     },
     {
       "Ticker": "주성엔지니어링",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22548,6 +22691,7 @@
     },
     {
       "Ticker": "케이씨텍",
+      "Market": "KOSPI",
       "Sector": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "Industry": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "period": "3y",
@@ -22565,6 +22709,7 @@
     },
     {
       "Ticker": "코리안리",
+      "Market": "KOSPI",
       "Sector": "재 보험업",
       "Industry": "재 보험업",
       "period": "3y",
@@ -22582,6 +22727,7 @@
     },
     {
       "Ticker": "코미코",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22599,6 +22745,7 @@
     },
     {
       "Ticker": "코스맥스엔비티",
+      "Market": "KOSDAQ",
       "Sector": "기타 식품 제조업",
       "Industry": "기타 식품 제조업",
       "period": "3y",
@@ -22616,6 +22763,7 @@
     },
     {
       "Ticker": "코웨이",
+      "Market": "KOSPI",
       "Sector": "그외 기타 개인 서비스업",
       "Industry": "그외 기타 개인 서비스업",
       "period": "3y",
@@ -22633,6 +22781,7 @@
     },
     {
       "Ticker": "테스",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22650,6 +22799,7 @@
     },
     {
       "Ticker": "티에스이",
+      "Market": "KOSDAQ",
       "Sector": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "Industry": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "period": "3y",
@@ -22667,6 +22817,7 @@
     },
     {
       "Ticker": "피델릭스",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "3y",
@@ -22684,6 +22835,7 @@
     },
     {
       "Ticker": "피에스케이",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22701,6 +22853,7 @@
     },
     {
       "Ticker": "피에스케이홀딩스",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22718,6 +22871,7 @@
     },
     {
       "Ticker": "하나금융지주",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "3y",
@@ -22735,6 +22889,7 @@
     },
     {
       "Ticker": "하나마이크론",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "3y",
@@ -22752,6 +22907,7 @@
     },
     {
       "Ticker": "한국콜마",
+      "Market": "KOSPI",
       "Sector": "기타 화학제품 제조업",
       "Industry": "기타 화학제품 제조업",
       "period": "3y",
@@ -22769,6 +22925,7 @@
     },
     {
       "Ticker": "한국타이어앤테크놀로지",
+      "Market": "KOSPI",
       "Sector": "고무제품 제조업",
       "Industry": "고무제품 제조업",
       "period": "3y",
@@ -22786,6 +22943,7 @@
     },
     {
       "Ticker": "한솔테크닉스",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "3y",
@@ -22803,6 +22961,7 @@
     },
     {
       "Ticker": "한양이엔지",
+      "Market": "KOSDAQ",
       "Sector": "건축기술, 엔지니어링 및 관련 기술 서비스업",
       "Industry": "건축기술, 엔지니어링 및 관련 기술 서비스업",
       "period": "3y",
@@ -22820,6 +22979,7 @@
     },
     {
       "Ticker": "한올바이오파마",
+      "Market": "KOSPI",
       "Sector": "의약품 제조업",
       "Industry": "의약품 제조업",
       "period": "3y",
@@ -22837,6 +22997,7 @@
     },
     {
       "Ticker": "해성디에스",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "3y",
@@ -22854,6 +23015,7 @@
     },
     {
       "Ticker": "현대모비스",
+      "Market": "KOSPI",
       "Sector": "자동차 신품 부품 제조업",
       "Industry": "자동차 신품 부품 제조업",
       "period": "3y",
@@ -22871,6 +23033,7 @@
     },
     {
       "Ticker": "현대백화점",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "3y",
@@ -22888,6 +23051,7 @@
     },
     {
       "Ticker": "현대지에프홀딩스",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "3y",
@@ -22905,6 +23069,7 @@
     },
     {
       "Ticker": "현대해상",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "3y",
@@ -22922,6 +23087,7 @@
     },
     {
       "Ticker": "후성",
+      "Market": "KOSPI",
       "Sector": "기초 화학물질 제조업",
       "Industry": "기초 화학물질 제조업",
       "period": "3y",
@@ -22939,6 +23105,7 @@
     },
     {
       "Ticker": "DB하이텍",
+      "Market": "KOSPI",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "5y",
@@ -22956,6 +23123,7 @@
     },
     {
       "Ticker": "DI동일",
+      "Market": "KOSPI",
       "Sector": "상품 중개업",
       "Industry": "상품 중개업",
       "period": "5y",
@@ -22973,6 +23141,7 @@
     },
     {
       "Ticker": "DN오토모티브",
+      "Market": "KOSPI",
       "Sector": "일차전지 및 축전지 제조업",
       "Industry": "일차전지 및 축전지 제조업",
       "period": "5y",
@@ -22990,6 +23159,7 @@
     },
     {
       "Ticker": "GS",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "5y",
@@ -23007,6 +23177,7 @@
     },
     {
       "Ticker": "GST",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23024,6 +23195,7 @@
     },
     {
       "Ticker": "GS리테일",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "5y",
@@ -23041,6 +23213,7 @@
     },
     {
       "Ticker": "KBI메탈",
+      "Market": "KOSDAQ",
       "Sector": "1차 비철금속 제조업",
       "Industry": "1차 비철금속 제조업",
       "period": "5y",
@@ -23058,6 +23231,7 @@
     },
     {
       "Ticker": "KB금융",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "5y",
@@ -23075,6 +23249,7 @@
     },
     {
       "Ticker": "KT&G",
+      "Market": "KOSPI",
       "Sector": "담배 제조업",
       "Industry": "담배 제조업",
       "period": "5y",
@@ -23092,6 +23267,7 @@
     },
     {
       "Ticker": "LG",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "5y",
@@ -23109,6 +23285,7 @@
     },
     {
       "Ticker": "LG이노텍",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "5y",
@@ -23126,6 +23303,7 @@
     },
     {
       "Ticker": "LG전자",
+      "Market": "KOSPI",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "5y",
@@ -23143,6 +23321,7 @@
     },
     {
       "Ticker": "LS ELECTRIC",
+      "Market": "KOSPI",
       "Sector": "전동기, 발전기 및 전기 변환 · 공급 · 제어 장치 제조업",
       "Industry": "전동기, 발전기 및 전기 변환 · 공급 · 제어 장치 제조업",
       "period": "5y",
@@ -23160,6 +23339,7 @@
     },
     {
       "Ticker": "S-Oil",
+      "Market": "KOSPI",
       "Sector": "석유 정제품 제조업",
       "Industry": "석유 정제품 제조업",
       "period": "5y",
@@ -23177,6 +23357,7 @@
     },
     {
       "Ticker": "SK",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "5y",
@@ -23194,6 +23375,7 @@
     },
     {
       "Ticker": "SK네트웍스",
+      "Market": "KOSPI",
       "Sector": "기타 전문 도매업",
       "Industry": "기타 전문 도매업",
       "period": "5y",
@@ -23211,6 +23393,7 @@
     },
     {
       "Ticker": "SK하이닉스",
+      "Market": "KOSPI",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "5y",
@@ -23228,6 +23411,7 @@
     },
     {
       "Ticker": "가온전선",
+      "Market": "KOSPI",
       "Sector": "절연선 및 케이블 제조업",
       "Industry": "절연선 및 케이블 제조업",
       "period": "5y",
@@ -23245,6 +23429,7 @@
     },
     {
       "Ticker": "광주신세계",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "5y",
@@ -23262,6 +23447,7 @@
     },
     {
       "Ticker": "금호건설",
+      "Market": "KOSPI",
       "Sector": "건물 건설업",
       "Industry": "건물 건설업",
       "period": "5y",
@@ -23279,6 +23465,7 @@
     },
     {
       "Ticker": "금호타이어",
+      "Market": "KOSPI",
       "Sector": "고무제품 제조업",
       "Industry": "고무제품 제조업",
       "period": "5y",
@@ -23296,6 +23483,7 @@
     },
     {
       "Ticker": "네이처셀",
+      "Market": "KOSDAQ",
       "Sector": "기초 의약물질 및 생물학적 제제 제조업",
       "Industry": "기초 의약물질 및 생물학적 제제 제조업",
       "period": "5y",
@@ -23313,6 +23501,7 @@
     },
     {
       "Ticker": "네패스아크",
+      "Market": "KOSDAQ",
       "Sector": "그외 기타 전문, 과학 및 기술 서비스업",
       "Industry": "그외 기타 전문, 과학 및 기술 서비스업",
       "period": "5y",
@@ -23330,6 +23519,7 @@
     },
     {
       "Ticker": "뉴파워프라즈마",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23347,6 +23537,7 @@
     },
     {
       "Ticker": "대덕전자",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "5y",
@@ -23364,6 +23555,7 @@
     },
     {
       "Ticker": "대원전선",
+      "Market": "KOSPI",
       "Sector": "절연선 및 케이블 제조업",
       "Industry": "절연선 및 케이블 제조업",
       "period": "5y",
@@ -23381,6 +23573,7 @@
     },
     {
       "Ticker": "대한항공",
+      "Market": "KOSPI",
       "Sector": "항공 여객 운송업",
       "Industry": "항공 여객 운송업",
       "period": "5y",
@@ -23398,6 +23591,7 @@
     },
     {
       "Ticker": "더블유게임즈",
+      "Market": "KOSPI",
       "Sector": "소프트웨어 개발 및 공급업",
       "Industry": "소프트웨어 개발 및 공급업",
       "period": "5y",
@@ -23415,6 +23609,7 @@
     },
     {
       "Ticker": "롯데손해보험",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "5y",
@@ -23432,6 +23627,7 @@
     },
     {
       "Ticker": "롯데쇼핑",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "5y",
@@ -23449,6 +23645,7 @@
     },
     {
       "Ticker": "미스토홀딩스",
+      "Market": "KOSPI",
       "Sector": "생활용품 도매업",
       "Industry": "생활용품 도매업",
       "period": "5y",
@@ -23466,6 +23663,7 @@
     },
     {
       "Ticker": "브이엠",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23483,6 +23681,7 @@
     },
     {
       "Ticker": "삼성물산",
+      "Market": "KOSPI",
       "Sector": "기타 전문 도매업",
       "Industry": "기타 전문 도매업",
       "period": "5y",
@@ -23500,6 +23699,7 @@
     },
     {
       "Ticker": "삼성생명",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "5y",
@@ -23517,6 +23717,7 @@
     },
     {
       "Ticker": "삼성에스디에스",
+      "Market": "KOSPI",
       "Sector": "컴퓨터 프로그래밍, 시스템 통합 및 관리업",
       "Industry": "컴퓨터 프로그래밍, 시스템 통합 및 관리업",
       "period": "5y",
@@ -23534,6 +23735,7 @@
     },
     {
       "Ticker": "삼성전기",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "5y",
@@ -23551,6 +23753,7 @@
     },
     {
       "Ticker": "삼성전자",
+      "Market": "KOSPI",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "5y",
@@ -23568,6 +23771,7 @@
     },
     {
       "Ticker": "삼성화재",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "5y",
@@ -23585,6 +23789,7 @@
     },
     {
       "Ticker": "삼지전자",
+      "Market": "KOSDAQ",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "5y",
@@ -23602,6 +23807,7 @@
     },
     {
       "Ticker": "삼화콘덴서",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "5y",
@@ -23619,6 +23825,7 @@
     },
     {
       "Ticker": "서울바이오시스",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "5y",
@@ -23636,6 +23843,7 @@
     },
     {
       "Ticker": "소룩스",
+      "Market": "KOSDAQ",
       "Sector": "전구 및 조명장치 제조업",
       "Industry": "전구 및 조명장치 제조업",
       "period": "5y",
@@ -23653,6 +23861,7 @@
     },
     {
       "Ticker": "신한지주",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "5y",
@@ -23670,6 +23879,7 @@
     },
     {
       "Ticker": "심텍",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "5y",
@@ -23687,6 +23897,7 @@
     },
     {
       "Ticker": "심텍홀딩스",
+      "Market": "KOSDAQ",
       "Sector": "통신 및 방송 장비 제조업",
       "Industry": "통신 및 방송 장비 제조업",
       "period": "5y",
@@ -23704,6 +23915,7 @@
     },
     {
       "Ticker": "싸이맥스",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23721,6 +23933,7 @@
     },
     {
       "Ticker": "씨젠",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "의료용품 및 기타 의약 관련제품 제조업",
       "Industry": "의료용품 및 기타 의약 관련제품 제조업",
       "period": "5y",
@@ -23738,6 +23951,7 @@
     },
     {
       "Ticker": "에스에이엠티",
+      "Market": "KOSDAQ",
       "Sector": "기계장비 및 관련 물품 도매업",
       "Industry": "기계장비 및 관련 물품 도매업",
       "period": "5y",
@@ -23755,6 +23969,7 @@
     },
     {
       "Ticker": "엘티씨",
+      "Market": "KOSDAQ",
       "Sector": "기초 화학물질 제조업",
       "Industry": "기초 화학물질 제조업",
       "period": "5y",
@@ -23772,6 +23987,7 @@
     },
     {
       "Ticker": "예스티",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23789,6 +24005,7 @@
     },
     {
       "Ticker": "오로라",
+      "Market": "KOSDAQ",
       "Sector": "전문디자인업",
       "Industry": "전문디자인업",
       "period": "5y",
@@ -23806,6 +24023,7 @@
     },
     {
       "Ticker": "오리온홀딩스",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "5y",
@@ -23823,6 +24041,7 @@
     },
     {
       "Ticker": "와이지-원",
+      "Market": "KOSDAQ",
       "Sector": "기타 금속 가공제품 제조업",
       "Industry": "기타 금속 가공제품 제조업",
       "period": "5y",
@@ -23840,6 +24059,7 @@
     },
     {
       "Ticker": "원익IPS",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23857,6 +24077,7 @@
     },
     {
       "Ticker": "유진테크",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23874,6 +24095,7 @@
     },
     {
       "Ticker": "이수화학",
+      "Market": "KOSPI",
       "Sector": "기초 화학물질 제조업",
       "Industry": "기초 화학물질 제조업",
       "period": "5y",
@@ -23891,6 +24113,7 @@
     },
     {
       "Ticker": "인바디",
+      "Market": "KOSDAQ",
       "Sector": "의료용 기기 제조업",
       "Industry": "의료용 기기 제조업",
       "period": "5y",
@@ -23908,6 +24131,7 @@
     },
     {
       "Ticker": "인텍플러스",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23925,6 +24149,7 @@
     },
     {
       "Ticker": "제주반도체",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "5y",
@@ -23942,6 +24167,7 @@
     },
     {
       "Ticker": "주성엔지니어링",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23959,6 +24185,7 @@
     },
     {
       "Ticker": "케이씨텍",
+      "Market": "KOSPI",
       "Sector": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "Industry": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "period": "5y",
@@ -23976,6 +24203,7 @@
     },
     {
       "Ticker": "코리안리",
+      "Market": "KOSPI",
       "Sector": "재 보험업",
       "Industry": "재 보험업",
       "period": "5y",
@@ -23993,6 +24221,7 @@
     },
     {
       "Ticker": "코미코",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -24010,6 +24239,7 @@
     },
     {
       "Ticker": "코스맥스엔비티",
+      "Market": "KOSDAQ",
       "Sector": "기타 식품 제조업",
       "Industry": "기타 식품 제조업",
       "period": "5y",
@@ -24027,6 +24257,7 @@
     },
     {
       "Ticker": "코웨이",
+      "Market": "KOSPI",
       "Sector": "그외 기타 개인 서비스업",
       "Industry": "그외 기타 개인 서비스업",
       "period": "5y",
@@ -24044,6 +24275,7 @@
     },
     {
       "Ticker": "테스",
+      "Market": "KOSDAQ GLOBAL",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -24061,6 +24293,7 @@
     },
     {
       "Ticker": "티에스이",
+      "Market": "KOSDAQ",
       "Sector": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "Industry": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
       "period": "5y",
@@ -24078,6 +24311,7 @@
     },
     {
       "Ticker": "피델릭스",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "5y",
@@ -24095,6 +24329,7 @@
     },
     {
       "Ticker": "피에스케이",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -24112,6 +24347,7 @@
     },
     {
       "Ticker": "피에스케이홀딩스",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -24129,6 +24365,7 @@
     },
     {
       "Ticker": "하나금융지주",
+      "Market": "KOSPI",
       "Sector": "기타 금융업",
       "Industry": "기타 금융업",
       "period": "5y",
@@ -24146,6 +24383,7 @@
     },
     {
       "Ticker": "하나마이크론",
+      "Market": "KOSDAQ",
       "Sector": "반도체 제조업",
       "Industry": "반도체 제조업",
       "period": "5y",
@@ -24163,6 +24401,7 @@
     },
     {
       "Ticker": "한국콜마",
+      "Market": "KOSPI",
       "Sector": "기타 화학제품 제조업",
       "Industry": "기타 화학제품 제조업",
       "period": "5y",
@@ -24180,6 +24419,7 @@
     },
     {
       "Ticker": "한국타이어앤테크놀로지",
+      "Market": "KOSPI",
       "Sector": "고무제품 제조업",
       "Industry": "고무제품 제조업",
       "period": "5y",
@@ -24197,6 +24437,7 @@
     },
     {
       "Ticker": "한솔테크닉스",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "5y",
@@ -24214,6 +24455,7 @@
     },
     {
       "Ticker": "한양이엔지",
+      "Market": "KOSDAQ",
       "Sector": "건축기술, 엔지니어링 및 관련 기술 서비스업",
       "Industry": "건축기술, 엔지니어링 및 관련 기술 서비스업",
       "period": "5y",
@@ -24231,6 +24473,7 @@
     },
     {
       "Ticker": "한올바이오파마",
+      "Market": "KOSPI",
       "Sector": "의약품 제조업",
       "Industry": "의약품 제조업",
       "period": "5y",
@@ -24248,6 +24491,7 @@
     },
     {
       "Ticker": "해성디에스",
+      "Market": "KOSPI",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "5y",
@@ -24265,6 +24509,7 @@
     },
     {
       "Ticker": "현대모비스",
+      "Market": "KOSPI",
       "Sector": "자동차 신품 부품 제조업",
       "Industry": "자동차 신품 부품 제조업",
       "period": "5y",
@@ -24282,6 +24527,7 @@
     },
     {
       "Ticker": "현대백화점",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "5y",
@@ -24299,6 +24545,7 @@
     },
     {
       "Ticker": "현대지에프홀딩스",
+      "Market": "KOSPI",
       "Sector": "종합 소매업",
       "Industry": "종합 소매업",
       "period": "5y",
@@ -24316,6 +24563,7 @@
     },
     {
       "Ticker": "현대해상",
+      "Market": "KOSPI",
       "Sector": "보험업",
       "Industry": "보험업",
       "period": "5y",
@@ -24333,6 +24581,7 @@
     },
     {
       "Ticker": "후성",
+      "Market": "KOSPI",
       "Sector": "기초 화학물질 제조업",
       "Industry": "기초 화학물질 제조업",
       "period": "5y",

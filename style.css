@@ -853,6 +853,7 @@ tbody tr:hover {
 
 .grade-pill,
 .trend-pill,
+.market-pill,
 .period-pill {
   display: inline-flex;
   min-width: 70px;
@@ -863,6 +864,32 @@ tbody tr:hover {
   font-size: 12px;
   font-weight: 950;
   line-height: 1.15;
+}
+
+.market-pill {
+  min-width: 82px;
+  color: var(--gray-text);
+  background: var(--gray-soft);
+  border-color: var(--line-strong);
+  white-space: nowrap;
+}
+
+.market-kospi {
+  color: var(--blue-text);
+  background: var(--blue-soft);
+  border-color: var(--blue);
+}
+
+.market-kosdaq {
+  color: var(--best-text);
+  background: var(--best-soft);
+  border-color: var(--best);
+}
+
+.market-kosdaq-global {
+  color: var(--violet-text);
+  background: var(--violet-soft);
+  border-color: var(--violet);
 }
 
 .period-pill {

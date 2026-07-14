@@ -69,7 +69,7 @@ const DETAIL_METRIC_COLUMNS = [
   "Score3"
 ];
 const DATE_COLUMNS = new Set(["first_date", "last_date"]);
-const TEXT_DEFAULT_ASC_COLUMNS = new Set(["Ticker", "Name", "Category", "Sector", "Industry", "first_date", "last_date"]);
+const TEXT_DEFAULT_ASC_COLUMNS = new Set(["Ticker", "Name", "Market", "Category", "Sector", "Industry", "first_date", "last_date"]);
 const ROUTING_COLUMNS = new Set([
   "asset_type",
   "Asset Type",
@@ -113,15 +113,34 @@ const EQUITY_DEFAULT_COLUMNS = [
   "Grade",
   "Return"
 ];
+const KRX_DEFAULT_COLUMNS = [
+  "Ticker",
+  "Market",
+  "Sector",
+  "Industry",
+  "period",
+  "first_date",
+  "last_date",
+  "Total Return",
+  "CAGR",
+  "Sharpe",
+  "MDD",
+  "Calmar",
+  "Grade",
+  "Score1",
+  "Score2",
+  "Score3"
+];
 const DEFAULT_COLUMNS_BY_DATASET = {
   ETF: DEFAULT_COLUMNS,
   NASDAQ: EQUITY_DEFAULT_COLUMNS,
   SP500: EQUITY_DEFAULT_COLUMNS,
-  KRX: EQUITY_DEFAULT_COLUMNS
+  KRX: KRX_DEFAULT_COLUMNS
 };
 const COLUMN_LABELS = {
   Ticker: "티커",
   Name: "종목명",
+  Market: "시장",
   Category: "카테고리",
   Sector: "섹터",
   Industry: "산업",
@@ -934,7 +953,9 @@ function inferColumns(rows) {
 
   rows.forEach(function (row) {
     Object.keys(row).forEach(function (key) {
-      if (!ROUTING_COLUMNS.has(key) && !hiddenColumns.has(key) && !seen.has(key)) {
+      const isKrxMarketColumn = activeDataset === "KRX" && key === "Market";
+
+      if ((!ROUTING_COLUMNS.has(key) || isKrxMarketColumn) && !hiddenColumns.has(key) && !seen.has(key)) {
         seen.add(key);
         result.push(key);
       }
@@ -1235,6 +1256,8 @@ function renderTable(rows) {
         td.innerHTML = gradeBadge(value);
       } else if (column === "Trend") {
         td.innerHTML = trendBadge(value);
+      } else if (column === "Market") {
+        td.innerHTML = marketBadge(value);
       } else if (column === "period") {
         td.innerHTML = periodBadge(value);
       } else {
@@ -1264,6 +1287,7 @@ function openDrawer(row) {
   dom.detailTicker.textContent = ticker;
   dom.detailSub.textContent = [DATASET_META[activeDataset].label, category, availablePeriods].filter(Boolean).join(" · ") || "-";
   dom.detailBadges.innerHTML =
+    (columns.indexOf("Market") >= 0 ? marketBadge(mainRow.Market) : "") +
     (columns.indexOf("Grade") >= 0 ? gradeBadge(mainRow.Grade) : "") +
     (columns.indexOf("Trend") >= 0 ? trendBadge(mainRow.Trend) : "") +
     (columns.indexOf("period") >= 0 ? periodBadge(mainPeriod) : "");
@@ -1768,7 +1792,7 @@ function cellClass(column, value) {
 
   if (column === "Ticker") {
     classes.push("ticker", "text-cell");
-  } else if (column === "Name" || column === "Category" || column === "Sector" || column === "Industry" || column === "Grade" || column === "Trend" || column === "period") {
+  } else if (column === "Name" || column === "Market" || column === "Category" || column === "Sector" || column === "Industry" || column === "Grade" || column === "Trend" || column === "period") {
     classes.push("text-cell");
   }
 
@@ -1913,6 +1937,18 @@ function trendBadge(value) {
   if (normalized === "하락") className = "trend-down";
 
   return '<span class="trend-pill ' + className + '">' + escapeHtml(normalized) + '</span>';
+}
+
+function marketBadge(value) {
+  const market = cleanText(value) || "Unknown";
+  const normalized = market.toUpperCase();
+  let className = "market-unknown";
+
+  if (normalized === "KOSPI") className = "market-kospi";
+  if (normalized === "KOSDAQ") className = "market-kosdaq";
+  if (normalized === "KOSDAQ GLOBAL") className = "market-kosdaq-global";
+
+  return '<span class="market-pill ' + className + '">' + escapeHtml(market) + '</span>';
 }
 
 function periodBadge(value) {
