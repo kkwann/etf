@@ -20069,9 +20069,9 @@
       "MDD": -33.4,
       "Calmar": 1.53,
       "Grade": "Good",
-      "Score1": 63.83,
-      "Score2": 35.31,
-      "Score3": 36.17
+      "Score1": 63.58,
+      "Score2": 37.84,
+      "Score3": 34.94
     },
     {
       "Ticker": "GS",
@@ -20087,9 +20087,9 @@
       "MDD": -23.87,
       "Calmar": 3.56,
       "Grade": "Best",
-      "Score1": 90.86,
-      "Score2": 49.32,
-      "Score3": 64.38
+      "Score1": 74.44,
+      "Score2": 39.01,
+      "Score3": 37.78
     },
     {
       "Ticker": "GS리테일",
@@ -20105,9 +20105,9 @@
       "MDD": -27.16,
       "Calmar": 1.78,
       "Grade": "Best",
-      "Score1": 58.4,
-      "Score2": 37.28,
-      "Score3": 39.38
+      "Score1": 50.62,
+      "Score2": 41.17,
+      "Score3": 27.47
     },
     {
       "Ticker": "HMM",
@@ -20123,9 +20123,9 @@
       "MDD": -25.87,
       "Calmar": -0.55,
       "Grade": "Bad",
-      "Score1": 73.95,
-      "Score2": 15.93,
-      "Score3": 28.95
+      "Score1": 61.11,
+      "Score2": 17.28,
+      "Score3": 10.06
     },
     {
       "Ticker": "KBI메탈",
@@ -20141,9 +20141,9 @@
       "MDD": -66.08,
       "Calmar": 2.37,
       "Grade": "Bad",
-      "Score1": 75.68,
-      "Score2": 63.15,
-      "Score3": 79.88
+      "Score1": 68.27,
+      "Score2": 54.94,
+      "Score3": 59.14
     },
     {
       "Ticker": "KB금융",
@@ -20159,9 +20159,9 @@
       "MDD": -18.42,
       "Calmar": 3.04,
       "Grade": "Best",
-      "Score1": 60.12,
-      "Score2": 34.88,
-      "Score3": 49.38
+      "Score1": 52.47,
+      "Score2": 33.4,
+      "Score3": 40.49
     },
     {
       "Ticker": "KT&G",
@@ -20177,9 +20177,9 @@
       "MDD": -15.64,
       "Calmar": 2.1,
       "Grade": "Best",
-      "Score1": 65.31,
-      "Score2": 45.43,
-      "Score3": 36.48
+      "Score1": 60.86,
+      "Score2": 54.01,
+      "Score3": 33.15
     },
     {
       "Ticker": "LG",
@@ -20195,9 +20195,9 @@
       "MDD": -42.7,
       "Calmar": 0.66,
       "Grade": "Normal",
-      "Score1": 43.58,
-      "Score2": 29.69,
-      "Score3": 24.75
+      "Score1": 40.0,
+      "Score2": 39.94,
+      "Score3": 20.93
     },
     {
       "Ticker": "LG이노텍",
@@ -20213,9 +20213,9 @@
       "MDD": -60.65,
       "Calmar": 6.09,
       "Grade": "Bad",
-      "Score1": 28.27,
-      "Score2": 69.75,
-      "Score3": 41.23
+      "Score1": 47.53,
+      "Score2": 69.38,
+      "Score3": 72.22
     },
     {
       "Ticker": "LG전자",
@@ -20231,9 +20231,9 @@
       "MDD": -57.4,
       "Calmar": 2.63,
       "Grade": "Bad",
-      "Score1": 52.35,
-      "Score2": 47.72,
-      "Score3": 50.49
+      "Score1": 56.54,
+      "Score2": 44.63,
+      "Score3": 54.32
     },
     {
       "Ticker": "LS ELECTRIC",
@@ -20249,9 +20249,9 @@
       "MDD": -43.7,
       "Calmar": 7.41,
       "Grade": "Normal",
-      "Score1": 59.51,
-      "Score2": 67.65,
-      "Score3": 34.75
+      "Score1": 69.88,
+      "Score2": 62.65,
+      "Score3": 48.4
     },
     {
       "Ticker": "S-Oil",
@@ -20267,9 +20267,9 @@
       "MDD": -34.04,
       "Calmar": 4.28,
       "Grade": "Good",
-      "Score1": 82.1,
-      "Score2": 46.48,
-      "Score3": 65.93
+      "Score1": 68.89,
+      "Score2": 37.04,
+      "Score3": 44.38
     },
     {
       "Ticker": "SK",
@@ -20285,9 +20285,9 @@
       "MDD": -34.5,
       "Calmar": 6.28,
       "Grade": "Good",
-      "Score1": 37.53,
-      "Score2": 66.3,
-      "Score3": 64.57
+      "Score1": 41.73,
+      "Score2": 62.65,
+      "Score3": 74.81
     },
     {
       "Ticker": "SK네트웍스",
@@ -20303,9 +20303,9 @@
       "MDD": -48.15,
       "Calmar": 1.59,
       "Grade": "Normal",
-      "Score1": 26.67,
-      "Score2": 42.04,
-      "Score3": 49.01
+      "Score1": 30.12,
+      "Score2": 41.3,
+      "Score3": 52.1
     },
     {
       "Ticker": "SK텔레콤",
@@ -20321,9 +20321,9 @@
       "MDD": -32.99,
       "Calmar": 2.41,
       "Grade": "Good",
-      "Score1": 81.48,
-      "Score2": 50.37,
-      "Score3": 35.19
+      "Score1": 81.73,
+      "Score2": 50.06,
+      "Score3": 33.95
     },
     {
       "Ticker": "SK하이닉스",
@@ -20339,9 +20339,9 @@
       "MDD": -39.57,
       "Calmar": 16.74,
       "Grade": "Good",
-      "Score1": 27.16,
-      "Score2": 66.79,
-      "Score3": 54.94
+      "Score1": 43.95,
+      "Score2": 64.57,
+      "Score3": 85.43
     },
     {
       "Ticker": "가온전선",
@@ -20357,9 +20357,9 @@
       "MDD": -55.32,
       "Calmar": 9.8,
       "Grade": "Bad",
-      "Score1": 68.27,
-      "Score2": 78.52,
-      "Score3": 87.35
+      "Score1": 66.3,
+      "Score2": 68.58,
+      "Score3": 77.47
     },
     {
       "Ticker": "금호건설",
@@ -20375,9 +20375,9 @@
       "MDD": -40.55,
       "Calmar": 5.78,
       "Grade": "Normal",
-      "Score1": 38.15,
-      "Score2": 55.49,
-      "Score3": 93.89
+      "Score1": 13.09,
+      "Score2": 27.04,
+      "Score3": 40.99
     },
     {
       "Ticker": "금호타이어",
@@ -20393,9 +20393,9 @@
       "MDD": -42.83,
       "Calmar": 0.96,
       "Grade": "Normal",
-      "Score1": 51.98,
-      "Score2": 16.3,
-      "Score3": 47.41
+      "Score1": 32.84,
+      "Score2": 13.4,
+      "Score3": 18.4
     },
     {
       "Ticker": "네오오토",
@@ -20411,9 +20411,9 @@
       "MDD": -47.91,
       "Calmar": 2.08,
       "Grade": "Normal",
-      "Score1": 72.59,
-      "Score2": 28.7,
-      "Score3": 61.85
+      "Score1": 52.96,
+      "Score2": 29.57,
+      "Score3": 30.68
     },
     {
       "Ticker": "네이처셀",
@@ -20429,9 +20429,9 @@
       "MDD": -55.29,
       "Calmar": -0.2,
       "Grade": "Bad",
-      "Score1": 50.25,
-      "Score2": 12.28,
-      "Score3": 30.8
+      "Score1": 45.43,
+      "Score2": 18.52,
+      "Score3": 24.57
     },
     {
       "Ticker": "뉴파워프라즈마",
@@ -20447,9 +20447,9 @@
       "MDD": -39.21,
       "Calmar": 1.57,
       "Grade": "Good",
-      "Score1": 85.19,
-      "Score2": 52.84,
-      "Score3": 75.25
+      "Score1": 70.37,
+      "Score2": 50.12,
+      "Score3": 48.02
     },
     {
       "Ticker": "대덕전자",
@@ -20465,9 +20465,9 @@
       "MDD": -44.63,
       "Calmar": 12.44,
       "Grade": "Normal",
-      "Score1": 41.98,
-      "Score2": 61.23,
-      "Score3": 47.47
+      "Score1": 56.79,
+      "Score2": 58.95,
+      "Score3": 71.23
     },
     {
       "Ticker": "대원전선",
@@ -20483,9 +20483,9 @@
       "MDD": -49.89,
       "Calmar": 8.32,
       "Grade": "Normal",
-      "Score1": 87.9,
-      "Score2": 91.48,
-      "Score3": 84.81
+      "Score1": 84.2,
+      "Score2": 86.11,
+      "Score3": 72.53
     },
     {
       "Ticker": "대한항공",
@@ -20501,9 +20501,9 @@
       "MDD": -22.63,
       "Calmar": 0.12,
       "Grade": "Bad",
-      "Score1": 39.01,
-      "Score2": 12.28,
-      "Score3": 23.77
+      "Score1": 36.54,
+      "Score2": 17.96,
+      "Score3": 25.74
     },
     {
       "Ticker": "더블유게임즈",
@@ -20519,9 +20519,9 @@
       "MDD": -20.64,
       "Calmar": 0.3,
       "Grade": "Bad",
-      "Score1": 63.33,
-      "Score2": 24.32,
-      "Score3": 32.04
+      "Score1": 58.64,
+      "Score2": 28.4,
+      "Score3": 28.83
     },
     {
       "Ticker": "롯데손해보험",
@@ -20537,9 +20537,9 @@
       "MDD": -38.57,
       "Calmar": 0.43,
       "Grade": "Good",
-      "Score1": 61.11,
-      "Score2": 19.38,
-      "Score3": 47.41
+      "Score1": 45.43,
+      "Score2": 13.21,
+      "Score3": 20.0
     },
     {
       "Ticker": "롯데쇼핑",
@@ -20555,9 +20555,9 @@
       "MDD": -37.84,
       "Calmar": 1.95,
       "Grade": "Good",
-      "Score1": 48.27,
-      "Score2": 40.49,
-      "Score3": 21.79
+      "Score1": 63.21,
+      "Score2": 44.94,
+      "Score3": 49.51
     },
     {
       "Ticker": "브이엠",
@@ -20573,9 +20573,9 @@
       "MDD": -31.83,
       "Calmar": 22.25,
       "Grade": "Good",
-      "Score1": 42.72,
-      "Score2": 68.46,
-      "Score3": 58.02
+      "Score1": 57.28,
+      "Score2": 61.48,
+      "Score3": 80.12
     },
     {
       "Ticker": "삼성물산",
@@ -20591,9 +20591,9 @@
       "MDD": -40.65,
       "Calmar": 2.87,
       "Grade": "Normal",
-      "Score1": 12.96,
-      "Score2": 29.32,
-      "Score3": 21.79
+      "Score1": 24.07,
+      "Score2": 35.31,
+      "Score3": 46.23
     },
     {
       "Ticker": "삼성생명",
@@ -20609,9 +20609,9 @@
       "MDD": -39.34,
       "Calmar": 4.03,
       "Grade": "Good",
-      "Score1": 25.06,
-      "Score2": 55.56,
-      "Score3": 44.14
+      "Score1": 36.54,
+      "Score2": 56.98,
+      "Score3": 66.6
     },
     {
       "Ticker": "삼성에스디에스",
@@ -20627,9 +20627,9 @@
       "MDD": -48.67,
       "Calmar": 0.48,
       "Grade": "Normal",
-      "Score1": 81.11,
-      "Score2": 31.3,
-      "Score3": 49.94
+      "Score1": 67.28,
+      "Score2": 26.85,
+      "Score3": 22.59
     },
     {
       "Ticker": "삼성전기",
@@ -20645,9 +20645,9 @@
       "MDD": -44.49,
       "Calmar": 23.91,
       "Grade": "Normal",
-      "Score1": 27.65,
-      "Score2": 87.04,
-      "Score3": 64.51
+      "Score1": 46.3,
+      "Score2": 82.04,
+      "Score3": 95.06
     },
     {
       "Ticker": "삼성전자",
@@ -20663,9 +20663,9 @@
       "MDD": -32.69,
       "Calmar": 10.05,
       "Grade": "Good",
-      "Score1": 27.16,
-      "Score2": 56.73,
-      "Score3": 37.65
+      "Score1": 40.62,
+      "Score2": 54.81,
+      "Score3": 61.3
     },
     {
       "Ticker": "삼성화재",
@@ -20681,9 +20681,9 @@
       "MDD": -30.08,
       "Calmar": 1.3,
       "Grade": "Good",
-      "Score1": 53.83,
-      "Score2": 28.52,
-      "Score3": 52.78
+      "Score1": 49.63,
+      "Score2": 31.42,
+      "Score3": 51.98
     },
     {
       "Ticker": "삼지전자",
@@ -20699,9 +20699,9 @@
       "MDD": -41.93,
       "Calmar": 5.17,
       "Grade": "Normal",
-      "Score1": 58.4,
-      "Score2": 62.16,
-      "Score3": 38.52
+      "Score1": 64.94,
+      "Score2": 59.44,
+      "Score3": 45.31
     },
     {
       "Ticker": "삼화콘덴서",
@@ -20717,9 +20717,9 @@
       "MDD": -57.92,
       "Calmar": 4.37,
       "Grade": "Bad",
-      "Score1": 10.86,
-      "Score2": 63.64,
-      "Score3": 45.43
+      "Score1": 29.38,
+      "Score2": 63.52,
+      "Score3": 72.84
     },
     {
       "Ticker": "서울바이오시스",
@@ -20735,9 +20735,9 @@
       "MDD": -69.15,
       "Calmar": 1.17,
       "Grade": "Bad",
-      "Score1": 35.19,
-      "Score2": 46.48,
-      "Score3": 39.14
+      "Score1": 44.32,
+      "Score2": 46.23,
+      "Score3": 48.77
     },
     {
       "Ticker": "소룩스",
@@ -20753,9 +20753,9 @@
       "MDD": -54.21,
       "Calmar": -0.21,
       "Grade": "Bad",
-      "Score1": 14.07,
-      "Score2": 6.17,
-      "Score3": 20.19
+      "Score1": 14.2,
+      "Score2": 13.21,
+      "Score3": 22.53
     },
     {
       "Ticker": "송원산업",
@@ -20771,9 +20771,9 @@
       "MDD": -40.5,
       "Calmar": 0.12,
       "Grade": "Bad",
-      "Score1": 86.54,
-      "Score2": 37.41,
-      "Score3": 56.98
+      "Score1": 68.15,
+      "Score2": 31.42,
+      "Score3": 22.59
     },
     {
       "Ticker": "신한지주",
@@ -20789,9 +20789,9 @@
       "MDD": -17.26,
       "Calmar": 3.15,
       "Grade": "Best",
-      "Score1": 60.62,
-      "Score2": 27.9,
-      "Score3": 35.93
+      "Score1": 58.27,
+      "Score2": 32.22,
+      "Score3": 36.79
     },
     {
       "Ticker": "심텍",
@@ -20807,9 +20807,9 @@
       "MDD": -37.95,
       "Calmar": 8.99,
       "Grade": "Good",
-      "Score1": 21.36,
-      "Score2": 49.07,
-      "Score3": 35.8
+      "Score1": 36.17,
+      "Score2": 46.6,
+      "Score3": 60.25
     },
     {
       "Ticker": "싸이맥스",
@@ -20825,9 +20825,9 @@
       "MDD": -39.89,
       "Calmar": 4.99,
       "Grade": "Good",
-      "Score1": 49.51,
-      "Score2": 56.79,
-      "Score3": 54.01
+      "Score1": 50.12,
+      "Score2": 51.11,
+      "Score3": 50.31
     },
     {
       "Ticker": "씨젠",
@@ -20843,9 +20843,9 @@
       "MDD": -27.65,
       "Calmar": -0.33,
       "Grade": "Bad",
-      "Score1": 56.05,
-      "Score2": 14.01,
-      "Score3": 31.3
+      "Score1": 47.16,
+      "Score2": 16.42,
+      "Score3": 20.12
     },
     {
       "Ticker": "에스에이엠티",
@@ -20861,9 +20861,9 @@
       "MDD": -45.39,
       "Calmar": 5.97,
       "Grade": "Normal",
-      "Score1": 30.12,
-      "Score2": 68.7,
-      "Score3": 55.06
+      "Score1": 40.99,
+      "Score2": 66.67,
+      "Score3": 71.48
     },
     {
       "Ticker": "오로라",
@@ -20879,9 +20879,9 @@
       "MDD": -63.68,
       "Calmar": -0.05,
       "Grade": "Bad",
-      "Score1": 36.17,
-      "Score2": 25.93,
-      "Score3": 59.26
+      "Score1": 21.36,
+      "Score2": 20.56,
+      "Score3": 33.89
     },
     {
       "Ticker": "오리온홀딩스",
@@ -20897,9 +20897,9 @@
       "MDD": -19.96,
       "Calmar": 0.37,
       "Grade": "Bad",
-      "Score1": 48.77,
-      "Score2": 25.8,
-      "Score3": 29.26
+      "Score1": 42.35,
+      "Score2": 27.35,
+      "Score3": 19.32
     },
     {
       "Ticker": "와이지-원",
@@ -20915,9 +20915,9 @@
       "MDD": -32.49,
       "Calmar": 7.98,
       "Grade": "Good",
-      "Score1": 29.38,
-      "Score2": 66.05,
-      "Score3": 62.35
+      "Score1": 36.3,
+      "Score2": 60.31,
+      "Score3": 72.9
     },
     {
       "Ticker": "원익IPS",
@@ -20933,9 +20933,9 @@
       "MDD": -43.97,
       "Calmar": 7.31,
       "Grade": "Normal",
-      "Score1": 6.67,
-      "Score2": 33.21,
-      "Score3": 18.33
+      "Score1": 25.43,
+      "Score2": 35.74,
+      "Score3": 54.75
     },
     {
       "Ticker": "이수화학",
@@ -20951,9 +20951,9 @@
       "MDD": -42.3,
       "Calmar": 3.09,
       "Grade": "Normal",
-      "Score1": 88.02,
-      "Score2": 55.99,
-      "Score3": 72.96
+      "Score1": 76.42,
+      "Score2": 56.79,
+      "Score3": 52.1
     },
     {
       "Ticker": "인바디",
@@ -20969,9 +20969,9 @@
       "MDD": -23.03,
       "Calmar": 4.91,
       "Grade": "Best",
-      "Score1": 56.79,
-      "Score2": 42.22,
-      "Score3": 69.94
+      "Score1": 50.25,
+      "Score2": 38.33,
+      "Score3": 62.22
     },
     {
       "Ticker": "인텍플러스",
@@ -20987,9 +20987,9 @@
       "MDD": -43.89,
       "Calmar": 7.56,
       "Grade": "Normal",
-      "Score1": 43.95,
-      "Score2": 53.46,
-      "Score3": 45.37
+      "Score1": 55.19,
+      "Score2": 51.6,
+      "Score3": 62.72
     },
     {
       "Ticker": "자이에스앤디",
@@ -21005,9 +21005,9 @@
       "MDD": -34.5,
       "Calmar": 3.64,
       "Grade": "Good",
-      "Score1": 98.52,
-      "Score2": 64.07,
-      "Score3": 89.01
+      "Score1": 73.33,
+      "Score2": 42.72,
+      "Score3": 41.54
     },
     {
       "Ticker": "제주반도체",
@@ -21023,9 +21023,9 @@
       "MDD": -45.0,
       "Calmar": 10.04,
       "Grade": "Normal",
-      "Score1": 36.42,
-      "Score2": 65.49,
-      "Score3": 55.43
+      "Score1": 52.72,
+      "Score2": 63.09,
+      "Score3": 80.06
     },
     {
       "Ticker": "주성엔지니어링",
@@ -21041,9 +21041,9 @@
       "MDD": -36.13,
       "Calmar": 13.33,
       "Grade": "Good",
-      "Score1": 26.54,
-      "Score2": 72.41,
-      "Score3": 57.9
+      "Score1": 40.74,
+      "Score2": 66.98,
+      "Score3": 77.04
     },
     {
       "Ticker": "지엔씨에너지",
@@ -21059,9 +21059,9 @@
       "MDD": -58.25,
       "Calmar": 0.71,
       "Grade": "Bad",
-      "Score1": 94.81,
-      "Score2": 32.35,
-      "Score3": 66.98
+      "Score1": 69.88,
+      "Score2": 20.31,
+      "Score3": 23.4
     },
     {
       "Ticker": "케이씨텍",
@@ -21077,9 +21077,9 @@
       "MDD": -29.28,
       "Calmar": 8.07,
       "Grade": "Best",
-      "Score1": 41.6,
-      "Score2": 52.72,
-      "Score3": 68.77
+      "Score1": 40.49,
+      "Score2": 46.3,
+      "Score3": 65.68
     },
     {
       "Ticker": "코리안리",
@@ -21095,9 +21095,9 @@
       "MDD": -19.87,
       "Calmar": 1.22,
       "Grade": "Good",
-      "Score1": 52.72,
-      "Score2": 39.32,
-      "Score3": 44.63
+      "Score1": 43.7,
+      "Score2": 45.0,
+      "Score3": 33.4
     },
     {
       "Ticker": "코스맥스엔비티",
@@ -21113,9 +21113,9 @@
       "MDD": -34.91,
       "Calmar": 2.28,
       "Grade": "Good",
-      "Score1": 75.31,
-      "Score2": 63.83,
-      "Score3": 84.69
+      "Score1": 60.37,
+      "Score2": 52.35,
+      "Score3": 54.94
     },
     {
       "Ticker": "코웨이",
@@ -21131,9 +21131,9 @@
       "MDD": -37.37,
       "Calmar": -0.44,
       "Grade": "Bad",
-      "Score1": 45.43,
-      "Score2": 18.58,
-      "Score3": 39.94
+      "Score1": 34.44,
+      "Score2": 19.63,
+      "Score3": 25.62
     },
     {
       "Ticker": "테스",
@@ -21149,9 +21149,9 @@
       "MDD": -36.29,
       "Calmar": 15.09,
       "Grade": "Good",
-      "Score1": 54.57,
-      "Score2": 65.86,
-      "Score3": 71.11
+      "Score1": 62.59,
+      "Score2": 59.2,
+      "Score3": 83.21
     },
     {
       "Ticker": "티에스이",
@@ -21167,9 +21167,9 @@
       "MDD": -24.14,
       "Calmar": 23.37,
       "Grade": "Best",
-      "Score1": 60.25,
-      "Score2": 71.17,
-      "Score3": 64.2
+      "Score1": 70.99,
+      "Score2": 66.48,
+      "Score3": 81.98
     },
     {
       "Ticker": "피델릭스",
@@ -21185,9 +21185,9 @@
       "MDD": -48.76,
       "Calmar": 6.7,
       "Grade": "Normal",
-      "Score1": 47.16,
-      "Score2": 73.27,
-      "Score3": 69.32
+      "Score1": 57.53,
+      "Score2": 68.09,
+      "Score3": 83.4
     },
     {
       "Ticker": "피에스케이",
@@ -21203,9 +21203,9 @@
       "MDD": -28.42,
       "Calmar": 25.89,
       "Grade": "Best",
-      "Score1": 45.43,
-      "Score2": 71.91,
-      "Score3": 73.52
+      "Score1": 56.91,
+      "Score2": 66.54,
+      "Score3": 92.65
     },
     {
       "Ticker": "피에스케이홀딩스",
@@ -21221,9 +21221,9 @@
       "MDD": -30.81,
       "Calmar": 8.94,
       "Grade": "Good",
-      "Score1": 48.89,
-      "Score2": 47.04,
-      "Score3": 40.12
+      "Score1": 57.65,
+      "Score2": 43.27,
+      "Score3": 54.07
     },
     {
       "Ticker": "하나금융지주",
@@ -21239,9 +21239,9 @@
       "MDD": -19.65,
       "Calmar": 2.28,
       "Grade": "Best",
-      "Score1": 68.02,
-      "Score2": 30.8,
-      "Score3": 44.81
+      "Score1": 60.25,
+      "Score2": 29.63,
+      "Score3": 35.12
     },
     {
       "Ticker": "한국콜마",
@@ -21257,9 +21257,9 @@
       "MDD": -40.16,
       "Calmar": 0.15,
       "Grade": "Bad",
-      "Score1": 39.88,
-      "Score2": 38.09,
-      "Score3": 56.36
+      "Score1": 25.56,
+      "Score2": 34.63,
+      "Score3": 35.43
     },
     {
       "Ticker": "한국타이어앤테크놀로지",
@@ -21275,9 +21275,9 @@
       "MDD": -31.49,
       "Calmar": 2.17,
       "Grade": "Good",
-      "Score1": 84.32,
-      "Score2": 27.53,
-      "Score3": 52.35
+      "Score1": 72.47,
+      "Score2": 28.02,
+      "Score3": 38.15
     },
     {
       "Ticker": "한솔테크닉스",
@@ -21293,9 +21293,9 @@
       "MDD": -46.83,
       "Calmar": 1.19,
       "Grade": "Normal",
-      "Score1": 35.43,
-      "Score2": 30.93,
-      "Score3": 34.01
+      "Score1": 45.06,
+      "Score2": 36.48,
+      "Score3": 48.64
     },
     {
       "Ticker": "현대모비스",
@@ -21311,9 +21311,9 @@
       "MDD": -39.45,
       "Calmar": 2.09,
       "Grade": "Good",
-      "Score1": 68.4,
-      "Score2": 34.57,
-      "Score3": 36.42
+      "Score1": 65.43,
+      "Score2": 42.53,
+      "Score3": 32.47
     },
     {
       "Ticker": "현대백화점",
@@ -21329,9 +21329,9 @@
       "MDD": -34.11,
       "Calmar": 2.49,
       "Grade": "Good",
-      "Score1": 45.06,
-      "Score2": 38.64,
-      "Score3": 45.19
+      "Score1": 52.96,
+      "Score2": 41.6,
+      "Score3": 64.81
     },
     {
       "Ticker": "현대해상",
@@ -21347,9 +21347,9 @@
       "MDD": -24.74,
       "Calmar": 1.8,
       "Grade": "Best",
-      "Score1": 69.88,
-      "Score2": 49.81,
-      "Score3": 56.11
+      "Score1": 61.6,
+      "Score2": 55.31,
+      "Score3": 46.6
     },
     {
       "Ticker": "DN오토모티브",
@@ -21365,9 +21365,9 @@
       "MDD": -33.4,
       "Calmar": 0.85,
       "Grade": "Good",
-      "Score1": 63.83,
-      "Score2": 35.31,
-      "Score3": 36.17
+      "Score1": 63.58,
+      "Score2": 37.84,
+      "Score3": 34.94
     },
     {
       "Ticker": "GS",
@@ -21383,9 +21383,9 @@
       "MDD": -35.25,
       "Calmar": 1.02,
       "Grade": "Good",
-      "Score1": 90.86,
-      "Score2": 49.32,
-      "Score3": 64.38
+      "Score1": 74.44,
+      "Score2": 39.01,
+      "Score3": 37.78
     },
     {
       "Ticker": "GS리테일",
@@ -21401,9 +21401,9 @@
       "MDD": -37.63,
       "Calmar": 0.32,
       "Grade": "Normal",
-      "Score1": 58.4,
-      "Score2": 37.28,
-      "Score3": 39.38
+      "Score1": 50.62,
+      "Score2": 41.17,
+      "Score3": 27.47
     },
     {
       "Ticker": "HMM",
@@ -21419,9 +21419,9 @@
       "MDD": -34.16,
       "Calmar": 0.1,
       "Grade": "Bad",
-      "Score1": 73.95,
-      "Score2": 15.93,
-      "Score3": 28.95
+      "Score1": 61.11,
+      "Score2": 17.28,
+      "Score3": 10.06
     },
     {
       "Ticker": "KBI메탈",
@@ -21437,9 +21437,9 @@
       "MDD": -66.08,
       "Calmar": 0.65,
       "Grade": "Bad",
-      "Score1": 75.68,
-      "Score2": 63.15,
-      "Score3": 79.88
+      "Score1": 68.27,
+      "Score2": 54.94,
+      "Score3": 59.14
     },
     {
       "Ticker": "KB금융",
@@ -21455,9 +21455,9 @@
       "MDD": -30.34,
       "Calmar": 1.85,
       "Grade": "Good",
-      "Score1": 60.12,
-      "Score2": 34.88,
-      "Score3": 49.38
+      "Score1": 52.47,
+      "Score2": 33.4,
+      "Score3": 40.49
     },
     {
       "Ticker": "KT&G",
@@ -21473,9 +21473,9 @@
       "MDD": -23.01,
       "Calmar": 1.35,
       "Grade": "Best",
-      "Score1": 65.31,
-      "Score2": 45.43,
-      "Score3": 36.48
+      "Score1": 60.86,
+      "Score2": 54.01,
+      "Score3": 33.15
     },
     {
       "Ticker": "LG",
@@ -21491,9 +21491,9 @@
       "MDD": -43.48,
       "Calmar": 0.12,
       "Grade": "Bad",
-      "Score1": 43.58,
-      "Score2": 29.69,
-      "Score3": 24.75
+      "Score1": 40.0,
+      "Score2": 39.94,
+      "Score3": 20.93
     },
     {
       "Ticker": "LG이노텍",
@@ -21509,9 +21509,9 @@
       "MDD": -60.65,
       "Calmar": 0.58,
       "Grade": "Bad",
-      "Score1": 28.27,
-      "Score2": 69.75,
-      "Score3": 41.23
+      "Score1": 47.53,
+      "Score2": 69.38,
+      "Score3": 72.22
     },
     {
       "Ticker": "LG전자",
@@ -21527,9 +21527,9 @@
       "MDD": -57.4,
       "Calmar": 0.29,
       "Grade": "Bad",
-      "Score1": 52.35,
-      "Score2": 47.72,
-      "Score3": 50.49
+      "Score1": 56.54,
+      "Score2": 44.63,
+      "Score3": 54.32
     },
     {
       "Ticker": "LS ELECTRIC",
@@ -21545,9 +21545,9 @@
       "MDD": -49.5,
       "Calmar": 2.82,
       "Grade": "Normal",
-      "Score1": 59.51,
-      "Score2": 67.65,
-      "Score3": 34.75
+      "Score1": 69.88,
+      "Score2": 62.65,
+      "Score3": 48.4
     },
     {
       "Ticker": "S-Oil",
@@ -21563,9 +21563,9 @@
       "MDD": -39.64,
       "Calmar": 0.75,
       "Grade": "Good",
-      "Score1": 82.1,
-      "Score2": 46.48,
-      "Score3": 65.93
+      "Score1": 68.89,
+      "Score2": 37.04,
+      "Score3": 44.38
     },
     {
       "Ticker": "SK",
@@ -21581,9 +21581,9 @@
       "MDD": -44.39,
       "Calmar": 1.51,
       "Grade": "Normal",
-      "Score1": 37.53,
-      "Score2": 66.3,
-      "Score3": 64.57
+      "Score1": 41.73,
+      "Score2": 62.65,
+      "Score3": 74.81
     },
     {
       "Ticker": "SK네트웍스",
@@ -21599,9 +21599,9 @@
       "MDD": -52.29,
       "Calmar": 0.23,
       "Grade": "Bad",
-      "Score1": 26.67,
-      "Score2": 42.04,
-      "Score3": 49.01
+      "Score1": 30.12,
+      "Score2": 41.3,
+      "Score3": 52.1
     },
     {
       "Ticker": "SK텔레콤",
@@ -21617,9 +21617,9 @@
       "MDD": -32.99,
       "Calmar": 0.94,
       "Grade": "Good",
-      "Score1": 81.48,
-      "Score2": 50.37,
-      "Score3": 35.19
+      "Score1": 81.73,
+      "Score2": 50.06,
+      "Score3": 33.95
     },
     {
       "Ticker": "SK하이닉스",
@@ -21635,9 +21635,9 @@
       "MDD": -39.57,
       "Calmar": 4.16,
       "Grade": "Good",
-      "Score1": 27.16,
-      "Score2": 66.79,
-      "Score3": 54.94
+      "Score1": 43.95,
+      "Score2": 64.57,
+      "Score3": 85.43
     },
     {
       "Ticker": "가온전선",
@@ -21653,9 +21653,9 @@
       "MDD": -55.32,
       "Calmar": 3.29,
       "Grade": "Bad",
-      "Score1": 68.27,
-      "Score2": 78.52,
-      "Score3": 87.35
+      "Score1": 66.3,
+      "Score2": 68.58,
+      "Score3": 77.47
     },
     {
       "Ticker": "금호건설",
@@ -21671,9 +21671,9 @@
       "MDD": -58.52,
       "Calmar": 0.47,
       "Grade": "Bad",
-      "Score1": 38.15,
-      "Score2": 55.49,
-      "Score3": 93.89
+      "Score1": 13.09,
+      "Score2": 27.04,
+      "Score3": 40.99
     },
     {
       "Ticker": "금호타이어",
@@ -21689,9 +21689,9 @@
       "MDD": -50.24,
       "Calmar": 0.26,
       "Grade": "Bad",
-      "Score1": 51.98,
-      "Score2": 16.3,
-      "Score3": 47.41
+      "Score1": 32.84,
+      "Score2": 13.4,
+      "Score3": 18.4
     },
     {
       "Ticker": "네오오토",
@@ -21707,9 +21707,9 @@
       "MDD": -47.91,
       "Calmar": 0.66,
       "Grade": "Normal",
-      "Score1": 72.59,
-      "Score2": 28.7,
-      "Score3": 61.85
+      "Score1": 52.96,
+      "Score2": 29.57,
+      "Score3": 30.68
     },
     {
       "Ticker": "네이처셀",
@@ -21725,9 +21725,9 @@
       "MDD": -55.29,
       "Calmar": 0.81,
       "Grade": "Bad",
-      "Score1": 50.25,
-      "Score2": 12.28,
-      "Score3": 30.8
+      "Score1": 45.43,
+      "Score2": 18.52,
+      "Score3": 24.57
     },
     {
       "Ticker": "뉴파워프라즈마",
@@ -21743,9 +21743,9 @@
       "MDD": -43.02,
       "Calmar": 0.45,
       "Grade": "Normal",
-      "Score1": 85.19,
-      "Score2": 52.84,
-      "Score3": 75.25
+      "Score1": 70.37,
+      "Score2": 50.12,
+      "Score3": 48.02
     },
     {
       "Ticker": "대덕전자",
@@ -21761,9 +21761,9 @@
       "MDD": -64.98,
       "Calmar": 0.83,
       "Grade": "Bad",
-      "Score1": 41.98,
-      "Score2": 61.23,
-      "Score3": 47.47
+      "Score1": 56.79,
+      "Score2": 58.95,
+      "Score3": 71.23
     },
     {
       "Ticker": "대원전선",
@@ -21779,9 +21779,9 @@
       "MDD": -54.48,
       "Calmar": 2.6,
       "Grade": "Bad",
-      "Score1": 87.9,
-      "Score2": 91.48,
-      "Score3": 84.81
+      "Score1": 84.2,
+      "Score2": 86.11,
+      "Score3": 72.53
     },
     {
       "Ticker": "대한항공",
@@ -21797,9 +21797,9 @@
       "MDD": -24.41,
       "Calmar": -0.01,
       "Grade": "Bad",
-      "Score1": 39.01,
-      "Score2": 12.28,
-      "Score3": 23.77
+      "Score1": 36.54,
+      "Score2": 17.96,
+      "Score3": 25.74
     },
     {
       "Ticker": "더블유게임즈",
@@ -21815,9 +21815,9 @@
       "MDD": -23.83,
       "Calmar": 0.88,
       "Grade": "Good",
-      "Score1": 63.33,
-      "Score2": 24.32,
-      "Score3": 32.04
+      "Score1": 58.64,
+      "Score2": 28.4,
+      "Score3": 28.83
     },
     {
       "Ticker": "롯데손해보험",
@@ -21833,9 +21833,9 @@
       "MDD": -62.18,
       "Calmar": 0.16,
       "Grade": "Bad",
-      "Score1": 61.11,
-      "Score2": 19.38,
-      "Score3": 47.41
+      "Score1": 45.43,
+      "Score2": 13.21,
+      "Score3": 20.0
     },
     {
       "Ticker": "롯데쇼핑",
@@ -21851,9 +21851,9 @@
       "MDD": -42.59,
       "Calmar": 0.54,
       "Grade": "Normal",
-      "Score1": 48.27,
-      "Score2": 40.49,
-      "Score3": 21.79
+      "Score1": 63.21,
+      "Score2": 44.94,
+      "Score3": 49.51
     },
     {
       "Ticker": "브이엠",
@@ -21869,9 +21869,9 @@
       "MDD": -71.39,
       "Calmar": 0.94,
       "Grade": "Bad",
-      "Score1": 42.72,
-      "Score2": 68.46,
-      "Score3": 58.02
+      "Score1": 57.28,
+      "Score2": 61.48,
+      "Score3": 80.12
     },
     {
       "Ticker": "삼성물산",
@@ -21887,9 +21887,9 @@
       "MDD": -40.65,
       "Calmar": 1.32,
       "Grade": "Normal",
-      "Score1": 12.96,
-      "Score2": 29.32,
-      "Score3": 21.79
+      "Score1": 24.07,
+      "Score2": 35.31,
+      "Score3": 46.23
     },
     {
       "Ticker": "삼성생명",
@@ -21905,9 +21905,9 @@
       "MDD": -39.34,
       "Calmar": 1.82,
       "Grade": "Good",
-      "Score1": 25.06,
-      "Score2": 55.56,
-      "Score3": 44.14
+      "Score1": 36.54,
+      "Score2": 56.98,
+      "Score3": 66.6
     },
     {
       "Ticker": "삼성에스디에스",
@@ -21923,9 +21923,9 @@
       "MDD": -48.67,
       "Calmar": 0.41,
       "Grade": "Normal",
-      "Score1": 81.11,
-      "Score2": 31.3,
-      "Score3": 49.94
+      "Score1": 67.28,
+      "Score2": 26.85,
+      "Score3": 22.59
     },
     {
       "Ticker": "삼성전기",
@@ -21941,9 +21941,9 @@
       "MDD": -44.49,
       "Calmar": 2.68,
       "Grade": "Normal",
-      "Score1": 27.65,
-      "Score2": 87.04,
-      "Score3": 64.51
+      "Score1": 46.3,
+      "Score2": 82.04,
+      "Score3": 95.06
     },
     {
       "Ticker": "삼성전자",
@@ -21959,9 +21959,9 @@
       "MDD": -43.17,
       "Calmar": 1.37,
       "Grade": "Normal",
-      "Score1": 27.16,
-      "Score2": 56.73,
-      "Score3": 37.65
+      "Score1": 40.62,
+      "Score2": 54.81,
+      "Score3": 61.3
     },
     {
       "Ticker": "삼성화재",
@@ -21977,9 +21977,9 @@
       "MDD": -30.08,
       "Calmar": 1.34,
       "Grade": "Good",
-      "Score1": 53.83,
-      "Score2": 28.52,
-      "Score3": 52.78
+      "Score1": 49.63,
+      "Score2": 31.42,
+      "Score3": 51.98
     },
     {
       "Ticker": "삼지전자",
@@ -21995,9 +21995,9 @@
       "MDD": -41.93,
       "Calmar": 1.63,
       "Grade": "Normal",
-      "Score1": 58.4,
-      "Score2": 62.16,
-      "Score3": 38.52
+      "Score1": 64.94,
+      "Score2": 59.44,
+      "Score3": 45.31
     },
     {
       "Ticker": "삼화콘덴서",
@@ -22013,9 +22013,9 @@
       "MDD": -58.57,
       "Calmar": 0.5,
       "Grade": "Bad",
-      "Score1": 10.86,
-      "Score2": 63.64,
-      "Score3": 45.43
+      "Score1": 29.38,
+      "Score2": 63.52,
+      "Score3": 72.84
     },
     {
       "Ticker": "서울바이오시스",
@@ -22031,9 +22031,9 @@
       "MDD": -69.15,
       "Calmar": 0.07,
       "Grade": "Bad",
-      "Score1": 35.19,
-      "Score2": 46.48,
-      "Score3": 39.14
+      "Score1": 44.32,
+      "Score2": 46.23,
+      "Score3": 48.77
     },
     {
       "Ticker": "소룩스",
@@ -22049,9 +22049,9 @@
       "MDD": -92.87,
       "Calmar": -0.15,
       "Grade": "Bad",
-      "Score1": 14.07,
-      "Score2": 6.17,
-      "Score3": 20.19
+      "Score1": 14.2,
+      "Score2": 13.21,
+      "Score3": 22.53
     },
     {
       "Ticker": "송원산업",
@@ -22067,9 +22067,9 @@
       "MDD": -58.59,
       "Calmar": -0.23,
       "Grade": "Bad",
-      "Score1": 86.54,
-      "Score2": 37.41,
-      "Score3": 56.98
+      "Score1": 68.15,
+      "Score2": 31.42,
+      "Score3": 22.59
     },
     {
       "Ticker": "신한지주",
@@ -22085,9 +22085,9 @@
       "MDD": -28.99,
       "Calmar": 1.63,
       "Grade": "Best",
-      "Score1": 60.62,
-      "Score2": 27.9,
-      "Score3": 35.93
+      "Score1": 58.27,
+      "Score2": 32.22,
+      "Score3": 36.79
     },
     {
       "Ticker": "심텍",
@@ -22103,9 +22103,9 @@
       "MDD": -76.45,
       "Calmar": 0.56,
       "Grade": "Bad",
-      "Score1": 21.36,
-      "Score2": 49.07,
-      "Score3": 35.8
+      "Score1": 36.17,
+      "Score2": 46.6,
+      "Score3": 60.25
     },
     {
       "Ticker": "싸이맥스",
@@ -22121,9 +22121,9 @@
       "MDD": -67.39,
       "Calmar": 0.58,
       "Grade": "Bad",
-      "Score1": 49.51,
-      "Score2": 56.79,
-      "Score3": 54.01
+      "Score1": 50.12,
+      "Score2": 51.11,
+      "Score3": 50.31
     },
     {
       "Ticker": "씨젠",
@@ -22139,9 +22139,9 @@
       "MDD": -38.17,
       "Calmar": 0.23,
       "Grade": "Normal",
-      "Score1": 56.05,
-      "Score2": 14.01,
-      "Score3": 31.3
+      "Score1": 47.16,
+      "Score2": 16.42,
+      "Score3": 20.12
     },
     {
       "Ticker": "에스에이엠티",
@@ -22157,9 +22157,9 @@
       "MDD": -45.39,
       "Calmar": 1.29,
       "Grade": "Normal",
-      "Score1": 30.12,
-      "Score2": 68.7,
-      "Score3": 55.06
+      "Score1": 40.99,
+      "Score2": 66.67,
+      "Score3": 71.48
     },
     {
       "Ticker": "오로라",
@@ -22175,9 +22175,9 @@
       "MDD": -63.68,
       "Calmar": 0.61,
       "Grade": "Bad",
-      "Score1": 36.17,
-      "Score2": 25.93,
-      "Score3": 59.26
+      "Score1": 21.36,
+      "Score2": 20.56,
+      "Score3": 33.89
     },
     {
       "Ticker": "오리온홀딩스",
@@ -22193,9 +22193,9 @@
       "MDD": -26.99,
       "Calmar": 0.82,
       "Grade": "Good",
-      "Score1": 48.77,
-      "Score2": 25.8,
-      "Score3": 29.26
+      "Score1": 42.35,
+      "Score2": 27.35,
+      "Score3": 19.32
     },
     {
       "Ticker": "와이지-원",
@@ -22211,9 +22211,9 @@
       "MDD": -32.49,
       "Calmar": 1.55,
       "Grade": "Good",
-      "Score1": 29.38,
-      "Score2": 66.05,
-      "Score3": 62.35
+      "Score1": 36.3,
+      "Score2": 60.31,
+      "Score3": 72.9
     },
     {
       "Ticker": "원익IPS",
@@ -22229,9 +22229,9 @@
       "MDD": -50.24,
       "Calmar": 1.03,
       "Grade": "Bad",
-      "Score1": 6.67,
-      "Score2": 33.21,
-      "Score3": 18.33
+      "Score1": 25.43,
+      "Score2": 35.74,
+      "Score3": 54.75
     },
     {
       "Ticker": "이수화학",
@@ -22247,9 +22247,9 @@
       "MDD": -79.53,
       "Calmar": -0.21,
       "Grade": "Bad",
-      "Score1": 88.02,
-      "Score2": 55.99,
-      "Score3": 72.96
+      "Score1": 76.42,
+      "Score2": 56.79,
+      "Score3": 52.1
     },
     {
       "Ticker": "인바디",
@@ -22265,9 +22265,9 @@
       "MDD": -30.68,
       "Calmar": 0.71,
       "Grade": "Good",
-      "Score1": 56.79,
-      "Score2": 42.22,
-      "Score3": 69.94
+      "Score1": 50.25,
+      "Score2": 38.33,
+      "Score3": 62.22
     },
     {
       "Ticker": "인텍플러스",
@@ -22283,9 +22283,9 @@
       "MDD": -82.59,
       "Calmar": -0.08,
       "Grade": "Bad",
-      "Score1": 43.95,
-      "Score2": 53.46,
-      "Score3": 45.37
+      "Score1": 55.19,
+      "Score2": 51.6,
+      "Score3": 62.72
     },
     {
       "Ticker": "자이에스앤디",
@@ -22301,9 +22301,9 @@
       "MDD": -51.15,
       "Calmar": 0.2,
       "Grade": "Bad",
-      "Score1": 98.52,
-      "Score2": 64.07,
-      "Score3": 89.01
+      "Score1": 73.33,
+      "Score2": 42.72,
+      "Score3": 41.54
     },
     {
       "Ticker": "제주반도체",
@@ -22319,9 +22319,9 @@
       "MDD": -77.15,
       "Calmar": 2.18,
       "Grade": "Bad",
-      "Score1": 36.42,
-      "Score2": 65.49,
-      "Score3": 55.43
+      "Score1": 52.72,
+      "Score2": 63.09,
+      "Score3": 80.06
     },
     {
       "Ticker": "주성엔지니어링",
@@ -22337,9 +22337,9 @@
       "MDD": -44.37,
       "Calmar": 2.27,
       "Grade": "Normal",
-      "Score1": 26.54,
-      "Score2": 72.41,
-      "Score3": 57.9
+      "Score1": 40.74,
+      "Score2": 66.98,
+      "Score3": 77.04
     },
     {
       "Ticker": "지엔씨에너지",
@@ -22355,9 +22355,9 @@
       "MDD": -58.25,
       "Calmar": 2.17,
       "Grade": "Bad",
-      "Score1": 94.81,
-      "Score2": 32.35,
-      "Score3": 66.98
+      "Score1": 69.88,
+      "Score2": 20.31,
+      "Score3": 23.4
     },
     {
       "Ticker": "케이씨텍",
@@ -22373,9 +22373,9 @@
       "MDD": -59.29,
       "Calmar": 1.02,
       "Grade": "Bad",
-      "Score1": 41.6,
-      "Score2": 52.72,
-      "Score3": 68.77
+      "Score1": 40.49,
+      "Score2": 46.3,
+      "Score3": 65.68
     },
     {
       "Ticker": "코리안리",
@@ -22391,9 +22391,9 @@
       "MDD": -19.87,
       "Calmar": 2.11,
       "Grade": "Best",
-      "Score1": 52.72,
-      "Score2": 39.32,
-      "Score3": 44.63
+      "Score1": 43.7,
+      "Score2": 45.0,
+      "Score3": 33.4
     },
     {
       "Ticker": "코스맥스엔비티",
@@ -22409,9 +22409,9 @@
       "MDD": -59.41,
       "Calmar": 0.23,
       "Grade": "Bad",
-      "Score1": 75.31,
-      "Score2": 63.83,
-      "Score3": 84.69
+      "Score1": 60.37,
+      "Score2": 52.35,
+      "Score3": 54.94
     },
     {
       "Ticker": "코웨이",
@@ -22427,9 +22427,9 @@
       "MDD": -37.37,
       "Calmar": 0.78,
       "Grade": "Good",
-      "Score1": 45.43,
-      "Score2": 18.58,
-      "Score3": 39.94
+      "Score1": 34.44,
+      "Score2": 19.63,
+      "Score3": 25.62
     },
     {
       "Ticker": "테스",
@@ -22445,9 +22445,9 @@
       "MDD": -56.0,
       "Calmar": 1.73,
       "Grade": "Bad",
-      "Score1": 54.57,
-      "Score2": 65.86,
-      "Score3": 71.11
+      "Score1": 62.59,
+      "Score2": 59.2,
+      "Score3": 83.21
     },
     {
       "Ticker": "티에스이",
@@ -22463,9 +22463,9 @@
       "MDD": -57.87,
       "Calmar": 1.22,
       "Grade": "Bad",
-      "Score1": 60.25,
-      "Score2": 71.17,
-      "Score3": 64.2
+      "Score1": 70.99,
+      "Score2": 66.48,
+      "Score3": 81.98
     },
     {
       "Ticker": "피델릭스",
@@ -22481,9 +22481,9 @@
       "MDD": -61.54,
       "Calmar": 0.75,
       "Grade": "Bad",
-      "Score1": 47.16,
-      "Score2": 73.27,
-      "Score3": 69.32
+      "Score1": 57.53,
+      "Score2": 68.09,
+      "Score3": 83.4
     },
     {
       "Ticker": "피에스케이",
@@ -22499,9 +22499,9 @@
       "MDD": -57.62,
       "Calmar": 1.68,
       "Grade": "Bad",
-      "Score1": 45.43,
-      "Score2": 71.91,
-      "Score3": 73.52
+      "Score1": 56.91,
+      "Score2": 66.54,
+      "Score3": 92.65
     },
     {
       "Ticker": "피에스케이홀딩스",
@@ -22517,9 +22517,9 @@
       "MDD": -65.64,
       "Calmar": 1.1,
       "Grade": "Bad",
-      "Score1": 48.89,
-      "Score2": 47.04,
-      "Score3": 40.12
+      "Score1": 57.65,
+      "Score2": 43.27,
+      "Score3": 54.07
     },
     {
       "Ticker": "하나금융지주",
@@ -22535,9 +22535,9 @@
       "MDD": -24.13,
       "Calmar": 2.14,
       "Grade": "Best",
-      "Score1": 68.02,
-      "Score2": 30.8,
-      "Score3": 44.81
+      "Score1": 60.25,
+      "Score2": 29.63,
+      "Score3": 35.12
     },
     {
       "Ticker": "한국콜마",
@@ -22553,9 +22553,9 @@
       "MDD": -44.05,
       "Calmar": 0.71,
       "Grade": "Normal",
-      "Score1": 39.88,
-      "Score2": 38.09,
-      "Score3": 56.36
+      "Score1": 25.56,
+      "Score2": 34.63,
+      "Score3": 35.43
     },
     {
       "Ticker": "한국타이어앤테크놀로지",
@@ -22571,9 +22571,9 @@
       "MDD": -44.69,
       "Calmar": 0.64,
       "Grade": "Normal",
-      "Score1": 84.32,
-      "Score2": 27.53,
-      "Score3": 52.35
+      "Score1": 72.47,
+      "Score2": 28.02,
+      "Score3": 38.15
     },
     {
       "Ticker": "한솔테크닉스",
@@ -22589,9 +22589,9 @@
       "MDD": -52.89,
       "Calmar": 0.14,
       "Grade": "Bad",
-      "Score1": 35.43,
-      "Score2": 30.93,
-      "Score3": 34.01
+      "Score1": 45.06,
+      "Score2": 36.48,
+      "Score3": 48.64
     },
     {
       "Ticker": "현대모비스",
@@ -22607,9 +22607,9 @@
       "MDD": -39.45,
       "Calmar": 0.77,
       "Grade": "Good",
-      "Score1": 68.4,
-      "Score2": 34.57,
-      "Score3": 36.42
+      "Score1": 65.43,
+      "Score2": 42.53,
+      "Score3": 32.47
     },
     {
       "Ticker": "현대백화점",
@@ -22625,9 +22625,9 @@
       "MDD": -41.17,
       "Calmar": 0.93,
       "Grade": "Normal",
-      "Score1": 45.06,
-      "Score2": 38.64,
-      "Score3": 45.19
+      "Score1": 52.96,
+      "Score2": 41.6,
+      "Score3": 64.81
     },
     {
       "Ticker": "현대해상",
@@ -22643,9 +22643,9 @@
       "MDD": -44.79,
       "Calmar": 0.24,
       "Grade": "Normal",
-      "Score1": 69.88,
-      "Score2": 49.81,
-      "Score3": 56.11
+      "Score1": 61.6,
+      "Score2": 55.31,
+      "Score3": 46.6
     },
     {
       "Ticker": "DN오토모티브",
@@ -22661,9 +22661,9 @@
       "MDD": -41.87,
       "Calmar": 0.94,
       "Grade": "Normal",
-      "Score1": 63.83,
-      "Score2": 35.31,
-      "Score3": 36.17
+      "Score1": 63.58,
+      "Score2": 37.84,
+      "Score3": 34.94
     },
     {
       "Ticker": "GS",
@@ -22679,9 +22679,9 @@
       "MDD": -35.25,
       "Calmar": 0.48,
       "Grade": "Good",
-      "Score1": 90.86,
-      "Score2": 49.32,
-      "Score3": 64.38
+      "Score1": 74.44,
+      "Score2": 39.01,
+      "Score3": 37.78
     },
     {
       "Ticker": "GS리테일",
@@ -22697,9 +22697,9 @@
       "MDD": -55.75,
       "Calmar": -0.06,
       "Grade": "Bad",
-      "Score1": 58.4,
-      "Score2": 37.28,
-      "Score3": 39.38
+      "Score1": 50.62,
+      "Score2": 41.17,
+      "Score3": 27.47
     },
     {
       "Ticker": "HMM",
@@ -22715,9 +22715,9 @@
       "MDD": -66.79,
       "Calmar": -0.2,
       "Grade": "Bad",
-      "Score1": 73.95,
-      "Score2": 15.93,
-      "Score3": 28.95
+      "Score1": 61.11,
+      "Score2": 17.28,
+      "Score3": 10.06
     },
     {
       "Ticker": "KBI메탈",
@@ -22733,9 +22733,9 @@
       "MDD": -66.08,
       "Calmar": 0.17,
       "Grade": "Bad",
-      "Score1": 75.68,
-      "Score2": 63.15,
-      "Score3": 79.88
+      "Score1": 68.27,
+      "Score2": 54.94,
+      "Score3": 59.14
     },
     {
       "Ticker": "KB금융",
@@ -22751,9 +22751,9 @@
       "MDD": -33.59,
       "Calmar": 0.85,
       "Grade": "Good",
-      "Score1": 60.12,
-      "Score2": 34.88,
-      "Score3": 49.38
+      "Score1": 52.47,
+      "Score2": 33.4,
+      "Score3": 40.49
     },
     {
       "Ticker": "KT&G",
@@ -22769,9 +22769,9 @@
       "MDD": -23.01,
       "Calmar": 0.75,
       "Grade": "Good",
-      "Score1": 65.31,
-      "Score2": 45.43,
-      "Score3": 36.48
+      "Score1": 60.86,
+      "Score2": 54.01,
+      "Score3": 33.15
     },
     {
       "Ticker": "LG",
@@ -22787,9 +22787,9 @@
       "MDD": -43.48,
       "Calmar": 0.02,
       "Grade": "Bad",
-      "Score1": 43.58,
-      "Score2": 29.69,
-      "Score3": 24.75
+      "Score1": 40.0,
+      "Score2": 39.94,
+      "Score3": 20.93
     },
     {
       "Ticker": "LG이노텍",
@@ -22805,9 +22805,9 @@
       "MDD": -70.35,
       "Calmar": 0.35,
       "Grade": "Bad",
-      "Score1": 28.27,
-      "Score2": 69.75,
-      "Score3": 41.23
+      "Score1": 47.53,
+      "Score2": 69.38,
+      "Score3": 72.22
     },
     {
       "Ticker": "LG전자",
@@ -22823,9 +22823,9 @@
       "MDD": -61.14,
       "Calmar": 0.04,
       "Grade": "Bad",
-      "Score1": 52.35,
-      "Score2": 47.72,
-      "Score3": 50.49
+      "Score1": 56.54,
+      "Score2": 44.63,
+      "Score3": 54.32
     },
     {
       "Ticker": "LS ELECTRIC",
@@ -22841,9 +22841,9 @@
       "MDD": -49.5,
       "Calmar": 1.63,
       "Grade": "Normal",
-      "Score1": 59.51,
-      "Score2": 67.65,
-      "Score3": 34.75
+      "Score1": 69.88,
+      "Score2": 62.65,
+      "Score3": 48.4
     },
     {
       "Ticker": "S-Oil",
@@ -22859,9 +22859,9 @@
       "MDD": -58.52,
       "Calmar": 0.16,
       "Grade": "Bad",
-      "Score1": 82.1,
-      "Score2": 46.48,
-      "Score3": 65.93
+      "Score1": 68.89,
+      "Score2": 37.04,
+      "Score3": 44.38
     },
     {
       "Ticker": "SK",
@@ -22877,9 +22877,9 @@
       "MDD": -58.56,
       "Calmar": 0.33,
       "Grade": "Bad",
-      "Score1": 37.53,
-      "Score2": 66.3,
-      "Score3": 64.57
+      "Score1": 41.73,
+      "Score2": 62.65,
+      "Score3": 74.81
     },
     {
       "Ticker": "SK네트웍스",
@@ -22895,9 +22895,9 @@
       "MDD": -52.29,
       "Calmar": 0.1,
       "Grade": "Bad",
-      "Score1": 26.67,
-      "Score2": 42.04,
-      "Score3": 49.01
+      "Score1": 30.12,
+      "Score2": 41.3,
+      "Score3": 52.1
     },
     {
       "Ticker": "SK텔레콤",
@@ -22913,9 +22913,9 @@
       "MDD": -32.99,
       "Calmar": 0.43,
       "Grade": "Good",
-      "Score1": 81.48,
-      "Score2": 50.37,
-      "Score3": 35.19
+      "Score1": 81.73,
+      "Score2": 50.06,
+      "Score3": 33.95
     },
     {
       "Ticker": "SK하이닉스",
@@ -22931,9 +22931,9 @@
       "MDD": -43.61,
       "Calmar": 1.78,
       "Grade": "Normal",
-      "Score1": 27.16,
-      "Score2": 66.79,
-      "Score3": 54.94
+      "Score1": 43.95,
+      "Score2": 64.57,
+      "Score3": 85.43
     },
     {
       "Ticker": "가온전선",
@@ -22949,9 +22949,9 @@
       "MDD": -55.32,
       "Calmar": 1.3,
       "Grade": "Bad",
-      "Score1": 68.27,
-      "Score2": 78.52,
-      "Score3": 87.35
+      "Score1": 66.3,
+      "Score2": 68.58,
+      "Score3": 77.47
     },
     {
       "Ticker": "금호건설",
@@ -22967,9 +22967,9 @@
       "MDD": -82.26,
       "Calmar": -0.04,
       "Grade": "Bad",
-      "Score1": 38.15,
-      "Score2": 55.49,
-      "Score3": 93.89
+      "Score1": 13.09,
+      "Score2": 27.04,
+      "Score3": 40.99
     },
     {
       "Ticker": "금호타이어",
@@ -22985,9 +22985,9 @@
       "MDD": -60.03,
       "Calmar": -0.02,
       "Grade": "Bad",
-      "Score1": 51.98,
-      "Score2": 16.3,
-      "Score3": 47.41
+      "Score1": 32.84,
+      "Score2": 13.4,
+      "Score3": 18.4
     },
     {
       "Ticker": "네오오토",
@@ -23003,9 +23003,9 @@
       "MDD": -47.91,
       "Calmar": 0.27,
       "Grade": "Normal",
-      "Score1": 72.59,
-      "Score2": 28.7,
-      "Score3": 61.85
+      "Score1": 52.96,
+      "Score2": 29.57,
+      "Score3": 30.68
     },
     {
       "Ticker": "네이처셀",
@@ -23021,9 +23021,9 @@
       "MDD": -79.28,
       "Calmar": -0.08,
       "Grade": "Bad",
-      "Score1": 50.25,
-      "Score2": 12.28,
-      "Score3": 30.8
+      "Score1": 45.43,
+      "Score2": 18.52,
+      "Score3": 24.57
     },
     {
       "Ticker": "뉴파워프라즈마",
@@ -23039,9 +23039,9 @@
       "MDD": -63.6,
       "Calmar": 0.15,
       "Grade": "Bad",
-      "Score1": 85.19,
-      "Score2": 52.84,
-      "Score3": 75.25
+      "Score1": 70.37,
+      "Score2": 50.12,
+      "Score3": 48.02
     },
     {
       "Ticker": "대덕전자",
@@ -23057,9 +23057,9 @@
       "MDD": -66.48,
       "Calmar": 0.79,
       "Grade": "Bad",
-      "Score1": 41.98,
-      "Score2": 61.23,
-      "Score3": 47.47
+      "Score1": 56.79,
+      "Score2": 58.95,
+      "Score3": 71.23
     },
     {
       "Ticker": "대원전선",
@@ -23075,9 +23075,9 @@
       "MDD": -61.88,
       "Calmar": 0.7,
       "Grade": "Bad",
-      "Score1": 87.9,
-      "Score2": 91.48,
-      "Score3": 84.81
+      "Score1": 84.2,
+      "Score2": 86.11,
+      "Score3": 72.53
     },
     {
       "Ticker": "대한항공",
@@ -23093,9 +23093,9 @@
       "MDD": -43.5,
       "Calmar": -0.08,
       "Grade": "Bad",
-      "Score1": 39.01,
-      "Score2": 12.28,
-      "Score3": 23.77
+      "Score1": 36.54,
+      "Score2": 17.96,
+      "Score3": 25.74
     },
     {
       "Ticker": "더블유게임즈",
@@ -23111,9 +23111,9 @@
       "MDD": -50.14,
       "Calmar": 0.05,
       "Grade": "Bad",
-      "Score1": 63.33,
-      "Score2": 24.32,
-      "Score3": 32.04
+      "Score1": 58.64,
+      "Score2": 28.4,
+      "Score3": 28.83
     },
     {
       "Ticker": "롯데손해보험",
@@ -23129,9 +23129,9 @@
       "MDD": -62.18,
       "Calmar": 0.05,
       "Grade": "Bad",
-      "Score1": 61.11,
-      "Score2": 19.38,
-      "Score3": 47.41
+      "Score1": 45.43,
+      "Score2": 13.21,
+      "Score3": 20.0
     },
     {
       "Ticker": "롯데쇼핑",
@@ -23147,9 +23147,9 @@
       "MDD": -53.72,
       "Calmar": 0.06,
       "Grade": "Bad",
-      "Score1": 48.27,
-      "Score2": 40.49,
-      "Score3": 21.79
+      "Score1": 63.21,
+      "Score2": 44.94,
+      "Score3": 49.51
     },
     {
       "Ticker": "브이엠",
@@ -23165,9 +23165,9 @@
       "MDD": -79.44,
       "Calmar": 0.35,
       "Grade": "Bad",
-      "Score1": 42.72,
-      "Score2": 68.46,
-      "Score3": 58.02
+      "Score1": 57.28,
+      "Score2": 61.48,
+      "Score3": 80.12
     },
     {
       "Ticker": "삼성물산",
@@ -23183,9 +23183,9 @@
       "MDD": -40.65,
       "Calmar": 0.54,
       "Grade": "Normal",
-      "Score1": 12.96,
-      "Score2": 29.32,
-      "Score3": 21.79
+      "Score1": 24.07,
+      "Score2": 35.31,
+      "Score3": 46.23
     },
     {
       "Ticker": "삼성생명",
@@ -23201,9 +23201,9 @@
       "MDD": -39.34,
       "Calmar": 0.89,
       "Grade": "Good",
-      "Score1": 25.06,
-      "Score2": 55.56,
-      "Score3": 44.14
+      "Score1": 36.54,
+      "Score2": 56.98,
+      "Score3": 66.6
     },
     {
       "Ticker": "삼성에스디에스",
@@ -23219,9 +23219,9 @@
       "MDD": -48.67,
       "Calmar": 0.07,
       "Grade": "Bad",
-      "Score1": 81.11,
-      "Score2": 31.3,
-      "Score3": 49.94
+      "Score1": 67.28,
+      "Score2": 26.85,
+      "Score3": 22.59
     },
     {
       "Ticker": "삼성전기",
@@ -23237,9 +23237,9 @@
       "MDD": -46.53,
       "Calmar": 1.14,
       "Grade": "Normal",
-      "Score1": 27.65,
-      "Score2": 87.04,
-      "Score3": 64.51
+      "Score1": 46.3,
+      "Score2": 82.04,
+      "Score3": 95.06
     },
     {
       "Ticker": "삼성전자",
@@ -23255,9 +23255,9 @@
       "MDD": -43.17,
       "Calmar": 0.67,
       "Grade": "Normal",
-      "Score1": 27.16,
-      "Score2": 56.73,
-      "Score3": 37.65
+      "Score1": 40.62,
+      "Score2": 54.81,
+      "Score3": 61.3
     },
     {
       "Ticker": "삼성화재",
@@ -23273,9 +23273,9 @@
       "MDD": -30.08,
       "Calmar": 0.83,
       "Grade": "Good",
-      "Score1": 53.83,
-      "Score2": 28.52,
-      "Score3": 52.78
+      "Score1": 49.63,
+      "Score2": 31.42,
+      "Score3": 51.98
     },
     {
       "Ticker": "삼지전자",
@@ -23291,9 +23291,9 @@
       "MDD": -53.1,
       "Calmar": 0.42,
       "Grade": "Bad",
-      "Score1": 58.4,
-      "Score2": 62.16,
-      "Score3": 38.52
+      "Score1": 64.94,
+      "Score2": 59.44,
+      "Score3": 45.31
     },
     {
       "Ticker": "삼화콘덴서",
@@ -23309,9 +23309,9 @@
       "MDD": -68.79,
       "Calmar": 0.12,
       "Grade": "Bad",
-      "Score1": 10.86,
-      "Score2": 63.64,
-      "Score3": 45.43
+      "Score1": 29.38,
+      "Score2": 63.52,
+      "Score3": 72.84
     },
     {
       "Ticker": "서울바이오시스",
@@ -23327,9 +23327,9 @@
       "MDD": -87.96,
       "Calmar": -0.23,
       "Grade": "Bad",
-      "Score1": 35.19,
-      "Score2": 46.48,
-      "Score3": 39.14
+      "Score1": 44.32,
+      "Score2": 46.23,
+      "Score3": 48.77
     },
     {
       "Ticker": "소룩스",
@@ -23345,9 +23345,9 @@
       "MDD": -92.87,
       "Calmar": -0.05,
       "Grade": "Bad",
-      "Score1": 14.07,
-      "Score2": 6.17,
-      "Score3": 20.19
+      "Score1": 14.2,
+      "Score2": 13.21,
+      "Score3": 22.53
     },
     {
       "Ticker": "송원산업",
@@ -23363,9 +23363,9 @@
       "MDD": -69.5,
       "Calmar": -0.12,
       "Grade": "Bad",
-      "Score1": 86.54,
-      "Score2": 37.41,
-      "Score3": 56.98
+      "Score1": 68.15,
+      "Score2": 31.42,
+      "Score3": 22.59
     },
     {
       "Ticker": "신한지주",
@@ -23381,9 +23381,9 @@
       "MDD": -28.99,
       "Calmar": 0.79,
       "Grade": "Best",
-      "Score1": 60.62,
-      "Score2": 27.9,
-      "Score3": 35.93
+      "Score1": 58.27,
+      "Score2": 32.22,
+      "Score3": 36.79
     },
     {
       "Ticker": "심텍",
@@ -23399,9 +23399,9 @@
       "MDD": -82.67,
       "Calmar": 0.39,
       "Grade": "Bad",
-      "Score1": 21.36,
-      "Score2": 49.07,
-      "Score3": 35.8
+      "Score1": 36.17,
+      "Score2": 46.6,
+      "Score3": 60.25
     },
     {
       "Ticker": "싸이맥스",
@@ -23417,9 +23417,9 @@
       "MDD": -67.39,
       "Calmar": 0.18,
       "Grade": "Bad",
-      "Score1": 49.51,
-      "Score2": 56.79,
-      "Score3": 54.01
+      "Score1": 50.12,
+      "Score2": 51.11,
+      "Score3": 50.31
     },
     {
       "Ticker": "씨젠",
@@ -23435,9 +23435,9 @@
       "MDD": -74.8,
       "Calmar": -0.25,
       "Grade": "Bad",
-      "Score1": 56.05,
-      "Score2": 14.01,
-      "Score3": 31.3
+      "Score1": 47.16,
+      "Score2": 16.42,
+      "Score3": 20.12
     },
     {
       "Ticker": "에스에이엠티",
@@ -23453,9 +23453,9 @@
       "MDD": -57.89,
       "Calmar": 0.37,
       "Grade": "Bad",
-      "Score1": 30.12,
-      "Score2": 68.7,
-      "Score3": 55.06
+      "Score1": 40.99,
+      "Score2": 66.67,
+      "Score3": 71.48
     },
     {
       "Ticker": "오로라",
@@ -23471,9 +23471,9 @@
       "MDD": -63.68,
       "Calmar": 0.18,
       "Grade": "Bad",
-      "Score1": 36.17,
-      "Score2": 25.93,
-      "Score3": 59.26
+      "Score1": 21.36,
+      "Score2": 20.56,
+      "Score3": 33.89
     },
     {
       "Ticker": "오리온홀딩스",
@@ -23489,9 +23489,9 @@
       "MDD": -26.99,
       "Calmar": 0.34,
       "Grade": "Normal",
-      "Score1": 48.77,
-      "Score2": 25.8,
-      "Score3": 29.26
+      "Score1": 42.35,
+      "Score2": 27.35,
+      "Score3": 19.32
     },
     {
       "Ticker": "와이지-원",
@@ -23507,9 +23507,9 @@
       "MDD": -56.4,
       "Calmar": 0.32,
       "Grade": "Bad",
-      "Score1": 29.38,
-      "Score2": 66.05,
-      "Score3": 62.35
+      "Score1": 36.3,
+      "Score2": 60.31,
+      "Score3": 72.9
     },
     {
       "Ticker": "원익IPS",
@@ -23525,9 +23525,9 @@
       "MDD": -58.51,
       "Calmar": 0.33,
       "Grade": "Bad",
-      "Score1": 6.67,
-      "Score2": 33.21,
-      "Score3": 18.33
+      "Score1": 25.43,
+      "Score2": 35.74,
+      "Score3": 54.75
     },
     {
       "Ticker": "이수화학",
@@ -23543,9 +23543,9 @@
       "MDD": -85.6,
       "Calmar": 0.24,
       "Grade": "Bad",
-      "Score1": 88.02,
-      "Score2": 55.99,
-      "Score3": 72.96
+      "Score1": 76.42,
+      "Score2": 56.79,
+      "Score3": 52.1
     },
     {
       "Ticker": "인바디",
@@ -23561,9 +23561,9 @@
       "MDD": -43.02,
       "Calmar": 0.26,
       "Grade": "Normal",
-      "Score1": 56.79,
-      "Score2": 42.22,
-      "Score3": 69.94
+      "Score1": 50.25,
+      "Score2": 38.33,
+      "Score3": 62.22
     },
     {
       "Ticker": "인텍플러스",
@@ -23579,9 +23579,9 @@
       "MDD": -82.59,
       "Calmar": 0.07,
       "Grade": "Bad",
-      "Score1": 43.95,
-      "Score2": 53.46,
-      "Score3": 45.37
+      "Score1": 55.19,
+      "Score2": 51.6,
+      "Score3": 62.72
     },
     {
       "Ticker": "자이에스앤디",
@@ -23597,9 +23597,9 @@
       "MDD": -73.47,
       "Calmar": -0.07,
       "Grade": "Bad",
-      "Score1": 98.52,
-      "Score2": 64.07,
-      "Score3": 89.01
+      "Score1": 73.33,
+      "Score2": 42.72,
+      "Score3": 41.54
     },
     {
       "Ticker": "제주반도체",
@@ -23615,9 +23615,9 @@
       "MDD": -77.15,
       "Calmar": 0.92,
       "Grade": "Bad",
-      "Score1": 36.42,
-      "Score2": 65.49,
-      "Score3": 55.43
+      "Score1": 52.72,
+      "Score2": 63.09,
+      "Score3": 80.06
     },
     {
       "Ticker": "주성엔지니어링",
@@ -23633,9 +23633,9 @@
       "MDD": -62.21,
       "Calmar": 1.02,
       "Grade": "Bad",
-      "Score1": 26.54,
-      "Score2": 72.41,
-      "Score3": 57.9
+      "Score1": 40.74,
+      "Score2": 66.98,
+      "Score3": 77.04
     },
     {
       "Ticker": "지엔씨에너지",
@@ -23651,9 +23651,9 @@
       "MDD": -58.25,
       "Calmar": 0.9,
       "Grade": "Bad",
-      "Score1": 94.81,
-      "Score2": 32.35,
-      "Score3": 66.98
+      "Score1": 69.88,
+      "Score2": 20.31,
+      "Score3": 23.4
     },
     {
       "Ticker": "케이씨텍",
@@ -23669,9 +23669,9 @@
       "MDD": -59.29,
       "Calmar": 0.41,
       "Grade": "Bad",
-      "Score1": 41.6,
-      "Score2": 52.72,
-      "Score3": 68.77
+      "Score1": 40.49,
+      "Score2": 46.3,
+      "Score3": 65.68
     },
     {
       "Ticker": "코리안리",
@@ -23687,9 +23687,9 @@
       "MDD": -34.53,
       "Calmar": 0.55,
       "Grade": "Good",
-      "Score1": 52.72,
-      "Score2": 39.32,
-      "Score3": 44.63
+      "Score1": 43.7,
+      "Score2": 45.0,
+      "Score3": 33.4
     },
     {
       "Ticker": "코스맥스엔비티",
@@ -23705,9 +23705,9 @@
       "MDD": -72.44,
       "Calmar": -0.09,
       "Grade": "Bad",
-      "Score1": 75.31,
-      "Score2": 63.83,
-      "Score3": 84.69
+      "Score1": 60.37,
+      "Score2": 52.35,
+      "Score3": 54.94
     },
     {
       "Ticker": "코웨이",
@@ -23723,9 +23723,9 @@
       "MDD": -53.94,
       "Calmar": 0.01,
       "Grade": "Bad",
-      "Score1": 45.43,
-      "Score2": 18.58,
-      "Score3": 39.94
+      "Score1": 34.44,
+      "Score2": 19.63,
+      "Score3": 25.62
     },
     {
       "Ticker": "테스",
@@ -23741,9 +23741,9 @@
       "MDD": -59.41,
       "Calmar": 0.67,
       "Grade": "Bad",
-      "Score1": 54.57,
-      "Score2": 65.86,
-      "Score3": 71.11
+      "Score1": 62.59,
+      "Score2": 59.2,
+      "Score3": 83.21
     },
     {
       "Ticker": "티에스이",
@@ -23759,9 +23759,9 @@
       "MDD": -61.49,
       "Calmar": 0.45,
       "Grade": "Bad",
-      "Score1": 60.25,
-      "Score2": 71.17,
-      "Score3": 64.2
+      "Score1": 70.99,
+      "Score2": 66.48,
+      "Score3": 81.98
     },
     {
       "Ticker": "피델릭스",
@@ -23777,9 +23777,9 @@
       "MDD": -63.36,
       "Calmar": 0.43,
       "Grade": "Bad",
-      "Score1": 47.16,
-      "Score2": 73.27,
-      "Score3": 69.32
+      "Score1": 57.53,
+      "Score2": 68.09,
+      "Score3": 83.4
     },
     {
       "Ticker": "피에스케이",
@@ -23795,9 +23795,9 @@
       "MDD": -57.62,
       "Calmar": 0.88,
       "Grade": "Bad",
-      "Score1": 45.43,
-      "Score2": 71.91,
-      "Score3": 73.52
+      "Score1": 56.91,
+      "Score2": 66.54,
+      "Score3": 92.65
     },
     {
       "Ticker": "피에스케이홀딩스",
@@ -23813,9 +23813,9 @@
       "MDD": -65.64,
       "Calmar": 0.91,
       "Grade": "Bad",
-      "Score1": 48.89,
-      "Score2": 47.04,
-      "Score3": 40.12
+      "Score1": 57.65,
+      "Score2": 43.27,
+      "Score3": 54.07
     },
     {
       "Ticker": "하나금융지주",
@@ -23831,9 +23831,9 @@
       "MDD": -35.4,
       "Calmar": 0.71,
       "Grade": "Good",
-      "Score1": 68.02,
-      "Score2": 30.8,
-      "Score3": 44.81
+      "Score1": 60.25,
+      "Score2": 29.63,
+      "Score3": 35.12
     },
     {
       "Ticker": "한국콜마",
@@ -23849,9 +23849,9 @@
       "MDD": -44.05,
       "Calmar": 0.31,
       "Grade": "Normal",
-      "Score1": 39.88,
-      "Score2": 38.09,
-      "Score3": 56.36
+      "Score1": 25.56,
+      "Score2": 34.63,
+      "Score3": 35.43
     },
     {
       "Ticker": "한국타이어앤테크놀로지",
@@ -23867,9 +23867,9 @@
       "MDD": -44.69,
       "Calmar": 0.21,
       "Grade": "Normal",
-      "Score1": 84.32,
-      "Score2": 27.53,
-      "Score3": 52.35
+      "Score1": 72.47,
+      "Score2": 28.02,
+      "Score3": 38.15
     },
     {
       "Ticker": "한솔테크닉스",
@@ -23885,9 +23885,9 @@
       "MDD": -60.28,
       "Calmar": 0.01,
       "Grade": "Bad",
-      "Score1": 35.43,
-      "Score2": 30.93,
-      "Score3": 34.01
+      "Score1": 45.06,
+      "Score2": 36.48,
+      "Score3": 48.64
     },
     {
       "Ticker": "현대모비스",
@@ -23903,9 +23903,9 @@
       "MDD": -39.45,
       "Calmar": 0.35,
       "Grade": "Normal",
-      "Score1": 68.4,
-      "Score2": 34.57,
-      "Score3": 36.42
+      "Score1": 65.43,
+      "Score2": 42.53,
+      "Score3": 32.47
     },
     {
       "Ticker": "현대백화점",
@@ -23921,9 +23921,9 @@
       "MDD": -51.79,
       "Calmar": 0.23,
       "Grade": "Bad",
-      "Score1": 45.06,
-      "Score2": 38.64,
-      "Score3": 45.19
+      "Score1": 52.96,
+      "Score2": 41.6,
+      "Score3": 64.81
     },
     {
       "Ticker": "현대해상",
@@ -23939,9 +23939,9 @@
       "MDD": -47.34,
       "Calmar": 0.19,
       "Grade": "Normal",
-      "Score1": 69.88,
-      "Score2": 49.81,
-      "Score3": 56.11
+      "Score1": 61.6,
+      "Score2": 55.31,
+      "Score3": 46.6
     }
   ]
 }
