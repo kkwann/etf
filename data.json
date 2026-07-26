@@ -12167,9 +12167,9 @@
       "MDD": -54.0,
       "Calmar": 2.5,
       "Grade": "Bad",
-      "Score1": 26.63,
-      "Score2": 58.82,
-      "Score3": 81.91
+      "Score1": 31.57,
+      "Score2": 48.54,
+      "Score3": 72.08
     },
     {
       "Ticker": "ACHC",
@@ -12184,9 +12184,9 @@
       "MDD": -57.11,
       "Calmar": 1.06,
       "Grade": "Bad",
-      "Score1": 59.55,
-      "Score2": 66.8,
-      "Score3": 68.48
+      "Score1": 51.4,
+      "Score2": 57.7,
+      "Score3": 47.42
     },
     {
       "Ticker": "ACMR",
@@ -12201,9 +12201,9 @@
       "MDD": -46.34,
       "Calmar": 4.2,
       "Grade": "Normal",
-      "Score1": 24.94,
-      "Score2": 24.16,
-      "Score3": 41.8
+      "Score1": 26.69,
+      "Score2": 27.19,
+      "Score3": 52.98
     },
     {
       "Ticker": "AGEN",
@@ -12218,9 +12218,9 @@
       "MDD": -56.38,
       "Calmar": -0.16,
       "Grade": "Bad",
-      "Score1": 26.85,
-      "Score2": 22.19,
-      "Score3": 66.12
+      "Score1": 17.75,
+      "Score2": 27.42,
+      "Score3": 40.51
     },
     {
       "Ticker": "ALKS",
@@ -12235,9 +12235,9 @@
       "MDD": -22.2,
       "Calmar": 4.38,
       "Grade": "Best",
-      "Score1": 73.48,
-      "Score2": 41.63,
-      "Score3": 58.2
+      "Score1": 61.18,
+      "Score2": 55.34,
+      "Score3": 50.67
     },
     {
       "Ticker": "AMAT",
@@ -12252,9 +12252,9 @@
       "MDD": -27.29,
       "Calmar": 6.95,
       "Grade": "Best",
-      "Score1": 24.38,
-      "Score2": 33.03,
-      "Score3": 37.25
+      "Score1": 34.83,
+      "Score2": 33.76,
+      "Score3": 51.52
     },
     {
       "Ticker": "AMD",
@@ -12269,9 +12269,9 @@
       "MDD": -27.76,
       "Calmar": 9.07,
       "Grade": "Best",
-      "Score1": 76.63,
-      "Score2": 76.24,
-      "Score3": 62.58
+      "Score1": 76.57,
+      "Score2": 73.26,
+      "Score3": 60.9
     },
     {
       "Ticker": "APGE",
@@ -12286,9 +12286,9 @@
       "MDD": -24.63,
       "Calmar": 9.86,
       "Grade": "Best",
-      "Score1": 64.72,
-      "Score2": 55.17,
-      "Score3": 55.34
+      "Score1": 57.58,
+      "Score2": 43.6,
+      "Score3": 50.96
     },
     {
       "Ticker": "ARCB",
@@ -12303,9 +12303,9 @@
       "MDD": -30.6,
       "Calmar": 3.42,
       "Grade": "Good",
-      "Score1": 73.03,
-      "Score2": 56.52,
-      "Score3": 53.43
+      "Score1": 68.65,
+      "Score2": 53.26,
+      "Score3": 45.39
     },
     {
       "Ticker": "ATAI",
@@ -12320,9 +12320,9 @@
       "MDD": -48.06,
       "Calmar": 2.15,
       "Grade": "Normal",
-      "Score1": 73.93,
-      "Score2": 40.06,
-      "Score3": 75.45
+      "Score1": 63.15,
+      "Score2": 39.94,
+      "Score3": 47.53
     },
     {
       "Ticker": "AVT",
@@ -12337,9 +12337,9 @@
       "MDD": -19.76,
       "Calmar": 3.42,
       "Grade": "Best",
-      "Score1": 73.82,
-      "Score2": 34.94,
-      "Score3": 22.7
+      "Score1": 71.18,
+      "Score2": 45.96,
+      "Score3": 31.35
     },
     {
       "Ticker": "BAND",
@@ -12354,9 +12354,9 @@
       "MDD": -30.56,
       "Calmar": 10.35,
       "Grade": "Good",
-      "Score1": 71.35,
-      "Score2": 71.91,
-      "Score3": 91.97
+      "Score1": 64.72,
+      "Score2": 62.87,
+      "Score3": 80.06
     },
     {
       "Ticker": "BLZE",
@@ -12371,9 +12371,9 @@
       "MDD": -69.21,
       "Calmar": 2.13,
       "Grade": "Bad",
-      "Score1": 38.09,
-      "Score2": 51.8,
-      "Score3": 90.22
+      "Score1": 37.47,
+      "Score2": 37.87,
+      "Score3": 62.92
     },
     {
       "Ticker": "CBRL",
@@ -12388,9 +12388,9 @@
       "MDD": -64.97,
       "Calmar": -0.28,
       "Grade": "Bad",
-      "Score1": 76.74,
-      "Score2": 49.94,
-      "Score3": 73.2
+      "Score1": 57.42,
+      "Score2": 54.78,
+      "Score3": 45.45
     },
     {
       "Ticker": "CGNX",
@@ -12405,9 +12405,9 @@
       "MDD": -27.87,
       "Calmar": 3.11,
       "Grade": "Best",
-      "Score1": 48.09,
-      "Score2": 23.88,
-      "Score3": 24.44
+      "Score1": 50.17,
+      "Score2": 32.81,
+      "Score3": 32.25
     },
     {
       "Ticker": "CLBK",
@@ -12422,9 +12422,9 @@
       "MDD": -13.33,
       "Calmar": 4.57,
       "Grade": "Best",
-      "Score1": 82.02,
-      "Score2": 41.74,
-      "Score3": 58.2
+      "Score1": 63.99,
+      "Score2": 59.78,
+      "Score3": 49.1
     },
     {
       "Ticker": "CMPS",
@@ -12439,9 +12439,9 @@
       "MDD": -38.22,
       "Calmar": 4.38,
       "Grade": "Good",
-      "Score1": 18.99,
-      "Score2": 28.6,
-      "Score3": 34.21
+      "Score1": 25.96,
+      "Score2": 23.2,
+      "Score3": 41.46
     },
     {
       "Ticker": "COHU",
@@ -12456,9 +12456,9 @@
       "MDD": -31.04,
       "Calmar": 5.6,
       "Grade": "Good",
-      "Score1": 15.51,
-      "Score2": 50.22,
-      "Score3": 24.04
+      "Score1": 31.35,
+      "Score2": 42.02,
+      "Score3": 40.45
     },
     {
       "Ticker": "CORT",
@@ -12473,9 +12473,9 @@
       "MDD": -64.4,
       "Calmar": 0.46,
       "Grade": "Bad",
-      "Score1": 87.53,
-      "Score2": 57.47,
-      "Score3": 80.22
+      "Score1": 68.88,
+      "Score2": 64.72,
+      "Score3": 61.69
     },
     {
       "Ticker": "CRDO",
@@ -12490,9 +12490,9 @@
       "MDD": -53.59,
       "Calmar": 2.58,
       "Grade": "Bad",
-      "Score1": 23.82,
-      "Score2": 30.45,
-      "Score3": 20.73
+      "Score1": 38.54,
+      "Score2": 31.85,
+      "Score3": 36.29
     },
     {
       "Ticker": "CRNX",
@@ -12507,9 +12507,9 @@
       "MDD": -42.21,
       "Calmar": 4.04,
       "Grade": "Normal",
-      "Score1": 81.57,
-      "Score2": 34.78,
-      "Score3": 78.6
+      "Score1": 61.91,
+      "Score2": 35.22,
+      "Score3": 51.07
     },
     {
       "Ticker": "CROX",
@@ -12524,9 +12524,9 @@
       "MDD": -32.54,
       "Calmar": 0.97,
       "Grade": "Good",
-      "Score1": 62.13,
-      "Score2": 44.94,
-      "Score3": 53.71
+      "Score1": 57.64,
+      "Score2": 56.97,
+      "Score3": 39.38
     },
     {
       "Ticker": "CRWD",
@@ -12541,9 +12541,9 @@
       "MDD": -37.18,
       "Calmar": 1.52,
       "Grade": "Good",
-      "Score1": 68.43,
-      "Score2": 19.66,
-      "Score3": 59.66
+      "Score1": 57.3,
+      "Score2": 28.09,
+      "Score3": 45.51
     },
     {
       "Ticker": "CVLT",
@@ -12558,9 +12558,9 @@
       "MDD": -61.53,
       "Calmar": -0.27,
       "Grade": "Bad",
-      "Score1": 69.89,
-      "Score2": 20.45,
-      "Score3": 57.19
+      "Score1": 54.94,
+      "Score2": 29.72,
+      "Score3": 39.44
     },
     {
       "Ticker": "DAVE",
@@ -12575,9 +12575,9 @@
       "MDD": -39.11,
       "Calmar": 2.98,
       "Grade": "Good",
-      "Score1": 73.93,
-      "Score2": 69.83,
-      "Score3": 80.28
+      "Score1": 63.15,
+      "Score2": 66.12,
+      "Score3": 56.69
     },
     {
       "Ticker": "DDOG",
@@ -12592,9 +12592,9 @@
       "MDD": -48.62,
       "Calmar": 1.42,
       "Grade": "Normal",
-      "Score1": 71.57,
-      "Score2": 26.29,
-      "Score3": 67.19
+      "Score1": 60.34,
+      "Score2": 33.2,
+      "Score3": 52.47
     },
     {
       "Ticker": "DFTX",
@@ -12609,9 +12609,9 @@
       "MDD": -24.79,
       "Calmar": 13.67,
       "Grade": "Best",
-      "Score1": 45.96,
-      "Score2": 67.19,
-      "Score3": 86.57
+      "Score1": 44.66,
+      "Score2": 58.93,
+      "Score3": 79.16
     },
     {
       "Ticker": "DNTH",
@@ -12626,9 +12626,9 @@
       "MDD": -20.2,
       "Calmar": 19.58,
       "Grade": "Best",
-      "Score1": 75.51,
-      "Score2": 73.93,
-      "Score3": 54.72
+      "Score1": 71.12,
+      "Score2": 73.15,
+      "Score3": 58.65
     },
     {
       "Ticker": "ELVN",
@@ -12643,9 +12643,9 @@
       "MDD": -36.84,
       "Calmar": 3.85,
       "Grade": "Good",
-      "Score1": 44.72,
-      "Score2": 73.43,
-      "Score3": 46.35
+      "Score1": 43.15,
+      "Score2": 64.72,
+      "Score3": 43.43
     },
     {
       "Ticker": "EXTR",
@@ -12660,9 +12660,9 @@
       "MDD": -39.87,
       "Calmar": 1.8,
       "Grade": "Good",
-      "Score1": 51.01,
-      "Score2": 45.62,
-      "Score3": 58.31
+      "Score1": 47.87,
+      "Score2": 40.73,
+      "Score3": 51.74
     },
     {
       "Ticker": "FCEL",
@@ -12677,9 +12677,9 @@
       "MDD": -52.07,
       "Calmar": 6.13,
       "Grade": "Bad",
-      "Score1": 32.47,
-      "Score2": 60.0,
-      "Score3": 68.09
+      "Score1": 43.99,
+      "Score2": 51.52,
+      "Score3": 72.7
     },
     {
       "Ticker": "FLEX",
@@ -12694,9 +12694,9 @@
       "MDD": -26.42,
       "Calmar": 5.24,
       "Grade": "Best",
-      "Score1": 30.34,
-      "Score2": 43.48,
-      "Score3": 36.12
+      "Score1": 39.44,
+      "Score2": 35.73,
+      "Score3": 41.97
     },
     {
       "Ticker": "FTNT",
@@ -12711,9 +12711,9 @@
       "MDD": -29.19,
       "Calmar": 1.54,
       "Grade": "Best",
-      "Score1": 69.78,
-      "Score2": 46.46,
-      "Score3": 64.1
+      "Score1": 56.18,
+      "Score2": 41.29,
+      "Score3": 48.43
     },
     {
       "Ticker": "GTX",
@@ -12728,9 +12728,9 @@
       "MDD": -19.85,
       "Calmar": 9.0,
       "Grade": "Best",
-      "Score1": 57.3,
-      "Score2": 49.89,
-      "Score3": 46.8
+      "Score1": 54.44,
+      "Score2": 46.69,
+      "Score3": 50.51
     },
     {
       "Ticker": "HUT",
@@ -12745,9 +12745,9 @@
       "MDD": -38.62,
       "Calmar": 10.74,
       "Grade": "Good",
-      "Score1": 51.24,
-      "Score2": 45.51,
-      "Score3": 38.82
+      "Score1": 57.42,
+      "Score2": 43.93,
+      "Score3": 53.93
     },
     {
       "Ticker": "ICHR",
@@ -12762,9 +12762,9 @@
       "MDD": -39.54,
       "Calmar": 8.14,
       "Grade": "Good",
-      "Score1": 41.12,
-      "Score2": 80.34,
-      "Score3": 56.4
+      "Score1": 53.2,
+      "Score2": 62.92,
+      "Score3": 63.65
     },
     {
       "Ticker": "INTC",
@@ -12779,9 +12779,9 @@
       "MDD": -32.57,
       "Calmar": 10.48,
       "Grade": "Good",
-      "Score1": 33.82,
-      "Score2": 58.26,
-      "Score3": 26.69
+      "Score1": 45.39,
+      "Score2": 44.89,
+      "Score3": 47.02
     },
     {
       "Ticker": "IOVA",
@@ -12796,9 +12796,9 @@
       "MDD": -54.41,
       "Calmar": 1.98,
       "Grade": "Bad",
-      "Score1": 79.33,
-      "Score2": 45.17,
-      "Score3": 68.76
+      "Score1": 64.78,
+      "Score2": 51.85,
+      "Score3": 52.3
     },
     {
       "Ticker": "IRDM",
@@ -12813,9 +12813,9 @@
       "MDD": -50.74,
       "Calmar": 0.98,
       "Grade": "Bad",
-      "Score1": 49.21,
-      "Score2": 55.17,
-      "Score3": 45.28
+      "Score1": 46.24,
+      "Score2": 46.69,
+      "Score3": 41.46
     },
     {
       "Ticker": "JAZZ",
@@ -12830,9 +12830,9 @@
       "MDD": -11.42,
       "Calmar": 10.71,
       "Grade": "Best",
-      "Score1": 72.02,
-      "Score2": 38.15,
-      "Score3": 41.29
+      "Score1": 61.18,
+      "Score2": 44.49,
+      "Score3": 38.26
     },
     {
       "Ticker": "KEEL",
@@ -12847,9 +12847,9 @@
       "MDD": -73.57,
       "Calmar": 4.28,
       "Grade": "Bad",
-      "Score1": 30.34,
-      "Score2": 46.8,
-      "Score3": 31.57
+      "Score1": 42.3,
+      "Score2": 42.36,
+      "Score3": 51.91
     },
     {
       "Ticker": "KLIC",
@@ -12864,9 +12864,9 @@
       "MDD": -27.34,
       "Calmar": 7.33,
       "Grade": "Best",
-      "Score1": 35.96,
-      "Score2": 45.11,
-      "Score3": 26.18
+      "Score1": 42.64,
+      "Score2": 36.74,
+      "Score3": 45.11
     },
     {
       "Ticker": "KYMR",
@@ -12881,9 +12881,9 @@
       "MDD": -27.74,
       "Calmar": 5.21,
       "Grade": "Best",
-      "Score1": 43.6,
-      "Score2": 26.07,
-      "Score3": 48.03
+      "Score1": 37.53,
+      "Score2": 34.89,
+      "Score3": 48.37
     },
     {
       "Ticker": "LGND",
@@ -12898,9 +12898,9 @@
       "MDD": -14.07,
       "Calmar": 8.22,
       "Grade": "Best",
-      "Score1": 46.07,
-      "Score2": 50.96,
-      "Score3": 48.15
+      "Score1": 42.92,
+      "Score2": 59.21,
+      "Score3": 44.66
     },
     {
       "Ticker": "LNTH",
@@ -12915,9 +12915,9 @@
       "MDD": -31.65,
       "Calmar": 1.46,
       "Grade": "Good",
-      "Score1": 42.81,
-      "Score2": 46.97,
-      "Score3": 31.35
+      "Score1": 37.7,
+      "Score2": 53.37,
+      "Score3": 32.98
     },
     {
       "Ticker": "LQDA",
@@ -12932,9 +12932,9 @@
       "MDD": -35.66,
       "Calmar": 13.36,
       "Grade": "Good",
-      "Score1": 97.08,
-      "Score2": 68.26,
-      "Score3": 85.28
+      "Score1": 90.96,
+      "Score2": 66.29,
+      "Score3": 77.64
     },
     {
       "Ticker": "LSCC",
@@ -12949,9 +12949,9 @@
       "MDD": -19.82,
       "Calmar": 8.23,
       "Grade": "Best",
-      "Score1": 50.67,
-      "Score2": 35.79,
-      "Score3": 19.44
+      "Score1": 57.02,
+      "Score2": 40.79,
+      "Score3": 31.91
     },
     {
       "Ticker": "MRVL",
@@ -12966,9 +12966,9 @@
       "MDD": -40.48,
       "Calmar": 4.68,
       "Grade": "Normal",
-      "Score1": 21.91,
-      "Score2": 64.1,
-      "Score3": 31.24
+      "Score1": 40.06,
+      "Score2": 49.49,
+      "Score3": 45.9
     },
     {
       "Ticker": "MU",
@@ -12983,9 +12983,9 @@
       "MDD": -30.28,
       "Calmar": 24.73,
       "Grade": "Good",
-      "Score1": 41.69,
-      "Score2": 67.36,
-      "Score3": 60.67
+      "Score1": 51.35,
+      "Score2": 56.69,
+      "Score3": 74.33
     },
     {
       "Ticker": "MXL",
@@ -13000,9 +13000,9 @@
       "MDD": -43.89,
       "Calmar": 10.14,
       "Grade": "Normal",
-      "Score1": 53.03,
-      "Score2": 74.27,
-      "Score3": 52.42
+      "Score1": 61.4,
+      "Score2": 57.3,
+      "Score3": 61.52
     },
     {
       "Ticker": "MYRG",
@@ -13017,9 +13017,9 @@
       "MDD": -22.11,
       "Calmar": 5.18,
       "Grade": "Best",
-      "Score1": 44.16,
-      "Score2": 33.99,
-      "Score3": 21.63
+      "Score1": 52.75,
+      "Score2": 36.46,
+      "Score3": 34.78
     },
     {
       "Ticker": "NTAP",
@@ -13034,9 +13034,9 @@
       "MDD": -24.83,
       "Calmar": 2.32,
       "Grade": "Best",
-      "Score1": 61.8,
-      "Score2": 44.72,
-      "Score3": 52.47
+      "Score1": 52.75,
+      "Score2": 52.19,
+      "Score3": 42.7
     },
     {
       "Ticker": "OKTA",
@@ -13051,9 +13051,9 @@
       "MDD": -37.75,
       "Calmar": 1.13,
       "Grade": "Good",
-      "Score1": 75.73,
-      "Score2": 6.29,
-      "Score3": 63.09
+      "Score1": 57.47,
+      "Score2": 23.37,
+      "Score3": 45.51
     },
     {
       "Ticker": "ORKA",
@@ -13068,9 +13068,9 @@
       "MDD": -27.99,
       "Calmar": 20.44,
       "Grade": "Best",
-      "Score1": 54.49,
-      "Score2": 89.16,
-      "Score3": 61.35
+      "Score1": 60.06,
+      "Score2": 83.76,
+      "Score3": 69.44
     },
     {
       "Ticker": "OUST",
@@ -13085,9 +13085,9 @@
       "MDD": -55.15,
       "Calmar": 0.59,
       "Grade": "Bad",
-      "Score1": 17.08,
-      "Score2": 14.04,
-      "Score3": 30.67
+      "Score1": 19.61,
+      "Score2": 18.09,
+      "Score3": 34.49
     },
     {
       "Ticker": "PANW",
@@ -13102,9 +13102,9 @@
       "MDD": -36.01,
       "Calmar": 1.88,
       "Grade": "Good",
-      "Score1": 75.28,
-      "Score2": 43.31,
-      "Score3": 76.18
+      "Score1": 62.42,
+      "Score2": 42.25,
+      "Score3": 54.72
     },
     {
       "Ticker": "PENG",
@@ -13119,9 +13119,9 @@
       "MDD": -44.57,
       "Calmar": 3.16,
       "Grade": "Normal",
-      "Score1": 21.12,
-      "Score2": 61.97,
-      "Score3": 63.71
+      "Score1": 31.8,
+      "Score2": 45.39,
+      "Score3": 64.33
     },
     {
       "Ticker": "PENN",
@@ -13136,9 +13136,9 @@
       "MDD": -42.55,
       "Calmar": 0.33,
       "Grade": "Normal",
-      "Score1": 48.2,
-      "Score2": 33.26,
-      "Score3": 33.26
+      "Score1": 42.58,
+      "Score2": 44.89,
+      "Score3": 30.28
     },
     {
       "Ticker": "PTGX",
@@ -13153,9 +13153,9 @@
       "MDD": -16.38,
       "Calmar": 8.87,
       "Grade": "Best",
-      "Score1": 75.39,
-      "Score2": 51.63,
-      "Score3": 58.88
+      "Score1": 63.54,
+      "Score2": 57.98,
+      "Score3": 51.01
     },
     {
       "Ticker": "QURE",
@@ -13170,9 +13170,9 @@
       "MDD": -87.21,
       "Calmar": 2.05,
       "Grade": "Bad",
-      "Score1": 38.2,
-      "Score2": 36.29,
-      "Score3": 47.81
+      "Score1": 42.75,
+      "Score2": 30.28,
+      "Score3": 52.25
     },
     {
       "Ticker": "RELY",
@@ -13187,9 +13187,9 @@
       "MDD": -39.75,
       "Calmar": 0.85,
       "Grade": "Good",
-      "Score1": 57.75,
-      "Score2": 27.08,
-      "Score3": 37.42
+      "Score1": 51.18,
+      "Score2": 32.3,
+      "Score3": 25.62
     },
     {
       "Ticker": "RLAY",
@@ -13204,9 +13204,9 @@
       "MDD": -28.15,
       "Calmar": 15.3,
       "Grade": "Best",
-      "Score1": 40.79,
-      "Score2": 84.44,
-      "Score3": 56.24
+      "Score1": 53.99,
+      "Score2": 77.81,
+      "Score3": 63.76
     },
     {
       "Ticker": "ROIV",
@@ -13221,9 +13221,9 @@
       "MDD": -12.84,
       "Calmar": 15.9,
       "Grade": "Best",
-      "Score1": 57.87,
-      "Score2": 51.07,
-      "Score3": 42.19
+      "Score1": 57.19,
+      "Score2": 56.8,
+      "Score3": 42.87
     },
     {
       "Ticker": "RVMD",
@@ -13238,9 +13238,9 @@
       "MDD": -24.95,
       "Calmar": 15.08,
       "Grade": "Best",
-      "Score1": 41.24,
-      "Score2": 66.35,
-      "Score3": 55.17
+      "Score1": 46.24,
+      "Score2": 60.45,
+      "Score3": 54.83
     },
     {
       "Ticker": "RXT",
@@ -13255,9 +13255,9 @@
       "MDD": -77.6,
       "Calmar": 2.47,
       "Grade": "Bad",
-      "Score1": 11.57,
-      "Score2": 56.4,
-      "Score3": 55.28
+      "Score1": 25.06,
+      "Score2": 38.2,
+      "Score3": 62.3
     },
     {
       "Ticker": "SIMO",
@@ -13272,9 +13272,9 @@
       "MDD": -26.27,
       "Calmar": 10.82,
       "Grade": "Best",
-      "Score1": 42.92,
-      "Score2": 59.66,
-      "Score3": 55.0
+      "Score1": 52.3,
+      "Score2": 46.85,
+      "Score3": 62.02
     },
     {
       "Ticker": "SIRI",
@@ -13289,9 +13289,9 @@
       "MDD": -17.47,
       "Calmar": 1.99,
       "Grade": "Best",
-      "Score1": 70.9,
-      "Score2": 39.72,
-      "Score3": 26.85
+      "Score1": 59.66,
+      "Score2": 52.36,
+      "Score3": 24.38
     },
     {
       "Ticker": "SITM",
@@ -13306,9 +13306,9 @@
       "MDD": -38.44,
       "Calmar": 4.69,
       "Grade": "Good",
-      "Score1": 24.61,
-      "Score2": 28.09,
-      "Score3": 12.02
+      "Score1": 41.4,
+      "Score2": 30.34,
+      "Score3": 36.52
     },
     {
       "Ticker": "SLS",
@@ -13323,9 +13323,9 @@
       "MDD": -36.24,
       "Calmar": 15.26,
       "Grade": "Good",
-      "Score1": 43.71,
-      "Score2": 72.02,
-      "Score3": 95.39
+      "Score1": 45.28,
+      "Score2": 59.27,
+      "Score3": 84.89
     },
     {
       "Ticker": "SMTC",
@@ -13340,9 +13340,9 @@
       "MDD": -28.48,
       "Calmar": 5.55,
       "Grade": "Best",
-      "Score1": 19.33,
-      "Score2": 33.09,
-      "Score3": 24.33
+      "Score1": 33.71,
+      "Score2": 33.71,
+      "Score3": 39.94
     },
     {
       "Ticker": "SNEX",
@@ -13357,9 +13357,9 @@
       "MDD": -25.91,
       "Calmar": 2.93,
       "Grade": "Best",
-      "Score1": 39.21,
-      "Score2": 26.01,
-      "Score3": 8.48
+      "Score1": 44.38,
+      "Score2": 31.12,
+      "Score3": 30.06
     },
     {
       "Ticker": "STRL",
@@ -13374,9 +13374,9 @@
       "MDD": -35.74,
       "Calmar": 5.33,
       "Grade": "Good",
-      "Score1": 31.57,
-      "Score2": 48.2,
-      "Score3": 38.93
+      "Score1": 45.17,
+      "Score2": 44.27,
+      "Score3": 53.03
     },
     {
       "Ticker": "STX",
@@ -13391,9 +13391,9 @@
       "MDD": -31.81,
       "Calmar": 16.09,
       "Grade": "Good",
-      "Score1": 59.21,
-      "Score2": 69.89,
-      "Score3": 50.0
+      "Score1": 68.54,
+      "Score2": 59.66,
+      "Score3": 68.48
     },
     {
       "Ticker": "SYRE",
@@ -13408,9 +13408,9 @@
       "MDD": -16.79,
       "Calmar": 30.17,
       "Grade": "Best",
-      "Score1": 45.28,
-      "Score2": 90.79,
-      "Score3": 60.39
+      "Score1": 50.28,
+      "Score2": 80.67,
+      "Score3": 72.3
     },
     {
       "Ticker": "TGTX",
@@ -13425,9 +13425,9 @@
       "MDD": -29.81,
       "Calmar": 1.37,
       "Grade": "Best",
-      "Score1": 47.08,
-      "Score2": 38.26,
-      "Score3": 48.03
+      "Score1": 39.83,
+      "Score2": 35.17,
+      "Score3": 42.98
     },
     {
       "Ticker": "TIGO",
@@ -13442,9 +13442,9 @@
       "MDD": -11.05,
       "Calmar": 14.69,
       "Grade": "Best",
-      "Score1": 81.01,
-      "Score2": 53.93,
-      "Score3": 41.85
+      "Score1": 68.71,
+      "Score2": 53.37,
+      "Score3": 40.11
     },
     {
       "Ticker": "TNGX",
@@ -13459,9 +13459,9 @@
       "MDD": -29.24,
       "Calmar": 10.78,
       "Grade": "Best",
-      "Score1": 22.81,
-      "Score2": 57.92,
-      "Score3": 33.82
+      "Score1": 36.24,
+      "Score2": 43.88,
+      "Score3": 45.06
     },
     {
       "Ticker": "TRVI",
@@ -13476,9 +13476,9 @@
       "MDD": -29.5,
       "Calmar": 5.24,
       "Grade": "Best",
-      "Score1": 30.22,
-      "Score2": 27.92,
-      "Score3": 33.65
+      "Score1": 33.6,
+      "Score2": 29.44,
+      "Score3": 43.93
     },
     {
       "Ticker": "TSEM",
@@ -13493,9 +13493,9 @@
       "MDD": -33.11,
       "Calmar": 12.08,
       "Grade": "Good",
-      "Score1": 42.36,
-      "Score2": 41.97,
-      "Score3": 27.42
+      "Score1": 56.29,
+      "Score2": 39.27,
+      "Score3": 49.72
     },
     {
       "Ticker": "TVTX",
@@ -13510,9 +13510,9 @@
       "MDD": -33.49,
       "Calmar": 7.63,
       "Grade": "Good",
-      "Score1": 53.03,
-      "Score2": 61.35,
-      "Score3": 49.83
+      "Score1": 59.55,
+      "Score2": 60.62,
+      "Score3": 54.16
     },
     {
       "Ticker": "TWST",
@@ -13527,9 +13527,9 @@
       "MDD": -33.86,
       "Calmar": 5.05,
       "Grade": "Good",
-      "Score1": 60.67,
-      "Score2": 70.56,
-      "Score3": 69.55
+      "Score1": 58.65,
+      "Score2": 56.97,
+      "Score3": 60.56
     },
     {
       "Ticker": "TXG",
@@ -13544,9 +13544,9 @@
       "MDD": -28.03,
       "Calmar": 10.98,
       "Grade": "Best",
-      "Score1": 93.48,
-      "Score2": 72.98,
-      "Score3": 90.67
+      "Score1": 80.67,
+      "Score2": 60.73,
+      "Score3": 68.43
     },
     {
       "Ticker": "UCTT",
@@ -13561,9 +13561,9 @@
       "MDD": -36.33,
       "Calmar": 8.45,
       "Grade": "Good",
-      "Score1": 22.25,
-      "Score2": 56.85,
-      "Score3": 37.19
+      "Score1": 36.46,
+      "Score2": 45.17,
+      "Score3": 55.22
     },
     {
       "Ticker": "VCYT",
@@ -13578,9 +13578,9 @@
       "MDD": -39.23,
       "Calmar": 3.87,
       "Grade": "Good",
-      "Score1": 57.42,
-      "Score2": 32.42,
-      "Score3": 54.55
+      "Score1": 48.88,
+      "Score2": 45.62,
+      "Score3": 49.78
     },
     {
       "Ticker": "VECO",
@@ -13595,9 +13595,9 @@
       "MDD": -38.96,
       "Calmar": 3.99,
       "Grade": "Good",
-      "Score1": 6.85,
-      "Score2": 29.38,
-      "Score3": 10.62
+      "Score1": 27.58,
+      "Score2": 29.55,
+      "Score3": 36.74
     },
     {
       "Ticker": "VSAT",
@@ -13612,9 +13612,9 @@
       "MDD": -30.79,
       "Calmar": 13.06,
       "Grade": "Good",
-      "Score1": 44.83,
-      "Score2": 30.84,
-      "Score3": 41.46
+      "Score1": 49.66,
+      "Score2": 49.1,
+      "Score3": 51.24
     },
     {
       "Ticker": "WDC",
@@ -13629,9 +13629,9 @@
       "MDD": -37.44,
       "Calmar": 19.02,
       "Grade": "Good",
-      "Score1": 34.61,
-      "Score2": 61.01,
-      "Score3": 37.47
+      "Score1": 51.12,
+      "Score2": 50.0,
+      "Score3": 59.55
     },
     {
       "Ticker": "XENE",
@@ -13646,9 +13646,9 @@
       "MDD": -18.4,
       "Calmar": 5.99,
       "Grade": "Best",
-      "Score1": 42.7,
-      "Score2": 20.73,
-      "Score3": 48.82
+      "Score1": 41.74,
+      "Score2": 34.49,
+      "Score3": 44.49
     },
     {
       "Ticker": "XMTR",
@@ -13663,9 +13663,9 @@
       "MDD": -49.93,
       "Calmar": 3.66,
       "Grade": "Normal",
-      "Score1": 78.65,
-      "Score2": 26.63,
-      "Score3": 58.54
+      "Score1": 63.65,
+      "Score2": 43.31,
+      "Score3": 54.49
     },
     {
       "Ticker": "ABSI",
@@ -13680,9 +13680,9 @@
       "MDD": -66.16,
       "Calmar": 0.77,
       "Grade": "Bad",
-      "Score1": 26.63,
-      "Score2": 58.82,
-      "Score3": 81.91
+      "Score1": 31.57,
+      "Score2": 48.54,
+      "Score3": 72.08
     },
     {
       "Ticker": "ACHC",
@@ -13697,9 +13697,9 @@
       "MDD": -86.63,
       "Calmar": -0.26,
       "Grade": "Bad",
-      "Score1": 59.55,
-      "Score2": 66.8,
-      "Score3": 68.48
+      "Score1": 51.4,
+      "Score2": 57.7,
+      "Score3": 47.42
     },
     {
       "Ticker": "ACMR",
@@ -13714,9 +13714,9 @@
       "MDD": -58.42,
       "Calmar": 1.56,
       "Grade": "Bad",
-      "Score1": 24.94,
-      "Score2": 24.16,
-      "Score3": 41.8
+      "Score1": 26.69,
+      "Score2": 27.19,
+      "Score3": 52.98
     },
     {
       "Ticker": "AGEN",
@@ -13731,9 +13731,9 @@
       "MDD": -95.16,
       "Calmar": -0.47,
       "Grade": "Bad",
-      "Score1": 26.85,
-      "Score2": 22.19,
-      "Score3": 66.12
+      "Score1": 17.75,
+      "Score2": 27.42,
+      "Score3": 40.51
     },
     {
       "Ticker": "ALKS",
@@ -13748,9 +13748,9 @@
       "MDD": -29.33,
       "Calmar": 0.62,
       "Grade": "Good",
-      "Score1": 73.48,
-      "Score2": 41.63,
-      "Score3": 58.2
+      "Score1": 61.18,
+      "Score2": 55.34,
+      "Score3": 50.67
     },
     {
       "Ticker": "AMAT",
@@ -13765,9 +13765,9 @@
       "MDD": -49.88,
       "Calmar": 1.23,
       "Grade": "Normal",
-      "Score1": 24.38,
-      "Score2": 33.03,
-      "Score3": 37.25
+      "Score1": 34.83,
+      "Score2": 33.76,
+      "Score3": 51.52
     },
     {
       "Ticker": "AMD",
@@ -13782,9 +13782,9 @@
       "MDD": -63.0,
       "Calmar": 1.13,
       "Grade": "Bad",
-      "Score1": 76.63,
-      "Score2": 76.24,
-      "Score3": 62.58
+      "Score1": 76.57,
+      "Score2": 73.26,
+      "Score3": 60.9
     },
     {
       "Ticker": "APGE",
@@ -13799,9 +13799,9 @@
       "MDD": -58.75,
       "Calmar": 1.5,
       "Grade": "Bad",
-      "Score1": 64.72,
-      "Score2": 55.17,
-      "Score3": 55.34
+      "Score1": 57.58,
+      "Score2": 43.6,
+      "Score3": 50.96
     },
     {
       "Ticker": "ARCB",
@@ -13816,9 +13816,9 @@
       "MDD": -62.45,
       "Calmar": 0.23,
       "Grade": "Bad",
-      "Score1": 73.03,
-      "Score2": 56.52,
-      "Score3": 53.43
+      "Score1": 68.65,
+      "Score2": 53.26,
+      "Score3": 45.39
     },
     {
       "Ticker": "ATAI",
@@ -13833,9 +13833,9 @@
       "MDD": -59.23,
       "Calmar": 0.86,
       "Grade": "Bad",
-      "Score1": 73.93,
-      "Score2": 40.06,
-      "Score3": 75.45
+      "Score1": 63.15,
+      "Score2": 39.94,
+      "Score3": 47.53
     },
     {
       "Ticker": "AVT",
@@ -13850,9 +13850,9 @@
       "MDD": -27.12,
       "Calmar": 1.0,
       "Grade": "Best",
-      "Score1": 73.82,
-      "Score2": 34.94,
-      "Score3": 22.7
+      "Score1": 71.18,
+      "Score2": 45.96,
+      "Score3": 31.35
     },
     {
       "Ticker": "BAND",
@@ -13867,9 +13867,9 @@
       "MDD": -49.82,
       "Calmar": 1.32,
       "Grade": "Normal",
-      "Score1": 71.35,
-      "Score2": 71.91,
-      "Score3": 91.97
+      "Score1": 64.72,
+      "Score2": 62.87,
+      "Score3": 80.06
     },
     {
       "Ticker": "BLZE",
@@ -13884,9 +13884,9 @@
       "MDD": -72.02,
       "Calmar": 0.53,
       "Grade": "Bad",
-      "Score1": 38.09,
-      "Score2": 51.8,
-      "Score3": 90.22
+      "Score1": 37.47,
+      "Score2": 37.87,
+      "Score3": 62.92
     },
     {
       "Ticker": "CBRL",
@@ -13901,9 +13901,9 @@
       "MDD": -71.46,
       "Calmar": -0.21,
       "Grade": "Bad",
-      "Score1": 76.74,
-      "Score2": 49.94,
-      "Score3": 73.2
+      "Score1": 57.42,
+      "Score2": 54.78,
+      "Score3": 45.45
     },
     {
       "Ticker": "CGNX",
@@ -13918,9 +13918,9 @@
       "MDD": -56.83,
       "Calmar": 0.08,
       "Grade": "Bad",
-      "Score1": 48.09,
-      "Score2": 23.88,
-      "Score3": 24.44
+      "Score1": 50.17,
+      "Score2": 32.81,
+      "Score3": 32.25
     },
     {
       "Ticker": "CLBK",
@@ -13935,9 +13935,9 @@
       "MDD": -33.85,
       "Calmar": 0.29,
       "Grade": "Normal",
-      "Score1": 82.02,
-      "Score2": 41.74,
-      "Score3": 58.2
+      "Score1": 63.99,
+      "Score2": 59.78,
+      "Score3": 49.1
     },
     {
       "Ticker": "CMPS",
@@ -13952,9 +13952,9 @@
       "MDD": -81.0,
       "Calmar": 0.12,
       "Grade": "Bad",
-      "Score1": 18.99,
-      "Score2": 28.6,
-      "Score3": 34.21
+      "Score1": 25.96,
+      "Score2": 23.2,
+      "Score3": 41.46
     },
     {
       "Ticker": "COHU",
@@ -13969,9 +13969,9 @@
       "MDD": -69.46,
       "Calmar": 0.16,
       "Grade": "Bad",
-      "Score1": 15.51,
-      "Score2": 50.22,
-      "Score3": 24.04
+      "Score1": 31.35,
+      "Score2": 42.02,
+      "Score3": 40.45
     },
     {
       "Ticker": "CORT",
@@ -13986,9 +13986,9 @@
       "MDD": -71.85,
       "Calmar": 0.79,
       "Grade": "Bad",
-      "Score1": 87.53,
-      "Score2": 57.47,
-      "Score3": 80.22
+      "Score1": 68.88,
+      "Score2": 64.72,
+      "Score3": 61.69
     },
     {
       "Ticker": "CRDO",
@@ -14003,9 +14003,9 @@
       "MDD": -61.05,
       "Calmar": 2.33,
       "Grade": "Bad",
-      "Score1": 23.82,
-      "Score2": 30.45,
-      "Score3": 20.73
+      "Score1": 38.54,
+      "Score2": 31.85,
+      "Score3": 36.29
     },
     {
       "Ticker": "CRNX",
@@ -14020,9 +14020,9 @@
       "MDD": -57.88,
       "Calmar": 1.13,
       "Grade": "Bad",
-      "Score1": 81.57,
-      "Score2": 34.78,
-      "Score3": 78.6
+      "Score1": 61.91,
+      "Score2": 35.22,
+      "Score3": 51.07
     },
     {
       "Ticker": "CROX",
@@ -14037,9 +14037,9 @@
       "MDD": -54.04,
       "Calmar": 0.07,
       "Grade": "Bad",
-      "Score1": 62.13,
-      "Score2": 44.94,
-      "Score3": 53.71
+      "Score1": 57.64,
+      "Score2": 56.97,
+      "Score3": 39.38
     },
     {
       "Ticker": "CRWD",
@@ -14054,9 +14054,9 @@
       "MDD": -44.44,
       "Calmar": 1.61,
       "Grade": "Normal",
-      "Score1": 68.43,
-      "Score2": 19.66,
-      "Score3": 59.66
+      "Score1": 57.3,
+      "Score2": 28.09,
+      "Score3": 45.51
     },
     {
       "Ticker": "CVLT",
@@ -14071,9 +14071,9 @@
       "MDD": -61.53,
       "Calmar": 0.38,
       "Grade": "Bad",
-      "Score1": 69.89,
-      "Score2": 20.45,
-      "Score3": 57.19
+      "Score1": 54.94,
+      "Score2": 29.72,
+      "Score3": 39.44
     },
     {
       "Ticker": "DAVE",
@@ -14088,9 +14088,9 @@
       "MDD": -44.67,
       "Calmar": 7.43,
       "Grade": "Normal",
-      "Score1": 73.93,
-      "Score2": 69.83,
-      "Score3": 80.28
+      "Score1": 63.15,
+      "Score2": 66.12,
+      "Score3": 56.69
     },
     {
       "Ticker": "DDOG",
@@ -14105,9 +14105,9 @@
       "MDD": -48.62,
       "Calmar": 0.64,
       "Grade": "Normal",
-      "Score1": 71.57,
-      "Score2": 26.29,
-      "Score3": 67.19
+      "Score1": 60.34,
+      "Score2": 33.2,
+      "Score3": 52.47
     },
     {
       "Ticker": "DFTX",
@@ -14122,9 +14122,9 @@
       "MDD": -58.38,
       "Calmar": 1.92,
       "Grade": "Bad",
-      "Score1": 45.96,
-      "Score2": 67.19,
-      "Score3": 86.57
+      "Score1": 44.66,
+      "Score2": 58.93,
+      "Score3": 79.16
     },
     {
       "Ticker": "DNTH",
@@ -14139,9 +14139,9 @@
       "MDD": -53.48,
       "Calmar": 1.89,
       "Grade": "Bad",
-      "Score1": 75.51,
-      "Score2": 73.93,
-      "Score3": 54.72
+      "Score1": 71.12,
+      "Score2": 73.15,
+      "Score3": 58.65
     },
     {
       "Ticker": "ELVN",
@@ -14156,9 +14156,9 @@
       "MDD": -49.54,
       "Calmar": 0.81,
       "Grade": "Normal",
-      "Score1": 44.72,
-      "Score2": 73.43,
-      "Score3": 46.35
+      "Score1": 43.15,
+      "Score2": 64.72,
+      "Score3": 43.43
     },
     {
       "Ticker": "EXTR",
@@ -14173,9 +14173,9 @@
       "MDD": -67.21,
       "Calmar": 0.06,
       "Grade": "Bad",
-      "Score1": 51.01,
-      "Score2": 45.62,
-      "Score3": 58.31
+      "Score1": 47.87,
+      "Score2": 40.73,
+      "Score3": 51.74
     },
     {
       "Ticker": "FCEL",
@@ -14190,9 +14190,9 @@
       "MDD": -94.47,
       "Calmar": -0.33,
       "Grade": "Bad",
-      "Score1": 32.47,
-      "Score2": 60.0,
-      "Score3": 68.09
+      "Score1": 43.99,
+      "Score2": 51.52,
+      "Score3": 72.7
     },
     {
       "Ticker": "FLEX",
@@ -14207,9 +14207,9 @@
       "MDD": -39.99,
       "Calmar": 2.04,
       "Grade": "Good",
-      "Score1": 30.34,
-      "Score2": 43.48,
-      "Score3": 36.12
+      "Score1": 39.44,
+      "Score2": 35.73,
+      "Score3": 41.97
     },
     {
       "Ticker": "FTNT",
@@ -14224,9 +14224,9 @@
       "MDD": -36.79,
       "Calmar": 0.7,
       "Grade": "Good",
-      "Score1": 69.78,
-      "Score2": 46.46,
-      "Score3": 64.1
+      "Score1": 56.18,
+      "Score2": 41.29,
+      "Score3": 48.43
     },
     {
       "Ticker": "GTX",
@@ -14241,9 +14241,9 @@
       "MDD": -26.77,
       "Calmar": 2.41,
       "Grade": "Best",
-      "Score1": 57.3,
-      "Score2": 49.89,
-      "Score3": 46.8
+      "Score1": 54.44,
+      "Score2": 46.69,
+      "Score3": 50.51
     },
     {
       "Ticker": "HUT",
@@ -14258,9 +14258,9 @@
       "MDD": -65.07,
       "Calmar": 1.27,
       "Grade": "Bad",
-      "Score1": 51.24,
-      "Score2": 45.51,
-      "Score3": 38.82
+      "Score1": 57.42,
+      "Score2": 43.93,
+      "Score3": 53.93
     },
     {
       "Ticker": "ICHR",
@@ -14275,9 +14275,9 @@
       "MDD": -69.09,
       "Calmar": 0.57,
       "Grade": "Bad",
-      "Score1": 41.12,
-      "Score2": 80.34,
-      "Score3": 56.4
+      "Score1": 53.2,
+      "Score2": 62.92,
+      "Score3": 63.65
     },
     {
       "Ticker": "INTC",
@@ -14292,9 +14292,9 @@
       "MDD": -63.81,
       "Calmar": 0.72,
       "Grade": "Bad",
-      "Score1": 33.82,
-      "Score2": 58.26,
-      "Score3": 26.69
+      "Score1": 45.39,
+      "Score2": 44.89,
+      "Score3": 47.02
     },
     {
       "Ticker": "IOVA",
@@ -14309,9 +14309,9 @@
       "MDD": -90.5,
       "Calmar": -0.14,
       "Grade": "Bad",
-      "Score1": 79.33,
-      "Score2": 45.17,
-      "Score3": 68.76
+      "Score1": 64.78,
+      "Score2": 51.85,
+      "Score3": 52.3
     },
     {
       "Ticker": "IRDM",
@@ -14326,9 +14326,9 @@
       "MDD": -72.39,
       "Calmar": -0.09,
       "Grade": "Bad",
-      "Score1": 49.21,
-      "Score2": 55.17,
-      "Score3": 45.28
+      "Score1": 46.24,
+      "Score2": 46.69,
+      "Score3": 41.46
     },
     {
       "Ticker": "JAZZ",
@@ -14343,9 +14343,9 @@
       "MDD": -32.71,
       "Calmar": 0.74,
       "Grade": "Good",
-      "Score1": 72.02,
-      "Score2": 38.15,
-      "Score3": 41.29
+      "Score1": 61.18,
+      "Score2": 44.49,
+      "Score3": 38.26
     },
     {
       "Ticker": "KEEL",
@@ -14360,9 +14360,9 @@
       "MDD": -81.16,
       "Calmar": 0.49,
       "Grade": "Bad",
-      "Score1": 30.34,
-      "Score2": 46.8,
-      "Score3": 31.57
+      "Score1": 42.3,
+      "Score2": 42.36,
+      "Score3": 51.91
     },
     {
       "Ticker": "KLIC",
@@ -14377,9 +14377,9 @@
       "MDD": -52.47,
       "Calmar": 0.48,
       "Grade": "Bad",
-      "Score1": 35.96,
-      "Score2": 45.11,
-      "Score3": 26.18
+      "Score1": 42.64,
+      "Score2": 36.74,
+      "Score3": 45.11
     },
     {
       "Ticker": "KYMR",
@@ -14394,9 +14394,9 @@
       "MDD": -59.83,
       "Calmar": 1.21,
       "Grade": "Bad",
-      "Score1": 43.6,
-      "Score2": 26.07,
-      "Score3": 48.03
+      "Score1": 37.53,
+      "Score2": 34.89,
+      "Score3": 48.37
     },
     {
       "Ticker": "LGND",
@@ -14411,9 +14411,9 @@
       "MDD": -29.91,
       "Calmar": 2.2,
       "Grade": "Best",
-      "Score1": 46.07,
-      "Score2": 50.96,
-      "Score3": 48.15
+      "Score1": 42.92,
+      "Score2": 59.21,
+      "Score3": 44.66
     },
     {
       "Ticker": "LNTH",
@@ -14428,9 +14428,9 @@
       "MDD": -59.46,
       "Calmar": 0.1,
       "Grade": "Bad",
-      "Score1": 42.81,
-      "Score2": 46.97,
-      "Score3": 31.35
+      "Score1": 37.7,
+      "Score2": 53.37,
+      "Score3": 32.98
     },
     {
       "Ticker": "LQDA",
@@ -14445,9 +14445,9 @@
       "MDD": -46.8,
       "Calmar": 2.59,
       "Grade": "Normal",
-      "Score1": 97.08,
-      "Score2": 68.26,
-      "Score3": 85.28
+      "Score1": 90.96,
+      "Score2": 66.29,
+      "Score3": 77.64
     },
     {
       "Ticker": "LSCC",
@@ -14462,9 +14462,9 @@
       "MDD": -61.09,
       "Calmar": 0.27,
       "Grade": "Bad",
-      "Score1": 50.67,
-      "Score2": 35.79,
-      "Score3": 19.44
+      "Score1": 57.02,
+      "Score2": 40.79,
+      "Score3": 31.91
     },
     {
       "Ticker": "MRVL",
@@ -14479,9 +14479,9 @@
       "MDD": -60.79,
       "Calmar": 0.82,
       "Grade": "Bad",
-      "Score1": 21.91,
-      "Score2": 64.1,
-      "Score3": 31.24
+      "Score1": 40.06,
+      "Score2": 49.49,
+      "Score3": 45.9
     },
     {
       "Ticker": "MU",
@@ -14496,9 +14496,9 @@
       "MDD": -57.63,
       "Calmar": 2.54,
       "Grade": "Bad",
-      "Score1": 41.69,
-      "Score2": 67.36,
-      "Score3": 60.67
+      "Score1": 51.35,
+      "Score2": 56.69,
+      "Score3": 74.33
     },
     {
       "Ticker": "MXL",
@@ -14513,9 +14513,9 @@
       "MDD": -73.09,
       "Calmar": 0.51,
       "Grade": "Bad",
-      "Score1": 53.03,
-      "Score2": 74.27,
-      "Score3": 52.42
+      "Score1": 61.4,
+      "Score2": 57.3,
+      "Score3": 61.52
     },
     {
       "Ticker": "MYRG",
@@ -14530,9 +14530,9 @@
       "MDD": -50.29,
       "Calmar": 0.8,
       "Grade": "Bad",
-      "Score1": 44.16,
-      "Score2": 33.99,
-      "Score3": 21.63
+      "Score1": 52.75,
+      "Score2": 36.46,
+      "Score3": 34.78
     },
     {
       "Ticker": "NTAP",
@@ -14547,9 +14547,9 @@
       "MDD": -42.61,
       "Calmar": 0.72,
       "Grade": "Normal",
-      "Score1": 61.8,
-      "Score2": 44.72,
-      "Score3": 52.47
+      "Score1": 52.75,
+      "Score2": 52.19,
+      "Score3": 42.7
     },
     {
       "Ticker": "OKTA",
@@ -14564,9 +14564,9 @@
       "MDD": -50.57,
       "Calmar": 0.5,
       "Grade": "Bad",
-      "Score1": 75.73,
-      "Score2": 6.29,
-      "Score3": 63.09
+      "Score1": 57.47,
+      "Score2": 23.37,
+      "Score3": 45.51
     },
     {
       "Ticker": "ORKA",
@@ -14581,9 +14581,9 @@
       "MDD": -77.76,
       "Calmar": 1.19,
       "Grade": "Bad",
-      "Score1": 54.49,
-      "Score2": 89.16,
-      "Score3": 61.35
+      "Score1": 60.06,
+      "Score2": 83.76,
+      "Score3": 69.44
     },
     {
       "Ticker": "OUST",
@@ -14598,9 +14598,9 @@
       "MDD": -64.0,
       "Calmar": 1.39,
       "Grade": "Bad",
-      "Score1": 17.08,
-      "Score2": 14.04,
-      "Score3": 30.67
+      "Score1": 19.61,
+      "Score2": 18.09,
+      "Score3": 34.49
     },
     {
       "Ticker": "PANW",
@@ -14615,9 +14615,9 @@
       "MDD": -36.01,
       "Calmar": 1.12,
       "Grade": "Good",
-      "Score1": 75.28,
-      "Score2": 43.31,
-      "Score3": 76.18
+      "Score1": 62.42,
+      "Score2": 42.25,
+      "Score3": 54.72
     },
     {
       "Ticker": "PENG",
@@ -14632,9 +14632,9 @@
       "MDD": -51.3,
       "Calmar": 0.63,
       "Grade": "Bad",
-      "Score1": 21.12,
-      "Score2": 61.97,
-      "Score3": 63.71
+      "Score1": 31.8,
+      "Score2": 45.39,
+      "Score3": 64.33
     },
     {
       "Ticker": "PENN",
@@ -14649,9 +14649,9 @@
       "MDD": -56.61,
       "Calmar": -0.13,
       "Grade": "Bad",
-      "Score1": 48.2,
-      "Score2": 33.26,
-      "Score3": 33.26
+      "Score1": 42.58,
+      "Score2": 44.89,
+      "Score3": 30.28
     },
     {
       "Ticker": "PTGX",
@@ -14666,9 +14666,9 @@
       "MDD": -31.58,
       "Calmar": 2.85,
       "Grade": "Good",
-      "Score1": 75.39,
-      "Score2": 51.63,
-      "Score3": 58.88
+      "Score1": 63.54,
+      "Score2": 57.98,
+      "Score3": 51.01
     },
     {
       "Ticker": "QURE",
@@ -14683,9 +14683,9 @@
       "MDD": -87.21,
       "Calmar": 0.68,
       "Grade": "Bad",
-      "Score1": 38.2,
-      "Score2": 36.29,
-      "Score3": 47.81
+      "Score1": 42.75,
+      "Score2": 30.28,
+      "Score3": 52.25
     },
     {
       "Ticker": "RELY",
@@ -14700,9 +14700,9 @@
       "MDD": -57.92,
       "Calmar": 0.11,
       "Grade": "Bad",
-      "Score1": 57.75,
-      "Score2": 27.08,
-      "Score3": 37.42
+      "Score1": 51.18,
+      "Score2": 32.3,
+      "Score3": 25.62
     },
     {
       "Ticker": "RLAY",
@@ -14717,9 +14717,9 @@
       "MDD": -84.13,
       "Calmar": 0.19,
       "Grade": "Bad",
-      "Score1": 40.79,
-      "Score2": 84.44,
-      "Score3": 56.24
+      "Score1": 53.99,
+      "Score2": 77.81,
+      "Score3": 63.76
     },
     {
       "Ticker": "ROIV",
@@ -14734,9 +14734,9 @@
       "MDD": -36.47,
       "Calmar": 1.28,
       "Grade": "Good",
-      "Score1": 57.87,
-      "Score2": 51.07,
-      "Score3": 42.19
+      "Score1": 57.19,
+      "Score2": 56.8,
+      "Score3": 42.87
     },
     {
       "Ticker": "RVMD",
@@ -14751,9 +14751,9 @@
       "MDD": -48.63,
       "Calmar": 1.86,
       "Grade": "Normal",
-      "Score1": 41.24,
-      "Score2": 66.35,
-      "Score3": 55.17
+      "Score1": 46.24,
+      "Score2": 60.45,
+      "Score3": 54.83
     },
     {
       "Ticker": "RXT",
@@ -14768,9 +14768,9 @@
       "MDD": -86.47,
       "Calmar": 0.21,
       "Grade": "Bad",
-      "Score1": 11.57,
-      "Score2": 56.4,
-      "Score3": 55.28
+      "Score1": 25.06,
+      "Score2": 38.2,
+      "Score3": 62.3
     },
     {
       "Ticker": "SIMO",
@@ -14785,9 +14785,9 @@
       "MDD": -52.84,
       "Calmar": 1.49,
       "Grade": "Bad",
-      "Score1": 42.92,
-      "Score2": 59.66,
-      "Score3": 55.0
+      "Score1": 52.3,
+      "Score2": 46.85,
+      "Score3": 62.02
     },
     {
       "Ticker": "SIRI",
@@ -14802,9 +14802,9 @@
       "MDD": -65.96,
       "Calmar": -0.34,
       "Grade": "Bad",
-      "Score1": 70.9,
-      "Score2": 39.72,
-      "Score3": 26.85
+      "Score1": 59.66,
+      "Score2": 52.36,
+      "Score3": 24.38
     },
     {
       "Ticker": "SITM",
@@ -14819,9 +14819,9 @@
       "MDD": -55.26,
       "Calmar": 1.24,
       "Grade": "Bad",
-      "Score1": 24.61,
-      "Score2": 28.09,
-      "Score3": 12.02
+      "Score1": 41.4,
+      "Score2": 30.34,
+      "Score3": 36.52
     },
     {
       "Ticker": "SLS",
@@ -14836,9 +14836,9 @@
       "MDD": -71.98,
       "Calmar": 1.3,
       "Grade": "Bad",
-      "Score1": 43.71,
-      "Score2": 72.02,
-      "Score3": 95.39
+      "Score1": 45.28,
+      "Score2": 59.27,
+      "Score3": 84.89
     },
     {
       "Ticker": "SMTC",
@@ -14853,9 +14853,9 @@
       "MDD": -68.45,
       "Calmar": 1.05,
       "Grade": "Bad",
-      "Score1": 19.33,
-      "Score2": 33.09,
-      "Score3": 24.33
+      "Score1": 33.71,
+      "Score2": 33.71,
+      "Score3": 39.94
     },
     {
       "Ticker": "SNEX",
@@ -14870,9 +14870,9 @@
       "MDD": -25.91,
       "Calmar": 2.35,
       "Grade": "Best",
-      "Score1": 39.21,
-      "Score2": 26.01,
-      "Score3": 8.48
+      "Score1": 44.38,
+      "Score2": 31.12,
+      "Score3": 30.06
     },
     {
       "Ticker": "STRL",
@@ -14887,9 +14887,9 @@
       "MDD": -47.67,
       "Calmar": 2.78,
       "Grade": "Normal",
-      "Score1": 31.57,
-      "Score2": 48.2,
-      "Score3": 38.93
+      "Score1": 45.17,
+      "Score2": 44.27,
+      "Score3": 53.03
     },
     {
       "Ticker": "STX",
@@ -14904,9 +14904,9 @@
       "MDD": -40.0,
       "Calmar": 3.87,
       "Grade": "Good",
-      "Score1": 59.21,
-      "Score2": 69.89,
-      "Score3": 50.0
+      "Score1": 68.54,
+      "Score2": 59.66,
+      "Score3": 68.48
     },
     {
       "Ticker": "SYRE",
@@ -14921,9 +14921,9 @@
       "MDD": -73.99,
       "Calmar": 1.2,
       "Grade": "Bad",
-      "Score1": 45.28,
-      "Score2": 90.79,
-      "Score3": 60.39
+      "Score1": 50.28,
+      "Score2": 80.67,
+      "Score3": 72.3
     },
     {
       "Ticker": "TGTX",
@@ -14938,9 +14938,9 @@
       "MDD": -67.71,
       "Calmar": 0.55,
       "Grade": "Bad",
-      "Score1": 47.08,
-      "Score2": 38.26,
-      "Score3": 48.03
+      "Score1": 39.83,
+      "Score2": 35.17,
+      "Score3": 42.98
     },
     {
       "Ticker": "TIGO",
@@ -14955,9 +14955,9 @@
       "MDD": -17.65,
       "Calmar": 5.22,
       "Grade": "Best",
-      "Score1": 81.01,
-      "Score2": 53.93,
-      "Score3": 41.85
+      "Score1": 68.71,
+      "Score2": 53.37,
+      "Score3": 40.11
     },
     {
       "Ticker": "TNGX",
@@ -14972,9 +14972,9 @@
       "MDD": -91.46,
       "Calmar": 1.16,
       "Grade": "Bad",
-      "Score1": 22.81,
-      "Score2": 57.92,
-      "Score3": 33.82
+      "Score1": 36.24,
+      "Score2": 43.88,
+      "Score3": 45.06
     },
     {
       "Ticker": "TRVI",
@@ -14989,9 +14989,9 @@
       "MDD": -56.68,
       "Calmar": 1.68,
       "Grade": "Bad",
-      "Score1": 30.22,
-      "Score2": 27.92,
-      "Score3": 33.65
+      "Score1": 33.6,
+      "Score2": 29.44,
+      "Score3": 43.93
     },
     {
       "Ticker": "TSEM",
@@ -15006,9 +15006,9 @@
       "MDD": -45.83,
       "Calmar": 1.98,
       "Grade": "Normal",
-      "Score1": 42.36,
-      "Score2": 41.97,
-      "Score3": 27.42
+      "Score1": 56.29,
+      "Score2": 39.27,
+      "Score3": 49.72
     },
     {
       "Ticker": "TVTX",
@@ -15023,9 +15023,9 @@
       "MDD": -69.51,
       "Calmar": 0.75,
       "Grade": "Bad",
-      "Score1": 53.03,
-      "Score2": 61.35,
-      "Score3": 49.83
+      "Score1": 59.55,
+      "Score2": 60.62,
+      "Score3": 54.16
     },
     {
       "Ticker": "TWST",
@@ -15040,9 +15040,9 @@
       "MDD": -58.97,
       "Calmar": 0.95,
       "Grade": "Bad",
-      "Score1": 60.67,
-      "Score2": 70.56,
-      "Score3": 69.55
+      "Score1": 58.65,
+      "Score2": 56.97,
+      "Score3": 60.56
     },
     {
       "Ticker": "TXG",
@@ -15057,9 +15057,9 @@
       "MDD": -88.66,
       "Calmar": -0.09,
       "Grade": "Bad",
-      "Score1": 93.48,
-      "Score2": 72.98,
-      "Score3": 90.67
+      "Score1": 80.67,
+      "Score2": 60.73,
+      "Score3": 68.43
     },
     {
       "Ticker": "UCTT",
@@ -15074,9 +15074,9 @@
       "MDD": -68.24,
       "Calmar": 0.61,
       "Grade": "Bad",
-      "Score1": 22.25,
-      "Score2": 56.85,
-      "Score3": 37.19
+      "Score1": 36.46,
+      "Score2": 45.17,
+      "Score3": 55.22
     },
     {
       "Ticker": "VCYT",
@@ -15091,9 +15091,9 @@
       "MDD": -50.09,
       "Calmar": 0.53,
       "Grade": "Bad",
-      "Score1": 57.42,
-      "Score2": 32.42,
-      "Score3": 54.55
+      "Score1": 48.88,
+      "Score2": 45.62,
+      "Score3": 49.78
     },
     {
       "Ticker": "VECO",
@@ -15108,9 +15108,9 @@
       "MDD": -64.2,
       "Calmar": 0.43,
       "Grade": "Bad",
-      "Score1": 6.85,
-      "Score2": 29.38,
-      "Score3": 10.62
+      "Score1": 27.58,
+      "Score2": 29.55,
+      "Score3": 36.74
     },
     {
       "Ticker": "VSAT",
@@ -15125,9 +15125,9 @@
       "MDD": -78.22,
       "Calmar": 0.43,
       "Grade": "Bad",
-      "Score1": 44.83,
-      "Score2": 30.84,
-      "Score3": 41.46
+      "Score1": 49.66,
+      "Score2": 49.1,
+      "Score3": 51.24
     },
     {
       "Ticker": "WDC",
@@ -15142,9 +15142,9 @@
       "MDD": -49.64,
       "Calmar": 3.42,
       "Grade": "Normal",
-      "Score1": 34.61,
-      "Score2": 61.01,
-      "Score3": 37.47
+      "Score1": 51.12,
+      "Score2": 50.0,
+      "Score3": 59.55
     },
     {
       "Ticker": "XENE",
@@ -15159,9 +15159,9 @@
       "MDD": -43.59,
       "Calmar": 0.49,
       "Grade": "Normal",
-      "Score1": 42.7,
-      "Score2": 20.73,
-      "Score3": 48.82
+      "Score1": 41.74,
+      "Score2": 34.49,
+      "Score3": 44.49
     },
     {
       "Ticker": "XMTR",
@@ -15176,9 +15176,9 @@
       "MDD": -70.44,
       "Calmar": 0.95,
       "Grade": "Bad",
-      "Score1": 78.65,
-      "Score2": 26.63,
-      "Score3": 58.54
+      "Score1": 63.65,
+      "Score2": 43.31,
+      "Score3": 54.49
     },
     {
       "Ticker": "ABSI",
@@ -15193,9 +15193,9 @@
       "MDD": -96.2,
       "Calmar": -0.19,
       "Grade": "Bad",
-      "Score1": 26.63,
-      "Score2": 58.82,
-      "Score3": 81.91
+      "Score1": 31.57,
+      "Score2": 48.54,
+      "Score3": 72.08
     },
     {
       "Ticker": "ACHC",
@@ -15210,9 +15210,9 @@
       "MDD": -86.89,
       "Calmar": -0.12,
       "Grade": "Bad",
-      "Score1": 59.55,
-      "Score2": 66.8,
-      "Score3": 68.48
+      "Score1": 51.4,
+      "Score2": 57.7,
+      "Score3": 47.42
     },
     {
       "Ticker": "ACMR",
@@ -15227,9 +15227,9 @@
       "MDD": -84.81,
       "Calmar": 0.3,
       "Grade": "Bad",
-      "Score1": 24.94,
-      "Score2": 24.16,
-      "Score3": 41.8
+      "Score1": 26.69,
+      "Score2": 27.19,
+      "Score3": 52.98
     },
     {
       "Ticker": "AGEN",
@@ -15244,9 +15244,9 @@
       "MDD": -98.84,
       "Calmar": -0.46,
       "Grade": "Bad",
-      "Score1": 26.85,
-      "Score2": 22.19,
-      "Score3": 66.12
+      "Score1": 17.75,
+      "Score2": 27.42,
+      "Score3": 40.51
     },
     {
       "Ticker": "ALKS",
@@ -15261,9 +15261,9 @@
       "MDD": -33.18,
       "Calmar": 0.5,
       "Grade": "Good",
-      "Score1": 73.48,
-      "Score2": 41.63,
-      "Score3": 58.2
+      "Score1": 61.18,
+      "Score2": 55.34,
+      "Score3": 50.67
     },
     {
       "Ticker": "AMAT",
@@ -15278,9 +15278,9 @@
       "MDD": -55.14,
       "Calmar": 0.6,
       "Grade": "Bad",
-      "Score1": 24.38,
-      "Score2": 33.03,
-      "Score3": 37.25
+      "Score1": 34.83,
+      "Score2": 33.76,
+      "Score3": 51.52
     },
     {
       "Ticker": "AMD",
@@ -15295,9 +15295,9 @@
       "MDD": -65.45,
       "Calmar": 0.66,
       "Grade": "Bad",
-      "Score1": 76.63,
-      "Score2": 76.24,
-      "Score3": 62.58
+      "Score1": 76.57,
+      "Score2": 73.26,
+      "Score3": 60.9
     },
     {
       "Ticker": "APGE",
@@ -15312,9 +15312,9 @@
       "MDD": -58.75,
       "Calmar": 1.44,
       "Grade": "Bad",
-      "Score1": 64.72,
-      "Score2": 55.17,
-      "Score3": 55.34
+      "Score1": 57.58,
+      "Score2": 43.6,
+      "Score3": 50.96
     },
     {
       "Ticker": "ARCB",
@@ -15329,9 +15329,9 @@
       "MDD": -62.45,
       "Calmar": 0.37,
       "Grade": "Bad",
-      "Score1": 73.03,
-      "Score2": 56.52,
-      "Score3": 53.43
+      "Score1": 68.65,
+      "Score2": 53.26,
+      "Score3": 45.39
     },
     {
       "Ticker": "ATAI",
@@ -15346,9 +15346,9 @@
       "MDD": -94.17,
       "Calmar": -0.17,
       "Grade": "Bad",
-      "Score1": 73.93,
-      "Score2": 40.06,
-      "Score3": 75.45
+      "Score1": 63.15,
+      "Score2": 39.94,
+      "Score3": 47.53
     },
     {
       "Ticker": "AVT",
@@ -15363,9 +15363,9 @@
       "MDD": -27.12,
       "Calmar": 0.76,
       "Grade": "Good",
-      "Score1": 73.82,
-      "Score2": 34.94,
-      "Score3": 22.7
+      "Score1": 71.18,
+      "Score2": 45.96,
+      "Score3": 31.35
     },
     {
       "Ticker": "BAND",
@@ -15380,9 +15380,9 @@
       "MDD": -92.91,
       "Calmar": -0.15,
       "Grade": "Bad",
-      "Score1": 71.35,
-      "Score2": 71.91,
-      "Score3": 91.97
+      "Score1": 64.72,
+      "Score2": 62.87,
+      "Score3": 80.06
     },
     {
       "Ticker": "BLZE",
@@ -15397,9 +15397,9 @@
       "MDD": -89.49,
       "Calmar": -0.09,
       "Grade": "Bad",
-      "Score1": 38.09,
-      "Score2": 51.8,
-      "Score3": 90.22
+      "Score1": 37.47,
+      "Score2": 37.87,
+      "Score3": 62.92
     },
     {
       "Ticker": "CBRL",
@@ -15414,9 +15414,9 @@
       "MDD": -79.95,
       "Calmar": -0.18,
       "Grade": "Bad",
-      "Score1": 76.74,
-      "Score2": 49.94,
-      "Score3": 73.2
+      "Score1": 57.42,
+      "Score2": 54.78,
+      "Score3": 45.45
     },
     {
       "Ticker": "CGNX",
@@ -15431,9 +15431,9 @@
       "MDD": -74.07,
       "Calmar": -0.08,
       "Grade": "Bad",
-      "Score1": 48.09,
-      "Score2": 23.88,
-      "Score3": 24.44
+      "Score1": 50.17,
+      "Score2": 32.81,
+      "Score3": 32.25
     },
     {
       "Ticker": "CLBK",
@@ -15448,9 +15448,9 @@
       "MDD": -42.66,
       "Calmar": 0.15,
       "Grade": "Bad",
-      "Score1": 82.02,
-      "Score2": 41.74,
-      "Score3": 58.2
+      "Score1": 63.99,
+      "Score2": 59.78,
+      "Score3": 49.1
     },
     {
       "Ticker": "CMPS",
@@ -15465,9 +15465,9 @@
       "MDD": -95.2,
       "Calmar": -0.21,
       "Grade": "Bad",
-      "Score1": 18.99,
-      "Score2": 28.6,
-      "Score3": 34.21
+      "Score1": 25.96,
+      "Score2": 23.2,
+      "Score3": 41.46
     },
     {
       "Ticker": "COHU",
@@ -15482,9 +15482,9 @@
       "MDD": -69.46,
       "Calmar": 0.12,
       "Grade": "Bad",
-      "Score1": 15.51,
-      "Score2": 50.22,
-      "Score3": 24.04
+      "Score1": 31.35,
+      "Score2": 42.02,
+      "Score3": 40.45
     },
     {
       "Ticker": "CORT",
@@ -15499,9 +15499,9 @@
       "MDD": -71.85,
       "Calmar": 0.49,
       "Grade": "Bad",
-      "Score1": 87.53,
-      "Score2": 57.47,
-      "Score3": 80.22
+      "Score1": 68.88,
+      "Score2": 64.72,
+      "Score3": 61.69
     },
     {
       "Ticker": "CRDO",
@@ -15516,9 +15516,9 @@
       "MDD": -62.04,
       "Calmar": 1.53,
       "Grade": "Bad",
-      "Score1": 23.82,
-      "Score2": 30.45,
-      "Score3": 20.73
+      "Score1": 38.54,
+      "Score2": 31.85,
+      "Score3": 36.29
     },
     {
       "Ticker": "CRNX",
@@ -15533,9 +15533,9 @@
       "MDD": -57.88,
       "Calmar": 0.58,
       "Grade": "Bad",
-      "Score1": 81.57,
-      "Score2": 34.78,
-      "Score3": 78.6
+      "Score1": 61.91,
+      "Score2": 35.22,
+      "Score3": 51.07
     },
     {
       "Ticker": "CROX",
@@ -15550,9 +15550,9 @@
       "MDD": -73.86,
       "Calmar": 0.01,
       "Grade": "Bad",
-      "Score1": 62.13,
-      "Score2": 44.94,
-      "Score3": 53.71
+      "Score1": 57.64,
+      "Score2": 56.97,
+      "Score3": 39.38
     },
     {
       "Ticker": "CRWD",
@@ -15567,9 +15567,9 @@
       "MDD": -67.69,
       "Calmar": 0.34,
       "Grade": "Bad",
-      "Score1": 68.43,
-      "Score2": 19.66,
-      "Score3": 59.66
+      "Score1": 57.3,
+      "Score2": 28.09,
+      "Score3": 45.51
     },
     {
       "Ticker": "CVLT",
@@ -15584,9 +15584,9 @@
       "MDD": -61.53,
       "Calmar": 0.18,
       "Grade": "Bad",
-      "Score1": 69.89,
-      "Score2": 20.45,
-      "Score3": 57.19
+      "Score1": 54.94,
+      "Score2": 29.72,
+      "Score3": 39.44
     },
     {
       "Ticker": "DAVE",
@@ -15601,9 +15601,9 @@
       "MDD": -99.01,
       "Calmar": 0.06,
       "Grade": "Bad",
-      "Score1": 73.93,
-      "Score2": 69.83,
-      "Score3": 80.28
+      "Score1": 63.15,
+      "Score2": 66.12,
+      "Score3": 56.69
     },
     {
       "Ticker": "DDOG",
@@ -15618,9 +15618,9 @@
       "MDD": -68.11,
       "Calmar": 0.25,
       "Grade": "Bad",
-      "Score1": 71.57,
-      "Score2": 26.29,
-      "Score3": 67.19
+      "Score1": 60.34,
+      "Score2": 33.2,
+      "Score3": 52.47
     },
     {
       "Ticker": "DFTX",
@@ -15635,9 +15635,9 @@
       "MDD": -95.41,
       "Calmar": -0.01,
       "Grade": "Bad",
-      "Score1": 45.96,
-      "Score2": 67.19,
-      "Score3": 86.57
+      "Score1": 44.66,
+      "Score2": 58.93,
+      "Score3": 79.16
     },
     {
       "Ticker": "DNTH",
@@ -15652,9 +15652,9 @@
       "MDD": -95.68,
       "Calmar": -0.03,
       "Grade": "Bad",
-      "Score1": 75.51,
-      "Score2": 73.93,
-      "Score3": 54.72
+      "Score1": 71.12,
+      "Score2": 73.15,
+      "Score3": 58.65
     },
     {
       "Ticker": "ELVN",
@@ -15669,9 +15669,9 @@
       "MDD": -83.33,
       "Calmar": 0.24,
       "Grade": "Bad",
-      "Score1": 44.72,
-      "Score2": 73.43,
-      "Score3": 46.35
+      "Score1": 43.15,
+      "Score2": 64.72,
+      "Score3": 43.43
     },
     {
       "Ticker": "EXTR",
@@ -15686,9 +15686,9 @@
       "MDD": -67.21,
       "Calmar": 0.36,
       "Grade": "Bad",
-      "Score1": 51.01,
-      "Score2": 45.62,
-      "Score3": 58.31
+      "Score1": 47.87,
+      "Score2": 40.73,
+      "Score3": 51.74
     },
     {
       "Ticker": "FCEL",
@@ -15703,9 +15703,9 @@
       "MDD": -98.89,
       "Calmar": -0.35,
       "Grade": "Bad",
-      "Score1": 32.47,
-      "Score2": 60.0,
-      "Score3": 68.09
+      "Score1": 43.99,
+      "Score2": 51.52,
+      "Score3": 72.7
     },
     {
       "Ticker": "FLEX",
@@ -15720,9 +15720,9 @@
       "MDD": -39.99,
       "Calmar": 1.48,
       "Grade": "Good",
-      "Score1": 30.34,
-      "Score2": 43.48,
-      "Score3": 36.12
+      "Score1": 39.44,
+      "Score2": 35.73,
+      "Score3": 41.97
     },
     {
       "Ticker": "FTNT",
@@ -15737,9 +15737,9 @@
       "MDD": -38.32,
       "Calmar": 0.6,
       "Grade": "Good",
-      "Score1": 69.78,
-      "Score2": 46.46,
-      "Score3": 64.1
+      "Score1": 56.18,
+      "Score2": 41.29,
+      "Score3": 48.43
     },
     {
       "Ticker": "GTX",
@@ -15754,9 +15754,9 @@
       "MDD": -31.48,
       "Calmar": 1.13,
       "Grade": "Good",
-      "Score1": 57.3,
-      "Score2": 49.89,
-      "Score3": 46.8
+      "Score1": 54.44,
+      "Score2": 46.69,
+      "Score3": 50.51
     },
     {
       "Ticker": "HUT",
@@ -15771,9 +15771,9 @@
       "MDD": -95.04,
       "Calmar": 0.42,
       "Grade": "Bad",
-      "Score1": 51.24,
-      "Score2": 45.51,
-      "Score3": 38.82
+      "Score1": 57.42,
+      "Score2": 43.93,
+      "Score3": 53.93
     },
     {
       "Ticker": "ICHR",
@@ -15788,9 +15788,9 @@
       "MDD": -72.74,
       "Calmar": 0.2,
       "Grade": "Bad",
-      "Score1": 41.12,
-      "Score2": 80.34,
-      "Score3": 56.4
+      "Score1": 53.2,
+      "Score2": 62.92,
+      "Score3": 63.65
     },
     {
       "Ticker": "INTC",
@@ -15805,9 +15805,9 @@
       "MDD": -65.03,
       "Calmar": 0.25,
       "Grade": "Bad",
-      "Score1": 33.82,
-      "Score2": 58.26,
-      "Score3": 26.69
+      "Score1": 45.39,
+      "Score2": 44.89,
+      "Score3": 47.02
     },
     {
       "Ticker": "IOVA",
@@ -15822,9 +15822,9 @@
       "MDD": -93.99,
       "Calmar": -0.28,
       "Grade": "Bad",
-      "Score1": 79.33,
-      "Score2": 45.17,
-      "Score3": 68.76
+      "Score1": 64.78,
+      "Score2": 51.85,
+      "Score3": 52.3
     },
     {
       "Ticker": "IRDM",
@@ -15839,9 +15839,9 @@
       "MDD": -75.34,
       "Calmar": 0.05,
       "Grade": "Bad",
-      "Score1": 49.21,
-      "Score2": 55.17,
-      "Score3": 45.28
+      "Score1": 46.24,
+      "Score2": 46.69,
+      "Score3": 41.46
     },
     {
       "Ticker": "JAZZ",
@@ -15856,9 +15856,9 @@
       "MDD": -43.98,
       "Calmar": 0.17,
       "Grade": "Bad",
-      "Score1": 72.02,
-      "Score2": 38.15,
-      "Score3": 41.29
+      "Score1": 61.18,
+      "Score2": 44.49,
+      "Score3": 38.26
     },
     {
       "Ticker": "KEEL",
@@ -15873,9 +15873,9 @@
       "MDD": -95.72,
       "Calmar": 0.08,
       "Grade": "Bad",
-      "Score1": 30.34,
-      "Score2": 46.8,
-      "Score3": 31.57
+      "Score1": 42.3,
+      "Score2": 42.36,
+      "Score3": 51.91
     },
     {
       "Ticker": "KLIC",
@@ -15890,9 +15890,9 @@
       "MDD": -60.45,
       "Calmar": 0.26,
       "Grade": "Bad",
-      "Score1": 35.96,
-      "Score2": 45.11,
-      "Score3": 26.18
+      "Score1": 42.64,
+      "Score2": 36.74,
+      "Score3": 45.11
     },
     {
       "Ticker": "KYMR",
@@ -15907,9 +15907,9 @@
       "MDD": -83.54,
       "Calmar": 0.16,
       "Grade": "Bad",
-      "Score1": 43.6,
-      "Score2": 26.07,
-      "Score3": 48.03
+      "Score1": 37.53,
+      "Score2": 34.89,
+      "Score3": 48.37
     },
     {
       "Ticker": "LGND",
@@ -15924,9 +15924,9 @@
       "MDD": -55.06,
       "Calmar": 0.58,
       "Grade": "Bad",
-      "Score1": 46.07,
-      "Score2": 50.96,
-      "Score3": 48.15
+      "Score1": 42.92,
+      "Score2": 59.21,
+      "Score3": 44.66
     },
     {
       "Ticker": "LNTH",
@@ -15941,9 +15941,9 @@
       "MDD": -59.46,
       "Calmar": 0.55,
       "Grade": "Bad",
-      "Score1": 42.81,
-      "Score2": 46.97,
-      "Score3": 31.35
+      "Score1": 37.7,
+      "Score2": 53.37,
+      "Score3": 32.98
     },
     {
       "Ticker": "LQDA",
@@ -15958,9 +15958,9 @@
       "MDD": -55.36,
       "Calmar": 1.89,
       "Grade": "Bad",
-      "Score1": 97.08,
-      "Score2": 68.26,
-      "Score3": 85.28
+      "Score1": 90.96,
+      "Score2": 66.29,
+      "Score3": 77.64
     },
     {
       "Ticker": "LSCC",
@@ -15975,9 +15975,9 @@
       "MDD": -61.09,
       "Calmar": 0.34,
       "Grade": "Bad",
-      "Score1": 50.67,
-      "Score2": 35.79,
-      "Score3": 19.44
+      "Score1": 57.02,
+      "Score2": 40.79,
+      "Score3": 31.91
     },
     {
       "Ticker": "MRVL",
@@ -15992,9 +15992,9 @@
       "MDD": -61.88,
       "Calmar": 0.48,
       "Grade": "Bad",
-      "Score1": 21.91,
-      "Score2": 64.1,
-      "Score3": 31.24
+      "Score1": 40.06,
+      "Score2": 49.49,
+      "Score3": 45.9
     },
     {
       "Ticker": "MU",
@@ -16009,9 +16009,9 @@
       "MDD": -57.63,
       "Calmar": 1.17,
       "Grade": "Bad",
-      "Score1": 41.69,
-      "Score2": 67.36,
-      "Score3": 60.67
+      "Score1": 51.35,
+      "Score2": 56.69,
+      "Score3": 74.33
     },
     {
       "Ticker": "MXL",
@@ -16026,9 +16026,9 @@
       "MDD": -88.13,
       "Calmar": 0.18,
       "Grade": "Bad",
-      "Score1": 53.03,
-      "Score2": 74.27,
-      "Score3": 52.42
+      "Score1": 61.4,
+      "Score2": 57.3,
+      "Score3": 61.52
     },
     {
       "Ticker": "MYRG",
@@ -16043,9 +16043,9 @@
       "MDD": -50.29,
       "Calmar": 0.67,
       "Grade": "Bad",
-      "Score1": 44.16,
-      "Score2": 33.99,
-      "Score3": 21.63
+      "Score1": 52.75,
+      "Score2": 36.46,
+      "Score3": 34.78
     },
     {
       "Ticker": "NTAP",
@@ -16060,9 +16060,9 @@
       "MDD": -42.61,
       "Calmar": 0.45,
       "Grade": "Normal",
-      "Score1": 61.8,
-      "Score2": 44.72,
-      "Score3": 52.47
+      "Score1": 52.75,
+      "Score2": 52.19,
+      "Score3": 42.7
     },
     {
       "Ticker": "OKTA",
@@ -16077,9 +16077,9 @@
       "MDD": -83.43,
       "Calmar": -0.14,
       "Grade": "Bad",
-      "Score1": 75.73,
-      "Score2": 6.29,
-      "Score3": 63.09
+      "Score1": 57.47,
+      "Score2": 23.37,
+      "Score3": 45.51
     },
     {
       "Ticker": "ORKA",
@@ -16094,9 +16094,9 @@
       "MDD": -77.76,
       "Calmar": 0.48,
       "Grade": "Bad",
-      "Score1": 54.49,
-      "Score2": 89.16,
-      "Score3": 61.35
+      "Score1": 60.06,
+      "Score2": 83.76,
+      "Score3": 69.44
     },
     {
       "Ticker": "OUST",
@@ -16111,9 +16111,9 @@
       "MDD": -96.9,
       "Calmar": -0.17,
       "Grade": "Bad",
-      "Score1": 17.08,
-      "Score2": 14.04,
-      "Score3": 30.67
+      "Score1": 19.61,
+      "Score2": 18.09,
+      "Score3": 34.49
     },
     {
       "Ticker": "PANW",
@@ -16128,9 +16128,9 @@
       "MDD": -36.01,
       "Calmar": 1.06,
       "Grade": "Good",
-      "Score1": 75.28,
-      "Score2": 43.31,
-      "Score3": 76.18
+      "Score1": 62.42,
+      "Score2": 42.25,
+      "Score3": 54.72
     },
     {
       "Ticker": "PENG",
@@ -16145,9 +16145,9 @@
       "MDD": -65.4,
       "Calmar": 0.31,
       "Grade": "Bad",
-      "Score1": 21.12,
-      "Score2": 61.97,
-      "Score3": 63.71
+      "Score1": 31.8,
+      "Score2": 45.39,
+      "Score3": 64.33
     },
     {
       "Ticker": "PENN",
@@ -16162,9 +16162,9 @@
       "MDD": -86.14,
       "Calmar": -0.25,
       "Grade": "Bad",
-      "Score1": 48.2,
-      "Score2": 33.26,
-      "Score3": 33.26
+      "Score1": 42.58,
+      "Score2": 44.89,
+      "Score3": 30.28
     },
     {
       "Ticker": "PTGX",
@@ -16179,9 +16179,9 @@
       "MDD": -85.79,
       "Calmar": 0.28,
       "Grade": "Bad",
-      "Score1": 75.39,
-      "Score2": 51.63,
-      "Score3": 58.88
+      "Score1": 63.54,
+      "Score2": 57.98,
+      "Score3": 51.01
     },
     {
       "Ticker": "QURE",
@@ -16196,9 +16196,9 @@
       "MDD": -90.11,
       "Calmar": 0.1,
       "Grade": "Bad",
-      "Score1": 38.2,
-      "Score2": 36.29,
-      "Score3": 47.81
+      "Score1": 42.75,
+      "Score2": 30.28,
+      "Score3": 52.25
     },
     {
       "Ticker": "RELY",
@@ -16213,9 +16213,9 @@
       "MDD": -84.39,
       "Calmar": -0.17,
       "Grade": "Bad",
-      "Score1": 57.75,
-      "Score2": 27.08,
-      "Score3": 37.42
+      "Score1": 51.18,
+      "Score2": 32.3,
+      "Score3": 25.62
     },
     {
       "Ticker": "RLAY",
@@ -16230,9 +16230,9 @@
       "MDD": -94.65,
       "Calmar": -0.12,
       "Grade": "Bad",
-      "Score1": 40.79,
-      "Score2": 84.44,
-      "Score3": 56.24
+      "Score1": 53.99,
+      "Score2": 77.81,
+      "Score3": 63.76
     },
     {
       "Ticker": "ROIV",
@@ -16247,9 +16247,9 @@
       "MDD": -79.22,
       "Calmar": 0.36,
       "Grade": "Bad",
-      "Score1": 57.87,
-      "Score2": 51.07,
-      "Score3": 42.19
+      "Score1": 57.19,
+      "Score2": 56.8,
+      "Score3": 42.87
     },
     {
       "Ticker": "RVMD",
@@ -16264,9 +16264,9 @@
       "MDD": -56.85,
       "Calmar": 0.79,
       "Grade": "Bad",
-      "Score1": 41.24,
-      "Score2": 66.35,
-      "Score3": 55.17
+      "Score1": 46.24,
+      "Score2": 60.45,
+      "Score3": 54.83
     },
     {
       "Ticker": "RXT",
@@ -16281,9 +16281,9 @@
       "MDD": -97.79,
       "Calmar": -0.27,
       "Grade": "Bad",
-      "Score1": 11.57,
-      "Score2": 56.4,
-      "Score3": 55.28
+      "Score1": 25.06,
+      "Score2": 38.2,
+      "Score3": 62.3
     },
     {
       "Ticker": "SIMO",
@@ -16298,9 +16298,9 @@
       "MDD": -56.49,
       "Calmar": 0.68,
       "Grade": "Bad",
-      "Score1": 42.92,
-      "Score2": 59.66,
-      "Score3": 55.0
+      "Score1": 52.3,
+      "Score2": 46.85,
+      "Score3": 62.02
     },
     {
       "Ticker": "SIRI",
@@ -16315,9 +16315,9 @@
       "MDD": -73.85,
       "Calmar": -0.15,
       "Grade": "Bad",
-      "Score1": 70.9,
-      "Score2": 39.72,
-      "Score3": 26.85
+      "Score1": 59.66,
+      "Score2": 52.36,
+      "Score3": 24.38
     },
     {
       "Ticker": "SITM",
@@ -16332,9 +16332,9 @@
       "MDD": -78.12,
       "Calmar": 0.46,
       "Grade": "Bad",
-      "Score1": 24.61,
-      "Score2": 28.09,
-      "Score3": 12.02
+      "Score1": 41.4,
+      "Score2": 30.34,
+      "Score3": 36.52
     },
     {
       "Ticker": "SLS",
@@ -16349,9 +16349,9 @@
       "MDD": -95.16,
       "Calmar": 0.07,
       "Grade": "Bad",
-      "Score1": 43.71,
-      "Score2": 72.02,
-      "Score3": 95.39
+      "Score1": 45.28,
+      "Score2": 59.27,
+      "Score3": 84.89
     },
     {
       "Ticker": "SMTC",
@@ -16366,9 +16366,9 @@
       "MDD": -85.4,
       "Calmar": 0.21,
       "Grade": "Bad",
-      "Score1": 19.33,
-      "Score2": 33.09,
-      "Score3": 24.33
+      "Score1": 33.71,
+      "Score2": 33.71,
+      "Score3": 39.94
     },
     {
       "Ticker": "SNEX",
@@ -16383,9 +16383,9 @@
       "MDD": -25.91,
       "Calmar": 1.65,
       "Grade": "Best",
-      "Score1": 39.21,
-      "Score2": 26.01,
-      "Score3": 8.48
+      "Score1": 44.38,
+      "Score2": 31.12,
+      "Score3": 30.06
     },
     {
       "Ticker": "STRL",
@@ -16400,9 +16400,9 @@
       "MDD": -47.67,
       "Calmar": 2.16,
       "Grade": "Normal",
-      "Score1": 31.57,
-      "Score2": 48.2,
-      "Score3": 38.93
+      "Score1": 45.17,
+      "Score2": 44.27,
+      "Score3": 53.03
     },
     {
       "Ticker": "STX",
@@ -16417,9 +16417,9 @@
       "MDD": -56.99,
       "Calmar": 1.15,
       "Grade": "Bad",
-      "Score1": 59.21,
-      "Score2": 69.89,
-      "Score3": 50.0
+      "Score1": 68.54,
+      "Score2": 59.66,
+      "Score3": 68.48
     },
     {
       "Ticker": "SYRE",
@@ -16434,9 +16434,9 @@
       "MDD": -98.74,
       "Calmar": -0.1,
       "Grade": "Bad",
-      "Score1": 45.28,
-      "Score2": 90.79,
-      "Score3": 60.39
+      "Score1": 50.28,
+      "Score2": 80.67,
+      "Score3": 72.3
     },
     {
       "Ticker": "TGTX",
@@ -16451,9 +16451,9 @@
       "MDD": -89.78,
       "Calmar": 0.08,
       "Grade": "Bad",
-      "Score1": 47.08,
-      "Score2": 38.26,
-      "Score3": 48.03
+      "Score1": 39.83,
+      "Score2": 35.17,
+      "Score3": 42.98
     },
     {
       "Ticker": "TIGO",
@@ -16468,9 +16468,9 @@
       "MDD": -75.08,
       "Calmar": 0.31,
       "Grade": "Bad",
-      "Score1": 81.01,
-      "Score2": 53.93,
-      "Score3": 41.85
+      "Score1": 68.71,
+      "Score2": 53.37,
+      "Score3": 40.11
     },
     {
       "Ticker": "TNGX",
@@ -16485,9 +16485,9 @@
       "MDD": -93.64,
       "Calmar": 0.23,
       "Grade": "Bad",
-      "Score1": 22.81,
-      "Score2": 57.92,
-      "Score3": 33.82
+      "Score1": 36.24,
+      "Score2": 43.88,
+      "Score3": 45.06
     },
     {
       "Ticker": "TRVI",
@@ -16502,9 +16502,9 @@
       "MDD": -78.1,
       "Calmar": 0.7,
       "Grade": "Bad",
-      "Score1": 30.22,
-      "Score2": 27.92,
-      "Score3": 33.65
+      "Score1": 33.6,
+      "Score2": 29.44,
+      "Score3": 43.93
     },
     {
       "Ticker": "TSEM",
@@ -16519,9 +16519,9 @@
       "MDD": -55.39,
       "Calmar": 1.02,
       "Grade": "Bad",
-      "Score1": 42.36,
-      "Score2": 41.97,
-      "Score3": 27.42
+      "Score1": 56.29,
+      "Score2": 39.27,
+      "Score3": 49.72
     },
     {
       "Ticker": "TVTX",
@@ -16536,9 +16536,9 @@
       "MDD": -83.12,
       "Calmar": 0.41,
       "Grade": "Bad",
-      "Score1": 53.03,
-      "Score2": 61.35,
-      "Score3": 49.83
+      "Score1": 59.55,
+      "Score2": 60.62,
+      "Score3": 54.16
     },
     {
       "Ticker": "TWST",
@@ -16553,9 +16553,9 @@
       "MDD": -91.54,
       "Calmar": -0.05,
       "Grade": "Bad",
-      "Score1": 60.67,
-      "Score2": 70.56,
-      "Score3": 69.55
+      "Score1": 58.65,
+      "Score2": 56.97,
+      "Score3": 60.56
     },
     {
       "Ticker": "TXG",
@@ -16570,9 +16570,9 @@
       "MDD": -96.26,
       "Calmar": -0.25,
       "Grade": "Bad",
-      "Score1": 93.48,
-      "Score2": 72.98,
-      "Score3": 90.67
+      "Score1": 80.67,
+      "Score2": 60.73,
+      "Score3": 68.43
     },
     {
       "Ticker": "UCTT",
@@ -16587,9 +16587,9 @@
       "MDD": -70.43,
       "Calmar": 0.2,
       "Grade": "Bad",
-      "Score1": 22.25,
-      "Score2": 56.85,
-      "Score3": 37.19
+      "Score1": 36.46,
+      "Score2": 45.17,
+      "Score3": 55.22
     },
     {
       "Ticker": "VCYT",
@@ -16604,9 +16604,9 @@
       "MDD": -71.54,
       "Calmar": 0.11,
       "Grade": "Bad",
-      "Score1": 57.42,
-      "Score2": 32.42,
-      "Score3": 54.55
+      "Score1": 48.88,
+      "Score2": 45.62,
+      "Score3": 49.78
     },
     {
       "Ticker": "VECO",
@@ -16621,9 +16621,9 @@
       "MDD": -64.2,
       "Calmar": 0.3,
       "Grade": "Bad",
-      "Score1": 6.85,
-      "Score2": 29.38,
-      "Score3": 10.62
+      "Score1": 27.58,
+      "Score2": 29.55,
+      "Score3": 36.74
     },
     {
       "Ticker": "VSAT",
@@ -16638,9 +16638,9 @@
       "MDD": -89.81,
       "Calmar": 0.09,
       "Grade": "Bad",
-      "Score1": 44.83,
-      "Score2": 30.84,
-      "Score3": 41.46
+      "Score1": 49.66,
+      "Score2": 49.1,
+      "Score3": 51.24
     },
     {
       "Ticker": "WDC",
@@ -16655,9 +16655,9 @@
       "MDD": -56.07,
       "Calmar": 1.14,
       "Grade": "Bad",
-      "Score1": 34.61,
-      "Score2": 61.01,
-      "Score3": 37.47
+      "Score1": 51.12,
+      "Score2": 50.0,
+      "Score3": 59.55
     },
     {
       "Ticker": "XENE",
@@ -16672,9 +16672,9 @@
       "MDD": -43.59,
       "Calmar": 0.68,
       "Grade": "Normal",
-      "Score1": 42.7,
-      "Score2": 20.73,
-      "Score3": 48.82
+      "Score1": 41.74,
+      "Score2": 34.49,
+      "Score3": 44.49
     },
     {
       "Ticker": "XMTR",
@@ -16689,9 +16689,9 @@
       "MDD": -86.13,
       "Calmar": 0.07,
       "Grade": "Bad",
-      "Score1": 78.65,
-      "Score2": 26.63,
-      "Score3": 58.54
+      "Score1": 63.65,
+      "Score2": 43.31,
+      "Score3": 54.49
     }
   ],
   "MARKET_INDICES": [
@@ -16751,9 +16751,9 @@
       "MDD": -12.77,
       "Calmar": 5.19,
       "Grade": "Best",
-      "Score1": 85.69,
-      "Score2": 38.62,
-      "Score3": 63.08
+      "Score1": 75.77,
+      "Score2": 48.62,
+      "Score3": 52.08
     },
     {
       "Ticker": "ALL",
@@ -16768,9 +16768,9 @@
       "MDD": -11.48,
       "Calmar": 2.89,
       "Grade": "Best",
-      "Score1": 58.77,
-      "Score2": 25.38,
-      "Score3": 49.92
+      "Score1": 53.62,
+      "Score2": 37.77,
+      "Score3": 41.46
     },
     {
       "Ticker": "AMAT",
@@ -16785,9 +16785,9 @@
       "MDD": -27.29,
       "Calmar": 6.95,
       "Grade": "Best",
-      "Score1": 15.38,
-      "Score2": 48.46,
-      "Score3": 50.85
+      "Score1": 29.85,
+      "Score2": 36.15,
+      "Score3": 63.77
     },
     {
       "Ticker": "AMD",
@@ -16802,9 +16802,9 @@
       "MDD": -27.76,
       "Calmar": 9.07,
       "Grade": "Best",
-      "Score1": 59.08,
-      "Score2": 84.62,
-      "Score3": 72.23
+      "Score1": 60.62,
+      "Score2": 73.08,
+      "Score3": 67.69
     },
     {
       "Ticker": "BBY",
@@ -16819,9 +16819,9 @@
       "MDD": -32.01,
       "Calmar": 1.22,
       "Grade": "Good",
-      "Score1": 69.38,
-      "Score2": 32.15,
-      "Score3": 75.08
+      "Score1": 60.46,
+      "Score2": 38.46,
+      "Score3": 50.23
     },
     {
       "Ticker": "BEN",
@@ -16836,9 +16836,9 @@
       "MDD": -19.21,
       "Calmar": 2.11,
       "Grade": "Best",
-      "Score1": 31.54,
-      "Score2": 25.15,
-      "Score3": 32.69
+      "Score1": 33.69,
+      "Score2": 42.15,
+      "Score3": 41.77
     },
     {
       "Ticker": "BNY",
@@ -16853,9 +16853,9 @@
       "MDD": -10.15,
       "Calmar": 6.48,
       "Grade": "Best",
-      "Score1": 69.08,
-      "Score2": 46.08,
-      "Score3": 59.62
+      "Score1": 66.54,
+      "Score2": 48.46,
+      "Score3": 55.23
     },
     {
       "Ticker": "CASY",
@@ -16870,9 +16870,9 @@
       "MDD": -16.07,
       "Calmar": 4.1,
       "Grade": "Best",
-      "Score1": 31.85,
-      "Score2": 43.08,
-      "Score3": 31.62
+      "Score1": 35.92,
+      "Score2": 38.54,
+      "Score3": 40.0
     },
     {
       "Ticker": "CAT",
@@ -16887,9 +16887,9 @@
       "MDD": -18.69,
       "Calmar": 6.36,
       "Grade": "Best",
-      "Score1": 12.46,
-      "Score2": 39.0,
-      "Score3": 24.15
+      "Score1": 31.38,
+      "Score2": 33.15,
+      "Score3": 48.77
     },
     {
       "Ticker": "CF",
@@ -16904,9 +16904,9 @@
       "MDD": -25.45,
       "Calmar": 1.69,
       "Grade": "Best",
-      "Score1": 72.92,
-      "Score2": 37.0,
-      "Score3": 47.85
+      "Score1": 68.23,
+      "Score2": 38.0,
+      "Score3": 31.23
     },
     {
       "Ticker": "CNC",
@@ -16921,9 +16921,9 @@
       "MDD": -32.73,
       "Calmar": 4.28,
       "Grade": "Good",
-      "Score1": 61.38,
-      "Score2": 65.92,
-      "Score3": 66.0
+      "Score1": 56.62,
+      "Score2": 60.77,
+      "Score3": 65.0
     },
     {
       "Ticker": "CRWD",
@@ -16938,9 +16938,9 @@
       "MDD": -37.18,
       "Calmar": 1.52,
       "Grade": "Good",
-      "Score1": 52.92,
-      "Score2": 41.77,
-      "Score3": 80.15
+      "Score1": 47.92,
+      "Score2": 37.46,
+      "Score3": 63.69
     },
     {
       "Ticker": "CSCO",
@@ -16955,9 +16955,9 @@
       "MDD": -15.33,
       "Calmar": 4.41,
       "Grade": "Best",
-      "Score1": 24.77,
-      "Score2": 41.77,
-      "Score3": 42.23
+      "Score1": 34.38,
+      "Score2": 36.69,
+      "Score3": 54.38
     },
     {
       "Ticker": "CSX",
@@ -16972,9 +16972,9 @@
       "MDD": -11.89,
       "Calmar": 3.99,
       "Grade": "Best",
-      "Score1": 72.62,
-      "Score2": 38.85,
-      "Score3": 43.85
+      "Score1": 68.54,
+      "Score2": 45.38,
+      "Score3": 42.31
     },
     {
       "Ticker": "CVS",
@@ -16989,9 +16989,9 @@
       "MDD": -16.44,
       "Calmar": 4.97,
       "Grade": "Best",
-      "Score1": 75.85,
-      "Score2": 59.15,
-      "Score3": 68.31
+      "Score1": 64.46,
+      "Score2": 51.92,
+      "Score3": 63.15
     },
     {
       "Ticker": "DAL",
@@ -17006,9 +17006,9 @@
       "MDD": -22.9,
       "Calmar": 2.24,
       "Grade": "Best",
-      "Score1": 28.0,
-      "Score2": 14.92,
-      "Score3": 32.85
+      "Score1": 31.46,
+      "Score2": 24.23,
+      "Score3": 43.85
     },
     {
       "Ticker": "DDOG",
@@ -17023,9 +17023,9 @@
       "MDD": -48.62,
       "Calmar": 1.42,
       "Grade": "Normal",
-      "Score1": 54.0,
-      "Score2": 44.92,
-      "Score3": 83.23
+      "Score1": 49.54,
+      "Score2": 42.62,
+      "Score3": 70.46
     },
     {
       "Ticker": "DELL",
@@ -17040,9 +17040,9 @@
       "MDD": -32.35,
       "Calmar": 7.68,
       "Grade": "Good",
-      "Score1": 63.38,
-      "Score2": 89.08,
-      "Score3": 75.15
+      "Score1": 66.85,
+      "Score2": 75.0,
+      "Score3": 76.31
     },
     {
       "Ticker": "DOC",
@@ -17057,9 +17057,9 @@
       "MDD": -17.09,
       "Calmar": 1.7,
       "Grade": "Best",
-      "Score1": 54.15,
-      "Score2": 28.38,
-      "Score3": 60.38
+      "Score1": 38.15,
+      "Score2": 28.54,
+      "Score3": 35.08
     },
     {
       "Ticker": "DVA",
@@ -17074,9 +17074,9 @@
       "MDD": -31.36,
       "Calmar": 2.12,
       "Grade": "Good",
-      "Score1": 78.0,
-      "Score2": 82.38,
-      "Score3": 80.85
+      "Score1": 71.31,
+      "Score2": 77.85,
+      "Score3": 72.31
     },
     {
       "Ticker": "EIX",
@@ -17091,9 +17091,9 @@
       "MDD": -10.4,
       "Calmar": 6.4,
       "Grade": "Best",
-      "Score1": 85.38,
-      "Score2": 42.85,
-      "Score3": 53.38
+      "Score1": 78.54,
+      "Score2": 53.23,
+      "Score3": 49.46
     },
     {
       "Ticker": "EOG",
@@ -17108,9 +17108,9 @@
       "MDD": -18.5,
       "Calmar": 1.51,
       "Grade": "Best",
-      "Score1": 67.23,
-      "Score2": 30.08,
-      "Score3": 35.62
+      "Score1": 57.23,
+      "Score2": 42.0,
+      "Score3": 33.85
     },
     {
       "Ticker": "FANG",
@@ -17125,9 +17125,9 @@
       "MDD": -19.09,
       "Calmar": 2.56,
       "Grade": "Best",
-      "Score1": 63.38,
-      "Score2": 25.08,
-      "Score3": 26.23
+      "Score1": 61.38,
+      "Score2": 42.54,
+      "Score3": 34.46
     },
     {
       "Ticker": "FFIV",
@@ -17142,9 +17142,9 @@
       "MDD": -34.73,
       "Calmar": 0.96,
       "Grade": "Good",
-      "Score1": 51.54,
-      "Score2": 36.38,
-      "Score3": 51.46
+      "Score1": 43.85,
+      "Score2": 45.69,
+      "Score3": 46.31
     },
     {
       "Ticker": "FLEX",
@@ -17159,9 +17159,9 @@
       "MDD": -26.42,
       "Calmar": 5.24,
       "Grade": "Best",
-      "Score1": 18.0,
-      "Score2": 55.46,
-      "Score3": 45.31
+      "Score1": 31.92,
+      "Score2": 38.85,
+      "Score3": 54.0
     },
     {
       "Ticker": "FRT",
@@ -17176,9 +17176,9 @@
       "MDD": -6.97,
       "Calmar": 5.49,
       "Grade": "Best",
-      "Score1": 58.15,
-      "Score2": 33.92,
-      "Score3": 27.15
+      "Score1": 49.62,
+      "Score2": 39.38,
+      "Score3": 29.38
     },
     {
       "Ticker": "FTNT",
@@ -17193,9 +17193,9 @@
       "MDD": -29.19,
       "Calmar": 1.54,
       "Grade": "Best",
-      "Score1": 48.77,
-      "Score2": 58.77,
-      "Score3": 73.23
+      "Score1": 42.23,
+      "Score2": 45.92,
+      "Score3": 61.23
     },
     {
       "Ticker": "GL",
@@ -17210,9 +17210,9 @@
       "MDD": -10.87,
       "Calmar": 4.99,
       "Grade": "Best",
-      "Score1": 69.38,
-      "Score2": 47.92,
-      "Score3": 50.46
+      "Score1": 63.38,
+      "Score2": 59.0,
+      "Score3": 51.54
     },
     {
       "Ticker": "HPE",
@@ -17227,9 +17227,9 @@
       "MDD": -26.36,
       "Calmar": 5.23,
       "Grade": "Best",
-      "Score1": 46.0,
-      "Score2": 84.0,
-      "Score3": 64.69
+      "Score1": 50.69,
+      "Score2": 69.46,
+      "Score3": 65.23
     },
     {
       "Ticker": "HPQ",
@@ -17244,9 +17244,9 @@
       "MDD": -36.64,
       "Calmar": 0.17,
       "Grade": "Bad",
-      "Score1": 57.85,
-      "Score2": 26.85,
-      "Score3": 50.54
+      "Score1": 45.69,
+      "Score2": 29.62,
+      "Score3": 31.46
     },
     {
       "Ticker": "HST",
@@ -17261,9 +17261,9 @@
       "MDD": -9.49,
       "Calmar": 6.84,
       "Grade": "Best",
-      "Score1": 55.08,
-      "Score2": 73.23,
-      "Score3": 50.46
+      "Score1": 57.77,
+      "Score2": 70.54,
+      "Score3": 56.0
     },
     {
       "Ticker": "HUM",
@@ -17278,9 +17278,9 @@
       "MDD": -47.18,
       "Calmar": 1.71,
       "Grade": "Normal",
-      "Score1": 39.38,
-      "Score2": 71.69,
-      "Score3": 86.92
+      "Score1": 38.08,
+      "Score2": 69.62,
+      "Score3": 71.62
     },
     {
       "Ticker": "HWM",
@@ -17295,9 +17295,9 @@
       "MDD": -15.89,
       "Calmar": 3.13,
       "Grade": "Best",
-      "Score1": 43.08,
-      "Score2": 34.15,
-      "Score3": 33.62
+      "Score1": 48.23,
+      "Score2": 37.46,
+      "Score3": 41.85
     },
     {
       "Ticker": "INTC",
@@ -17312,9 +17312,9 @@
       "MDD": -32.57,
       "Calmar": 10.48,
       "Grade": "Good",
-      "Score1": 21.85,
-      "Score2": 63.54,
-      "Score3": 39.54
+      "Score1": 33.23,
+      "Score2": 43.15,
+      "Score3": 49.85
     },
     {
       "Ticker": "IRM",
@@ -17329,9 +17329,9 @@
       "MDD": -25.15,
       "Calmar": 1.21,
       "Grade": "Best",
-      "Score1": 22.15,
-      "Score2": 44.38,
-      "Score3": 25.46
+      "Score1": 28.77,
+      "Score2": 47.62,
+      "Score3": 36.69
     },
     {
       "Ticker": "JBHT",
@@ -17346,9 +17346,9 @@
       "MDD": -15.87,
       "Calmar": 6.3,
       "Grade": "Best",
-      "Score1": 66.62,
-      "Score2": 54.15,
-      "Score3": 56.31
+      "Score1": 65.85,
+      "Score2": 50.08,
+      "Score3": 59.15
     },
     {
       "Ticker": "KIM",
@@ -17363,9 +17363,9 @@
       "MDD": -12.69,
       "Calmar": 2.09,
       "Grade": "Best",
-      "Score1": 55.38,
-      "Score2": 36.77,
-      "Score3": 30.62
+      "Score1": 50.38,
+      "Score2": 40.31,
+      "Score3": 25.69
     },
     {
       "Ticker": "KLAC",
@@ -17380,9 +17380,9 @@
       "MDD": -31.19,
       "Calmar": 4.18,
       "Grade": "Good",
-      "Score1": 14.0,
-      "Score2": 24.92,
-      "Score3": 20.0
+      "Score1": 31.54,
+      "Score2": 28.31,
+      "Score3": 48.46
     },
     {
       "Ticker": "LRCX",
@@ -17397,9 +17397,9 @@
       "MDD": -29.21,
       "Calmar": 7.38,
       "Grade": "Best",
-      "Score1": 10.77,
-      "Score2": 29.0,
-      "Score3": 28.77
+      "Score1": 30.46,
+      "Score2": 29.23,
+      "Score3": 54.0
     },
     {
       "Ticker": "MGM",
@@ -17414,9 +17414,9 @@
       "MDD": -22.76,
       "Calmar": 0.98,
       "Grade": "Good",
-      "Score1": 21.23,
-      "Score2": 27.62,
-      "Score3": 31.54
+      "Score1": 27.31,
+      "Score2": 24.77,
+      "Score3": 27.23
     },
     {
       "Ticker": "MPC",
@@ -17431,9 +17431,9 @@
       "MDD": -18.33,
       "Calmar": 4.59,
       "Grade": "Best",
-      "Score1": 88.15,
-      "Score2": 73.08,
-      "Score3": 86.54
+      "Score1": 72.31,
+      "Score2": 64.0,
+      "Score3": 69.08
     },
     {
       "Ticker": "MRNA",
@@ -17448,9 +17448,9 @@
       "MDD": -35.51,
       "Calmar": 2.46,
       "Grade": "Good",
-      "Score1": 8.46,
-      "Score2": 18.15,
-      "Score3": 23.0
+      "Score1": 18.77,
+      "Score2": 23.92,
+      "Score3": 47.23
     },
     {
       "Ticker": "MRVL",
@@ -17465,9 +17465,9 @@
       "MDD": -40.48,
       "Calmar": 4.68,
       "Grade": "Normal",
-      "Score1": 11.23,
-      "Score2": 71.69,
-      "Score3": 41.77
+      "Score1": 30.62,
+      "Score2": 49.77,
+      "Score3": 51.38
     },
     {
       "Ticker": "MU",
@@ -17482,9 +17482,9 @@
       "MDD": -30.28,
       "Calmar": 24.73,
       "Grade": "Good",
-      "Score1": 25.54,
-      "Score2": 71.31,
-      "Score3": 63.69
+      "Score1": 37.38,
+      "Score2": 51.54,
+      "Score3": 74.23
     },
     {
       "Ticker": "NTAP",
@@ -17499,9 +17499,9 @@
       "MDD": -24.83,
       "Calmar": 2.32,
       "Grade": "Best",
-      "Score1": 41.38,
-      "Score2": 61.08,
-      "Score3": 66.08
+      "Score1": 39.62,
+      "Score2": 59.0,
+      "Score3": 58.54
     },
     {
       "Ticker": "NUE",
@@ -17516,9 +17516,9 @@
       "MDD": -18.43,
       "Calmar": 3.7,
       "Grade": "Best",
-      "Score1": 35.38,
-      "Score2": 57.85,
-      "Score3": 29.08
+      "Score1": 43.23,
+      "Score2": 62.0,
+      "Score3": 42.23
     },
     {
       "Ticker": "ODFL",
@@ -17533,9 +17533,9 @@
       "MDD": -24.6,
       "Calmar": 1.77,
       "Grade": "Best",
-      "Score1": 61.38,
-      "Score2": 29.23,
-      "Score3": 32.69
+      "Score1": 53.69,
+      "Score2": 31.08,
+      "Score3": 28.69
     },
     {
       "Ticker": "PANW",
@@ -17550,9 +17550,9 @@
       "MDD": -36.01,
       "Calmar": 1.88,
       "Grade": "Good",
-      "Score1": 56.0,
-      "Score2": 59.85,
-      "Score3": 90.08
+      "Score1": 51.15,
+      "Score2": 51.38,
+      "Score3": 72.38
     },
     {
       "Ticker": "PSX",
@@ -17567,9 +17567,9 @@
       "MDD": -17.27,
       "Calmar": 4.25,
       "Grade": "Best",
-      "Score1": 84.15,
-      "Score2": 64.54,
-      "Score3": 77.85
+      "Score1": 68.31,
+      "Score2": 55.08,
+      "Score3": 58.31
     },
     {
       "Ticker": "ROST",
@@ -17584,9 +17584,9 @@
       "MDD": -13.03,
       "Calmar": 6.09,
       "Grade": "Best",
-      "Score1": 47.85,
-      "Score2": 33.46,
-      "Score3": 21.62
+      "Score1": 55.62,
+      "Score2": 43.38,
+      "Score3": 39.23
     },
     {
       "Ticker": "STLD",
@@ -17601,9 +17601,9 @@
       "MDD": -21.88,
       "Calmar": 3.63,
       "Grade": "Best",
-      "Score1": 51.85,
-      "Score2": 56.69,
-      "Score3": 23.92
+      "Score1": 61.31,
+      "Score2": 59.62,
+      "Score3": 45.54
     },
     {
       "Ticker": "STT",
@@ -17618,9 +17618,9 @@
       "MDD": -11.79,
       "Calmar": 6.43,
       "Grade": "Best",
-      "Score1": 61.54,
-      "Score2": 68.92,
-      "Score3": 64.62
+      "Score1": 64.54,
+      "Score2": 69.31,
+      "Score3": 64.69
     },
     {
       "Ticker": "STX",
@@ -17635,9 +17635,9 @@
       "MDD": -31.81,
       "Calmar": 16.09,
       "Grade": "Good",
-      "Score1": 46.31,
-      "Score2": 76.38,
-      "Score3": 55.77
+      "Score1": 57.31,
+      "Score2": 58.69,
+      "Score3": 71.62
     },
     {
       "Ticker": "TGT",
@@ -17652,9 +17652,9 @@
       "MDD": -20.28,
       "Calmar": 2.05,
       "Grade": "Best",
-      "Score1": 29.08,
-      "Score2": 45.15,
-      "Score3": 30.46
+      "Score1": 30.54,
+      "Score2": 43.23,
+      "Score3": 24.31
     },
     {
       "Ticker": "TRGP",
@@ -17669,9 +17669,9 @@
       "MDD": -16.01,
       "Calmar": 4.88,
       "Grade": "Best",
-      "Score1": 54.62,
-      "Score2": 62.15,
-      "Score3": 51.23
+      "Score1": 63.46,
+      "Score2": 59.92,
+      "Score3": 61.85
     },
     {
       "Ticker": "TRV",
@@ -17686,9 +17686,9 @@
       "MDD": -8.31,
       "Calmar": 5.24,
       "Grade": "Best",
-      "Score1": 90.15,
-      "Score2": 41.23,
-      "Score3": 65.38
+      "Score1": 75.62,
+      "Score2": 47.92,
+      "Score3": 48.69
     },
     {
       "Ticker": "TXN",
@@ -17703,9 +17703,9 @@
       "MDD": -27.5,
       "Calmar": 1.49,
       "Grade": "Best",
-      "Score1": 50.0,
-      "Score2": 39.46,
-      "Score3": 23.77
+      "Score1": 60.31,
+      "Score2": 45.08,
+      "Score3": 41.54
     },
     {
       "Ticker": "UNH",
@@ -17720,9 +17720,9 @@
       "MDD": -28.96,
       "Calmar": 1.97,
       "Grade": "Best",
-      "Score1": 42.46,
-      "Score2": 64.15,
-      "Score3": 55.92
+      "Score1": 38.46,
+      "Score2": 52.77,
+      "Score3": 45.85
     },
     {
       "Ticker": "UNP",
@@ -17737,9 +17737,9 @@
       "MDD": -12.28,
       "Calmar": 2.64,
       "Grade": "Best",
-      "Score1": 70.77,
-      "Score2": 36.15,
-      "Score3": 44.62
+      "Score1": 59.69,
+      "Score2": 52.38,
+      "Score3": 34.69
     },
     {
       "Ticker": "VLO",
@@ -17754,9 +17754,9 @@
       "MDD": -12.12,
       "Calmar": 9.74,
       "Grade": "Best",
-      "Score1": 72.31,
-      "Score2": 70.15,
-      "Score3": 81.46
+      "Score1": 64.77,
+      "Score2": 63.69,
+      "Score3": 71.77
     },
     {
       "Ticker": "VTR",
@@ -17771,9 +17771,9 @@
       "MDD": -12.51,
       "Calmar": 4.0,
       "Grade": "Best",
-      "Score1": 63.38,
-      "Score2": 35.38,
-      "Score3": 49.23
+      "Score1": 54.08,
+      "Score2": 43.69,
+      "Score3": 37.0
     },
     {
       "Ticker": "VTRS",
@@ -17788,9 +17788,9 @@
       "MDD": -18.95,
       "Calmar": 5.21,
       "Grade": "Best",
-      "Score1": 72.46,
-      "Score2": 43.92,
-      "Score3": 43.92
+      "Score1": 64.46,
+      "Score2": 53.31,
+      "Score3": 48.46
     },
     {
       "Ticker": "WDC",
@@ -17805,9 +17805,9 @@
       "MDD": -37.44,
       "Calmar": 19.02,
       "Grade": "Good",
-      "Score1": 21.38,
-      "Score2": 66.08,
-      "Score3": 47.77
+      "Score1": 39.08,
+      "Score2": 48.0,
+      "Score3": 64.08
     },
     {
       "Ticker": "WELL",
@@ -17822,9 +17822,9 @@
       "MDD": -12.61,
       "Calmar": 4.38,
       "Grade": "Best",
-      "Score1": 60.62,
-      "Score2": 42.31,
-      "Score3": 54.54
+      "Score1": 50.77,
+      "Score2": 44.23,
+      "Score3": 39.62
     },
     {
       "Ticker": "WST",
@@ -17839,9 +17839,9 @@
       "MDD": -24.7,
       "Calmar": 2.88,
       "Grade": "Best",
-      "Score1": 67.08,
-      "Score2": 54.15,
-      "Score3": 53.62
+      "Score1": 63.46,
+      "Score2": 50.38,
+      "Score3": 52.77
     },
     {
       "Ticker": "ADM",
@@ -17856,9 +17856,9 @@
       "MDD": -49.22,
       "Calmar": 0.11,
       "Grade": "Bad",
-      "Score1": 85.69,
-      "Score2": 38.62,
-      "Score3": 63.08
+      "Score1": 75.77,
+      "Score2": 48.62,
+      "Score3": 52.08
     },
     {
       "Ticker": "ALL",
@@ -17873,9 +17873,9 @@
       "MDD": -14.1,
       "Calmar": 2.45,
       "Grade": "Best",
-      "Score1": 58.77,
-      "Score2": 25.38,
-      "Score3": 49.92
+      "Score1": 53.62,
+      "Score2": 37.77,
+      "Score3": 41.46
     },
     {
       "Ticker": "AMAT",
@@ -17890,9 +17890,9 @@
       "MDD": -49.88,
       "Calmar": 1.23,
       "Grade": "Normal",
-      "Score1": 15.38,
-      "Score2": 48.46,
-      "Score3": 50.85
+      "Score1": 29.85,
+      "Score2": 36.15,
+      "Score3": 63.77
     },
     {
       "Ticker": "AMD",
@@ -17907,9 +17907,9 @@
       "MDD": -63.0,
       "Calmar": 1.13,
       "Grade": "Bad",
-      "Score1": 59.08,
-      "Score2": 84.62,
-      "Score3": 72.23
+      "Score1": 60.62,
+      "Score2": 73.08,
+      "Score3": 67.69
     },
     {
       "Ticker": "BBY",
@@ -17924,9 +17924,9 @@
       "MDD": -44.35,
       "Calmar": 0.16,
       "Grade": "Bad",
-      "Score1": 69.38,
-      "Score2": 32.15,
-      "Score3": 75.08
+      "Score1": 60.46,
+      "Score2": 38.46,
+      "Score3": 50.23
     },
     {
       "Ticker": "BEN",
@@ -17941,9 +17941,9 @@
       "MDD": -40.02,
       "Calmar": 0.23,
       "Grade": "Normal",
-      "Score1": 31.54,
-      "Score2": 25.15,
-      "Score3": 32.69
+      "Score1": 33.69,
+      "Score2": 42.15,
+      "Score3": 41.77
     },
     {
       "Ticker": "BNY",
@@ -17958,9 +17958,9 @@
       "MDD": -17.59,
       "Calmar": 3.25,
       "Grade": "Best",
-      "Score1": 69.08,
-      "Score2": 46.08,
-      "Score3": 59.62
+      "Score1": 66.54,
+      "Score2": 48.46,
+      "Score3": 55.23
     },
     {
       "Ticker": "CASY",
@@ -17975,9 +17975,9 @@
       "MDD": -16.07,
       "Calmar": 3.15,
       "Grade": "Best",
-      "Score1": 31.85,
-      "Score2": 43.08,
-      "Score3": 31.62
+      "Score1": 35.92,
+      "Score2": 38.54,
+      "Score3": 40.0
     },
     {
       "Ticker": "CAT",
@@ -17992,9 +17992,9 @@
       "MDD": -34.05,
       "Calmar": 1.57,
       "Grade": "Good",
-      "Score1": 12.46,
-      "Score2": 39.0,
-      "Score3": 24.15
+      "Score1": 31.38,
+      "Score2": 33.15,
+      "Score3": 48.77
     },
     {
       "Ticker": "CF",
@@ -18009,9 +18009,9 @@
       "MDD": -29.16,
       "Calmar": 0.69,
       "Grade": "Good",
-      "Score1": 72.92,
-      "Score2": 37.0,
-      "Score3": 47.85
+      "Score1": 68.23,
+      "Score2": 38.0,
+      "Score3": 31.23
     },
     {
       "Ticker": "CNC",
@@ -18026,9 +18026,9 @@
       "MDD": -68.65,
       "Calmar": -0.03,
       "Grade": "Bad",
-      "Score1": 61.38,
-      "Score2": 65.92,
-      "Score3": 66.0
+      "Score1": 56.62,
+      "Score2": 60.77,
+      "Score3": 65.0
     },
     {
       "Ticker": "CRWD",
@@ -18043,9 +18043,9 @@
       "MDD": -44.44,
       "Calmar": 1.61,
       "Grade": "Normal",
-      "Score1": 52.92,
-      "Score2": 41.77,
-      "Score3": 80.15
+      "Score1": 47.92,
+      "Score2": 37.46,
+      "Score3": 63.69
     },
     {
       "Ticker": "CSCO",
@@ -18060,9 +18060,9 @@
       "MDD": -20.17,
       "Calmar": 1.6,
       "Grade": "Best",
-      "Score1": 24.77,
-      "Score2": 41.77,
-      "Score3": 42.23
+      "Score1": 34.38,
+      "Score2": 36.69,
+      "Score3": 54.38
     },
     {
       "Ticker": "CSX",
@@ -18077,9 +18077,9 @@
       "MDD": -29.45,
       "Calmar": 0.58,
       "Grade": "Best",
-      "Score1": 72.62,
-      "Score2": 38.85,
-      "Score3": 43.85
+      "Score1": 68.54,
+      "Score2": 45.38,
+      "Score3": 42.31
     },
     {
       "Ticker": "CVS",
@@ -18094,9 +18094,9 @@
       "MDD": -43.98,
       "Calmar": 0.39,
       "Grade": "Normal",
-      "Score1": 75.85,
-      "Score2": 59.15,
-      "Score3": 68.31
+      "Score1": 64.46,
+      "Score2": 51.92,
+      "Score3": 63.15
     },
     {
       "Ticker": "DAL",
@@ -18111,9 +18111,9 @@
       "MDD": -47.92,
       "Calmar": 0.44,
       "Grade": "Normal",
-      "Score1": 28.0,
-      "Score2": 14.92,
-      "Score3": 32.85
+      "Score1": 31.46,
+      "Score2": 24.23,
+      "Score3": 43.85
     },
     {
       "Ticker": "DDOG",
@@ -18128,9 +18128,9 @@
       "MDD": -48.62,
       "Calmar": 0.64,
       "Grade": "Normal",
-      "Score1": 54.0,
-      "Score2": 44.92,
-      "Score3": 83.23
+      "Score1": 49.54,
+      "Score2": 42.62,
+      "Score3": 70.46
     },
     {
       "Ticker": "DELL",
@@ -18145,9 +18145,9 @@
       "MDD": -59.59,
       "Calmar": 1.79,
       "Grade": "Bad",
-      "Score1": 63.38,
-      "Score2": 89.08,
-      "Score3": 75.15
+      "Score1": 66.85,
+      "Score2": 75.0,
+      "Score3": 76.31
     },
     {
       "Ticker": "DOC",
@@ -18162,9 +18162,9 @@
       "MDD": -29.0,
       "Calmar": 0.26,
       "Grade": "Normal",
-      "Score1": 54.15,
-      "Score2": 28.38,
-      "Score3": 60.38
+      "Score1": 38.15,
+      "Score2": 28.54,
+      "Score3": 35.08
     },
     {
       "Ticker": "DVA",
@@ -18179,9 +18179,9 @@
       "MDD": -41.43,
       "Calmar": 0.76,
       "Grade": "Normal",
-      "Score1": 78.0,
-      "Score2": 82.38,
-      "Score3": 80.85
+      "Score1": 71.31,
+      "Score2": 77.85,
+      "Score3": 72.31
     },
     {
       "Ticker": "EIX",
@@ -18196,9 +18196,9 @@
       "MDD": -43.89,
       "Calmar": 0.2,
       "Grade": "Normal",
-      "Score1": 85.38,
-      "Score2": 42.85,
-      "Score3": 53.38
+      "Score1": 78.54,
+      "Score2": 53.23,
+      "Score3": 49.46
     },
     {
       "Ticker": "EOG",
@@ -18213,9 +18213,9 @@
       "MDD": -23.72,
       "Calmar": 0.37,
       "Grade": "Normal",
-      "Score1": 67.23,
-      "Score2": 30.08,
-      "Score3": 35.62
+      "Score1": 57.23,
+      "Score2": 42.0,
+      "Score3": 33.85
     },
     {
       "Ticker": "FANG",
@@ -18230,9 +18230,9 @@
       "MDD": -42.1,
       "Calmar": 0.41,
       "Grade": "Normal",
-      "Score1": 63.38,
-      "Score2": 25.08,
-      "Score3": 26.23
+      "Score1": 61.38,
+      "Score2": 42.54,
+      "Score3": 34.46
     },
     {
       "Ticker": "FFIV",
@@ -18247,9 +18247,9 @@
       "MDD": -34.73,
       "Calmar": 1.13,
       "Grade": "Good",
-      "Score1": 51.54,
-      "Score2": 36.38,
-      "Score3": 51.46
+      "Score1": 43.85,
+      "Score2": 45.69,
+      "Score3": 46.31
     },
     {
       "Ticker": "FLEX",
@@ -18264,9 +18264,9 @@
       "MDD": -39.99,
       "Calmar": 2.04,
       "Grade": "Good",
-      "Score1": 18.0,
-      "Score2": 55.46,
-      "Score3": 45.31
+      "Score1": 31.92,
+      "Score2": 38.85,
+      "Score3": 54.0
     },
     {
       "Ticker": "FRT",
@@ -18281,9 +18281,9 @@
       "MDD": -27.38,
       "Calmar": 0.41,
       "Grade": "Good",
-      "Score1": 58.15,
-      "Score2": 33.92,
-      "Score3": 27.15
+      "Score1": 49.62,
+      "Score2": 39.38,
+      "Score3": 29.38
     },
     {
       "Ticker": "FTNT",
@@ -18298,9 +18298,9 @@
       "MDD": -36.79,
       "Calmar": 0.7,
       "Grade": "Good",
-      "Score1": 48.77,
-      "Score2": 58.77,
-      "Score3": 73.23
+      "Score1": 42.23,
+      "Score2": 45.92,
+      "Score3": 61.23
     },
     {
       "Ticker": "GL",
@@ -18315,9 +18315,9 @@
       "MDD": -61.62,
       "Calmar": 0.3,
       "Grade": "Bad",
-      "Score1": 69.38,
-      "Score2": 47.92,
-      "Score3": 50.46
+      "Score1": 63.38,
+      "Score2": 59.0,
+      "Score3": 51.54
     },
     {
       "Ticker": "HPE",
@@ -18332,9 +18332,9 @@
       "MDD": -48.34,
       "Calmar": 0.93,
       "Grade": "Normal",
-      "Score1": 46.0,
-      "Score2": 84.0,
-      "Score3": 64.69
+      "Score1": 50.69,
+      "Score2": 69.46,
+      "Score3": 65.23
     },
     {
       "Ticker": "HPQ",
@@ -18349,9 +18349,9 @@
       "MDD": -51.24,
       "Calmar": -0.08,
       "Grade": "Bad",
-      "Score1": 57.85,
-      "Score2": 26.85,
-      "Score3": 50.54
+      "Score1": 45.69,
+      "Score2": 29.62,
+      "Score3": 31.46
     },
     {
       "Ticker": "HST",
@@ -18366,9 +18366,9 @@
       "MDD": -36.0,
       "Calmar": 0.53,
       "Grade": "Good",
-      "Score1": 55.08,
-      "Score2": 73.23,
-      "Score3": 50.46
+      "Score1": 57.77,
+      "Score2": 70.54,
+      "Score3": 56.0
     },
     {
       "Ticker": "HUM",
@@ -18383,9 +18383,9 @@
       "MDD": -67.92,
       "Calmar": -0.05,
       "Grade": "Bad",
-      "Score1": 39.38,
-      "Score2": 71.69,
-      "Score3": 86.92
+      "Score1": 38.08,
+      "Score2": 69.62,
+      "Score3": 71.62
     },
     {
       "Ticker": "HWM",
@@ -18400,9 +18400,9 @@
       "MDD": -19.41,
       "Calmar": 4.06,
       "Grade": "Best",
-      "Score1": 43.08,
-      "Score2": 34.15,
-      "Score3": 33.62
+      "Score1": 48.23,
+      "Score2": 37.46,
+      "Score3": 41.85
     },
     {
       "Ticker": "INTC",
@@ -18417,9 +18417,9 @@
       "MDD": -63.81,
       "Calmar": 0.72,
       "Grade": "Bad",
-      "Score1": 21.85,
-      "Score2": 63.54,
-      "Score3": 39.54
+      "Score1": 33.23,
+      "Score2": 43.15,
+      "Score3": 49.85
     },
     {
       "Ticker": "IRM",
@@ -18434,9 +18434,9 @@
       "MDD": -39.03,
       "Calmar": 0.78,
       "Grade": "Good",
-      "Score1": 22.15,
-      "Score2": 44.38,
-      "Score3": 25.46
+      "Score1": 28.77,
+      "Score2": 47.62,
+      "Score3": 36.69
     },
     {
       "Ticker": "JBHT",
@@ -18451,9 +18451,9 @@
       "MDD": -42.41,
       "Calmar": 0.37,
       "Grade": "Normal",
-      "Score1": 66.62,
-      "Score2": 54.15,
-      "Score3": 56.31
+      "Score1": 65.85,
+      "Score2": 50.08,
+      "Score3": 59.15
     },
     {
       "Ticker": "KIM",
@@ -18468,9 +18468,9 @@
       "MDD": -25.87,
       "Calmar": 0.51,
       "Grade": "Good",
-      "Score1": 55.38,
-      "Score2": 36.77,
-      "Score3": 30.62
+      "Score1": 50.38,
+      "Score2": 40.31,
+      "Score3": 25.69
     },
     {
       "Ticker": "KLAC",
@@ -18485,9 +18485,9 @@
       "MDD": -34.95,
       "Calmar": 1.98,
       "Grade": "Good",
-      "Score1": 14.0,
-      "Score2": 24.92,
-      "Score3": 20.0
+      "Score1": 31.54,
+      "Score2": 28.31,
+      "Score3": 48.46
     },
     {
       "Ticker": "LRCX",
@@ -18502,9 +18502,9 @@
       "MDD": -47.1,
       "Calmar": 1.58,
       "Grade": "Normal",
-      "Score1": 10.77,
-      "Score2": 29.0,
-      "Score3": 28.77
+      "Score1": 30.46,
+      "Score2": 29.23,
+      "Score3": 54.0
     },
     {
       "Ticker": "MGM",
@@ -18519,9 +18519,9 @@
       "MDD": -49.33,
       "Calmar": -0.06,
       "Grade": "Bad",
-      "Score1": 21.23,
-      "Score2": 27.62,
-      "Score3": 31.54
+      "Score1": 27.31,
+      "Score2": 24.77,
+      "Score3": 27.23
     },
     {
       "Ticker": "MPC",
@@ -18536,9 +18536,9 @@
       "MDD": -44.75,
       "Calmar": 0.87,
       "Grade": "Normal",
-      "Score1": 88.15,
-      "Score2": 73.08,
-      "Score3": 86.54
+      "Score1": 72.31,
+      "Score2": 64.0,
+      "Score3": 69.08
     },
     {
       "Ticker": "MRNA",
@@ -18553,9 +18553,9 @@
       "MDD": -86.58,
       "Calmar": -0.27,
       "Grade": "Bad",
-      "Score1": 8.46,
-      "Score2": 18.15,
-      "Score3": 23.0
+      "Score1": 18.77,
+      "Score2": 23.92,
+      "Score3": 47.23
     },
     {
       "Ticker": "MRVL",
@@ -18570,9 +18570,9 @@
       "MDD": -60.79,
       "Calmar": 0.82,
       "Grade": "Bad",
-      "Score1": 11.23,
-      "Score2": 71.69,
-      "Score3": 41.77
+      "Score1": 30.62,
+      "Score2": 49.77,
+      "Score3": 51.38
     },
     {
       "Ticker": "MU",
@@ -18587,9 +18587,9 @@
       "MDD": -57.63,
       "Calmar": 2.54,
       "Grade": "Bad",
-      "Score1": 25.54,
-      "Score2": 71.31,
-      "Score3": 63.69
+      "Score1": 37.38,
+      "Score2": 51.54,
+      "Score3": 74.23
     },
     {
       "Ticker": "NTAP",
@@ -18604,9 +18604,9 @@
       "MDD": -42.61,
       "Calmar": 0.72,
       "Grade": "Normal",
-      "Score1": 41.38,
-      "Score2": 61.08,
-      "Score3": 66.08
+      "Score1": 39.62,
+      "Score2": 59.0,
+      "Score3": 58.54
     },
     {
       "Ticker": "NUE",
@@ -18621,9 +18621,9 @@
       "MDD": -47.79,
       "Calmar": 0.31,
       "Grade": "Normal",
-      "Score1": 35.38,
-      "Score2": 57.85,
-      "Score3": 29.08
+      "Score1": 43.23,
+      "Score2": 62.0,
+      "Score3": 42.23
     },
     {
       "Ticker": "ODFL",
@@ -18638,9 +18638,9 @@
       "MDD": -45.18,
       "Calmar": 0.14,
       "Grade": "Bad",
-      "Score1": 61.38,
-      "Score2": 29.23,
-      "Score3": 32.69
+      "Score1": 53.69,
+      "Score2": 31.08,
+      "Score3": 28.69
     },
     {
       "Ticker": "PANW",
@@ -18655,9 +18655,9 @@
       "MDD": -36.01,
       "Calmar": 1.12,
       "Grade": "Good",
-      "Score1": 56.0,
-      "Score2": 59.85,
-      "Score3": 90.08
+      "Score1": 51.15,
+      "Score2": 51.38,
+      "Score3": 72.38
     },
     {
       "Ticker": "PSX",
@@ -18672,9 +18672,9 @@
       "MDD": -44.37,
       "Calmar": 0.69,
       "Grade": "Normal",
-      "Score1": 84.15,
-      "Score2": 64.54,
-      "Score3": 77.85
+      "Score1": 68.31,
+      "Score2": 55.08,
+      "Score3": 58.31
     },
     {
       "Ticker": "ROST",
@@ -18689,9 +18689,9 @@
       "MDD": -21.09,
       "Calmar": 1.43,
       "Grade": "Best",
-      "Score1": 47.85,
-      "Score2": 33.46,
-      "Score3": 21.62
+      "Score1": 55.62,
+      "Score2": 43.38,
+      "Score3": 39.23
     },
     {
       "Ticker": "STLD",
@@ -18706,9 +18706,9 @@
       "MDD": -28.65,
       "Calmar": 1.24,
       "Grade": "Best",
-      "Score1": 51.85,
-      "Score2": 56.69,
-      "Score3": 23.92
+      "Score1": 61.31,
+      "Score2": 59.62,
+      "Score3": 45.54
     },
     {
       "Ticker": "STT",
@@ -18723,9 +18723,9 @@
       "MDD": -25.69,
       "Calmar": 1.67,
       "Grade": "Best",
-      "Score1": 61.54,
-      "Score2": 68.92,
-      "Score3": 64.62
+      "Score1": 64.54,
+      "Score2": 69.31,
+      "Score3": 64.69
     },
     {
       "Ticker": "STX",
@@ -18740,9 +18740,9 @@
       "MDD": -40.0,
       "Calmar": 3.87,
       "Grade": "Good",
-      "Score1": 46.31,
-      "Score2": 76.38,
-      "Score3": 55.77
+      "Score1": 57.31,
+      "Score2": 58.69,
+      "Score3": 71.62
     },
     {
       "Ticker": "TGT",
@@ -18757,9 +18757,9 @@
       "MDD": -49.78,
       "Calmar": 0.1,
       "Grade": "Bad",
-      "Score1": 29.08,
-      "Score2": 45.15,
-      "Score3": 30.46
+      "Score1": 30.54,
+      "Score2": 43.23,
+      "Score3": 24.31
     },
     {
       "Ticker": "TRGP",
@@ -18774,9 +18774,9 @@
       "MDD": -31.61,
       "Calmar": 1.77,
       "Grade": "Good",
-      "Score1": 54.62,
-      "Score2": 62.15,
-      "Score3": 51.23
+      "Score1": 63.46,
+      "Score2": 59.92,
+      "Score3": 61.85
     },
     {
       "Ticker": "TRV",
@@ -18791,9 +18791,9 @@
       "MDD": -12.47,
       "Calmar": 2.54,
       "Grade": "Best",
-      "Score1": 90.15,
-      "Score2": 41.23,
-      "Score3": 65.38
+      "Score1": 75.62,
+      "Score2": 47.92,
+      "Score3": 48.69
     },
     {
       "Ticker": "TXN",
@@ -18808,9 +18808,9 @@
       "MDD": -33.41,
       "Calmar": 0.61,
       "Grade": "Good",
-      "Score1": 50.0,
-      "Score2": 39.46,
-      "Score3": 23.77
+      "Score1": 60.31,
+      "Score2": 45.08,
+      "Score3": 41.54
     },
     {
       "Ticker": "UNH",
@@ -18825,9 +18825,9 @@
       "MDD": -61.39,
       "Calmar": -0.05,
       "Grade": "Bad",
-      "Score1": 42.46,
-      "Score2": 64.15,
-      "Score3": 55.92
+      "Score1": 38.46,
+      "Score2": 52.77,
+      "Score3": 45.85
     },
     {
       "Ticker": "UNP",
@@ -18842,9 +18842,9 @@
       "MDD": -17.76,
       "Calmar": 0.74,
       "Grade": "Good",
-      "Score1": 70.77,
-      "Score2": 36.15,
-      "Score3": 44.62
+      "Score1": 59.69,
+      "Score2": 52.38,
+      "Score3": 34.69
     },
     {
       "Ticker": "VLO",
@@ -18859,9 +18859,9 @@
       "MDD": -41.22,
       "Calmar": 0.98,
       "Grade": "Normal",
-      "Score1": 72.31,
-      "Score2": 70.15,
-      "Score3": 81.46
+      "Score1": 64.77,
+      "Score2": 63.69,
+      "Score3": 71.77
     },
     {
       "Ticker": "VTR",
@@ -18876,9 +18876,9 @@
       "MDD": -19.34,
       "Calmar": 1.52,
       "Grade": "Best",
-      "Score1": 63.38,
-      "Score2": 35.38,
-      "Score3": 49.23
+      "Score1": 54.08,
+      "Score2": 43.69,
+      "Score3": 37.0
     },
     {
       "Ticker": "VTRS",
@@ -18893,9 +18893,9 @@
       "MDD": -44.97,
       "Calmar": 0.51,
       "Grade": "Normal",
-      "Score1": 72.46,
-      "Score2": 43.92,
-      "Score3": 43.92
+      "Score1": 64.46,
+      "Score2": 53.31,
+      "Score3": 48.46
     },
     {
       "Ticker": "WDC",
@@ -18910,9 +18910,9 @@
       "MDD": -49.64,
       "Calmar": 3.42,
       "Grade": "Normal",
-      "Score1": 21.38,
-      "Score2": 66.08,
-      "Score3": 47.77
+      "Score1": 39.08,
+      "Score2": 48.0,
+      "Score3": 64.08
     },
     {
       "Ticker": "WELL",
@@ -18927,9 +18927,9 @@
       "MDD": -12.99,
       "Calmar": 3.63,
       "Grade": "Best",
-      "Score1": 60.62,
-      "Score2": 42.31,
-      "Score3": 54.54
+      "Score1": 50.77,
+      "Score2": 44.23,
+      "Score3": 39.62
     },
     {
       "Ticker": "WST",
@@ -18944,9 +18944,9 @@
       "MDD": -53.79,
       "Calmar": -0.03,
       "Grade": "Bad",
-      "Score1": 67.08,
-      "Score2": 54.15,
-      "Score3": 53.62
+      "Score1": 63.46,
+      "Score2": 50.38,
+      "Score3": 52.77
     },
     {
       "Ticker": "ADM",
@@ -18961,9 +18961,9 @@
       "MDD": -54.14,
       "Calmar": 0.22,
       "Grade": "Bad",
-      "Score1": 85.69,
-      "Score2": 38.62,
-      "Score3": 63.08
+      "Score1": 75.77,
+      "Score2": 48.62,
+      "Score3": 52.08
     },
     {
       "Ticker": "ALL",
@@ -18978,9 +18978,9 @@
       "MDD": -27.34,
       "Calmar": 0.62,
       "Grade": "Good",
-      "Score1": 58.77,
-      "Score2": 25.38,
-      "Score3": 49.92
+      "Score1": 53.62,
+      "Score2": 37.77,
+      "Score3": 41.46
     },
     {
       "Ticker": "AMAT",
@@ -18995,9 +18995,9 @@
       "MDD": -55.14,
       "Calmar": 0.6,
       "Grade": "Bad",
-      "Score1": 15.38,
-      "Score2": 48.46,
-      "Score3": 50.85
+      "Score1": 29.85,
+      "Score2": 36.15,
+      "Score3": 63.77
     },
     {
       "Ticker": "AMD",
@@ -19012,9 +19012,9 @@
       "MDD": -65.45,
       "Calmar": 0.66,
       "Grade": "Bad",
-      "Score1": 59.08,
-      "Score2": 84.62,
-      "Score3": 72.23
+      "Score1": 60.62,
+      "Score2": 73.08,
+      "Score3": 67.69
     },
     {
       "Ticker": "BBY",
@@ -19029,9 +19029,9 @@
       "MDD": -52.59,
       "Calmar": -0.01,
       "Grade": "Bad",
-      "Score1": 69.38,
-      "Score2": 32.15,
-      "Score3": 75.08
+      "Score1": 60.46,
+      "Score2": 38.46,
+      "Score3": 50.23
     },
     {
       "Ticker": "BEN",
@@ -19046,9 +19046,9 @@
       "MDD": -47.44,
       "Calmar": 0.15,
       "Grade": "Bad",
-      "Score1": 31.54,
-      "Score2": 25.15,
-      "Score3": 32.69
+      "Score1": 33.69,
+      "Score2": 42.15,
+      "Score3": 41.77
     },
     {
       "Ticker": "BNY",
@@ -19063,9 +19063,9 @@
       "MDD": -40.44,
       "Calmar": 0.74,
       "Grade": "Normal",
-      "Score1": 69.08,
-      "Score2": 46.08,
-      "Score3": 59.62
+      "Score1": 66.54,
+      "Score2": 48.46,
+      "Score3": 55.23
     },
     {
       "Ticker": "CASY",
@@ -19080,9 +19080,9 @@
       "MDD": -17.13,
       "Calmar": 2.07,
       "Grade": "Best",
-      "Score1": 31.85,
-      "Score2": 43.08,
-      "Score3": 31.62
+      "Score1": 35.92,
+      "Score2": 38.54,
+      "Score3": 40.0
     },
     {
       "Ticker": "CAT",
@@ -19097,9 +19097,9 @@
       "MDD": -34.05,
       "Calmar": 1.06,
       "Grade": "Good",
-      "Score1": 12.46,
-      "Score2": 39.0,
-      "Score3": 24.15
+      "Score1": 31.38,
+      "Score2": 33.15,
+      "Score3": 48.77
     },
     {
       "Ticker": "CF",
@@ -19114,9 +19114,9 @@
       "MDD": -48.35,
       "Calmar": 0.51,
       "Grade": "Normal",
-      "Score1": 72.92,
-      "Score2": 37.0,
-      "Score3": 47.85
+      "Score1": 68.23,
+      "Score2": 38.0,
+      "Score3": 31.23
     },
     {
       "Ticker": "CNC",
@@ -19131,9 +19131,9 @@
       "MDD": -74.07,
       "Calmar": -0.03,
       "Grade": "Bad",
-      "Score1": 61.38,
-      "Score2": 65.92,
-      "Score3": 66.0
+      "Score1": 56.62,
+      "Score2": 60.77,
+      "Score3": 65.0
     },
     {
       "Ticker": "CRWD",
@@ -19148,9 +19148,9 @@
       "MDD": -67.69,
       "Calmar": 0.34,
       "Grade": "Bad",
-      "Score1": 52.92,
-      "Score2": 41.77,
-      "Score3": 80.15
+      "Score1": 47.92,
+      "Score2": 37.46,
+      "Score3": 63.69
     },
     {
       "Ticker": "CSCO",
@@ -19165,9 +19165,9 @@
       "MDD": -36.67,
       "Calmar": 0.51,
       "Grade": "Good",
-      "Score1": 24.77,
-      "Score2": 41.77,
-      "Score3": 42.23
+      "Score1": 34.38,
+      "Score2": 36.69,
+      "Score3": 54.38
     },
     {
       "Ticker": "CSX",
@@ -19182,9 +19182,9 @@
       "MDD": -29.45,
       "Calmar": 0.35,
       "Grade": "Normal",
-      "Score1": 72.62,
-      "Score2": 38.85,
-      "Score3": 43.85
+      "Score1": 68.54,
+      "Score2": 45.38,
+      "Score3": 42.31
     },
     {
       "Ticker": "CVS",
@@ -19199,9 +19199,9 @@
       "MDD": -56.79,
       "Calmar": 0.16,
       "Grade": "Bad",
-      "Score1": 75.85,
-      "Score2": 59.15,
-      "Score3": 68.31
+      "Score1": 64.46,
+      "Score2": 51.92,
+      "Score3": 63.15
     },
     {
       "Ticker": "DAL",
@@ -19216,9 +19216,9 @@
       "MDD": -47.92,
       "Calmar": 0.34,
       "Grade": "Normal",
-      "Score1": 28.0,
-      "Score2": 14.92,
-      "Score3": 32.85
+      "Score1": 31.46,
+      "Score2": 24.23,
+      "Score3": 43.85
     },
     {
       "Ticker": "DDOG",
@@ -19233,9 +19233,9 @@
       "MDD": -68.11,
       "Calmar": 0.25,
       "Grade": "Bad",
-      "Score1": 54.0,
-      "Score2": 44.92,
-      "Score3": 83.23
+      "Score1": 49.54,
+      "Score2": 42.62,
+      "Score3": 70.46
     },
     {
       "Ticker": "DELL",
@@ -19250,9 +19250,9 @@
       "MDD": -59.59,
       "Calmar": 0.98,
       "Grade": "Bad",
-      "Score1": 63.38,
-      "Score2": 89.08,
-      "Score3": 75.15
+      "Score1": 66.85,
+      "Score2": 75.0,
+      "Score3": 76.31
     },
     {
       "Ticker": "DOC",
@@ -19267,9 +19267,9 @@
       "MDD": -54.08,
       "Calmar": -0.08,
       "Grade": "Bad",
-      "Score1": 54.15,
-      "Score2": 28.38,
-      "Score3": 60.38
+      "Score1": 38.15,
+      "Score2": 28.54,
+      "Score3": 35.08
     },
     {
       "Ticker": "DVA",
@@ -19284,9 +19284,9 @@
       "MDD": -51.1,
       "Calmar": 0.28,
       "Grade": "Bad",
-      "Score1": 78.0,
-      "Score2": 82.38,
-      "Score3": 80.85
+      "Score1": 71.31,
+      "Score2": 77.85,
+      "Score3": 72.31
     },
     {
       "Ticker": "EIX",
@@ -19301,9 +19301,9 @@
       "MDD": -43.89,
       "Calmar": 0.29,
       "Grade": "Normal",
-      "Score1": 85.38,
-      "Score2": 42.85,
-      "Score3": 53.38
+      "Score1": 78.54,
+      "Score2": 53.23,
+      "Score3": 49.46
     },
     {
       "Ticker": "EOG",
@@ -19318,9 +19318,9 @@
       "MDD": -33.42,
       "Calmar": 0.61,
       "Grade": "Good",
-      "Score1": 67.23,
-      "Score2": 30.08,
-      "Score3": 35.62
+      "Score1": 57.23,
+      "Score2": 42.0,
+      "Score3": 33.85
     },
     {
       "Ticker": "FANG",
@@ -19335,9 +19335,9 @@
       "MDD": -42.1,
       "Calmar": 0.63,
       "Grade": "Normal",
-      "Score1": 63.38,
-      "Score2": 25.08,
-      "Score3": 26.23
+      "Score1": 61.38,
+      "Score2": 42.54,
+      "Score3": 34.46
     },
     {
       "Ticker": "FFIV",
@@ -19352,9 +19352,9 @@
       "MDD": -47.42,
       "Calmar": 0.34,
       "Grade": "Normal",
-      "Score1": 51.54,
-      "Score2": 36.38,
-      "Score3": 51.46
+      "Score1": 43.85,
+      "Score2": 45.69,
+      "Score3": 46.31
     },
     {
       "Ticker": "FLEX",
@@ -19369,9 +19369,9 @@
       "MDD": -39.99,
       "Calmar": 1.48,
       "Grade": "Good",
-      "Score1": 18.0,
-      "Score2": 55.46,
-      "Score3": 45.31
+      "Score1": 31.92,
+      "Score2": 38.85,
+      "Score3": 54.0
     },
     {
       "Ticker": "FRT",
@@ -19386,9 +19386,9 @@
       "MDD": -34.99,
       "Calmar": 0.17,
       "Grade": "Bad",
-      "Score1": 58.15,
-      "Score2": 33.92,
-      "Score3": 27.15
+      "Score1": 49.62,
+      "Score2": 39.38,
+      "Score3": 29.38
     },
     {
       "Ticker": "FTNT",
@@ -19403,9 +19403,9 @@
       "MDD": -38.32,
       "Calmar": 0.6,
       "Grade": "Good",
-      "Score1": 48.77,
-      "Score2": 58.77,
-      "Score3": 73.23
+      "Score1": 42.23,
+      "Score2": 45.92,
+      "Score3": 61.23
     },
     {
       "Ticker": "GL",
@@ -19420,9 +19420,9 @@
       "MDD": -61.62,
       "Calmar": 0.25,
       "Grade": "Bad",
-      "Score1": 69.38,
-      "Score2": 47.92,
-      "Score3": 50.46
+      "Score1": 63.38,
+      "Score2": 59.0,
+      "Score3": 51.54
     },
     {
       "Ticker": "HPE",
@@ -19437,9 +19437,9 @@
       "MDD": -48.34,
       "Calmar": 0.66,
       "Grade": "Normal",
-      "Score1": 46.0,
-      "Score2": 84.0,
-      "Score3": 64.69
+      "Score1": 50.69,
+      "Score2": 69.46,
+      "Score3": 65.23
     },
     {
       "Ticker": "HPQ",
@@ -19454,9 +19454,9 @@
       "MDD": -51.24,
       "Calmar": 0.03,
       "Grade": "Bad",
-      "Score1": 57.85,
-      "Score2": 26.85,
-      "Score3": 50.54
+      "Score1": 45.69,
+      "Score2": 29.62,
+      "Score3": 31.46
     },
     {
       "Ticker": "HST",
@@ -19471,9 +19471,9 @@
       "MDD": -36.0,
       "Calmar": 0.41,
       "Grade": "Good",
-      "Score1": 55.08,
-      "Score2": 73.23,
-      "Score3": 50.46
+      "Score1": 57.77,
+      "Score2": 70.54,
+      "Score3": 56.0
     },
     {
       "Ticker": "HUM",
@@ -19488,9 +19488,9 @@
       "MDD": -69.92,
       "Calmar": -0.03,
       "Grade": "Bad",
-      "Score1": 39.38,
-      "Score2": 71.69,
-      "Score3": 86.92
+      "Score1": 38.08,
+      "Score2": 69.62,
+      "Score3": 71.62
     },
     {
       "Ticker": "HWM",
@@ -19505,9 +19505,9 @@
       "MDD": -20.14,
       "Calmar": 2.72,
       "Grade": "Best",
-      "Score1": 43.08,
-      "Score2": 34.15,
-      "Score3": 33.62
+      "Score1": 48.23,
+      "Score2": 37.46,
+      "Score3": 41.85
     },
     {
       "Ticker": "INTC",
@@ -19522,9 +19522,9 @@
       "MDD": -65.03,
       "Calmar": 0.25,
       "Grade": "Bad",
-      "Score1": 21.85,
-      "Score2": 63.54,
-      "Score3": 39.54
+      "Score1": 33.23,
+      "Score2": 43.15,
+      "Score3": 49.85
     },
     {
       "Ticker": "IRM",
@@ -19539,9 +19539,9 @@
       "MDD": -39.03,
       "Calmar": 0.73,
       "Grade": "Good",
-      "Score1": 22.15,
-      "Score2": 44.38,
-      "Score3": 25.46
+      "Score1": 28.77,
+      "Score2": 47.62,
+      "Score3": 36.69
     },
     {
       "Ticker": "JBHT",
@@ -19556,9 +19556,9 @@
       "MDD": -42.41,
       "Calmar": 0.3,
       "Grade": "Normal",
-      "Score1": 66.62,
-      "Score2": 54.15,
-      "Score3": 56.31
+      "Score1": 65.85,
+      "Score2": 50.08,
+      "Score3": 59.15
     },
     {
       "Ticker": "KIM",
@@ -19573,9 +19573,9 @@
       "MDD": -33.6,
       "Calmar": 0.28,
       "Grade": "Normal",
-      "Score1": 55.38,
-      "Score2": 36.77,
-      "Score3": 30.62
+      "Score1": 50.38,
+      "Score2": 40.31,
+      "Score3": 25.69
     },
     {
       "Ticker": "KLAC",
@@ -19590,9 +19590,9 @@
       "MDD": -40.27,
       "Calmar": 1.19,
       "Grade": "Normal",
-      "Score1": 14.0,
-      "Score2": 24.92,
-      "Score3": 20.0
+      "Score1": 31.54,
+      "Score2": 28.31,
+      "Score3": 48.46
     },
     {
       "Ticker": "LRCX",
@@ -19607,9 +19607,9 @@
       "MDD": -56.39,
       "Calmar": 0.7,
       "Grade": "Bad",
-      "Score1": 10.77,
-      "Score2": 29.0,
-      "Score3": 28.77
+      "Score1": 30.46,
+      "Score2": 29.23,
+      "Score3": 54.0
     },
     {
       "Ticker": "MGM",
@@ -19624,9 +19624,9 @@
       "MDD": -49.33,
       "Calmar": 0.07,
       "Grade": "Bad",
-      "Score1": 21.23,
-      "Score2": 27.62,
-      "Score3": 31.54
+      "Score1": 27.31,
+      "Score2": 24.77,
+      "Score3": 27.23
     },
     {
       "Ticker": "MPC",
@@ -19641,9 +19641,9 @@
       "MDD": -44.75,
       "Calmar": 1.04,
       "Grade": "Normal",
-      "Score1": 88.15,
-      "Score2": 73.08,
-      "Score3": 86.54
+      "Score1": 72.31,
+      "Score2": 64.0,
+      "Score3": 69.08
     },
     {
       "Ticker": "MRNA",
@@ -19658,9 +19658,9 @@
       "MDD": -95.38,
       "Calmar": -0.32,
       "Grade": "Bad",
-      "Score1": 8.46,
-      "Score2": 18.15,
-      "Score3": 23.0
+      "Score1": 18.77,
+      "Score2": 23.92,
+      "Score3": 47.23
     },
     {
       "Ticker": "MRVL",
@@ -19675,9 +19675,9 @@
       "MDD": -61.88,
       "Calmar": 0.48,
       "Grade": "Bad",
-      "Score1": 11.23,
-      "Score2": 71.69,
-      "Score3": 41.77
+      "Score1": 30.62,
+      "Score2": 49.77,
+      "Score3": 51.38
     },
     {
       "Ticker": "MU",
@@ -19692,9 +19692,9 @@
       "MDD": -57.63,
       "Calmar": 1.17,
       "Grade": "Bad",
-      "Score1": 25.54,
-      "Score2": 71.31,
-      "Score3": 63.69
+      "Score1": 37.38,
+      "Score2": 51.54,
+      "Score3": 74.23
     },
     {
       "Ticker": "NTAP",
@@ -19709,9 +19709,9 @@
       "MDD": -42.61,
       "Calmar": 0.45,
       "Grade": "Normal",
-      "Score1": 41.38,
-      "Score2": 61.08,
-      "Score3": 66.08
+      "Score1": 39.62,
+      "Score2": 59.0,
+      "Score3": 58.54
     },
     {
       "Ticker": "NUE",
@@ -19726,9 +19726,9 @@
       "MDD": -47.79,
       "Calmar": 0.46,
       "Grade": "Normal",
-      "Score1": 35.38,
-      "Score2": 57.85,
-      "Score3": 29.08
+      "Score1": 43.23,
+      "Score2": 62.0,
+      "Score3": 42.23
     },
     {
       "Ticker": "ODFL",
@@ -19743,9 +19743,9 @@
       "MDD": -45.18,
       "Calmar": 0.29,
       "Grade": "Normal",
-      "Score1": 61.38,
-      "Score2": 29.23,
-      "Score3": 32.69
+      "Score1": 53.69,
+      "Score2": 31.08,
+      "Score3": 28.69
     },
     {
       "Ticker": "PANW",
@@ -19760,9 +19760,9 @@
       "MDD": -36.01,
       "Calmar": 1.06,
       "Grade": "Good",
-      "Score1": 56.0,
-      "Score2": 59.85,
-      "Score3": 90.08
+      "Score1": 51.15,
+      "Score2": 51.38,
+      "Score3": 72.38
     },
     {
       "Ticker": "PSX",
@@ -19777,9 +19777,9 @@
       "MDD": -44.37,
       "Calmar": 0.65,
       "Grade": "Normal",
-      "Score1": 84.15,
-      "Score2": 64.54,
-      "Score3": 77.85
+      "Score1": 68.31,
+      "Score2": 55.08,
+      "Score3": 58.31
     },
     {
       "Ticker": "ROST",
@@ -19794,9 +19794,9 @@
       "MDD": -44.13,
       "Calmar": 0.36,
       "Grade": "Normal",
-      "Score1": 47.85,
-      "Score2": 33.46,
-      "Score3": 21.62
+      "Score1": 55.62,
+      "Score2": 43.38,
+      "Score3": 39.23
     },
     {
       "Ticker": "STLD",
@@ -19811,9 +19811,9 @@
       "MDD": -32.2,
       "Calmar": 1.07,
       "Grade": "Good",
-      "Score1": 51.85,
-      "Score2": 56.69,
-      "Score3": 23.92
+      "Score1": 61.31,
+      "Score2": 59.62,
+      "Score3": 45.54
     },
     {
       "Ticker": "STT",
@@ -19828,9 +19828,9 @@
       "MDD": -41.46,
       "Calmar": 0.5,
       "Grade": "Normal",
-      "Score1": 61.54,
-      "Score2": 68.92,
-      "Score3": 64.62
+      "Score1": 64.54,
+      "Score2": 69.31,
+      "Score3": 64.69
     },
     {
       "Ticker": "STX",
@@ -19845,9 +19845,9 @@
       "MDD": -56.99,
       "Calmar": 1.15,
       "Grade": "Bad",
-      "Score1": 46.31,
-      "Score2": 76.38,
-      "Score3": 55.77
+      "Score1": 57.31,
+      "Score2": 58.69,
+      "Score3": 71.62
     },
     {
       "Ticker": "TGT",
@@ -19862,9 +19862,9 @@
       "MDD": -64.4,
       "Calmar": -0.14,
       "Grade": "Bad",
-      "Score1": 29.08,
-      "Score2": 45.15,
-      "Score3": 30.46
+      "Score1": 30.54,
+      "Score2": 43.23,
+      "Score3": 24.31
     },
     {
       "Ticker": "TRGP",
@@ -19879,9 +19879,9 @@
       "MDD": -31.61,
       "Calmar": 1.57,
       "Grade": "Good",
-      "Score1": 54.62,
-      "Score2": 62.15,
-      "Score3": 51.23
+      "Score1": 63.46,
+      "Score2": 59.92,
+      "Score3": 61.85
     },
     {
       "Ticker": "TRV",
@@ -19896,9 +19896,9 @@
       "MDD": -18.9,
       "Calmar": 1.2,
       "Grade": "Best",
-      "Score1": 90.15,
-      "Score2": 41.23,
-      "Score3": 65.38
+      "Score1": 75.62,
+      "Score2": 47.92,
+      "Score3": 48.69
     },
     {
       "Ticker": "TXN",
@@ -19913,9 +19913,9 @@
       "MDD": -33.41,
       "Calmar": 0.38,
       "Grade": "Normal",
-      "Score1": 50.0,
-      "Score2": 39.46,
-      "Score3": 23.77
+      "Score1": 60.31,
+      "Score2": 45.08,
+      "Score3": 41.54
     },
     {
       "Ticker": "UNH",
@@ -19930,9 +19930,9 @@
       "MDD": -61.39,
       "Calmar": 0.04,
       "Grade": "Bad",
-      "Score1": 42.46,
-      "Score2": 64.15,
-      "Score3": 55.92
+      "Score1": 38.46,
+      "Score2": 52.77,
+      "Score3": 45.85
     },
     {
       "Ticker": "UNP",
@@ -19947,9 +19947,9 @@
       "MDD": -31.84,
       "Calmar": 0.26,
       "Grade": "Normal",
-      "Score1": 70.77,
-      "Score2": 36.15,
-      "Score3": 44.62
+      "Score1": 59.69,
+      "Score2": 52.38,
+      "Score3": 34.69
     },
     {
       "Ticker": "VLO",
@@ -19964,9 +19964,9 @@
       "MDD": -41.22,
       "Calmar": 1.02,
       "Grade": "Normal",
-      "Score1": 72.31,
-      "Score2": 70.15,
-      "Score3": 81.46
+      "Score1": 64.77,
+      "Score2": 63.69,
+      "Score3": 71.77
     },
     {
       "Ticker": "VTR",
@@ -19981,9 +19981,9 @@
       "MDD": -41.79,
       "Calmar": 0.34,
       "Grade": "Normal",
-      "Score1": 63.38,
-      "Score2": 35.38,
-      "Score3": 49.23
+      "Score1": 54.08,
+      "Score2": 43.69,
+      "Score3": 37.0
     },
     {
       "Ticker": "VTRS",
@@ -19998,9 +19998,9 @@
       "MDD": -45.66,
       "Calmar": 0.19,
       "Grade": "Normal",
-      "Score1": 72.46,
-      "Score2": 43.92,
-      "Score3": 43.92
+      "Score1": 64.46,
+      "Score2": 53.31,
+      "Score3": 48.46
     },
     {
       "Ticker": "WDC",
@@ -20015,9 +20015,9 @@
       "MDD": -56.07,
       "Calmar": 1.14,
       "Grade": "Bad",
-      "Score1": 21.38,
-      "Score2": 66.08,
-      "Score3": 47.77
+      "Score1": 39.08,
+      "Score2": 48.0,
+      "Score3": 64.08
     },
     {
       "Ticker": "WELL",
@@ -20032,9 +20032,9 @@
       "MDD": -40.78,
       "Calmar": 0.64,
       "Grade": "Normal",
-      "Score1": 60.62,
-      "Score2": 42.31,
-      "Score3": 54.54
+      "Score1": 50.77,
+      "Score2": 44.23,
+      "Score3": 39.62
     },
     {
       "Ticker": "WST",
@@ -20049,9 +20049,9 @@
       "MDD": -59.29,
       "Calmar": -0.02,
       "Grade": "Bad",
-      "Score1": 67.08,
-      "Score2": 54.15,
-      "Score3": 53.62
+      "Score1": 63.46,
+      "Score2": 50.38,
+      "Score3": 52.77
     }
   ],
   "KRX": [
@@ -20069,9 +20069,9 @@
       "MDD": -33.4,
       "Calmar": 1.53,
       "Grade": "Good",
-      "Score1": 63.58,
-      "Score2": 37.84,
-      "Score3": 34.94
+      "Score1": 63.15,
+      "Score2": 39.63,
+      "Score3": 36.85
     },
     {
       "Ticker": "GS",
@@ -20087,9 +20087,9 @@
       "MDD": -23.87,
       "Calmar": 3.56,
       "Grade": "Best",
-      "Score1": 74.44,
-      "Score2": 39.01,
-      "Score3": 37.78
+      "Score1": 78.77,
+      "Score2": 50.0,
+      "Score3": 48.09
     },
     {
       "Ticker": "GS리테일",
@@ -20105,9 +20105,9 @@
       "MDD": -27.16,
       "Calmar": 1.78,
       "Grade": "Best",
-      "Score1": 50.62,
-      "Score2": 41.17,
-      "Score3": 27.47
+      "Score1": 53.46,
+      "Score2": 47.84,
+      "Score3": 33.27
     },
     {
       "Ticker": "HMM",
@@ -20123,9 +20123,9 @@
       "MDD": -25.87,
       "Calmar": -0.55,
       "Grade": "Bad",
-      "Score1": 61.11,
-      "Score2": 17.28,
-      "Score3": 10.06
+      "Score1": 66.73,
+      "Score2": 29.26,
+      "Score3": 22.28
     },
     {
       "Ticker": "KBI메탈",
@@ -20141,9 +20141,9 @@
       "MDD": -66.08,
       "Calmar": 2.37,
       "Grade": "Bad",
-      "Score1": 68.27,
-      "Score2": 54.94,
-      "Score3": 59.14
+      "Score1": 70.74,
+      "Score2": 58.7,
+      "Score3": 67.47
     },
     {
       "Ticker": "KB금융",
@@ -20159,9 +20159,9 @@
       "MDD": -18.42,
       "Calmar": 3.04,
       "Grade": "Best",
-      "Score1": 52.47,
-      "Score2": 33.4,
-      "Score3": 40.49
+      "Score1": 52.35,
+      "Score2": 40.86,
+      "Score3": 44.75
     },
     {
       "Ticker": "KT&G",
@@ -20177,9 +20177,9 @@
       "MDD": -15.64,
       "Calmar": 2.1,
       "Grade": "Best",
-      "Score1": 60.86,
-      "Score2": 54.01,
-      "Score3": 33.15
+      "Score1": 63.46,
+      "Score2": 54.94,
+      "Score3": 33.58
     },
     {
       "Ticker": "LG",
@@ -20195,9 +20195,9 @@
       "MDD": -42.7,
       "Calmar": 0.66,
       "Grade": "Normal",
-      "Score1": 40.0,
-      "Score2": 39.94,
-      "Score3": 20.93
+      "Score1": 48.83,
+      "Score2": 47.47,
+      "Score3": 25.43
     },
     {
       "Ticker": "LG이노텍",
@@ -20213,9 +20213,9 @@
       "MDD": -60.65,
       "Calmar": 6.09,
       "Grade": "Bad",
-      "Score1": 47.53,
-      "Score2": 69.38,
-      "Score3": 72.22
+      "Score1": 38.64,
+      "Score2": 54.57,
+      "Score3": 54.57
     },
     {
       "Ticker": "LG전자",
@@ -20231,9 +20231,9 @@
       "MDD": -57.4,
       "Calmar": 2.63,
       "Grade": "Bad",
-      "Score1": 56.54,
-      "Score2": 44.63,
-      "Score3": 54.32
+      "Score1": 57.47,
+      "Score2": 41.67,
+      "Score3": 48.27
     },
     {
       "Ticker": "LS ELECTRIC",
@@ -20249,9 +20249,9 @@
       "MDD": -43.7,
       "Calmar": 7.41,
       "Grade": "Normal",
-      "Score1": 69.88,
-      "Score2": 62.65,
-      "Score3": 48.4
+      "Score1": 71.42,
+      "Score2": 62.47,
+      "Score3": 48.15
     },
     {
       "Ticker": "S-Oil",
@@ -20267,9 +20267,9 @@
       "MDD": -34.04,
       "Calmar": 4.28,
       "Grade": "Good",
-      "Score1": 68.89,
-      "Score2": 37.04,
-      "Score3": 44.38
+      "Score1": 73.46,
+      "Score2": 47.53,
+      "Score3": 52.28
     },
     {
       "Ticker": "SK",
@@ -20285,9 +20285,9 @@
       "MDD": -34.5,
       "Calmar": 6.28,
       "Grade": "Good",
-      "Score1": 41.73,
-      "Score2": 62.65,
-      "Score3": 74.81
+      "Score1": 41.91,
+      "Score2": 57.72,
+      "Score3": 66.73
     },
     {
       "Ticker": "SK네트웍스",
@@ -20303,9 +20303,9 @@
       "MDD": -48.15,
       "Calmar": 1.59,
       "Grade": "Normal",
-      "Score1": 30.12,
-      "Score2": 41.3,
-      "Score3": 52.1
+      "Score1": 34.69,
+      "Score2": 35.74,
+      "Score3": 44.07
     },
     {
       "Ticker": "SK텔레콤",
@@ -20321,9 +20321,9 @@
       "MDD": -32.99,
       "Calmar": 2.41,
       "Grade": "Good",
-      "Score1": 81.73,
-      "Score2": 50.06,
-      "Score3": 33.95
+      "Score1": 81.3,
+      "Score2": 53.64,
+      "Score3": 38.64
     },
     {
       "Ticker": "SK하이닉스",
@@ -20339,9 +20339,9 @@
       "MDD": -39.57,
       "Calmar": 16.74,
       "Grade": "Good",
-      "Score1": 43.95,
-      "Score2": 64.57,
-      "Score3": 85.43
+      "Score1": 39.32,
+      "Score2": 52.28,
+      "Score3": 68.58
     },
     {
       "Ticker": "가온전선",
@@ -20357,9 +20357,9 @@
       "MDD": -55.32,
       "Calmar": 9.8,
       "Grade": "Bad",
-      "Score1": 66.3,
-      "Score2": 68.58,
-      "Score3": 77.47
+      "Score1": 68.77,
+      "Score2": 68.89,
+      "Score3": 79.94
     },
     {
       "Ticker": "금호건설",
@@ -20375,9 +20375,9 @@
       "MDD": -40.55,
       "Calmar": 5.78,
       "Grade": "Normal",
-      "Score1": 13.09,
-      "Score2": 27.04,
-      "Score3": 40.99
+      "Score1": 26.79,
+      "Score2": 38.46,
+      "Score3": 58.46
     },
     {
       "Ticker": "금호타이어",
@@ -20393,9 +20393,9 @@
       "MDD": -42.83,
       "Calmar": 0.96,
       "Grade": "Normal",
-      "Score1": 32.84,
-      "Score2": 13.4,
-      "Score3": 18.4
+      "Score1": 45.62,
+      "Score2": 31.42,
+      "Score3": 35.8
     },
     {
       "Ticker": "네오오토",
@@ -20411,9 +20411,9 @@
       "MDD": -47.91,
       "Calmar": 2.08,
       "Grade": "Normal",
-      "Score1": 52.96,
-      "Score2": 29.57,
-      "Score3": 30.68
+      "Score1": 57.78,
+      "Score2": 47.1,
+      "Score3": 48.21
     },
     {
       "Ticker": "네이처셀",
@@ -20429,9 +20429,9 @@
       "MDD": -55.29,
       "Calmar": -0.2,
       "Grade": "Bad",
-      "Score1": 45.43,
-      "Score2": 18.52,
-      "Score3": 24.57
+      "Score1": 48.15,
+      "Score2": 21.23,
+      "Score3": 30.93
     },
     {
       "Ticker": "뉴파워프라즈마",
@@ -20447,9 +20447,9 @@
       "MDD": -39.21,
       "Calmar": 1.57,
       "Grade": "Good",
-      "Score1": 70.37,
-      "Score2": 50.12,
-      "Score3": 48.02
+      "Score1": 71.05,
+      "Score2": 60.93,
+      "Score3": 61.54
     },
     {
       "Ticker": "대덕전자",
@@ -20465,9 +20465,9 @@
       "MDD": -44.63,
       "Calmar": 12.44,
       "Grade": "Normal",
-      "Score1": 56.79,
-      "Score2": 58.95,
-      "Score3": 71.23
+      "Score1": 47.9,
+      "Score2": 50.43,
+      "Score3": 60.68
     },
     {
       "Ticker": "대원전선",
@@ -20483,9 +20483,9 @@
       "MDD": -49.89,
       "Calmar": 8.32,
       "Grade": "Normal",
-      "Score1": 84.2,
-      "Score2": 86.11,
-      "Score3": 72.53
+      "Score1": 85.74,
+      "Score2": 87.84,
+      "Score3": 75.25
     },
     {
       "Ticker": "대한항공",
@@ -20501,9 +20501,9 @@
       "MDD": -22.63,
       "Calmar": 0.12,
       "Grade": "Bad",
-      "Score1": 36.54,
-      "Score2": 17.96,
-      "Score3": 25.74
+      "Score1": 41.36,
+      "Score2": 21.42,
+      "Score3": 26.42
     },
     {
       "Ticker": "더블유게임즈",
@@ -20519,9 +20519,9 @@
       "MDD": -20.64,
       "Calmar": 0.3,
       "Grade": "Bad",
-      "Score1": 58.64,
-      "Score2": 28.4,
-      "Score3": 28.83
+      "Score1": 53.33,
+      "Score2": 29.38,
+      "Score3": 26.85
     },
     {
       "Ticker": "롯데손해보험",
@@ -20537,9 +20537,9 @@
       "MDD": -38.57,
       "Calmar": 0.43,
       "Grade": "Good",
-      "Score1": 45.43,
-      "Score2": 13.21,
-      "Score3": 20.0
+      "Score1": 47.78,
+      "Score2": 26.85,
+      "Score3": 34.69
     },
     {
       "Ticker": "롯데쇼핑",
@@ -20555,9 +20555,9 @@
       "MDD": -37.84,
       "Calmar": 1.95,
       "Grade": "Good",
-      "Score1": 63.21,
-      "Score2": 44.94,
-      "Score3": 49.51
+      "Score1": 53.77,
+      "Score2": 33.27,
+      "Score3": 36.91
     },
     {
       "Ticker": "브이엠",
@@ -20573,9 +20573,9 @@
       "MDD": -31.83,
       "Calmar": 22.25,
       "Grade": "Good",
-      "Score1": 57.28,
-      "Score2": 61.48,
-      "Score3": 80.12
+      "Score1": 47.16,
+      "Score2": 50.68,
+      "Score3": 74.57
     },
     {
       "Ticker": "삼성물산",
@@ -20591,9 +20591,9 @@
       "MDD": -40.65,
       "Calmar": 2.87,
       "Grade": "Normal",
-      "Score1": 24.07,
-      "Score2": 35.31,
-      "Score3": 46.23
+      "Score1": 24.88,
+      "Score2": 32.1,
+      "Score3": 37.59
     },
     {
       "Ticker": "삼성생명",
@@ -20609,9 +20609,9 @@
       "MDD": -39.34,
       "Calmar": 4.03,
       "Grade": "Good",
-      "Score1": 36.54,
-      "Score2": 56.98,
-      "Score3": 66.6
+      "Score1": 33.52,
+      "Score2": 46.17,
+      "Score3": 51.98
     },
     {
       "Ticker": "삼성에스디에스",
@@ -20627,9 +20627,9 @@
       "MDD": -48.67,
       "Calmar": 0.48,
       "Grade": "Normal",
-      "Score1": 67.28,
-      "Score2": 26.85,
-      "Score3": 22.59
+      "Score1": 72.84,
+      "Score2": 38.58,
+      "Score3": 34.01
     },
     {
       "Ticker": "삼성전기",
@@ -20645,9 +20645,9 @@
       "MDD": -44.49,
       "Calmar": 23.91,
       "Grade": "Normal",
-      "Score1": 46.3,
-      "Score2": 82.04,
-      "Score3": 95.06
+      "Score1": 39.75,
+      "Score2": 65.0,
+      "Score3": 75.62
     },
     {
       "Ticker": "삼성전자",
@@ -20663,9 +20663,9 @@
       "MDD": -32.69,
       "Calmar": 10.05,
       "Grade": "Good",
-      "Score1": 40.62,
-      "Score2": 54.81,
-      "Score3": 61.3
+      "Score1": 37.65,
+      "Score2": 47.1,
+      "Score3": 50.0
     },
     {
       "Ticker": "삼성화재",
@@ -20681,9 +20681,9 @@
       "MDD": -30.08,
       "Calmar": 1.3,
       "Grade": "Good",
-      "Score1": 49.63,
-      "Score2": 31.42,
-      "Score3": 51.98
+      "Score1": 49.14,
+      "Score2": 31.73,
+      "Score3": 45.25
     },
     {
       "Ticker": "삼지전자",
@@ -20699,9 +20699,9 @@
       "MDD": -41.93,
       "Calmar": 5.17,
       "Grade": "Normal",
-      "Score1": 64.94,
-      "Score2": 59.44,
-      "Score3": 45.31
+      "Score1": 68.4,
+      "Score2": 59.38,
+      "Score3": 50.68
     },
     {
       "Ticker": "삼화콘덴서",
@@ -20717,9 +20717,9 @@
       "MDD": -57.92,
       "Calmar": 4.37,
       "Grade": "Bad",
-      "Score1": 29.38,
-      "Score2": 63.52,
-      "Score3": 72.84
+      "Score1": 26.54,
+      "Score2": 48.46,
+      "Score3": 56.11
     },
     {
       "Ticker": "서울바이오시스",
@@ -20735,9 +20735,9 @@
       "MDD": -69.15,
       "Calmar": 1.17,
       "Grade": "Bad",
-      "Score1": 44.32,
-      "Score2": 46.23,
-      "Score3": 48.77
+      "Score1": 41.85,
+      "Score2": 36.6,
+      "Score3": 44.44
     },
     {
       "Ticker": "소룩스",
@@ -20753,9 +20753,9 @@
       "MDD": -54.21,
       "Calmar": -0.21,
       "Grade": "Bad",
-      "Score1": 14.2,
-      "Score2": 13.21,
-      "Score3": 22.53
+      "Score1": 18.09,
+      "Score2": 11.17,
+      "Score3": 21.6
     },
     {
       "Ticker": "송원산업",
@@ -20771,9 +20771,9 @@
       "MDD": -40.5,
       "Calmar": 0.12,
       "Grade": "Bad",
-      "Score1": 68.15,
-      "Score2": 31.42,
-      "Score3": 22.59
+      "Score1": 72.53,
+      "Score2": 42.78,
+      "Score3": 34.51
     },
     {
       "Ticker": "신한지주",
@@ -20789,13 +20789,13 @@
       "MDD": -17.26,
       "Calmar": 3.15,
       "Grade": "Best",
-      "Score1": 58.27,
-      "Score2": 32.22,
-      "Score3": 36.79
+      "Score1": 54.81,
+      "Score2": 36.48,
+      "Score3": 39.07
     },
     {
       "Ticker": "심텍",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "1y",
@@ -20807,9 +20807,9 @@
       "MDD": -37.95,
       "Calmar": 8.99,
       "Grade": "Good",
-      "Score1": 36.17,
-      "Score2": 46.6,
-      "Score3": 60.25
+      "Score1": 31.48,
+      "Score2": 39.51,
+      "Score3": 58.02
     },
     {
       "Ticker": "싸이맥스",
@@ -20825,13 +20825,13 @@
       "MDD": -39.89,
       "Calmar": 4.99,
       "Grade": "Good",
-      "Score1": 50.12,
-      "Score2": 51.11,
-      "Score3": 50.31
+      "Score1": 55.56,
+      "Score2": 53.21,
+      "Score3": 60.31
     },
     {
       "Ticker": "씨젠",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "의료용품 및 기타 의약 관련제품 제조업",
       "Industry": "의료용품 및 기타 의약 관련제품 제조업",
       "period": "1y",
@@ -20843,9 +20843,9 @@
       "MDD": -27.65,
       "Calmar": -0.33,
       "Grade": "Bad",
-      "Score1": 47.16,
-      "Score2": 16.42,
-      "Score3": 20.12
+      "Score1": 50.12,
+      "Score2": 24.01,
+      "Score3": 29.81
     },
     {
       "Ticker": "에스에이엠티",
@@ -20861,9 +20861,9 @@
       "MDD": -45.39,
       "Calmar": 5.97,
       "Grade": "Normal",
-      "Score1": 40.99,
-      "Score2": 66.67,
-      "Score3": 71.48
+      "Score1": 42.47,
+      "Score2": 54.88,
+      "Score3": 61.17
     },
     {
       "Ticker": "오로라",
@@ -20879,9 +20879,9 @@
       "MDD": -63.68,
       "Calmar": -0.05,
       "Grade": "Bad",
-      "Score1": 21.36,
-      "Score2": 20.56,
-      "Score3": 33.89
+      "Score1": 30.62,
+      "Score2": 29.32,
+      "Score3": 43.09
     },
     {
       "Ticker": "오리온홀딩스",
@@ -20897,9 +20897,9 @@
       "MDD": -19.96,
       "Calmar": 0.37,
       "Grade": "Bad",
-      "Score1": 42.35,
-      "Score2": 27.35,
-      "Score3": 19.32
+      "Score1": 44.88,
+      "Score2": 31.54,
+      "Score3": 24.01
     },
     {
       "Ticker": "와이지-원",
@@ -20915,13 +20915,13 @@
       "MDD": -32.49,
       "Calmar": 7.98,
       "Grade": "Good",
-      "Score1": 36.3,
-      "Score2": 60.31,
-      "Score3": 72.9
+      "Score1": 38.89,
+      "Score2": 53.95,
+      "Score3": 69.88
     },
     {
       "Ticker": "원익IPS",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -20933,8 +20933,8 @@
       "MDD": -43.97,
       "Calmar": 7.31,
       "Grade": "Normal",
-      "Score1": 25.43,
-      "Score2": 35.74,
+      "Score1": 22.16,
+      "Score2": 30.99,
       "Score3": 54.75
     },
     {
@@ -20951,9 +20951,9 @@
       "MDD": -42.3,
       "Calmar": 3.09,
       "Grade": "Normal",
-      "Score1": 76.42,
-      "Score2": 56.79,
-      "Score3": 52.1
+      "Score1": 75.19,
+      "Score2": 66.05,
+      "Score3": 57.65
     },
     {
       "Ticker": "인바디",
@@ -20969,9 +20969,9 @@
       "MDD": -23.03,
       "Calmar": 4.91,
       "Grade": "Best",
-      "Score1": 50.25,
-      "Score2": 38.33,
-      "Score3": 62.22
+      "Score1": 47.96,
+      "Score2": 40.25,
+      "Score3": 64.01
     },
     {
       "Ticker": "인텍플러스",
@@ -20987,9 +20987,9 @@
       "MDD": -43.89,
       "Calmar": 7.56,
       "Grade": "Normal",
-      "Score1": 55.19,
-      "Score2": 51.6,
-      "Score3": 62.72
+      "Score1": 46.3,
+      "Score2": 43.33,
+      "Score3": 58.33
     },
     {
       "Ticker": "자이에스앤디",
@@ -21005,9 +21005,9 @@
       "MDD": -34.5,
       "Calmar": 3.64,
       "Grade": "Good",
-      "Score1": 73.33,
-      "Score2": 42.72,
-      "Score3": 41.54
+      "Score1": 80.31,
+      "Score2": 53.77,
+      "Score3": 56.11
     },
     {
       "Ticker": "제주반도체",
@@ -21023,13 +21023,13 @@
       "MDD": -45.0,
       "Calmar": 10.04,
       "Grade": "Normal",
-      "Score1": 52.72,
-      "Score2": 63.09,
-      "Score3": 80.06
+      "Score1": 42.35,
+      "Score2": 48.7,
+      "Score3": 66.79
     },
     {
       "Ticker": "주성엔지니어링",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -21041,9 +21041,9 @@
       "MDD": -36.13,
       "Calmar": 13.33,
       "Grade": "Good",
-      "Score1": 40.74,
-      "Score2": 66.98,
-      "Score3": 77.04
+      "Score1": 37.35,
+      "Score2": 55.56,
+      "Score3": 72.78
     },
     {
       "Ticker": "지엔씨에너지",
@@ -21059,9 +21059,9 @@
       "MDD": -58.25,
       "Calmar": 0.71,
       "Grade": "Bad",
-      "Score1": 69.88,
-      "Score2": 20.31,
-      "Score3": 23.4
+      "Score1": 79.57,
+      "Score2": 38.33,
+      "Score3": 46.42
     },
     {
       "Ticker": "케이씨텍",
@@ -21077,9 +21077,9 @@
       "MDD": -29.28,
       "Calmar": 8.07,
       "Grade": "Best",
-      "Score1": 40.49,
-      "Score2": 46.3,
-      "Score3": 65.68
+      "Score1": 41.3,
+      "Score2": 48.52,
+      "Score3": 65.86
     },
     {
       "Ticker": "코리안리",
@@ -21095,9 +21095,9 @@
       "MDD": -19.87,
       "Calmar": 1.22,
       "Grade": "Good",
-      "Score1": 43.7,
-      "Score2": 45.0,
-      "Score3": 33.4
+      "Score1": 47.22,
+      "Score2": 51.67,
+      "Score3": 36.36
     },
     {
       "Ticker": "코스맥스엔비티",
@@ -21113,9 +21113,9 @@
       "MDD": -34.91,
       "Calmar": 2.28,
       "Grade": "Good",
-      "Score1": 60.37,
-      "Score2": 52.35,
-      "Score3": 54.94
+      "Score1": 60.56,
+      "Score2": 57.28,
+      "Score3": 63.27
     },
     {
       "Ticker": "코웨이",
@@ -21131,13 +21131,13 @@
       "MDD": -37.37,
       "Calmar": -0.44,
       "Grade": "Bad",
-      "Score1": 34.44,
-      "Score2": 19.63,
-      "Score3": 25.62
+      "Score1": 37.72,
+      "Score2": 25.62,
+      "Score3": 29.01
     },
     {
       "Ticker": "테스",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "1y",
@@ -21149,9 +21149,9 @@
       "MDD": -36.29,
       "Calmar": 15.09,
       "Grade": "Good",
-      "Score1": 62.59,
-      "Score2": 59.2,
-      "Score3": 83.21
+      "Score1": 53.7,
+      "Score2": 52.9,
+      "Score3": 79.14
     },
     {
       "Ticker": "티에스이",
@@ -21167,9 +21167,9 @@
       "MDD": -24.14,
       "Calmar": 23.37,
       "Grade": "Best",
-      "Score1": 70.99,
-      "Score2": 66.48,
-      "Score3": 81.98
+      "Score1": 59.51,
+      "Score2": 56.11,
+      "Score3": 74.32
     },
     {
       "Ticker": "피델릭스",
@@ -21185,9 +21185,9 @@
       "MDD": -48.76,
       "Calmar": 6.7,
       "Grade": "Normal",
-      "Score1": 57.53,
-      "Score2": 68.09,
-      "Score3": 83.4
+      "Score1": 54.14,
+      "Score2": 54.57,
+      "Score3": 70.68
     },
     {
       "Ticker": "피에스케이",
@@ -21203,9 +21203,9 @@
       "MDD": -28.42,
       "Calmar": 25.89,
       "Grade": "Best",
-      "Score1": 56.91,
-      "Score2": 66.54,
-      "Score3": 92.65
+      "Score1": 49.94,
+      "Score2": 56.85,
+      "Score3": 83.89
     },
     {
       "Ticker": "피에스케이홀딩스",
@@ -21221,9 +21221,9 @@
       "MDD": -30.81,
       "Calmar": 8.94,
       "Grade": "Good",
-      "Score1": 57.65,
-      "Score2": 43.27,
-      "Score3": 54.07
+      "Score1": 53.52,
+      "Score2": 43.46,
+      "Score3": 59.81
     },
     {
       "Ticker": "하나금융지주",
@@ -21239,9 +21239,9 @@
       "MDD": -19.65,
       "Calmar": 2.28,
       "Grade": "Best",
-      "Score1": 60.25,
-      "Score2": 29.63,
-      "Score3": 35.12
+      "Score1": 58.09,
+      "Score2": 37.22,
+      "Score3": 41.11
     },
     {
       "Ticker": "한국콜마",
@@ -21257,9 +21257,9 @@
       "MDD": -40.16,
       "Calmar": 0.15,
       "Grade": "Bad",
-      "Score1": 25.56,
-      "Score2": 34.63,
-      "Score3": 35.43
+      "Score1": 37.04,
+      "Score2": 41.3,
+      "Score3": 43.27
     },
     {
       "Ticker": "한국타이어앤테크놀로지",
@@ -21275,9 +21275,9 @@
       "MDD": -31.49,
       "Calmar": 2.17,
       "Grade": "Good",
-      "Score1": 72.47,
-      "Score2": 28.02,
-      "Score3": 38.15
+      "Score1": 74.32,
+      "Score2": 40.12,
+      "Score3": 45.0
     },
     {
       "Ticker": "한솔테크닉스",
@@ -21293,9 +21293,9 @@
       "MDD": -46.83,
       "Calmar": 1.19,
       "Grade": "Normal",
-      "Score1": 45.06,
-      "Score2": 36.48,
-      "Score3": 48.64
+      "Score1": 36.36,
+      "Score2": 29.14,
+      "Score3": 38.7
     },
     {
       "Ticker": "현대모비스",
@@ -21311,9 +21311,9 @@
       "MDD": -39.45,
       "Calmar": 2.09,
       "Grade": "Good",
-      "Score1": 65.43,
-      "Score2": 42.53,
-      "Score3": 32.47
+      "Score1": 68.83,
+      "Score2": 51.91,
+      "Score3": 38.09
     },
     {
       "Ticker": "현대백화점",
@@ -21329,9 +21329,9 @@
       "MDD": -34.11,
       "Calmar": 2.49,
       "Grade": "Good",
-      "Score1": 52.96,
-      "Score2": 41.6,
-      "Score3": 64.81
+      "Score1": 46.79,
+      "Score2": 31.73,
+      "Score3": 50.31
     },
     {
       "Ticker": "현대해상",
@@ -21347,8 +21347,8 @@
       "MDD": -24.74,
       "Calmar": 1.8,
       "Grade": "Best",
-      "Score1": 61.6,
-      "Score2": 55.31,
+      "Score1": 63.21,
+      "Score2": 59.81,
       "Score3": 46.6
     },
     {
@@ -21365,9 +21365,9 @@
       "MDD": -33.4,
       "Calmar": 0.85,
       "Grade": "Good",
-      "Score1": 63.58,
-      "Score2": 37.84,
-      "Score3": 34.94
+      "Score1": 63.15,
+      "Score2": 39.63,
+      "Score3": 36.85
     },
     {
       "Ticker": "GS",
@@ -21383,9 +21383,9 @@
       "MDD": -35.25,
       "Calmar": 1.02,
       "Grade": "Good",
-      "Score1": 74.44,
-      "Score2": 39.01,
-      "Score3": 37.78
+      "Score1": 78.77,
+      "Score2": 50.0,
+      "Score3": 48.09
     },
     {
       "Ticker": "GS리테일",
@@ -21401,9 +21401,9 @@
       "MDD": -37.63,
       "Calmar": 0.32,
       "Grade": "Normal",
-      "Score1": 50.62,
-      "Score2": 41.17,
-      "Score3": 27.47
+      "Score1": 53.46,
+      "Score2": 47.84,
+      "Score3": 33.27
     },
     {
       "Ticker": "HMM",
@@ -21419,9 +21419,9 @@
       "MDD": -34.16,
       "Calmar": 0.1,
       "Grade": "Bad",
-      "Score1": 61.11,
-      "Score2": 17.28,
-      "Score3": 10.06
+      "Score1": 66.73,
+      "Score2": 29.26,
+      "Score3": 22.28
     },
     {
       "Ticker": "KBI메탈",
@@ -21437,9 +21437,9 @@
       "MDD": -66.08,
       "Calmar": 0.65,
       "Grade": "Bad",
-      "Score1": 68.27,
-      "Score2": 54.94,
-      "Score3": 59.14
+      "Score1": 70.74,
+      "Score2": 58.7,
+      "Score3": 67.47
     },
     {
       "Ticker": "KB금융",
@@ -21455,9 +21455,9 @@
       "MDD": -30.34,
       "Calmar": 1.85,
       "Grade": "Good",
-      "Score1": 52.47,
-      "Score2": 33.4,
-      "Score3": 40.49
+      "Score1": 52.35,
+      "Score2": 40.86,
+      "Score3": 44.75
     },
     {
       "Ticker": "KT&G",
@@ -21473,9 +21473,9 @@
       "MDD": -23.01,
       "Calmar": 1.35,
       "Grade": "Best",
-      "Score1": 60.86,
-      "Score2": 54.01,
-      "Score3": 33.15
+      "Score1": 63.46,
+      "Score2": 54.94,
+      "Score3": 33.58
     },
     {
       "Ticker": "LG",
@@ -21491,9 +21491,9 @@
       "MDD": -43.48,
       "Calmar": 0.12,
       "Grade": "Bad",
-      "Score1": 40.0,
-      "Score2": 39.94,
-      "Score3": 20.93
+      "Score1": 48.83,
+      "Score2": 47.47,
+      "Score3": 25.43
     },
     {
       "Ticker": "LG이노텍",
@@ -21509,9 +21509,9 @@
       "MDD": -60.65,
       "Calmar": 0.58,
       "Grade": "Bad",
-      "Score1": 47.53,
-      "Score2": 69.38,
-      "Score3": 72.22
+      "Score1": 38.64,
+      "Score2": 54.57,
+      "Score3": 54.57
     },
     {
       "Ticker": "LG전자",
@@ -21527,9 +21527,9 @@
       "MDD": -57.4,
       "Calmar": 0.29,
       "Grade": "Bad",
-      "Score1": 56.54,
-      "Score2": 44.63,
-      "Score3": 54.32
+      "Score1": 57.47,
+      "Score2": 41.67,
+      "Score3": 48.27
     },
     {
       "Ticker": "LS ELECTRIC",
@@ -21545,9 +21545,9 @@
       "MDD": -49.5,
       "Calmar": 2.82,
       "Grade": "Normal",
-      "Score1": 69.88,
-      "Score2": 62.65,
-      "Score3": 48.4
+      "Score1": 71.42,
+      "Score2": 62.47,
+      "Score3": 48.15
     },
     {
       "Ticker": "S-Oil",
@@ -21563,9 +21563,9 @@
       "MDD": -39.64,
       "Calmar": 0.75,
       "Grade": "Good",
-      "Score1": 68.89,
-      "Score2": 37.04,
-      "Score3": 44.38
+      "Score1": 73.46,
+      "Score2": 47.53,
+      "Score3": 52.28
     },
     {
       "Ticker": "SK",
@@ -21581,9 +21581,9 @@
       "MDD": -44.39,
       "Calmar": 1.51,
       "Grade": "Normal",
-      "Score1": 41.73,
-      "Score2": 62.65,
-      "Score3": 74.81
+      "Score1": 41.91,
+      "Score2": 57.72,
+      "Score3": 66.73
     },
     {
       "Ticker": "SK네트웍스",
@@ -21599,9 +21599,9 @@
       "MDD": -52.29,
       "Calmar": 0.23,
       "Grade": "Bad",
-      "Score1": 30.12,
-      "Score2": 41.3,
-      "Score3": 52.1
+      "Score1": 34.69,
+      "Score2": 35.74,
+      "Score3": 44.07
     },
     {
       "Ticker": "SK텔레콤",
@@ -21617,9 +21617,9 @@
       "MDD": -32.99,
       "Calmar": 0.94,
       "Grade": "Good",
-      "Score1": 81.73,
-      "Score2": 50.06,
-      "Score3": 33.95
+      "Score1": 81.3,
+      "Score2": 53.64,
+      "Score3": 38.64
     },
     {
       "Ticker": "SK하이닉스",
@@ -21635,9 +21635,9 @@
       "MDD": -39.57,
       "Calmar": 4.16,
       "Grade": "Good",
-      "Score1": 43.95,
-      "Score2": 64.57,
-      "Score3": 85.43
+      "Score1": 39.32,
+      "Score2": 52.28,
+      "Score3": 68.58
     },
     {
       "Ticker": "가온전선",
@@ -21653,9 +21653,9 @@
       "MDD": -55.32,
       "Calmar": 3.29,
       "Grade": "Bad",
-      "Score1": 66.3,
-      "Score2": 68.58,
-      "Score3": 77.47
+      "Score1": 68.77,
+      "Score2": 68.89,
+      "Score3": 79.94
     },
     {
       "Ticker": "금호건설",
@@ -21671,9 +21671,9 @@
       "MDD": -58.52,
       "Calmar": 0.47,
       "Grade": "Bad",
-      "Score1": 13.09,
-      "Score2": 27.04,
-      "Score3": 40.99
+      "Score1": 26.79,
+      "Score2": 38.46,
+      "Score3": 58.46
     },
     {
       "Ticker": "금호타이어",
@@ -21689,9 +21689,9 @@
       "MDD": -50.24,
       "Calmar": 0.26,
       "Grade": "Bad",
-      "Score1": 32.84,
-      "Score2": 13.4,
-      "Score3": 18.4
+      "Score1": 45.62,
+      "Score2": 31.42,
+      "Score3": 35.8
     },
     {
       "Ticker": "네오오토",
@@ -21707,9 +21707,9 @@
       "MDD": -47.91,
       "Calmar": 0.66,
       "Grade": "Normal",
-      "Score1": 52.96,
-      "Score2": 29.57,
-      "Score3": 30.68
+      "Score1": 57.78,
+      "Score2": 47.1,
+      "Score3": 48.21
     },
     {
       "Ticker": "네이처셀",
@@ -21725,9 +21725,9 @@
       "MDD": -55.29,
       "Calmar": 0.81,
       "Grade": "Bad",
-      "Score1": 45.43,
-      "Score2": 18.52,
-      "Score3": 24.57
+      "Score1": 48.15,
+      "Score2": 21.23,
+      "Score3": 30.93
     },
     {
       "Ticker": "뉴파워프라즈마",
@@ -21743,9 +21743,9 @@
       "MDD": -43.02,
       "Calmar": 0.45,
       "Grade": "Normal",
-      "Score1": 70.37,
-      "Score2": 50.12,
-      "Score3": 48.02
+      "Score1": 71.05,
+      "Score2": 60.93,
+      "Score3": 61.54
     },
     {
       "Ticker": "대덕전자",
@@ -21761,9 +21761,9 @@
       "MDD": -64.98,
       "Calmar": 0.83,
       "Grade": "Bad",
-      "Score1": 56.79,
-      "Score2": 58.95,
-      "Score3": 71.23
+      "Score1": 47.9,
+      "Score2": 50.43,
+      "Score3": 60.68
     },
     {
       "Ticker": "대원전선",
@@ -21779,9 +21779,9 @@
       "MDD": -54.48,
       "Calmar": 2.6,
       "Grade": "Bad",
-      "Score1": 84.2,
-      "Score2": 86.11,
-      "Score3": 72.53
+      "Score1": 85.74,
+      "Score2": 87.84,
+      "Score3": 75.25
     },
     {
       "Ticker": "대한항공",
@@ -21797,9 +21797,9 @@
       "MDD": -24.41,
       "Calmar": -0.01,
       "Grade": "Bad",
-      "Score1": 36.54,
-      "Score2": 17.96,
-      "Score3": 25.74
+      "Score1": 41.36,
+      "Score2": 21.42,
+      "Score3": 26.42
     },
     {
       "Ticker": "더블유게임즈",
@@ -21815,9 +21815,9 @@
       "MDD": -23.83,
       "Calmar": 0.88,
       "Grade": "Good",
-      "Score1": 58.64,
-      "Score2": 28.4,
-      "Score3": 28.83
+      "Score1": 53.33,
+      "Score2": 29.38,
+      "Score3": 26.85
     },
     {
       "Ticker": "롯데손해보험",
@@ -21833,9 +21833,9 @@
       "MDD": -62.18,
       "Calmar": 0.16,
       "Grade": "Bad",
-      "Score1": 45.43,
-      "Score2": 13.21,
-      "Score3": 20.0
+      "Score1": 47.78,
+      "Score2": 26.85,
+      "Score3": 34.69
     },
     {
       "Ticker": "롯데쇼핑",
@@ -21851,9 +21851,9 @@
       "MDD": -42.59,
       "Calmar": 0.54,
       "Grade": "Normal",
-      "Score1": 63.21,
-      "Score2": 44.94,
-      "Score3": 49.51
+      "Score1": 53.77,
+      "Score2": 33.27,
+      "Score3": 36.91
     },
     {
       "Ticker": "브이엠",
@@ -21869,9 +21869,9 @@
       "MDD": -71.39,
       "Calmar": 0.94,
       "Grade": "Bad",
-      "Score1": 57.28,
-      "Score2": 61.48,
-      "Score3": 80.12
+      "Score1": 47.16,
+      "Score2": 50.68,
+      "Score3": 74.57
     },
     {
       "Ticker": "삼성물산",
@@ -21887,9 +21887,9 @@
       "MDD": -40.65,
       "Calmar": 1.32,
       "Grade": "Normal",
-      "Score1": 24.07,
-      "Score2": 35.31,
-      "Score3": 46.23
+      "Score1": 24.88,
+      "Score2": 32.1,
+      "Score3": 37.59
     },
     {
       "Ticker": "삼성생명",
@@ -21905,9 +21905,9 @@
       "MDD": -39.34,
       "Calmar": 1.82,
       "Grade": "Good",
-      "Score1": 36.54,
-      "Score2": 56.98,
-      "Score3": 66.6
+      "Score1": 33.52,
+      "Score2": 46.17,
+      "Score3": 51.98
     },
     {
       "Ticker": "삼성에스디에스",
@@ -21923,9 +21923,9 @@
       "MDD": -48.67,
       "Calmar": 0.41,
       "Grade": "Normal",
-      "Score1": 67.28,
-      "Score2": 26.85,
-      "Score3": 22.59
+      "Score1": 72.84,
+      "Score2": 38.58,
+      "Score3": 34.01
     },
     {
       "Ticker": "삼성전기",
@@ -21941,9 +21941,9 @@
       "MDD": -44.49,
       "Calmar": 2.68,
       "Grade": "Normal",
-      "Score1": 46.3,
-      "Score2": 82.04,
-      "Score3": 95.06
+      "Score1": 39.75,
+      "Score2": 65.0,
+      "Score3": 75.62
     },
     {
       "Ticker": "삼성전자",
@@ -21959,9 +21959,9 @@
       "MDD": -43.17,
       "Calmar": 1.37,
       "Grade": "Normal",
-      "Score1": 40.62,
-      "Score2": 54.81,
-      "Score3": 61.3
+      "Score1": 37.65,
+      "Score2": 47.1,
+      "Score3": 50.0
     },
     {
       "Ticker": "삼성화재",
@@ -21977,9 +21977,9 @@
       "MDD": -30.08,
       "Calmar": 1.34,
       "Grade": "Good",
-      "Score1": 49.63,
-      "Score2": 31.42,
-      "Score3": 51.98
+      "Score1": 49.14,
+      "Score2": 31.73,
+      "Score3": 45.25
     },
     {
       "Ticker": "삼지전자",
@@ -21995,9 +21995,9 @@
       "MDD": -41.93,
       "Calmar": 1.63,
       "Grade": "Normal",
-      "Score1": 64.94,
-      "Score2": 59.44,
-      "Score3": 45.31
+      "Score1": 68.4,
+      "Score2": 59.38,
+      "Score3": 50.68
     },
     {
       "Ticker": "삼화콘덴서",
@@ -22013,9 +22013,9 @@
       "MDD": -58.57,
       "Calmar": 0.5,
       "Grade": "Bad",
-      "Score1": 29.38,
-      "Score2": 63.52,
-      "Score3": 72.84
+      "Score1": 26.54,
+      "Score2": 48.46,
+      "Score3": 56.11
     },
     {
       "Ticker": "서울바이오시스",
@@ -22031,9 +22031,9 @@
       "MDD": -69.15,
       "Calmar": 0.07,
       "Grade": "Bad",
-      "Score1": 44.32,
-      "Score2": 46.23,
-      "Score3": 48.77
+      "Score1": 41.85,
+      "Score2": 36.6,
+      "Score3": 44.44
     },
     {
       "Ticker": "소룩스",
@@ -22049,9 +22049,9 @@
       "MDD": -92.87,
       "Calmar": -0.15,
       "Grade": "Bad",
-      "Score1": 14.2,
-      "Score2": 13.21,
-      "Score3": 22.53
+      "Score1": 18.09,
+      "Score2": 11.17,
+      "Score3": 21.6
     },
     {
       "Ticker": "송원산업",
@@ -22067,9 +22067,9 @@
       "MDD": -58.59,
       "Calmar": -0.23,
       "Grade": "Bad",
-      "Score1": 68.15,
-      "Score2": 31.42,
-      "Score3": 22.59
+      "Score1": 72.53,
+      "Score2": 42.78,
+      "Score3": 34.51
     },
     {
       "Ticker": "신한지주",
@@ -22085,13 +22085,13 @@
       "MDD": -28.99,
       "Calmar": 1.63,
       "Grade": "Best",
-      "Score1": 58.27,
-      "Score2": 32.22,
-      "Score3": 36.79
+      "Score1": 54.81,
+      "Score2": 36.48,
+      "Score3": 39.07
     },
     {
       "Ticker": "심텍",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "3y",
@@ -22103,9 +22103,9 @@
       "MDD": -76.45,
       "Calmar": 0.56,
       "Grade": "Bad",
-      "Score1": 36.17,
-      "Score2": 46.6,
-      "Score3": 60.25
+      "Score1": 31.48,
+      "Score2": 39.51,
+      "Score3": 58.02
     },
     {
       "Ticker": "싸이맥스",
@@ -22121,13 +22121,13 @@
       "MDD": -67.39,
       "Calmar": 0.58,
       "Grade": "Bad",
-      "Score1": 50.12,
-      "Score2": 51.11,
-      "Score3": 50.31
+      "Score1": 55.56,
+      "Score2": 53.21,
+      "Score3": 60.31
     },
     {
       "Ticker": "씨젠",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "의료용품 및 기타 의약 관련제품 제조업",
       "Industry": "의료용품 및 기타 의약 관련제품 제조업",
       "period": "3y",
@@ -22139,9 +22139,9 @@
       "MDD": -38.17,
       "Calmar": 0.23,
       "Grade": "Normal",
-      "Score1": 47.16,
-      "Score2": 16.42,
-      "Score3": 20.12
+      "Score1": 50.12,
+      "Score2": 24.01,
+      "Score3": 29.81
     },
     {
       "Ticker": "에스에이엠티",
@@ -22157,9 +22157,9 @@
       "MDD": -45.39,
       "Calmar": 1.29,
       "Grade": "Normal",
-      "Score1": 40.99,
-      "Score2": 66.67,
-      "Score3": 71.48
+      "Score1": 42.47,
+      "Score2": 54.88,
+      "Score3": 61.17
     },
     {
       "Ticker": "오로라",
@@ -22175,9 +22175,9 @@
       "MDD": -63.68,
       "Calmar": 0.61,
       "Grade": "Bad",
-      "Score1": 21.36,
-      "Score2": 20.56,
-      "Score3": 33.89
+      "Score1": 30.62,
+      "Score2": 29.32,
+      "Score3": 43.09
     },
     {
       "Ticker": "오리온홀딩스",
@@ -22193,9 +22193,9 @@
       "MDD": -26.99,
       "Calmar": 0.82,
       "Grade": "Good",
-      "Score1": 42.35,
-      "Score2": 27.35,
-      "Score3": 19.32
+      "Score1": 44.88,
+      "Score2": 31.54,
+      "Score3": 24.01
     },
     {
       "Ticker": "와이지-원",
@@ -22211,13 +22211,13 @@
       "MDD": -32.49,
       "Calmar": 1.55,
       "Grade": "Good",
-      "Score1": 36.3,
-      "Score2": 60.31,
-      "Score3": 72.9
+      "Score1": 38.89,
+      "Score2": 53.95,
+      "Score3": 69.88
     },
     {
       "Ticker": "원익IPS",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22229,8 +22229,8 @@
       "MDD": -50.24,
       "Calmar": 1.03,
       "Grade": "Bad",
-      "Score1": 25.43,
-      "Score2": 35.74,
+      "Score1": 22.16,
+      "Score2": 30.99,
       "Score3": 54.75
     },
     {
@@ -22247,9 +22247,9 @@
       "MDD": -79.53,
       "Calmar": -0.21,
       "Grade": "Bad",
-      "Score1": 76.42,
-      "Score2": 56.79,
-      "Score3": 52.1
+      "Score1": 75.19,
+      "Score2": 66.05,
+      "Score3": 57.65
     },
     {
       "Ticker": "인바디",
@@ -22265,9 +22265,9 @@
       "MDD": -30.68,
       "Calmar": 0.71,
       "Grade": "Good",
-      "Score1": 50.25,
-      "Score2": 38.33,
-      "Score3": 62.22
+      "Score1": 47.96,
+      "Score2": 40.25,
+      "Score3": 64.01
     },
     {
       "Ticker": "인텍플러스",
@@ -22283,9 +22283,9 @@
       "MDD": -82.59,
       "Calmar": -0.08,
       "Grade": "Bad",
-      "Score1": 55.19,
-      "Score2": 51.6,
-      "Score3": 62.72
+      "Score1": 46.3,
+      "Score2": 43.33,
+      "Score3": 58.33
     },
     {
       "Ticker": "자이에스앤디",
@@ -22301,9 +22301,9 @@
       "MDD": -51.15,
       "Calmar": 0.2,
       "Grade": "Bad",
-      "Score1": 73.33,
-      "Score2": 42.72,
-      "Score3": 41.54
+      "Score1": 80.31,
+      "Score2": 53.77,
+      "Score3": 56.11
     },
     {
       "Ticker": "제주반도체",
@@ -22319,13 +22319,13 @@
       "MDD": -77.15,
       "Calmar": 2.18,
       "Grade": "Bad",
-      "Score1": 52.72,
-      "Score2": 63.09,
-      "Score3": 80.06
+      "Score1": 42.35,
+      "Score2": 48.7,
+      "Score3": 66.79
     },
     {
       "Ticker": "주성엔지니어링",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22337,9 +22337,9 @@
       "MDD": -44.37,
       "Calmar": 2.27,
       "Grade": "Normal",
-      "Score1": 40.74,
-      "Score2": 66.98,
-      "Score3": 77.04
+      "Score1": 37.35,
+      "Score2": 55.56,
+      "Score3": 72.78
     },
     {
       "Ticker": "지엔씨에너지",
@@ -22355,9 +22355,9 @@
       "MDD": -58.25,
       "Calmar": 2.17,
       "Grade": "Bad",
-      "Score1": 69.88,
-      "Score2": 20.31,
-      "Score3": 23.4
+      "Score1": 79.57,
+      "Score2": 38.33,
+      "Score3": 46.42
     },
     {
       "Ticker": "케이씨텍",
@@ -22373,9 +22373,9 @@
       "MDD": -59.29,
       "Calmar": 1.02,
       "Grade": "Bad",
-      "Score1": 40.49,
-      "Score2": 46.3,
-      "Score3": 65.68
+      "Score1": 41.3,
+      "Score2": 48.52,
+      "Score3": 65.86
     },
     {
       "Ticker": "코리안리",
@@ -22391,9 +22391,9 @@
       "MDD": -19.87,
       "Calmar": 2.11,
       "Grade": "Best",
-      "Score1": 43.7,
-      "Score2": 45.0,
-      "Score3": 33.4
+      "Score1": 47.22,
+      "Score2": 51.67,
+      "Score3": 36.36
     },
     {
       "Ticker": "코스맥스엔비티",
@@ -22409,9 +22409,9 @@
       "MDD": -59.41,
       "Calmar": 0.23,
       "Grade": "Bad",
-      "Score1": 60.37,
-      "Score2": 52.35,
-      "Score3": 54.94
+      "Score1": 60.56,
+      "Score2": 57.28,
+      "Score3": 63.27
     },
     {
       "Ticker": "코웨이",
@@ -22427,13 +22427,13 @@
       "MDD": -37.37,
       "Calmar": 0.78,
       "Grade": "Good",
-      "Score1": 34.44,
-      "Score2": 19.63,
-      "Score3": 25.62
+      "Score1": 37.72,
+      "Score2": 25.62,
+      "Score3": 29.01
     },
     {
       "Ticker": "테스",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "3y",
@@ -22445,9 +22445,9 @@
       "MDD": -56.0,
       "Calmar": 1.73,
       "Grade": "Bad",
-      "Score1": 62.59,
-      "Score2": 59.2,
-      "Score3": 83.21
+      "Score1": 53.7,
+      "Score2": 52.9,
+      "Score3": 79.14
     },
     {
       "Ticker": "티에스이",
@@ -22463,9 +22463,9 @@
       "MDD": -57.87,
       "Calmar": 1.22,
       "Grade": "Bad",
-      "Score1": 70.99,
-      "Score2": 66.48,
-      "Score3": 81.98
+      "Score1": 59.51,
+      "Score2": 56.11,
+      "Score3": 74.32
     },
     {
       "Ticker": "피델릭스",
@@ -22481,9 +22481,9 @@
       "MDD": -61.54,
       "Calmar": 0.75,
       "Grade": "Bad",
-      "Score1": 57.53,
-      "Score2": 68.09,
-      "Score3": 83.4
+      "Score1": 54.14,
+      "Score2": 54.57,
+      "Score3": 70.68
     },
     {
       "Ticker": "피에스케이",
@@ -22499,9 +22499,9 @@
       "MDD": -57.62,
       "Calmar": 1.68,
       "Grade": "Bad",
-      "Score1": 56.91,
-      "Score2": 66.54,
-      "Score3": 92.65
+      "Score1": 49.94,
+      "Score2": 56.85,
+      "Score3": 83.89
     },
     {
       "Ticker": "피에스케이홀딩스",
@@ -22517,9 +22517,9 @@
       "MDD": -65.64,
       "Calmar": 1.1,
       "Grade": "Bad",
-      "Score1": 57.65,
-      "Score2": 43.27,
-      "Score3": 54.07
+      "Score1": 53.52,
+      "Score2": 43.46,
+      "Score3": 59.81
     },
     {
       "Ticker": "하나금융지주",
@@ -22535,9 +22535,9 @@
       "MDD": -24.13,
       "Calmar": 2.14,
       "Grade": "Best",
-      "Score1": 60.25,
-      "Score2": 29.63,
-      "Score3": 35.12
+      "Score1": 58.09,
+      "Score2": 37.22,
+      "Score3": 41.11
     },
     {
       "Ticker": "한국콜마",
@@ -22553,9 +22553,9 @@
       "MDD": -44.05,
       "Calmar": 0.71,
       "Grade": "Normal",
-      "Score1": 25.56,
-      "Score2": 34.63,
-      "Score3": 35.43
+      "Score1": 37.04,
+      "Score2": 41.3,
+      "Score3": 43.27
     },
     {
       "Ticker": "한국타이어앤테크놀로지",
@@ -22571,9 +22571,9 @@
       "MDD": -44.69,
       "Calmar": 0.64,
       "Grade": "Normal",
-      "Score1": 72.47,
-      "Score2": 28.02,
-      "Score3": 38.15
+      "Score1": 74.32,
+      "Score2": 40.12,
+      "Score3": 45.0
     },
     {
       "Ticker": "한솔테크닉스",
@@ -22589,9 +22589,9 @@
       "MDD": -52.89,
       "Calmar": 0.14,
       "Grade": "Bad",
-      "Score1": 45.06,
-      "Score2": 36.48,
-      "Score3": 48.64
+      "Score1": 36.36,
+      "Score2": 29.14,
+      "Score3": 38.7
     },
     {
       "Ticker": "현대모비스",
@@ -22607,9 +22607,9 @@
       "MDD": -39.45,
       "Calmar": 0.77,
       "Grade": "Good",
-      "Score1": 65.43,
-      "Score2": 42.53,
-      "Score3": 32.47
+      "Score1": 68.83,
+      "Score2": 51.91,
+      "Score3": 38.09
     },
     {
       "Ticker": "현대백화점",
@@ -22625,9 +22625,9 @@
       "MDD": -41.17,
       "Calmar": 0.93,
       "Grade": "Normal",
-      "Score1": 52.96,
-      "Score2": 41.6,
-      "Score3": 64.81
+      "Score1": 46.79,
+      "Score2": 31.73,
+      "Score3": 50.31
     },
     {
       "Ticker": "현대해상",
@@ -22643,8 +22643,8 @@
       "MDD": -44.79,
       "Calmar": 0.24,
       "Grade": "Normal",
-      "Score1": 61.6,
-      "Score2": 55.31,
+      "Score1": 63.21,
+      "Score2": 59.81,
       "Score3": 46.6
     },
     {
@@ -22661,9 +22661,9 @@
       "MDD": -41.87,
       "Calmar": 0.94,
       "Grade": "Normal",
-      "Score1": 63.58,
-      "Score2": 37.84,
-      "Score3": 34.94
+      "Score1": 63.15,
+      "Score2": 39.63,
+      "Score3": 36.85
     },
     {
       "Ticker": "GS",
@@ -22679,9 +22679,9 @@
       "MDD": -35.25,
       "Calmar": 0.48,
       "Grade": "Good",
-      "Score1": 74.44,
-      "Score2": 39.01,
-      "Score3": 37.78
+      "Score1": 78.77,
+      "Score2": 50.0,
+      "Score3": 48.09
     },
     {
       "Ticker": "GS리테일",
@@ -22697,9 +22697,9 @@
       "MDD": -55.75,
       "Calmar": -0.06,
       "Grade": "Bad",
-      "Score1": 50.62,
-      "Score2": 41.17,
-      "Score3": 27.47
+      "Score1": 53.46,
+      "Score2": 47.84,
+      "Score3": 33.27
     },
     {
       "Ticker": "HMM",
@@ -22715,9 +22715,9 @@
       "MDD": -66.79,
       "Calmar": -0.2,
       "Grade": "Bad",
-      "Score1": 61.11,
-      "Score2": 17.28,
-      "Score3": 10.06
+      "Score1": 66.73,
+      "Score2": 29.26,
+      "Score3": 22.28
     },
     {
       "Ticker": "KBI메탈",
@@ -22733,9 +22733,9 @@
       "MDD": -66.08,
       "Calmar": 0.17,
       "Grade": "Bad",
-      "Score1": 68.27,
-      "Score2": 54.94,
-      "Score3": 59.14
+      "Score1": 70.74,
+      "Score2": 58.7,
+      "Score3": 67.47
     },
     {
       "Ticker": "KB금융",
@@ -22751,9 +22751,9 @@
       "MDD": -33.59,
       "Calmar": 0.85,
       "Grade": "Good",
-      "Score1": 52.47,
-      "Score2": 33.4,
-      "Score3": 40.49
+      "Score1": 52.35,
+      "Score2": 40.86,
+      "Score3": 44.75
     },
     {
       "Ticker": "KT&G",
@@ -22769,9 +22769,9 @@
       "MDD": -23.01,
       "Calmar": 0.75,
       "Grade": "Good",
-      "Score1": 60.86,
-      "Score2": 54.01,
-      "Score3": 33.15
+      "Score1": 63.46,
+      "Score2": 54.94,
+      "Score3": 33.58
     },
     {
       "Ticker": "LG",
@@ -22787,9 +22787,9 @@
       "MDD": -43.48,
       "Calmar": 0.02,
       "Grade": "Bad",
-      "Score1": 40.0,
-      "Score2": 39.94,
-      "Score3": 20.93
+      "Score1": 48.83,
+      "Score2": 47.47,
+      "Score3": 25.43
     },
     {
       "Ticker": "LG이노텍",
@@ -22805,9 +22805,9 @@
       "MDD": -70.35,
       "Calmar": 0.35,
       "Grade": "Bad",
-      "Score1": 47.53,
-      "Score2": 69.38,
-      "Score3": 72.22
+      "Score1": 38.64,
+      "Score2": 54.57,
+      "Score3": 54.57
     },
     {
       "Ticker": "LG전자",
@@ -22823,9 +22823,9 @@
       "MDD": -61.14,
       "Calmar": 0.04,
       "Grade": "Bad",
-      "Score1": 56.54,
-      "Score2": 44.63,
-      "Score3": 54.32
+      "Score1": 57.47,
+      "Score2": 41.67,
+      "Score3": 48.27
     },
     {
       "Ticker": "LS ELECTRIC",
@@ -22841,9 +22841,9 @@
       "MDD": -49.5,
       "Calmar": 1.63,
       "Grade": "Normal",
-      "Score1": 69.88,
-      "Score2": 62.65,
-      "Score3": 48.4
+      "Score1": 71.42,
+      "Score2": 62.47,
+      "Score3": 48.15
     },
     {
       "Ticker": "S-Oil",
@@ -22859,9 +22859,9 @@
       "MDD": -58.52,
       "Calmar": 0.16,
       "Grade": "Bad",
-      "Score1": 68.89,
-      "Score2": 37.04,
-      "Score3": 44.38
+      "Score1": 73.46,
+      "Score2": 47.53,
+      "Score3": 52.28
     },
     {
       "Ticker": "SK",
@@ -22877,9 +22877,9 @@
       "MDD": -58.56,
       "Calmar": 0.33,
       "Grade": "Bad",
-      "Score1": 41.73,
-      "Score2": 62.65,
-      "Score3": 74.81
+      "Score1": 41.91,
+      "Score2": 57.72,
+      "Score3": 66.73
     },
     {
       "Ticker": "SK네트웍스",
@@ -22895,9 +22895,9 @@
       "MDD": -52.29,
       "Calmar": 0.1,
       "Grade": "Bad",
-      "Score1": 30.12,
-      "Score2": 41.3,
-      "Score3": 52.1
+      "Score1": 34.69,
+      "Score2": 35.74,
+      "Score3": 44.07
     },
     {
       "Ticker": "SK텔레콤",
@@ -22913,9 +22913,9 @@
       "MDD": -32.99,
       "Calmar": 0.43,
       "Grade": "Good",
-      "Score1": 81.73,
-      "Score2": 50.06,
-      "Score3": 33.95
+      "Score1": 81.3,
+      "Score2": 53.64,
+      "Score3": 38.64
     },
     {
       "Ticker": "SK하이닉스",
@@ -22931,9 +22931,9 @@
       "MDD": -43.61,
       "Calmar": 1.78,
       "Grade": "Normal",
-      "Score1": 43.95,
-      "Score2": 64.57,
-      "Score3": 85.43
+      "Score1": 39.32,
+      "Score2": 52.28,
+      "Score3": 68.58
     },
     {
       "Ticker": "가온전선",
@@ -22949,9 +22949,9 @@
       "MDD": -55.32,
       "Calmar": 1.3,
       "Grade": "Bad",
-      "Score1": 66.3,
-      "Score2": 68.58,
-      "Score3": 77.47
+      "Score1": 68.77,
+      "Score2": 68.89,
+      "Score3": 79.94
     },
     {
       "Ticker": "금호건설",
@@ -22967,9 +22967,9 @@
       "MDD": -82.26,
       "Calmar": -0.04,
       "Grade": "Bad",
-      "Score1": 13.09,
-      "Score2": 27.04,
-      "Score3": 40.99
+      "Score1": 26.79,
+      "Score2": 38.46,
+      "Score3": 58.46
     },
     {
       "Ticker": "금호타이어",
@@ -22985,9 +22985,9 @@
       "MDD": -60.03,
       "Calmar": -0.02,
       "Grade": "Bad",
-      "Score1": 32.84,
-      "Score2": 13.4,
-      "Score3": 18.4
+      "Score1": 45.62,
+      "Score2": 31.42,
+      "Score3": 35.8
     },
     {
       "Ticker": "네오오토",
@@ -23003,9 +23003,9 @@
       "MDD": -47.91,
       "Calmar": 0.27,
       "Grade": "Normal",
-      "Score1": 52.96,
-      "Score2": 29.57,
-      "Score3": 30.68
+      "Score1": 57.78,
+      "Score2": 47.1,
+      "Score3": 48.21
     },
     {
       "Ticker": "네이처셀",
@@ -23021,9 +23021,9 @@
       "MDD": -79.28,
       "Calmar": -0.08,
       "Grade": "Bad",
-      "Score1": 45.43,
-      "Score2": 18.52,
-      "Score3": 24.57
+      "Score1": 48.15,
+      "Score2": 21.23,
+      "Score3": 30.93
     },
     {
       "Ticker": "뉴파워프라즈마",
@@ -23039,9 +23039,9 @@
       "MDD": -63.6,
       "Calmar": 0.15,
       "Grade": "Bad",
-      "Score1": 70.37,
-      "Score2": 50.12,
-      "Score3": 48.02
+      "Score1": 71.05,
+      "Score2": 60.93,
+      "Score3": 61.54
     },
     {
       "Ticker": "대덕전자",
@@ -23057,9 +23057,9 @@
       "MDD": -66.48,
       "Calmar": 0.79,
       "Grade": "Bad",
-      "Score1": 56.79,
-      "Score2": 58.95,
-      "Score3": 71.23
+      "Score1": 47.9,
+      "Score2": 50.43,
+      "Score3": 60.68
     },
     {
       "Ticker": "대원전선",
@@ -23075,9 +23075,9 @@
       "MDD": -61.88,
       "Calmar": 0.7,
       "Grade": "Bad",
-      "Score1": 84.2,
-      "Score2": 86.11,
-      "Score3": 72.53
+      "Score1": 85.74,
+      "Score2": 87.84,
+      "Score3": 75.25
     },
     {
       "Ticker": "대한항공",
@@ -23093,9 +23093,9 @@
       "MDD": -43.5,
       "Calmar": -0.08,
       "Grade": "Bad",
-      "Score1": 36.54,
-      "Score2": 17.96,
-      "Score3": 25.74
+      "Score1": 41.36,
+      "Score2": 21.42,
+      "Score3": 26.42
     },
     {
       "Ticker": "더블유게임즈",
@@ -23111,9 +23111,9 @@
       "MDD": -50.14,
       "Calmar": 0.05,
       "Grade": "Bad",
-      "Score1": 58.64,
-      "Score2": 28.4,
-      "Score3": 28.83
+      "Score1": 53.33,
+      "Score2": 29.38,
+      "Score3": 26.85
     },
     {
       "Ticker": "롯데손해보험",
@@ -23129,9 +23129,9 @@
       "MDD": -62.18,
       "Calmar": 0.05,
       "Grade": "Bad",
-      "Score1": 45.43,
-      "Score2": 13.21,
-      "Score3": 20.0
+      "Score1": 47.78,
+      "Score2": 26.85,
+      "Score3": 34.69
     },
     {
       "Ticker": "롯데쇼핑",
@@ -23147,9 +23147,9 @@
       "MDD": -53.72,
       "Calmar": 0.06,
       "Grade": "Bad",
-      "Score1": 63.21,
-      "Score2": 44.94,
-      "Score3": 49.51
+      "Score1": 53.77,
+      "Score2": 33.27,
+      "Score3": 36.91
     },
     {
       "Ticker": "브이엠",
@@ -23165,9 +23165,9 @@
       "MDD": -79.44,
       "Calmar": 0.35,
       "Grade": "Bad",
-      "Score1": 57.28,
-      "Score2": 61.48,
-      "Score3": 80.12
+      "Score1": 47.16,
+      "Score2": 50.68,
+      "Score3": 74.57
     },
     {
       "Ticker": "삼성물산",
@@ -23183,9 +23183,9 @@
       "MDD": -40.65,
       "Calmar": 0.54,
       "Grade": "Normal",
-      "Score1": 24.07,
-      "Score2": 35.31,
-      "Score3": 46.23
+      "Score1": 24.88,
+      "Score2": 32.1,
+      "Score3": 37.59
     },
     {
       "Ticker": "삼성생명",
@@ -23201,9 +23201,9 @@
       "MDD": -39.34,
       "Calmar": 0.89,
       "Grade": "Good",
-      "Score1": 36.54,
-      "Score2": 56.98,
-      "Score3": 66.6
+      "Score1": 33.52,
+      "Score2": 46.17,
+      "Score3": 51.98
     },
     {
       "Ticker": "삼성에스디에스",
@@ -23219,9 +23219,9 @@
       "MDD": -48.67,
       "Calmar": 0.07,
       "Grade": "Bad",
-      "Score1": 67.28,
-      "Score2": 26.85,
-      "Score3": 22.59
+      "Score1": 72.84,
+      "Score2": 38.58,
+      "Score3": 34.01
     },
     {
       "Ticker": "삼성전기",
@@ -23237,9 +23237,9 @@
       "MDD": -46.53,
       "Calmar": 1.14,
       "Grade": "Normal",
-      "Score1": 46.3,
-      "Score2": 82.04,
-      "Score3": 95.06
+      "Score1": 39.75,
+      "Score2": 65.0,
+      "Score3": 75.62
     },
     {
       "Ticker": "삼성전자",
@@ -23255,9 +23255,9 @@
       "MDD": -43.17,
       "Calmar": 0.67,
       "Grade": "Normal",
-      "Score1": 40.62,
-      "Score2": 54.81,
-      "Score3": 61.3
+      "Score1": 37.65,
+      "Score2": 47.1,
+      "Score3": 50.0
     },
     {
       "Ticker": "삼성화재",
@@ -23273,9 +23273,9 @@
       "MDD": -30.08,
       "Calmar": 0.83,
       "Grade": "Good",
-      "Score1": 49.63,
-      "Score2": 31.42,
-      "Score3": 51.98
+      "Score1": 49.14,
+      "Score2": 31.73,
+      "Score3": 45.25
     },
     {
       "Ticker": "삼지전자",
@@ -23291,9 +23291,9 @@
       "MDD": -53.1,
       "Calmar": 0.42,
       "Grade": "Bad",
-      "Score1": 64.94,
-      "Score2": 59.44,
-      "Score3": 45.31
+      "Score1": 68.4,
+      "Score2": 59.38,
+      "Score3": 50.68
     },
     {
       "Ticker": "삼화콘덴서",
@@ -23309,9 +23309,9 @@
       "MDD": -68.79,
       "Calmar": 0.12,
       "Grade": "Bad",
-      "Score1": 29.38,
-      "Score2": 63.52,
-      "Score3": 72.84
+      "Score1": 26.54,
+      "Score2": 48.46,
+      "Score3": 56.11
     },
     {
       "Ticker": "서울바이오시스",
@@ -23327,9 +23327,9 @@
       "MDD": -87.96,
       "Calmar": -0.23,
       "Grade": "Bad",
-      "Score1": 44.32,
-      "Score2": 46.23,
-      "Score3": 48.77
+      "Score1": 41.85,
+      "Score2": 36.6,
+      "Score3": 44.44
     },
     {
       "Ticker": "소룩스",
@@ -23345,9 +23345,9 @@
       "MDD": -92.87,
       "Calmar": -0.05,
       "Grade": "Bad",
-      "Score1": 14.2,
-      "Score2": 13.21,
-      "Score3": 22.53
+      "Score1": 18.09,
+      "Score2": 11.17,
+      "Score3": 21.6
     },
     {
       "Ticker": "송원산업",
@@ -23363,9 +23363,9 @@
       "MDD": -69.5,
       "Calmar": -0.12,
       "Grade": "Bad",
-      "Score1": 68.15,
-      "Score2": 31.42,
-      "Score3": 22.59
+      "Score1": 72.53,
+      "Score2": 42.78,
+      "Score3": 34.51
     },
     {
       "Ticker": "신한지주",
@@ -23381,13 +23381,13 @@
       "MDD": -28.99,
       "Calmar": 0.79,
       "Grade": "Best",
-      "Score1": 58.27,
-      "Score2": 32.22,
-      "Score3": 36.79
+      "Score1": 54.81,
+      "Score2": 36.48,
+      "Score3": 39.07
     },
     {
       "Ticker": "심텍",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "전자부품 제조업",
       "Industry": "전자부품 제조업",
       "period": "5y",
@@ -23399,9 +23399,9 @@
       "MDD": -82.67,
       "Calmar": 0.39,
       "Grade": "Bad",
-      "Score1": 36.17,
-      "Score2": 46.6,
-      "Score3": 60.25
+      "Score1": 31.48,
+      "Score2": 39.51,
+      "Score3": 58.02
     },
     {
       "Ticker": "싸이맥스",
@@ -23417,13 +23417,13 @@
       "MDD": -67.39,
       "Calmar": 0.18,
       "Grade": "Bad",
-      "Score1": 50.12,
-      "Score2": 51.11,
-      "Score3": 50.31
+      "Score1": 55.56,
+      "Score2": 53.21,
+      "Score3": 60.31
     },
     {
       "Ticker": "씨젠",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "의료용품 및 기타 의약 관련제품 제조업",
       "Industry": "의료용품 및 기타 의약 관련제품 제조업",
       "period": "5y",
@@ -23435,9 +23435,9 @@
       "MDD": -74.8,
       "Calmar": -0.25,
       "Grade": "Bad",
-      "Score1": 47.16,
-      "Score2": 16.42,
-      "Score3": 20.12
+      "Score1": 50.12,
+      "Score2": 24.01,
+      "Score3": 29.81
     },
     {
       "Ticker": "에스에이엠티",
@@ -23453,9 +23453,9 @@
       "MDD": -57.89,
       "Calmar": 0.37,
       "Grade": "Bad",
-      "Score1": 40.99,
-      "Score2": 66.67,
-      "Score3": 71.48
+      "Score1": 42.47,
+      "Score2": 54.88,
+      "Score3": 61.17
     },
     {
       "Ticker": "오로라",
@@ -23471,9 +23471,9 @@
       "MDD": -63.68,
       "Calmar": 0.18,
       "Grade": "Bad",
-      "Score1": 21.36,
-      "Score2": 20.56,
-      "Score3": 33.89
+      "Score1": 30.62,
+      "Score2": 29.32,
+      "Score3": 43.09
     },
     {
       "Ticker": "오리온홀딩스",
@@ -23489,9 +23489,9 @@
       "MDD": -26.99,
       "Calmar": 0.34,
       "Grade": "Normal",
-      "Score1": 42.35,
-      "Score2": 27.35,
-      "Score3": 19.32
+      "Score1": 44.88,
+      "Score2": 31.54,
+      "Score3": 24.01
     },
     {
       "Ticker": "와이지-원",
@@ -23507,13 +23507,13 @@
       "MDD": -56.4,
       "Calmar": 0.32,
       "Grade": "Bad",
-      "Score1": 36.3,
-      "Score2": 60.31,
-      "Score3": 72.9
+      "Score1": 38.89,
+      "Score2": 53.95,
+      "Score3": 69.88
     },
     {
       "Ticker": "원익IPS",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23525,8 +23525,8 @@
       "MDD": -58.51,
       "Calmar": 0.33,
       "Grade": "Bad",
-      "Score1": 25.43,
-      "Score2": 35.74,
+      "Score1": 22.16,
+      "Score2": 30.99,
       "Score3": 54.75
     },
     {
@@ -23543,9 +23543,9 @@
       "MDD": -85.6,
       "Calmar": 0.24,
       "Grade": "Bad",
-      "Score1": 76.42,
-      "Score2": 56.79,
-      "Score3": 52.1
+      "Score1": 75.19,
+      "Score2": 66.05,
+      "Score3": 57.65
     },
     {
       "Ticker": "인바디",
@@ -23561,9 +23561,9 @@
       "MDD": -43.02,
       "Calmar": 0.26,
       "Grade": "Normal",
-      "Score1": 50.25,
-      "Score2": 38.33,
-      "Score3": 62.22
+      "Score1": 47.96,
+      "Score2": 40.25,
+      "Score3": 64.01
     },
     {
       "Ticker": "인텍플러스",
@@ -23579,9 +23579,9 @@
       "MDD": -82.59,
       "Calmar": 0.07,
       "Grade": "Bad",
-      "Score1": 55.19,
-      "Score2": 51.6,
-      "Score3": 62.72
+      "Score1": 46.3,
+      "Score2": 43.33,
+      "Score3": 58.33
     },
     {
       "Ticker": "자이에스앤디",
@@ -23597,9 +23597,9 @@
       "MDD": -73.47,
       "Calmar": -0.07,
       "Grade": "Bad",
-      "Score1": 73.33,
-      "Score2": 42.72,
-      "Score3": 41.54
+      "Score1": 80.31,
+      "Score2": 53.77,
+      "Score3": 56.11
     },
     {
       "Ticker": "제주반도체",
@@ -23615,13 +23615,13 @@
       "MDD": -77.15,
       "Calmar": 0.92,
       "Grade": "Bad",
-      "Score1": 52.72,
-      "Score2": 63.09,
-      "Score3": 80.06
+      "Score1": 42.35,
+      "Score2": 48.7,
+      "Score3": 66.79
     },
     {
       "Ticker": "주성엔지니어링",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23633,9 +23633,9 @@
       "MDD": -62.21,
       "Calmar": 1.02,
       "Grade": "Bad",
-      "Score1": 40.74,
-      "Score2": 66.98,
-      "Score3": 77.04
+      "Score1": 37.35,
+      "Score2": 55.56,
+      "Score3": 72.78
     },
     {
       "Ticker": "지엔씨에너지",
@@ -23651,9 +23651,9 @@
       "MDD": -58.25,
       "Calmar": 0.9,
       "Grade": "Bad",
-      "Score1": 69.88,
-      "Score2": 20.31,
-      "Score3": 23.4
+      "Score1": 79.57,
+      "Score2": 38.33,
+      "Score3": 46.42
     },
     {
       "Ticker": "케이씨텍",
@@ -23669,9 +23669,9 @@
       "MDD": -59.29,
       "Calmar": 0.41,
       "Grade": "Bad",
-      "Score1": 40.49,
-      "Score2": 46.3,
-      "Score3": 65.68
+      "Score1": 41.3,
+      "Score2": 48.52,
+      "Score3": 65.86
     },
     {
       "Ticker": "코리안리",
@@ -23687,9 +23687,9 @@
       "MDD": -34.53,
       "Calmar": 0.55,
       "Grade": "Good",
-      "Score1": 43.7,
-      "Score2": 45.0,
-      "Score3": 33.4
+      "Score1": 47.22,
+      "Score2": 51.67,
+      "Score3": 36.36
     },
     {
       "Ticker": "코스맥스엔비티",
@@ -23705,9 +23705,9 @@
       "MDD": -72.44,
       "Calmar": -0.09,
       "Grade": "Bad",
-      "Score1": 60.37,
-      "Score2": 52.35,
-      "Score3": 54.94
+      "Score1": 60.56,
+      "Score2": 57.28,
+      "Score3": 63.27
     },
     {
       "Ticker": "코웨이",
@@ -23723,13 +23723,13 @@
       "MDD": -53.94,
       "Calmar": 0.01,
       "Grade": "Bad",
-      "Score1": 34.44,
-      "Score2": 19.63,
-      "Score3": 25.62
+      "Score1": 37.72,
+      "Score2": 25.62,
+      "Score3": 29.01
     },
     {
       "Ticker": "테스",
-      "Market": "KOSDAQ GLOBAL",
+      "Market": "KOSDAQ",
       "Sector": "특수 목적용 기계 제조업",
       "Industry": "특수 목적용 기계 제조업",
       "period": "5y",
@@ -23741,9 +23741,9 @@
       "MDD": -59.41,
       "Calmar": 0.67,
       "Grade": "Bad",
-      "Score1": 62.59,
-      "Score2": 59.2,
-      "Score3": 83.21
+      "Score1": 53.7,
+      "Score2": 52.9,
+      "Score3": 79.14
     },
     {
       "Ticker": "티에스이",
@@ -23759,9 +23759,9 @@
       "MDD": -61.49,
       "Calmar": 0.45,
       "Grade": "Bad",
-      "Score1": 70.99,
-      "Score2": 66.48,
-      "Score3": 81.98
+      "Score1": 59.51,
+      "Score2": 56.11,
+      "Score3": 74.32
     },
     {
       "Ticker": "피델릭스",
@@ -23777,9 +23777,9 @@
       "MDD": -63.36,
       "Calmar": 0.43,
       "Grade": "Bad",
-      "Score1": 57.53,
-      "Score2": 68.09,
-      "Score3": 83.4
+      "Score1": 54.14,
+      "Score2": 54.57,
+      "Score3": 70.68
     },
     {
       "Ticker": "피에스케이",
@@ -23795,9 +23795,9 @@
       "MDD": -57.62,
       "Calmar": 0.88,
       "Grade": "Bad",
-      "Score1": 56.91,
-      "Score2": 66.54,
-      "Score3": 92.65
+      "Score1": 49.94,
+      "Score2": 56.85,
+      "Score3": 83.89
     },
     {
       "Ticker": "피에스케이홀딩스",
@@ -23813,9 +23813,9 @@
       "MDD": -65.64,
       "Calmar": 0.91,
       "Grade": "Bad",
-      "Score1": 57.65,
-      "Score2": 43.27,
-      "Score3": 54.07
+      "Score1": 53.52,
+      "Score2": 43.46,
+      "Score3": 59.81
     },
     {
       "Ticker": "하나금융지주",
@@ -23831,9 +23831,9 @@
       "MDD": -35.4,
       "Calmar": 0.71,
       "Grade": "Good",
-      "Score1": 60.25,
-      "Score2": 29.63,
-      "Score3": 35.12
+      "Score1": 58.09,
+      "Score2": 37.22,
+      "Score3": 41.11
     },
     {
       "Ticker": "한국콜마",
@@ -23849,9 +23849,9 @@
       "MDD": -44.05,
       "Calmar": 0.31,
       "Grade": "Normal",
-      "Score1": 25.56,
-      "Score2": 34.63,
-      "Score3": 35.43
+      "Score1": 37.04,
+      "Score2": 41.3,
+      "Score3": 43.27
     },
     {
       "Ticker": "한국타이어앤테크놀로지",
@@ -23867,9 +23867,9 @@
       "MDD": -44.69,
       "Calmar": 0.21,
       "Grade": "Normal",
-      "Score1": 72.47,
-      "Score2": 28.02,
-      "Score3": 38.15
+      "Score1": 74.32,
+      "Score2": 40.12,
+      "Score3": 45.0
     },
     {
       "Ticker": "한솔테크닉스",
@@ -23885,9 +23885,9 @@
       "MDD": -60.28,
       "Calmar": 0.01,
       "Grade": "Bad",
-      "Score1": 45.06,
-      "Score2": 36.48,
-      "Score3": 48.64
+      "Score1": 36.36,
+      "Score2": 29.14,
+      "Score3": 38.7
     },
     {
       "Ticker": "현대모비스",
@@ -23903,9 +23903,9 @@
       "MDD": -39.45,
       "Calmar": 0.35,
       "Grade": "Normal",
-      "Score1": 65.43,
-      "Score2": 42.53,
-      "Score3": 32.47
+      "Score1": 68.83,
+      "Score2": 51.91,
+      "Score3": 38.09
     },
     {
       "Ticker": "현대백화점",
@@ -23921,9 +23921,9 @@
       "MDD": -51.79,
       "Calmar": 0.23,
       "Grade": "Bad",
-      "Score1": 52.96,
-      "Score2": 41.6,
-      "Score3": 64.81
+      "Score1": 46.79,
+      "Score2": 31.73,
+      "Score3": 50.31
     },
     {
       "Ticker": "현대해상",
@@ -23939,8 +23939,8 @@
       "MDD": -47.34,
       "Calmar": 0.19,
       "Grade": "Normal",
-      "Score1": 61.6,
-      "Score2": 55.31,
+      "Score1": 63.21,
+      "Score2": 59.81,
       "Score3": 46.6
     }
   ]
