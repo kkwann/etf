@@ -44,7 +44,9 @@ const PREFERRED_DEFAULT_PERIODS_BY_DATASET = {
 };
 const MAX_GROUP_DISTRIBUTION_ITEMS = 5;
 const PERCENT_COLUMNS = new Set(["Total Return", "CAGR", "MDD"]);
+const COUNT_COLUMNS = new Set(["Dividends Count"]);
 const KNOWN_NUMERIC_COLUMNS = new Set([
+  "Dividends Count",
   "Total Return",
   "CAGR",
   "Sharpe",
@@ -57,6 +59,7 @@ const KNOWN_NUMERIC_COLUMNS = new Set([
   "Score3"
 ]);
 const DETAIL_METRIC_COLUMNS = [
+  "Dividends Count",
   "Total Return",
   "CAGR",
   "Sharpe",
@@ -88,6 +91,7 @@ const DEFAULT_COLUMNS = [
   "period",
   "first_date",
   "last_date",
+  "Dividends Count",
   "Total Return",
   "CAGR",
   "Sharpe",
@@ -147,6 +151,7 @@ const COLUMN_LABELS = {
   period: "기간",
   first_date: "거래시작일",
   last_date: "거래종료일",
+  "Dividends Count": "배당 횟수",
   "Total Return": "총수익률",
   CAGR: "연평균수익률",
   Sharpe: "샤프지수",
@@ -1834,6 +1839,10 @@ function formatCellValue(column, value) {
     return formatPercent(value);
   }
 
+  if (COUNT_COLUMNS.has(column)) {
+    return formatCount(value);
+  }
+
   if (isNumericColumn(column)) {
     return formatNumber(value);
   }
@@ -1845,6 +1854,19 @@ function formatPercent(value) {
   const number = parseNumber(value);
 
   return Number.isFinite(number) ? number.toFixed(2) + "%" : cleanText(value);
+}
+
+function formatCount(value) {
+  const number = parseNumber(value);
+
+  if (!Number.isFinite(number)) {
+    return cleanText(value);
+  }
+
+  return number.toLocaleString("ko-KR", {
+    minimumFractionDigits: Number.isInteger(number) ? 0 : 2,
+    maximumFractionDigits: 2
+  }) + "회";
 }
 
 function formatNumber(value) {
