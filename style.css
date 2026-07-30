@@ -1021,6 +1021,8 @@ tbody tr:hover {
 .drawer-header p {
   margin: 7px 0 0;
   color: var(--muted);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .detail-badges {

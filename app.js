@@ -27,7 +27,12 @@ const HIDDEN_COLUMNS_BY_DATASET = {
   SP500: new Set(["Trend"]),
   KRX: new Set(["Trend"])
 };
-const MAIN_TABLE_HIDDEN_COLUMNS_BY_DATASET = {};
+const MAIN_TABLE_HIDDEN_COLUMNS_BY_DATASET = {
+  ETF: new Set(["Name"]),
+  NASDAQ: new Set(["Name"]),
+  SP500: new Set(["Name"]),
+  KRX: new Set(["Name"])
+};
 const DATASET_KEYS = ["ETF", "NASDAQ", "SP500", "KRX"];
 const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
 const SCORE_FILTER_COLUMNS = ["Score1", "Score2", "Score3"];
@@ -1304,12 +1309,18 @@ function openDrawer(row) {
   const periodRows = getTickerPeriodRows(row);
   const mainPeriod = getMainPeriod();
   const mainRow = findPeriodRow(periodRows, mainPeriod) || row;
+  const name = cleanText(mainRow.Name || row.Name);
   const availablePeriods = periodRows.map(function (periodRow) {
     return labelPeriod(periodRow.period);
   }).join(" · ");
 
   dom.detailTicker.textContent = ticker;
-  dom.detailSub.textContent = [DATASET_META[activeDataset].label, category, availablePeriods].filter(Boolean).join(" · ") || "-";
+  dom.detailSub.textContent = [
+    name,
+    DATASET_META[activeDataset].label,
+    category,
+    availablePeriods
+  ].filter(Boolean).join(" · ") || "-";
   dom.detailBadges.innerHTML =
     (columns.indexOf("Market") >= 0 ? marketBadge(mainRow.Market) : "") +
     (columns.indexOf("Grade") >= 0 ? gradeBadge(mainRow.Grade) : "") +
