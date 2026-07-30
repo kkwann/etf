@@ -27,11 +27,7 @@ const HIDDEN_COLUMNS_BY_DATASET = {
   SP500: new Set(["Trend"]),
   KRX: new Set(["Trend"])
 };
-const MAIN_TABLE_HIDDEN_COLUMNS_BY_DATASET = {
-  NASDAQ: new Set(["Industry"]),
-  SP500: new Set(["Industry"]),
-  KRX: new Set(["Industry"])
-};
+const MAIN_TABLE_HIDDEN_COLUMNS_BY_DATASET = {};
 const DATASET_KEYS = ["ETF", "NASDAQ", "SP500", "KRX"];
 const GRADE_ORDER = ["Best", "Good", "Normal", "Bad"];
 const SCORE_FILTER_COLUMNS = ["Score1", "Score2", "Score3"];
@@ -43,7 +39,7 @@ const PREFERRED_DEFAULT_PERIODS_BY_DATASET = {
   KRX: ["5y", "3y", "1y"]
 };
 const MAX_GROUP_DISTRIBUTION_ITEMS = 5;
-const PERCENT_COLUMNS = new Set(["Total Return", "CAGR", "MDD"]);
+const PERCENT_COLUMNS = new Set(["Total Return", "CAGR", "MDD", "Return"]);
 const COUNT_COLUMNS = new Set(["Dividends Count"]);
 const KNOWN_NUMERIC_COLUMNS = new Set([
   "Dividends Count",
@@ -85,8 +81,9 @@ const ROUTING_COLUMNS = new Set([
   "market",
   "Market"
 ]);
-const DEFAULT_COLUMNS = [
+const ETF_DEFAULT_COLUMNS = [
   "Ticker",
+  "Name",
   "Category",
   "period",
   "first_date",
@@ -98,12 +95,11 @@ const DEFAULT_COLUMNS = [
   "MDD",
   "Calmar",
   "Grade",
-  "Score1",
-  "Score2",
-  "Score3"
+  "Return"
 ];
 const EQUITY_DEFAULT_COLUMNS = [
   "Ticker",
+  "Name",
   "Sector",
   "Industry",
   "period",
@@ -115,12 +111,13 @@ const EQUITY_DEFAULT_COLUMNS = [
   "MDD",
   "Calmar",
   "Grade",
-  "Return"
+  "Score1",
+  "Score2",
+  "Score3"
 ];
 const KRX_DEFAULT_COLUMNS = [
   "Ticker",
   "Market",
-  "Sector",
   "Industry",
   "period",
   "first_date",
@@ -136,7 +133,7 @@ const KRX_DEFAULT_COLUMNS = [
   "Score3"
 ];
 const DEFAULT_COLUMNS_BY_DATASET = {
-  ETF: DEFAULT_COLUMNS,
+  ETF: ETF_DEFAULT_COLUMNS,
   NASDAQ: EQUITY_DEFAULT_COLUMNS,
   SP500: EQUITY_DEFAULT_COLUMNS,
   KRX: KRX_DEFAULT_COLUMNS
@@ -205,7 +202,7 @@ let rowsByDataset = {
 let marketItems = [];
 let activeDataset = "ETF";
 let rawRows = [];
-let columns = DEFAULT_COLUMNS.slice();
+let columns = ETF_DEFAULT_COLUMNS.slice();
 let visibleRows = [];
 let tableSort = {
   key: "CAGR",
@@ -367,12 +364,16 @@ function activateDataset(datasetKey, preserveSearch) {
 
 function applyDatasetCopy() {
   const meta = DATASET_META[activeDataset];
+  const searchPlaceholders = {
+    ETF: "티커, 종목명, 카테고리, 기간, 등급 검색",
+    NASDAQ: "티커, 종목명, 섹터, 산업, 기간, 등급 검색",
+    SP500: "티커, 종목명, 섹터, 산업, 기간, 등급 검색",
+    KRX: "종목, 시장, 산업, 기간, 등급 검색"
+  };
 
   dom.dashboardTitle.textContent = meta.title;
   dom.dashboardDescription.textContent = meta.description;
-  dom.searchInput.placeholder = activeDataset === "ETF"
-    ? "티커, 카테고리, 기간, 등급 검색"
-    : "티커, 종목명, 섹터, 기간, 등급 검색";
+  dom.searchInput.placeholder = searchPlaceholders[activeDataset] || "데이터 검색";
 }
 
 function renderMarketOverview() {
@@ -953,7 +954,7 @@ function appendOption(select, value, label) {
 
 function inferColumns(rows) {
   const seen = new Set();
-  const result = [];
+  const discoveredColumns = [];
   const hiddenColumns = HIDDEN_COLUMNS_BY_DATASET[activeDataset] || new Set();
 
   rows.forEach(function (row) {
@@ -962,16 +963,31 @@ function inferColumns(rows) {
 
       if ((!ROUTING_COLUMNS.has(key) || isKrxMarketColumn) && !hiddenColumns.has(key) && !seen.has(key)) {
         seen.add(key);
-        result.push(key);
+        discoveredColumns.push(key);
       }
     });
   });
 
-  return result.length > 0 ? result : defaultColumnsForDataset(activeDataset);
+  if (discoveredColumns.length === 0) {
+    return defaultColumnsForDataset(activeDataset);
+  }
+
+  const preferredColumns = defaultColumnsForDataset(activeDataset);
+  const orderedColumns = preferredColumns.filter(function (column) {
+    return seen.has(column);
+  });
+
+  discoveredColumns.forEach(function (column) {
+    if (orderedColumns.indexOf(column) < 0) {
+      orderedColumns.push(column);
+    }
+  });
+
+  return orderedColumns;
 }
 
 function defaultColumnsForDataset(datasetKey) {
-  const defaultColumns = DEFAULT_COLUMNS_BY_DATASET[datasetKey] || DEFAULT_COLUMNS;
+  const defaultColumns = DEFAULT_COLUMNS_BY_DATASET[datasetKey] || ETF_DEFAULT_COLUMNS;
 
   return defaultColumns.slice();
 }
@@ -993,6 +1009,9 @@ function renderTableHead() {
 
     th.dataset.sortKey = column;
     th.tabIndex = 0;
+    if (isTextAlignedColumn(column)) {
+      th.classList.add("text-cell");
+    }
     th.innerHTML = escapeHtml(label.ko) + "<br><span>" + escapeHtml(label.en) + "</span>";
     tr.appendChild(th);
   });
@@ -1797,7 +1816,7 @@ function cellClass(column, value) {
 
   if (column === "Ticker") {
     classes.push("ticker", "text-cell");
-  } else if (column === "Name" || column === "Market" || column === "Category" || column === "Sector" || column === "Industry" || column === "Grade" || column === "Trend" || column === "period") {
+  } else if (isTextAlignedColumn(column)) {
     classes.push("text-cell");
   }
 
@@ -1806,6 +1825,18 @@ function cellClass(column, value) {
   }
 
   return classes.join(" ");
+}
+
+function isTextAlignedColumn(column) {
+  return column === "Ticker" ||
+    column === "Name" ||
+    column === "Market" ||
+    column === "Category" ||
+    column === "Sector" ||
+    column === "Industry" ||
+    column === "Grade" ||
+    column === "Trend" ||
+    column === "period";
 }
 
 function isNumericColumn(column) {

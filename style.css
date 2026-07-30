@@ -830,10 +830,7 @@ th span {
 }
 
 td.text-cell,
-th:first-child,
-th:nth-child(2),
-th:nth-child(3),
-th:last-child {
+th.text-cell {
   text-align: left;
 }
 
